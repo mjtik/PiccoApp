@@ -68,6 +68,10 @@ public class Beer {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    public String toString() {
+        return this.getName();
+    }
 }
 /**
  * Created by mtiko_000 on 4/22/2015.

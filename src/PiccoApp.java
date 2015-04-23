@@ -9,6 +9,7 @@ public class PiccoApp {
         XMLParser parser = new XMLParser();
 
         parser.parseXML();
+        parser.display();
 
     }
 

@@ -8,4 +8,12 @@
         <location>Worcester, MA</location>
         <price>5.50</price>
     </beer>
+    <beer>
+        <name>Be Hoppy</name>
+        <style>American IPA</style>
+        <abv>6.5</abv>
+        <brewery>Wormtown</brewery>
+        <location>Worcester, MA</location>
+        <price>5.50</price>
+    </beer>
 </beers>
