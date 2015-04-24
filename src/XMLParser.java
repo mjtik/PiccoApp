@@ -3,6 +3,10 @@
  */
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,12 +24,18 @@ import ca.odell.glazedlists.swing.*;
 
 import javax.swing.*;
 
+import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseListener;
+import static javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION;
+import static javax.swing.ListSelectionModel.SINGLE_SELECTION;
+
 
 public class XMLParser {
 
+    Beer selectedBeer = new Beer();
 
 
     EventList <Beer> beerEventList = new BasicEventList<Beer>();
+    SortedList<Beer> sortedBeer = new SortedList<Beer>(beerEventList,null);
 
     public void parseXML(){
 
@@ -67,20 +77,36 @@ public class XMLParser {
 
     public void display(){
 
-        SortedList<Beer> sortedBeer = new SortedList<Beer>(beerEventList,null);
+
+
+
         JTextField filterEdit = new JTextField(10);
         FilterList<Beer> textFilteredIssues = new FilterList<Beer>(sortedBeer, new TextComponentMatcherEditor<Beer>(filterEdit, new BeerTextFilter()));
+        AdvancedTableModel<Beer> beerTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(textFilteredIssues, new BeerTableFormat());
+        final JTable beerJTable = new JTable(beerTableModel);
+        JButton print = new JButton("Print");
+
+
+
+        print.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                selectedBeer = sortedBeer.get(beerJTable.getSelectedRow());
+                System.out.println(selectedBeer.toString());
+            }
+        });
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridBagLayout());
-        AdvancedTableModel<Beer> beerTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(textFilteredIssues, new BeerTableFormat());
 
-        JTable beerJTable = new JTable(beerTableModel);
+
         TableComparatorChooser<Beer> tableSorter = TableComparatorChooser.install(beerJTable, sortedBeer, TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
         JScrollPane beerListScrollPane = new JScrollPane(beerJTable);
         panel.add(new JLabel("Filter: "), new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(filterEdit,             new GridBagConstraints(1, 0, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(beerListScrollPane,     new GridBagConstraints(0, 1, 2, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(print, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(beerListScrollPane, new GridBagConstraints(0, 1, 3, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+
 
         JFrame frame = new JFrame("Beers");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
