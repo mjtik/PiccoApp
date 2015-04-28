@@ -37,7 +37,8 @@ public class PiccoApp {
         changeBeer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                BeerChanger beerChanger = new BeerChanger();
+                beerChanger.display();
             }
         });
 
