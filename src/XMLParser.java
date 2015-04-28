@@ -82,7 +82,7 @@ public class XMLParser {
 
         JTextField filterEdit = new JTextField(10);
         FilterList<Beer> textFilteredIssues = new FilterList<Beer>(sortedBeer, new TextComponentMatcherEditor<Beer>(filterEdit, new BeerTextFilter()));
-        AdvancedTableModel<Beer> beerTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(textFilteredIssues, new BeerTableFormat());
+        AdvancedTableModel<Beer> beerTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(textFilteredIssues, new SimpleBeerTableFormat());
         final JTable beerJTable = new JTable(beerTableModel);
         JButton print = new JButton("Print");
 
@@ -104,8 +104,8 @@ public class XMLParser {
         JScrollPane beerListScrollPane = new JScrollPane(beerJTable);
         panel.add(new JLabel("Filter: "), new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(filterEdit,             new GridBagConstraints(1, 0, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(print, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(beerListScrollPane, new GridBagConstraints(0, 1, 3, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(print,                  new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(beerListScrollPane,     new GridBagConstraints(0, 1, 3, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
 
         JFrame frame = new JFrame("Beers");
