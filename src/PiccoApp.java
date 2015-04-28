@@ -50,6 +50,9 @@ public class PiccoApp {
 
         app.display();
 
+        //testing purposes
+        BeerChanger beerChanger = new BeerChanger();
+        beerChanger.display();
     }
 
 }

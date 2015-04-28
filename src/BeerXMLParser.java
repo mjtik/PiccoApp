@@ -27,14 +27,15 @@ public class BeerXMLParser {
     Beer selectedBeer = new Beer();
 
     EventList <Beer> beerEventList = new BasicEventList<Beer>();
+    private String fileName;
 
 
-    public SortedList<Beer> parseXML(){
+    public SortedList<Beer> parseXML(String fileName){
 
         SortedList<Beer> sortedBeer = new SortedList<Beer>(beerEventList,null);
 
         SAXBuilder builder = new SAXBuilder();
-        File file = new File("beers.xml");
+        File file = new File(fileName);
 
         try {
             Document document = builder.build(file);
