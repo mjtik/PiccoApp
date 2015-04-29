@@ -180,10 +180,10 @@ public class BeerChanger {
                     indiaPaleAlesBuilder.append(System.lineSeparator());
                     indiaPaleAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
                     indiaPaleAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-                    indiaPaleAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
+                    indiaPaleAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
                     indiaPaleAlesBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
                     indiaPaleAlesBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-                    indiaPaleAlesBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+                    indiaPaleAlesBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
 
                 }else if (beer.getCategory().equals(paleAles)){
 
@@ -193,10 +193,10 @@ public class BeerChanger {
 
                     paleAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
                     paleAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-                    paleAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
+                    paleAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
                     paleAlesBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
                     paleAlesBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-                    paleAlesBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+                    paleAlesBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
 
                 }else if (beer.getCategory().equals(otherAles)){
 
@@ -206,10 +206,10 @@ public class BeerChanger {
 
                     otherAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
                     otherAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-                    otherAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
+                    otherAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
                     otherAlesBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
                     otherAlesBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-                    otherAlesBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+                    otherAlesBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
 
                 }else if (beer.getCategory().equals(lagers)){
 
@@ -219,10 +219,10 @@ public class BeerChanger {
 
                     lagersBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
                     lagersBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-                    lagersBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
+                    lagersBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
                     lagersBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
                     lagersBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-                    lagersBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+                    lagersBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
 
                 }else if (beer.getCategory().equals(belgianStyle)){
 
@@ -232,10 +232,10 @@ public class BeerChanger {
 
                     belgianStyleBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
                     belgianStyleBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-                    belgianStyleBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
+                    belgianStyleBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
                     belgianStyleBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
                     belgianStyleBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-                    belgianStyleBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+                    belgianStyleBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
 
                 }else if (beer.getCategory().equals(dark)){
 
@@ -245,10 +245,10 @@ public class BeerChanger {
 
                     darkBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
                     darkBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-                    darkBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
+                    darkBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
                     darkBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
                     darkBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-                    darkBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+                    darkBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
 
                 }else if (beer.getCategory().equals(cider)){
 
@@ -258,10 +258,10 @@ public class BeerChanger {
 
                     ciderBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
                     ciderBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-                    ciderBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
+                    ciderBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
                     ciderBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
                     ciderBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-                    ciderBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+                    ciderBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
 
                 }
 
