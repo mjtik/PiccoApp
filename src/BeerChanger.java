@@ -173,11 +173,17 @@ public class BeerChanger {
                 Beer beer = currentBeerSortedList.get(i);
                 if (beer.getCategory().equals(indiaPaleAles)){
 
+                    indiaPaleAlesBuilder.append(System.lineSeparator());
                     indiaPaleAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+                    indiaPaleAlesBuilder.append(System.lineSeparator());
                     indiaPaleAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
+                    indiaPaleAlesBuilder.append(System.lineSeparator());
                     indiaPaleAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
+                    indiaPaleAlesBuilder.append(System.lineSeparator());
                     indiaPaleAlesBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
+                    indiaPaleAlesBuilder.append(System.lineSeparator());
                     indiaPaleAlesBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
+                    indiaPaleAlesBuilder.append(System.lineSeparator());
                     indiaPaleAlesBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
 
                 }else if (beer.getCategory().equals(paleAles)){
