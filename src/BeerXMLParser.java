@@ -24,11 +24,7 @@ import javax.swing.*;
 
 public class BeerXMLParser {
 
-    Beer selectedBeer = new Beer();
-
     EventList <Beer> beerEventList = new BasicEventList<Beer>();
-    private String fileName;
-
 
     public SortedList<Beer> parseXML(String fileName){
 
@@ -57,8 +53,6 @@ public class BeerXMLParser {
                 beerEventList.add(beer);
 
             }
-
-
 
         } catch (JDOMException e) {
             e.printStackTrace();

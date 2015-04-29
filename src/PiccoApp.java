@@ -10,6 +10,11 @@ import java.awt.event.ActionListener;
  */
 public class PiccoApp {
 
+    public PiccoApp() {
+
+        display();
+    }
+
     public void display (){
         JLabel  header     = new JLabel("What menu are you changing?",SwingConstants.CENTER);
         JButton changeBeer = new JButton("Beer");
@@ -37,8 +42,9 @@ public class PiccoApp {
         changeBeer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                BeerChanger beerChanger = new BeerChanger();
-                beerChanger.display();
+
+                new BeerChanger();
+
             }
         });
 
@@ -46,13 +52,11 @@ public class PiccoApp {
 
     public static void main(String [] args){
 
-        PiccoApp app = new PiccoApp();
+        new PiccoApp();
 
-        app.display();
 
         //testing purposes
-        BeerChanger beerChanger = new BeerChanger();
-        beerChanger.display();
+        new BeerChanger();
     }
 
 }
