@@ -2,9 +2,6 @@
  * Created by mtiko_000 on 4/22/2015.
  */
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -16,10 +13,6 @@ import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
 import ca.odell.glazedlists.*;
-import ca.odell.glazedlists.swing.*;
-
-import javax.swing.*;
-
 
 
 public class BeerXMLParser {
@@ -49,10 +42,13 @@ public class BeerXMLParser {
                 beer.setBrewery(element.getChildText("brewery"));
                 beer.setLocation(element.getChildText("location"));
                 beer.setPrice(element.getChildText("price"));
+                beer.setCategory(element.getChildText("category"));
 
                 beerEventList.add(beer);
 
             }
+
+
 
         } catch (JDOMException e) {
             e.printStackTrace();

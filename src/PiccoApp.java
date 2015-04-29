@@ -29,7 +29,7 @@ public class PiccoApp {
         panel.add(changeWine, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(changeFood, new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
-        JFrame frame = new JFrame();
+        final JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(300, 200);
         frame.getContentPane().add(panel);
@@ -45,6 +45,7 @@ public class PiccoApp {
 
                 new BeerChanger();
 
+
             }
         });
 
@@ -57,6 +58,7 @@ public class PiccoApp {
 
         //testing purposes
         new BeerChanger();
+
     }
 
 }

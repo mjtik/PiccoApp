@@ -5,7 +5,7 @@ public class Beer {
     String price;
     String name;
     String style;
-    String descriptiveStyle;
+    String category;
     String abv;
     String brewery;
     String location;
@@ -37,12 +37,12 @@ public class Beer {
         this.style = style;
     }
 
-    public String getDescriptiveStyle() {
-        return this.descriptiveStyle;
+    public String getCategory() {
+        return this.category;
     }
 
-    public void setDescriptiveStyle(String descriptiveStyle) {
-        this.descriptiveStyle = descriptiveStyle;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getAbv() {
