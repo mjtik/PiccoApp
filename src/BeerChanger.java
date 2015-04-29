@@ -42,13 +42,13 @@ public class BeerChanger {
         //Left table for BeerMasterList
         JTextField beerMasterListFilterEdit = new JTextField(10);
         FilterList<Beer> beerMasterListTextFilteredIssues = new FilterList<Beer>(BeerMasterSortedList, new TextComponentMatcherEditor<Beer>(beerMasterListFilterEdit, new BeerTextFilter()));
-        AdvancedTableModel<Beer> beerMasterListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(beerMasterListTextFilteredIssues, new SimpleBeerTableFormat());
+        AdvancedTableModel<Beer> beerMasterListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(beerMasterListTextFilteredIssues, new BeerTableFormat());
         final JTable beerMasterListJTable = new JTable(beerMasterListTableModel);
 
         //Right table for CurrentBeerList
         JTextField currentBeerListFilterEdit = new JTextField(10);
         FilterList<Beer> currentBeerListTextFilteredIssues = new FilterList<Beer>(currentBeerSortedList, new TextComponentMatcherEditor<Beer>(currentBeerListFilterEdit, new BeerTextFilter()));
-        AdvancedTableModel<Beer> currentBeerListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(currentBeerListTextFilteredIssues, new SimpleBeerTableFormat());
+        AdvancedTableModel<Beer> currentBeerListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(currentBeerListTextFilteredIssues, new BeerTableFormat());
         final JTable currentBeerListJTable = new JTable(currentBeerListTableModel);
 
 
@@ -436,7 +436,7 @@ public class BeerChanger {
             Element beer = new Element("beer");
             beer.addContent(new Element("name").setText(newBeer.getName()));
             beer.addContent(new Element("style").setText(newBeer.getStyle()));
-            beer.addContent(new Element("avb").setText(newBeer.getAbv()));
+            beer.addContent(new Element("abv").setText(newBeer.getAbv()));
             beer.addContent(new Element("brewery").setText(newBeer.getBrewery()));
             beer.addContent(new Element("location").setText(newBeer.getLocation()));
             beer.addContent(new Element("price").setText(newBeer.getPrice()));
