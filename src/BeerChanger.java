@@ -5,6 +5,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -110,7 +111,7 @@ public class BeerChanger {
         printList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                printList(currentBeerSortedList);
+                printList();
             }
         });
 
@@ -136,8 +137,146 @@ public class BeerChanger {
 
     }
 
-    void printList(SortedList beerList){
+    void printList(){
 
+        final String indiaPaleAles = "India Pale Ales";
+        final String paleAles = "Pale Ales";
+        final String otherAles = "Other Ales";
+        final String lagers = "Lagers";
+        final String belgianStyle = "Belgian Style";
+        final String dark = "Dark";
+        final String cider = "Cider";
+
+        String indiaPaleAlesHTML;
+        String paleAlesHTML;
+        String otherAlesHTML;
+        String lagersHTML;
+        String belgianStyleHTML;
+        String darkHTML;
+        String ciderHTML;
+
+        String headerHTML;
+        String footerHTML;
+
+
+        StringBuilder indiaPaleAlesBuilder = new StringBuilder();
+        StringBuilder paleAlesBuilder = new StringBuilder();
+        StringBuilder otherAlesBuilder = new StringBuilder();
+        StringBuilder lagersBuilder = new StringBuilder();
+        StringBuilder belgianStyleBuilder = new StringBuilder();
+        StringBuilder darkBuilder = new StringBuilder();
+        StringBuilder ciderBuilder = new StringBuilder();
+
+
+        for(int i=0;i<=currentBeerSortedList.size()-1;i++){
+
+                Beer beer = currentBeerSortedList.get(i);
+                if (beer.getCategory().equals(indiaPaleAles)){
+
+                    indiaPaleAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+                    indiaPaleAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
+                    indiaPaleAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
+                    indiaPaleAlesBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
+                    indiaPaleAlesBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
+                    indiaPaleAlesBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+
+                }else if (beer.getCategory().equals(paleAles)){
+
+                    paleAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+                    paleAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
+                    paleAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
+                    paleAlesBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
+                    paleAlesBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
+                    paleAlesBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+
+                }else if (beer.getCategory().equals(otherAles)){
+
+                    otherAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+                    otherAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
+                    otherAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
+                    otherAlesBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
+                    otherAlesBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
+                    otherAlesBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+
+                }else if (beer.getCategory().equals(lagers)){
+
+                    lagersBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+                    lagersBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
+                    lagersBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
+                    lagersBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
+                    lagersBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
+                    lagersBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+
+                }else if (beer.getCategory().equals(belgianStyle)){
+
+                    belgianStyleBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+                    belgianStyleBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
+                    belgianStyleBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
+                    belgianStyleBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
+                    belgianStyleBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
+                    belgianStyleBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+
+                }else if (beer.getCategory().equals(dark)){
+
+                    darkBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+                    darkBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
+                    darkBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
+                    darkBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
+                    darkBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
+                    darkBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+
+                }else if (beer.getCategory().equals(cider)){
+
+                    ciderBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+                    ciderBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
+                    ciderBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
+                    ciderBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
+                    ciderBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
+                    ciderBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+
+                }
+
+        }
+
+        indiaPaleAlesHTML = indiaPaleAlesBuilder.toString();
+        paleAlesHTML = paleAlesBuilder.toString();
+        otherAlesHTML = otherAlesBuilder.toString();
+        lagersHTML = lagersBuilder.toString();
+        belgianStyleHTML = belgianStyleBuilder.toString();
+        darkHTML = darkBuilder.toString();
+        ciderHTML = ciderBuilder.toString();
+
+        headerHTML = "<!DOCTYPE html>\n" +
+                "<html>\n" +
+                "    <head>\n" +
+                "        <meta charset=\"utf-8\">\n" +
+                "        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n" +
+                "        <link rel=\"stylesheet\" href=\"main.css\">\n" +
+                "    </head>\n" +
+                "    <body>\n" +
+                "        \n" +
+                "        <div class=\"leftSide\">";
+
+        footerHTML = "</div></body></html>";
+
+
+        File file = new File("html\\beerList.html");
+
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+            bufferedWriter.write(headerHTML);
+            bufferedWriter.write(indiaPaleAlesHTML);
+            bufferedWriter.write(paleAlesHTML);
+            bufferedWriter.write(otherAlesHTML);
+            bufferedWriter.write(lagersHTML);
+            bufferedWriter.write(belgianStyleHTML);
+            bufferedWriter.write(darkHTML);
+            bufferedWriter.write(ciderHTML);
+            bufferedWriter.write(footerHTML);
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }
@@ -204,7 +343,7 @@ public class BeerChanger {
         final JTextField brewery = new JTextField(15);
         final JTextField location = new JTextField(15);
         final JTextField price = new JTextField(15);
-        String [] categories = {"India Pale Ales", "Pale Ales", "Other Ales", "Lagers", "Belgian Style", "Dark"};
+        String [] categories = {"India Pale Ales", "Pale Ales", "Other Ales", "Lagers", "Belgian Style", "Dark", "Cider"};
         final JComboBox category = new JComboBox(categories);
 
         JButton createNewBeerButton = new JButton("Create Beer");
