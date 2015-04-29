@@ -173,20 +173,23 @@ public class BeerChanger {
                 Beer beer = currentBeerSortedList.get(i);
                 if (beer.getCategory().equals(indiaPaleAles)){
 
+                    if (indiaPaleAlesBuilder.length()==0){
+                        indiaPaleAlesBuilder.append("<p class=\"beerStyleHeader\">India Pale Ales</p>");
+                    }
+
                     indiaPaleAlesBuilder.append(System.lineSeparator());
                     indiaPaleAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
-                    indiaPaleAlesBuilder.append(System.lineSeparator());
                     indiaPaleAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-                    indiaPaleAlesBuilder.append(System.lineSeparator());
                     indiaPaleAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
-                    indiaPaleAlesBuilder.append(System.lineSeparator());
                     indiaPaleAlesBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
-                    indiaPaleAlesBuilder.append(System.lineSeparator());
                     indiaPaleAlesBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-                    indiaPaleAlesBuilder.append(System.lineSeparator());
                     indiaPaleAlesBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
 
                 }else if (beer.getCategory().equals(paleAles)){
+
+                    if (paleAlesBuilder.length()==0){
+                        paleAlesBuilder.append("<p class=\"beerStyleHeader\">Pale Ales</p>");
+                    }
 
                     paleAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
                     paleAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
@@ -197,6 +200,10 @@ public class BeerChanger {
 
                 }else if (beer.getCategory().equals(otherAles)){
 
+                    if (otherAlesBuilder.length()==0){
+                        otherAlesBuilder.append("<p class=\"beerStyleHeader\">Other Ales</p>");
+                    }
+
                     otherAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
                     otherAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
                     otherAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
@@ -205,6 +212,10 @@ public class BeerChanger {
                     otherAlesBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
 
                 }else if (beer.getCategory().equals(lagers)){
+
+                    if (lagersBuilder.length()==0){
+                        lagersBuilder.append("<p class=\"beerStyleHeader\">Lagers</p>");
+                    }
 
                     lagersBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
                     lagersBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
@@ -215,6 +226,10 @@ public class BeerChanger {
 
                 }else if (beer.getCategory().equals(belgianStyle)){
 
+                    if (belgianStyleBuilder.length()==0){
+                        belgianStyleBuilder.append("<p class=\"beerStyleHeader\">Belgian Style</p>");
+                    }
+
                     belgianStyleBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
                     belgianStyleBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
                     belgianStyleBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
@@ -224,6 +239,10 @@ public class BeerChanger {
 
                 }else if (beer.getCategory().equals(dark)){
 
+                    if (darkBuilder.length()==0){
+                        darkBuilder.append("<p class=\"beerStyleHeader\">Dark</p>");
+                    }
+
                     darkBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
                     darkBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
                     darkBuilder.append("<p class=\"abv\">" + beer.getAbv() + "</p>");
@@ -232,6 +251,10 @@ public class BeerChanger {
                     darkBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
 
                 }else if (beer.getCategory().equals(cider)){
+
+                    if (ciderBuilder.length()==0){
+                        ciderBuilder.append("<p class=\"beerStyleHeader\">Cider</p>");
+                    }
 
                     ciderBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
                     ciderBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
