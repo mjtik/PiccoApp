@@ -1,0 +1,13 @@
+FEATURE REQUESTS:
+
+1) Check fields in Create Beer window
+    - valid $ about, abv
+    - has the beer been created already?
+2) Edit a beer on the master list
+    - have it edit the beer if it's on the current list
+3) Publish inhouse beer menu
+4) Publish window menu
+5) Update beer list on website
+6) add beer pricer to create beer menu
+7) move html blocks to external txt files
+8)
