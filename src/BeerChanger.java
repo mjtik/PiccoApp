@@ -9,7 +9,6 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.*;
 import java.util.List;
 
 
@@ -32,10 +31,10 @@ public class BeerChanger {
     final String PALE_ALES = "Pale Ales";
     final String OTHER_ALES = "Other Ales";
     final String LAGERS = "Lagers";
-    final String BELGIAN_ALES = "Belgian Ales";
+    final String BELGIAN_STYLE = "Belgian Style";
     final String DARK = "Dark";
     final String CIDER = "Cider";
-    String [] categories = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_ALES, DARK, CIDER};
+    String [] categories = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
 
     SortedList<Beer> BeerMasterSortedList = new BeerXMLParser().parseXML("BeerMasterList.xml");
     SortedList<Beer> currentBeerSortedList = new BeerXMLParser().parseXML("CurrentBeerList.xml");
@@ -52,13 +51,13 @@ public class BeerChanger {
 
         //Left table for BeerMasterList
         JTextField beerMasterListFilterEdit = new JTextField(10);
-        FilterList<Beer> beerMasterListTextFilteredIssues = new FilterList<Beer>(BeerMasterSortedList, new TextComponentMatcherEditor<Beer>(beerMasterListFilterEdit, new BeerTextFilter()));
+        FilterList<Beer> beerMasterListTextFilteredIssues = new FilterList<>(BeerMasterSortedList, new TextComponentMatcherEditor<>(beerMasterListFilterEdit, new BeerTextFilter()));
         AdvancedTableModel<Beer> beerMasterListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(beerMasterListTextFilteredIssues, new SimpleBeerTableFormat());
         final JTable beerMasterListJTable = new JTable(beerMasterListTableModel);
 
         //Right table for CurrentBeerList
         JTextField currentBeerListFilterEdit = new JTextField(10);
-        FilterList<Beer> currentBeerListTextFilteredIssues = new FilterList<Beer>(currentBeerSortedList, new TextComponentMatcherEditor<Beer>(currentBeerListFilterEdit, new BeerTextFilter()));
+        FilterList<Beer> currentBeerListTextFilteredIssues = new FilterList<>(currentBeerSortedList, new TextComponentMatcherEditor<>(currentBeerListFilterEdit, new BeerTextFilter()));
         AdvancedTableModel<Beer> currentBeerListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(currentBeerListTextFilteredIssues, new SimpleBeerTableFormat());
         final JTable currentBeerListJTable = new JTable(currentBeerListTableModel);
 
@@ -129,8 +128,9 @@ public class BeerChanger {
         editBeer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectedBeer = BeerMasterSortedList.get(beerMasterListJTable.getSelectedRow());
-                editBeer(selectedBeer);
+
+                editBeer(BeerMasterSortedList.get(beerMasterListJTable.getSelectedRow()));
+                BeerMasterSortedList.remove(beerMasterListJTable.getSelectedRow());
             }
         });
 
@@ -339,7 +339,6 @@ public class BeerChanger {
         final JTextField brewery = new JTextField(15);
         final JTextField location = new JTextField(15);
         final JTextField price = new JTextField(15);
-        String [] categories = {"India Pale Ales", "Pale Ales", "Other Ales", "Lagers", "Belgian Style", "Dark", "Cider"};
         final JComboBox category = new JComboBox(categories);
 
         JButton createNewBeerButton = new JButton("Create Beer");
@@ -459,6 +458,8 @@ public class BeerChanger {
 
     void editBeer (Beer beer){
 
+        final Beer editedBeer = new Beer();
+
         final JTextField name = new JTextField(15);
         name.setText(beer.getName());
         final JTextField style = new JTextField(15);
@@ -473,9 +474,32 @@ public class BeerChanger {
         price.setText(beer.getPrice());
         final JComboBox category = new JComboBox(categories);
 
+        switch (beer.getCategory()){
+            case INDIA_PALE_ALES:
+                category.setSelectedIndex(0);
+                break;
+            case PALE_ALES:
+                category.setSelectedIndex(1);
+                break;
+            case OTHER_ALES:
+                category.setSelectedIndex(2);
+                break;
+            case LAGERS:
+                category.setSelectedIndex(3);
+                break;
+            case BELGIAN_STYLE:
+                category.setSelectedIndex(4);
+                break;
+            case DARK:
+                category.setSelectedIndex(5);
+                break;
+            case CIDER:
+                category.setSelectedIndex(6);
+                break;
+        }
 
 
-        JButton createNewBeerButton = new JButton("Create Beer");
+        JButton save = new JButton("Save");
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridBagLayout());
@@ -495,13 +519,30 @@ public class BeerChanger {
         panel.add(new JLabel("Category"), new GridBagConstraints(0, 7, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(category, new GridBagConstraints(1, 7, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
-        panel.add(createNewBeerButton, new GridBagConstraints(0, 8, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(save, new GridBagConstraints(0, 8, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
-        final JFrame frame = new JFrame("Create New Beer");
+        final JFrame frame = new JFrame("Edit Beer");
         frame.setSize(300, 300);
         frame.getContentPane().add(panel);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+
+        save.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                editedBeer.setName(name.getText());
+                editedBeer.setStyle(style.getText());
+                editedBeer.setAbv(abv.getText());
+                editedBeer.setBrewery(brewery.getText());
+                editedBeer.setLocation(location.getText());
+                editedBeer.setPrice(price.getText());
+                editedBeer.setCategory(category.getSelectedItem().toString());
+                addBeerToMasterList(editedBeer);
+                frame.setVisible(false);
+
+            }
+        });
 
     }
 
