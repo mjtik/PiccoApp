@@ -339,7 +339,7 @@ public class BeerChanger {
         final JTextField brewery = new JTextField(15);
         final JTextField location = new JTextField(15);
         final JTextField price = new JTextField(15);
-        final JComboBox category = new JComboBox(categories);
+        final JComboBox<String> category = new JComboBox<>(categories);
 
         JButton createNewBeerButton = new JButton("Create Beer");
 
@@ -414,9 +414,7 @@ public class BeerChanger {
             out.output(doc, writer);
             writer.close();
 
-        } catch (JDOMException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (JDOMException | IOException e) {
             e.printStackTrace();
         }
 
@@ -448,9 +446,7 @@ public class BeerChanger {
             out.output(doc, writer);
             writer.close();
 
-        } catch (JDOMException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (JDOMException | IOException e) {
             e.printStackTrace();
         }
 
@@ -472,7 +468,7 @@ public class BeerChanger {
         location.setText(beer.getLocation());
         final JTextField price = new JTextField(15);
         price.setText(beer.getPrice());
-        final JComboBox category = new JComboBox(categories);
+        final JComboBox<String> category = new JComboBox<>(categories);
 
         switch (beer.getCategory()){
             case INDIA_PALE_ALES:
@@ -571,9 +567,7 @@ public class BeerChanger {
 
 
 
-        } catch (JDOMException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (JDOMException | IOException e) {
             e.printStackTrace();
         }
 
