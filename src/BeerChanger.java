@@ -2,18 +2,11 @@
  * Created by mtiko_000 on 4/27/2015.
  */
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.List;
-
-
-import ca.odell.glazedlists.*;
-import ca.odell.glazedlists.swing.*;
+import ca.odell.glazedlists.FilterList;
+import ca.odell.glazedlists.SortedList;
+import ca.odell.glazedlists.swing.AdvancedTableModel;
+import ca.odell.glazedlists.swing.GlazedListsSwing;
+import ca.odell.glazedlists.swing.TextComponentMatcherEditor;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -22,6 +15,14 @@ import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.List;
 
 public class BeerChanger {
 
@@ -36,59 +37,64 @@ public class BeerChanger {
     final String CIDER = "Cider";
     String [] categories = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
 
-    SortedList<Beer> BeerMasterSortedList = new BeerXMLParser().parseXML("BeerMasterList.xml");
-    SortedList<Beer> currentBeerSortedList = new BeerXMLParser().parseXML("CurrentBeerList.xml");
+    SortedList<Beer> draftBeerMasterSortedList = new BeerXMLParser().parseXML("draftBeerMasterList.xml");
+    SortedList<Beer> currentDraftBeerSortedList = new BeerXMLParser().parseXML("currentDraftBeerList.xml");
+
+    SortedList<Beer> bottledBeerMasterSortedList = new BeerXMLParser().parseXML("bottledBeerMasterList.xml");
+    SortedList<Beer> currentBottledBeerSortedList = new BeerXMLParser().parseXML("currentBottledBeerList.xml");
 
     Beer selectedBeer = new Beer();
 
 
     public BeerChanger() {
 
-        display();
+        displayDraftBeerChanger();
     }
 
-    public void display(){
+    public void displayBottledBeerChanger() {
 
         //Left table for BeerMasterList
-        JTextField beerMasterListFilterEdit = new JTextField(10);
-        FilterList<Beer> beerMasterListTextFilteredIssues = new FilterList<>(BeerMasterSortedList, new TextComponentMatcherEditor<>(beerMasterListFilterEdit, new BeerTextFilter()));
-        AdvancedTableModel<Beer> beerMasterListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(beerMasterListTextFilteredIssues, new SimpleBeerTableFormat());
-        final JTable beerMasterListJTable = new JTable(beerMasterListTableModel);
+        JTextField bottledBeerMasterListFilterEdit = new JTextField(10);
+        FilterList<Beer> bottledBeerMasterListTextFilteredIssues = new FilterList<>(bottledBeerMasterSortedList, new TextComponentMatcherEditor<>(bottledBeerMasterListFilterEdit, new BeerTextFilter()));
+        AdvancedTableModel<Beer> bottledBeerMasterListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(bottledBeerMasterListTextFilteredIssues, new SimpleBeerTableFormat());
+        final JTable bottledBeerMasterListJTable = new JTable(bottledBeerMasterListTableModel);
 
         //Right table for CurrentBeerList
-        JTextField currentBeerListFilterEdit = new JTextField(10);
-        FilterList<Beer> currentBeerListTextFilteredIssues = new FilterList<>(currentBeerSortedList, new TextComponentMatcherEditor<>(currentBeerListFilterEdit, new BeerTextFilter()));
-        AdvancedTableModel<Beer> currentBeerListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(currentBeerListTextFilteredIssues, new SimpleBeerTableFormat());
-        final JTable currentBeerListJTable = new JTable(currentBeerListTableModel);
+        JTextField currentBottledBeerListFilterEdit = new JTextField(10);
+        FilterList<Beer> currentBottledBeerListTextFilteredIssues = new FilterList<>(currentBottledBeerSortedList, new TextComponentMatcherEditor<>(currentBottledBeerListFilterEdit, new BeerTextFilter()));
+        AdvancedTableModel<Beer> currentBottledBeerListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(currentBottledBeerListTextFilteredIssues, new SimpleBeerTableFormat());
+        final JTable currentBottledBeerListJTable = new JTable(currentBottledBeerListTableModel);
 
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridBagLayout());
 
-        JScrollPane beerMasterListScrollPane = new JScrollPane(beerMasterListJTable);
-        JScrollPane currentBeerListScrollPane = new JScrollPane(currentBeerListJTable);
+        JScrollPane beerMasterListScrollPane = new JScrollPane(bottledBeerMasterListJTable);
+        JScrollPane currentBeerListScrollPane = new JScrollPane(currentBottledBeerListJTable);
 
-        JButton createNewBeerButton = new JButton("Create New Beer");
+        JButton createNewBeerButton = new JButton("Create New Draft Beer");
         final JButton addBeerToCurrentList = new JButton("Add To List");
         final JButton removeBeerFromCurrentList = new JButton("86 From List");
         final JButton printList = new JButton("Print List");
         final JButton editBeer = new JButton("Edit Beer");
+        final JButton editBottledBeerList = new JButton("Edit Bottled Beer List");
 
-        panel.add(new JLabel("All Beer:"),      new GridBagConstraints(0, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("All Beer:"), new GridBagConstraints(0, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(new JLabel("Current List: "), new GridBagConstraints(2, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
-        panel.add(new JLabel("Filter: "),       new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(beerMasterListFilterEdit,     new GridBagConstraints(1, 1, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("Filter: "),       new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(currentBeerListFilterEdit,    new GridBagConstraints(3, 1, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Filter: "), new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(bottledBeerMasterListFilterEdit, new GridBagConstraints(1, 1, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Filter: "), new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(currentBottledBeerListFilterEdit, new GridBagConstraints(3, 1, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
-        panel.add(addBeerToCurrentList,         new GridBagConstraints(0, 2, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(removeBeerFromCurrentList,    new GridBagConstraints(2, 2, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(addBeerToCurrentList, new GridBagConstraints(0, 2, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(removeBeerFromCurrentList, new GridBagConstraints(2, 2, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
         panel.add(beerMasterListScrollPane, new GridBagConstraints(0, 3, 2, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(currentBeerListScrollPane, new GridBagConstraints(2, 3, 2, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
         panel.add(createNewBeerButton, new GridBagConstraints(0, 4, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(editBottledBeerList, new GridBagConstraints(2, 4, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(editBeer, new GridBagConstraints(0, 5, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(printList, new GridBagConstraints(2, 5, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
@@ -103,7 +109,7 @@ public class BeerChanger {
         addBeerToCurrentList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectedBeer = BeerMasterSortedList.get(beerMasterListJTable.getSelectedRow());
+                selectedBeer = draftBeerMasterSortedList.get(bottledBeerMasterListJTable.getSelectedRow());
                 addBeerToCurrentList(selectedBeer);
             }
         });
@@ -111,8 +117,8 @@ public class BeerChanger {
         removeBeerFromCurrentList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectedBeer = currentBeerSortedList.get(currentBeerListJTable.getSelectedRow());
-                currentBeerSortedList.remove(selectedBeer);
+                selectedBeer = currentDraftBeerSortedList.get(currentBottledBeerListJTable.getSelectedRow());
+                currentDraftBeerSortedList.remove(selectedBeer);
                 removeBeerFromCurrentList(selectedBeer);
 
             }
@@ -129,8 +135,15 @@ public class BeerChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                editBeer(BeerMasterSortedList.get(beerMasterListJTable.getSelectedRow()));
-                BeerMasterSortedList.remove(beerMasterListJTable.getSelectedRow());
+                editBeer(draftBeerMasterSortedList.get(bottledBeerMasterListJTable.getSelectedRow()));
+                draftBeerMasterSortedList.remove(bottledBeerMasterListJTable.getSelectedRow());
+            }
+        });
+
+        editBottledBeerList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                displayBottledBeerChanger();
             }
         });
 
@@ -142,16 +155,112 @@ public class BeerChanger {
         frame.setVisible(true);
 
 
+    }
+
+    public void displayDraftBeerChanger() {
+
+        //Left table for BeerMasterList
+        JTextField beerMasterListFilterEdit = new JTextField(10);
+        FilterList<Beer> beerMasterListTextFilteredIssues = new FilterList<>(draftBeerMasterSortedList, new TextComponentMatcherEditor<>(beerMasterListFilterEdit, new BeerTextFilter()));
+        AdvancedTableModel<Beer> beerMasterListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(beerMasterListTextFilteredIssues, new SimpleBeerTableFormat());
+        final JTable beerMasterListJTable = new JTable(beerMasterListTableModel);
+
+        //Right table for CurrentBeerList
+        JTextField currentBeerListFilterEdit = new JTextField(10);
+        FilterList<Beer> currentBeerListTextFilteredIssues = new FilterList<>(currentDraftBeerSortedList, new TextComponentMatcherEditor<>(currentBeerListFilterEdit, new BeerTextFilter()));
+        AdvancedTableModel<Beer> currentBeerListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(currentBeerListTextFilteredIssues, new SimpleBeerTableFormat());
+        final JTable currentBeerListJTable = new JTable(currentBeerListTableModel);
 
 
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridBagLayout());
 
-       /* print.addActionListener(new ActionListener() {
+        JScrollPane beerMasterListScrollPane = new JScrollPane(beerMasterListJTable);
+        JScrollPane currentBeerListScrollPane = new JScrollPane(currentBeerListJTable);
+
+        JButton createNewBeerButton = new JButton("Create New Draft Beer");
+        final JButton addBeerToCurrentList = new JButton("Add To List");
+        final JButton removeBeerFromCurrentList = new JButton("86 From List");
+        final JButton printList = new JButton("Print List");
+        final JButton editBeer = new JButton("Edit Beer");
+        final JButton editBottledBeerList = new JButton("Edit Bottled Beer List");
+
+        panel.add(new JLabel("All Beer:"),      new GridBagConstraints(0, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Current List: "), new GridBagConstraints(2, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+
+        panel.add(new JLabel("Filter: "),       new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(beerMasterListFilterEdit,     new GridBagConstraints(1, 1, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Filter: "),       new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(currentBeerListFilterEdit,    new GridBagConstraints(3, 1, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+
+        panel.add(addBeerToCurrentList,         new GridBagConstraints(0, 2, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(removeBeerFromCurrentList,    new GridBagConstraints(2, 2, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+
+        panel.add(beerMasterListScrollPane, new GridBagConstraints(0, 3, 2, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(currentBeerListScrollPane, new GridBagConstraints(2, 3, 2, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+
+        panel.add(createNewBeerButton, new GridBagConstraints(0, 4, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(editBottledBeerList, new GridBagConstraints(2, 4, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(editBeer, new GridBagConstraints(0, 5, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(printList, new GridBagConstraints(2, 5, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+
+
+        createNewBeerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectedBeer = BeerMasterSortedList.get(beerJTable.getSelectedRow());
-                System.out.println(selectedBeer.toString());
+                createNewBeer();
             }
-        });*/
+        });
+
+        addBeerToCurrentList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                selectedBeer = draftBeerMasterSortedList.get(beerMasterListJTable.getSelectedRow());
+                addBeerToCurrentList(selectedBeer);
+            }
+        });
+
+        removeBeerFromCurrentList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                selectedBeer = currentDraftBeerSortedList.get(currentBeerListJTable.getSelectedRow());
+                currentDraftBeerSortedList.remove(selectedBeer);
+                removeBeerFromCurrentList(selectedBeer);
+
+            }
+        });
+
+        printList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                printList();
+            }
+        });
+
+        editBeer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                editBeer(draftBeerMasterSortedList.get(beerMasterListJTable.getSelectedRow()));
+                draftBeerMasterSortedList.remove(beerMasterListJTable.getSelectedRow());
+            }
+        });
+
+        editBottledBeerList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                displayBottledBeerChanger();
+            }
+        });
+
+
+        JFrame frame = new JFrame("Beer Menu Changer");
+        frame.setSize(540, 380);
+        frame.getContentPane().add(panel);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+
+
 
 
     }
@@ -179,9 +288,9 @@ public class BeerChanger {
         StringBuilder ciderBuilder = new StringBuilder();
 
 
-        for(int i=0;i<=currentBeerSortedList.size()-1;i++){
+        for (int i = 0; i <= currentDraftBeerSortedList.size() - 1; i++) {
 
-            Beer beer = currentBeerSortedList.get(i);
+            Beer beer = currentDraftBeerSortedList.get(i);
 
             switch (beer.getCategory()){
                 case INDIA_PALE_ALES:
@@ -391,7 +500,7 @@ public class BeerChanger {
 
     void addBeerToMasterList(Beer newBeer){
 
-        BeerMasterSortedList.add(newBeer);
+        draftBeerMasterSortedList.add(newBeer);
 
         File file = new File("BeerMasterList.xml");
         XMLOutputter out = new XMLOutputter();
@@ -423,7 +532,7 @@ public class BeerChanger {
 
     void addBeerToCurrentList(Beer newBeer){
 
-        currentBeerSortedList.add(newBeer);
+        currentDraftBeerSortedList.add(newBeer);
 
         File file = new File("CurrentBeerList.xml");
         XMLOutputter out = new XMLOutputter();
