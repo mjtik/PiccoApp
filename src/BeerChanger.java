@@ -511,7 +511,6 @@ public class BeerChanger {
         final JTextField brewery = new JTextField(15);
         final JTextField location = new JTextField(15);
         final JTextField price = new JTextField(15);
-        final JComboBox<String> category = new JComboBox<>(categories);
 
         JButton createNewBeerButton = new JButton("Create Beer");
 
@@ -531,7 +530,6 @@ public class BeerChanger {
         panel.add(new JLabel("Price: "), new GridBagConstraints(0, 6, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(price, new GridBagConstraints(1, 6, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(new JLabel("Category"), new GridBagConstraints(0, 7, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(category, new GridBagConstraints(1, 7, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
         panel.add(createNewBeerButton, new GridBagConstraints(0, 8, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
@@ -550,8 +548,7 @@ public class BeerChanger {
                 newBeer.setBrewery(brewery.getText());
                 newBeer.setLocation(location.getText());
                 newBeer.setPrice(price.getText());
-                newBeer.setCategory(category.getSelectedItem().toString());
-                addBeerToAList(newBeer, DRAFT_BEER_MASTER_LIST_XML, draftBeerMasterSortedList);
+                addBeerToAList(newBeer, BOTTLED_BEER_MASTER_LIST_XML, bottledBeerMasterSortedList);
                 frame.setVisible(false);
 
             }
