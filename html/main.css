@@ -86,3 +86,8 @@ p1   {
     width: 33%;
 
 }
+
+#bottleBox{
+    border-style: solid;
+    border-width: thin;
+    border-color: #000000;

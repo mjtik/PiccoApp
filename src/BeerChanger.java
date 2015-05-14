@@ -7,6 +7,7 @@ import ca.odell.glazedlists.SortedList;
 import ca.odell.glazedlists.swing.AdvancedTableModel;
 import ca.odell.glazedlists.swing.GlazedListsSwing;
 import ca.odell.glazedlists.swing.TextComponentMatcherEditor;
+import org.apache.commons.io.FileUtils;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -39,6 +40,9 @@ public class BeerChanger {
     final String CURRENT_DRAFT_BEER_LIST_XML = "currentDraftBeerList.xml";
     final String BOTTLED_BEER_MASTER_LIST_XML = "bottledBeerMasterList.xml";
     final String CURRENT_BOTTLED_BEER_LIST_XML = "currentBottledBeerList.xml";
+
+    final String BEER_LIST_HTML_HEADER = "HTMLheader.txt";
+    final String BEER_LIST_HTML_FOOTER = "HTMLfooter.txt";
     String [] categories = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
     SortedList<Beer> draftBeerMasterSortedList = new BeerXMLParser().parseXML(DRAFT_BEER_MASTER_LIST_XML);
     SortedList<Beer> currentDraftBeerSortedList = new BeerXMLParser().parseXML(CURRENT_DRAFT_BEER_LIST_XML);
@@ -406,23 +410,15 @@ public class BeerChanger {
         darkHTML = darkBuilder.toString();
         ciderHTML = ciderBuilder.toString();
 
-        headerHTML = "<!DOCTYPE html>\n" +
-                "<html>\n" +
-                "    <head>\n" +
-                "        <meta charset=\"utf-8\">\n" +
-                "        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n" +
-                "        <link rel=\"stylesheet\" href=\"main.css\">\n" +
-                "    </head>\n" +
-                "    <body>\n" +
-                "        \n" +
-                "        <div class=\"leftSide\">";
 
-        footerHTML = "</div></body></html>";
-
-
+        File footerFile = new File(BEER_LIST_HTML_FOOTER);
+        File headerFile = new File(BEER_LIST_HTML_HEADER);
         File file = new File("html\\beerList.html");
 
+
         try {
+            headerHTML = FileUtils.readFileToString(headerFile);
+            footerHTML = FileUtils.readFileToString(footerFile);
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
             bufferedWriter.write(headerHTML);
             bufferedWriter.write(indiaPaleAlesHTML);
@@ -529,9 +525,8 @@ public class BeerChanger {
         panel.add(location, new GridBagConstraints(1, 5, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(new JLabel("Price: "), new GridBagConstraints(0, 6, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(price, new GridBagConstraints(1, 6, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("Category"), new GridBagConstraints(0, 7, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
-        panel.add(createNewBeerButton, new GridBagConstraints(0, 8, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(createNewBeerButton, new GridBagConstraints(0, 7, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
         final JFrame frame = new JFrame("Create New Beer");
         frame.setSize(300, 300);
