@@ -28,7 +28,7 @@ import java.util.List;
 public class BeerChanger {
 
 
-
+    //these are the categorys beers are sorted into, the beer style may be different and more descriptive (American or English Pale Ale)
     final String INDIA_PALE_ALES = "India Pale Ales";
     final String PALE_ALES = "Pale Ales";
     final String OTHER_ALES = "Other Ales";
@@ -36,6 +36,8 @@ public class BeerChanger {
     final String BELGIAN_STYLE = "Belgian Style";
     final String DARK = "Dark";
     final String CIDER = "Cider";
+
+
     final String SIXTEEN_OZ = "16oz";
     final String TWELVE_OZ = "12oz";
     final String TEN_OZ = "10oz";
@@ -276,6 +278,28 @@ public class BeerChanger {
 
     }
 
+    void printBeer(Beer beer, StringBuilder stringBuilder, String beerCategory) {
+
+        if (stringBuilder.length() == 0) {
+            stringBuilder.append("<p class=\"beerStyleHeader\">" + beerCategory + "</p>");
+        }
+
+        stringBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+        // deal with adding pour size next to beer name is NOT 16oz
+        if (beer.getPourSize().equals(SIXTEEN_OZ)) {
+            stringBuilder.append("</p>");
+        } else {
+            stringBuilder.append(" " + "(" + beer.getPourSize() + ")" + "</p>");
+        }
+
+        stringBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
+        stringBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
+        stringBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
+        stringBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
+        stringBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
+
+    }
+
     void printList(){
 
         String indiaPaleAlesHTML;
@@ -303,142 +327,34 @@ public class BeerChanger {
 
             Beer beer = currentDraftBeerSortedList.get(i);
 
+
             switch (beer.getCategory()){
                 case INDIA_PALE_ALES:
-                    if (indiaPaleAlesBuilder.length()==0){
-                        indiaPaleAlesBuilder.append("<p class=\"beerStyleHeader\">" + INDIA_PALE_ALES + "</p>");
-                    }
-
-
-                    indiaPaleAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
-                    // deal with adding pour size next to beer name is NOT 16oz
-                    if (beer.getPourSize().equals(SIXTEEN_OZ)) {
-                        indiaPaleAlesBuilder.append("</p>");
-                    } else {
-                        indiaPaleAlesBuilder.append(" " + "(" + beer.getPourSize() + ")" + "</p>");
-                    }
-
-                    indiaPaleAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-                    indiaPaleAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
-                    indiaPaleAlesBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
-                    indiaPaleAlesBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-                    indiaPaleAlesBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
-
+                    printBeer(beer, indiaPaleAlesBuilder, INDIA_PALE_ALES);
                     break;
 
                 case PALE_ALES:
-                    if (paleAlesBuilder.length()==0){
-                        paleAlesBuilder.append("<p class=\"beerStyleHeader\">" + PALE_ALES + "</p>");
-                    }
-
-
-                    paleAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
-                    paleAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-                    paleAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
-                    paleAlesBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
-                    paleAlesBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-                    paleAlesBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
-
+                    printBeer(beer, paleAlesBuilder, PALE_ALES);
                     break;
 
                 case OTHER_ALES:
-                    if (otherAlesBuilder.length()==0){
-                        otherAlesBuilder.append("<p class=\"beerStyleHeader\">" + OTHER_ALES + "</p>");
-                    }
-
-                    otherAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
-                    // deal with adding pour size next to beer name is NOT 16oz
-                    if (beer.getPourSize().equals(SIXTEEN_OZ)) {
-                        indiaPaleAlesBuilder.append("</p>");
-                    } else {
-                        indiaPaleAlesBuilder.append(" " + "(" + beer.getPourSize() + ")" + "</p>");
-                    }
-                    otherAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-                    otherAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
-                    otherAlesBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
-                    otherAlesBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-                    otherAlesBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
-
+                    printBeer(beer, otherAlesBuilder, OTHER_ALES);
                     break;
 
                 case LAGERS:
-                    if (lagersBuilder.length()==0){
-                        lagersBuilder.append("<p class=\"beerStyleHeader\">" + LAGERS + "</p>");
-                    }
-
-                    lagersBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
-                    // deal with adding pour size next to beer name is NOT 16oz
-                    if (beer.getPourSize().equals(SIXTEEN_OZ)) {
-                        indiaPaleAlesBuilder.append("</p>");
-                    } else {
-                        indiaPaleAlesBuilder.append(" " + "(" + beer.getPourSize() + ")" + "</p>");
-                    }
-                    lagersBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-                    lagersBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
-                    lagersBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
-                    lagersBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-                    lagersBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
-
+                    printBeer(beer, lagersBuilder, LAGERS);
                     break;
 
                 case BELGIAN_STYLE:
-                    if (belgianStyleBuilder.length()==0){
-                        belgianStyleBuilder.append("<p class=\"beerStyleHeader\">" + BELGIAN_STYLE + "</p>");
-                    }
-
-                    belgianStyleBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
-                    // deal with adding pour size next to beer name is NOT 16oz
-                    if (beer.getPourSize().equals(SIXTEEN_OZ)) {
-                        indiaPaleAlesBuilder.append("</p>");
-                    } else {
-                        indiaPaleAlesBuilder.append(" " + "(" + beer.getPourSize() + ")" + "</p>");
-                    }
-                    belgianStyleBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-                    belgianStyleBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
-                    belgianStyleBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
-                    belgianStyleBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-                    belgianStyleBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
-
+                    printBeer(beer, belgianStyleBuilder, BELGIAN_STYLE);
                     break;
 
                 case DARK:
-                    if (darkBuilder.length()==0){
-                        darkBuilder.append("<p class=\"beerStyleHeader\">Dark</p>");
-                    }
-
-                    darkBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
-                    // deal with adding pour size next to beer name is NOT 16oz
-                    if (beer.getPourSize().equals(SIXTEEN_OZ)) {
-                        indiaPaleAlesBuilder.append("</p>");
-                    } else {
-                        indiaPaleAlesBuilder.append(" " + "(" + beer.getPourSize() + ")" + "</p>");
-                    }
-                    darkBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-                    darkBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
-                    darkBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
-                    darkBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-                    darkBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
-
+                    printBeer(beer, darkBuilder, DARK);
                     break;
 
                 case CIDER:
-                    if (ciderBuilder.length()==0){
-                        ciderBuilder.append("<p class=\"beerStyleHeader\">" + CIDER + "</p>");
-                    }
-
-                    ciderBuilder.append("<p class=\"beerName\">" + beer.getName());
-                    // deal with adding pour size next to beer name is NOT 16oz
-                    if (beer.getPourSize().equals(SIXTEEN_OZ)) {
-                        indiaPaleAlesBuilder.append("</p>");
-                    } else {
-                        indiaPaleAlesBuilder.append(" " + "(" + beer.getPourSize() + ")" + "</p>");
-                    }
-                    ciderBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-                    ciderBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
-                    ciderBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
-                    ciderBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-                    ciderBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
-
+                    printBeer(beer, ciderBuilder, CIDER);
                     break;
 
             }
