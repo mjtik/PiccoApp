@@ -1,2 +1,3 @@
-Cleaned up PrintList
-- removed repetitive code
+Fixed bugs
+- all fields are wrtting/editing properly to the xml files
+- escape charaters removed from header and footer text files

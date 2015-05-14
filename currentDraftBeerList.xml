@@ -1,39 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beers>
   <beer>
-    <name>Banner American Rye</name>
-    <style>Rye Beer</style>
-    <abv>4.00</abv>
-    <brewery>Banner Beer</brewery>
-    <location>Williamsburg, ME</location>
-    <price>5.50</price>
-    <category>Other Ales</category>
-  </beer>
-  <beer>
-    <name>Scurvy Cure Summer Ale</name>
-    <style>American Pale Ale</style>
-    <abv>4.00</abv>
-    <brewery>Hidden Cove</brewery>
-    <location>Wells, ME</location>
-    <price>5.50</price>
-    <category>Other Ales</category>
-  </beer>
-  <beer>
-    <name>Soul Style</name>
+    <name>Be Hoppy</name>
     <style>American IPA</style>
-    <abv>6.80</abv>
-    <brewery>Green Flash</brewery>
-    <location>San Diego, CA</location>
-    <price>8.00</price>
+    <abv>6.50</abv>
+    <pourSize>16oz</pourSize>
+    <brewery>Wormtown</brewery>
+    <location>Worcester, MA</location>
+    <price>5.50</price>
     <category>India Pale Ales</category>
-  </beer>
-  <beer>
-    <name>Cayuga Cruiser</name>
-    <style>Berliner Weissbier</style>
-    <abv>4.20</abv>
-    <brewery>Ithaca</brewery>
-    <location>Ithaca, NY</location>
-    <price>6.00</price>
-    <category>Other Ales</category>
   </beer>
 </beers>
