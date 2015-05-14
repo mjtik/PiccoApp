@@ -36,6 +36,10 @@ public class BeerChanger {
     final String BELGIAN_STYLE = "Belgian Style";
     final String DARK = "Dark";
     final String CIDER = "Cider";
+    final String SIXTEEN_OZ = "16oz";
+    final String TWELVE_OZ = "12oz";
+    final String TEN_OZ = "10oz";
+    final String EIGHT_OZ = "8oz";
     final String DRAFT_BEER_MASTER_LIST_XML = "draftBeerMasterList.xml";
     final String CURRENT_DRAFT_BEER_LIST_XML = "currentDraftBeerList.xml";
     final String BOTTLED_BEER_MASTER_LIST_XML = "bottledBeerMasterList.xml";
@@ -44,6 +48,7 @@ public class BeerChanger {
     final String BEER_LIST_HTML_HEADER = "HTMLheader.txt";
     final String BEER_LIST_HTML_FOOTER = "HTMLfooter.txt";
     String [] categories = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
+    String[] pourSize = {SIXTEEN_OZ, TWELVE_OZ, TEN_OZ, EIGHT_OZ};
     SortedList<Beer> draftBeerMasterSortedList = new BeerXMLParser().parseXML(DRAFT_BEER_MASTER_LIST_XML);
     SortedList<Beer> currentDraftBeerSortedList = new BeerXMLParser().parseXML(CURRENT_DRAFT_BEER_LIST_XML);
 
@@ -304,8 +309,15 @@ public class BeerChanger {
                         indiaPaleAlesBuilder.append("<p class=\"beerStyleHeader\">" + INDIA_PALE_ALES + "</p>");
                     }
 
-                    indiaPaleAlesBuilder.append(System.lineSeparator());
+
                     indiaPaleAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+                    // deal with adding pour size next to beer name is NOT 16oz
+                    if (beer.getPourSize().equals(SIXTEEN_OZ)) {
+                        indiaPaleAlesBuilder.append("</p>");
+                    } else {
+                        indiaPaleAlesBuilder.append(" " + "(" + beer.getPourSize() + ")" + "</p>");
+                    }
+
                     indiaPaleAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
                     indiaPaleAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
                     indiaPaleAlesBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
@@ -318,6 +330,7 @@ public class BeerChanger {
                     if (paleAlesBuilder.length()==0){
                         paleAlesBuilder.append("<p class=\"beerStyleHeader\">" + PALE_ALES + "</p>");
                     }
+
 
                     paleAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
                     paleAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
@@ -334,6 +347,12 @@ public class BeerChanger {
                     }
 
                     otherAlesBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+                    // deal with adding pour size next to beer name is NOT 16oz
+                    if (beer.getPourSize().equals(SIXTEEN_OZ)) {
+                        indiaPaleAlesBuilder.append("</p>");
+                    } else {
+                        indiaPaleAlesBuilder.append(" " + "(" + beer.getPourSize() + ")" + "</p>");
+                    }
                     otherAlesBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
                     otherAlesBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
                     otherAlesBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
@@ -348,6 +367,12 @@ public class BeerChanger {
                     }
 
                     lagersBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+                    // deal with adding pour size next to beer name is NOT 16oz
+                    if (beer.getPourSize().equals(SIXTEEN_OZ)) {
+                        indiaPaleAlesBuilder.append("</p>");
+                    } else {
+                        indiaPaleAlesBuilder.append(" " + "(" + beer.getPourSize() + ")" + "</p>");
+                    }
                     lagersBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
                     lagersBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
                     lagersBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
@@ -362,6 +387,12 @@ public class BeerChanger {
                     }
 
                     belgianStyleBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+                    // deal with adding pour size next to beer name is NOT 16oz
+                    if (beer.getPourSize().equals(SIXTEEN_OZ)) {
+                        indiaPaleAlesBuilder.append("</p>");
+                    } else {
+                        indiaPaleAlesBuilder.append(" " + "(" + beer.getPourSize() + ")" + "</p>");
+                    }
                     belgianStyleBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
                     belgianStyleBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
                     belgianStyleBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
@@ -376,6 +407,12 @@ public class BeerChanger {
                     }
 
                     darkBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+                    // deal with adding pour size next to beer name is NOT 16oz
+                    if (beer.getPourSize().equals(SIXTEEN_OZ)) {
+                        indiaPaleAlesBuilder.append("</p>");
+                    } else {
+                        indiaPaleAlesBuilder.append(" " + "(" + beer.getPourSize() + ")" + "</p>");
+                    }
                     darkBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
                     darkBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
                     darkBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
@@ -389,7 +426,13 @@ public class BeerChanger {
                         ciderBuilder.append("<p class=\"beerStyleHeader\">" + CIDER + "</p>");
                     }
 
-                    ciderBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+                    ciderBuilder.append("<p class=\"beerName\">" + beer.getName());
+                    // deal with adding pour size next to beer name is NOT 16oz
+                    if (beer.getPourSize().equals(SIXTEEN_OZ)) {
+                        indiaPaleAlesBuilder.append("</p>");
+                    } else {
+                        indiaPaleAlesBuilder.append(" " + "(" + beer.getPourSize() + ")" + "</p>");
+                    }
                     ciderBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
                     ciderBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
                     ciderBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
@@ -447,7 +490,9 @@ public class BeerChanger {
         final JTextField brewery = new JTextField(15);
         final JTextField location = new JTextField(15);
         final JTextField price = new JTextField(15);
-        final JComboBox<String> category = new JComboBox<>(categories);
+        final JComboBox<String> categoryComboBox = new JComboBox<>(categories);
+        final JComboBox<String> pourSizeComboBox = new JComboBox<>(pourSize);
+        final JCheckBox addToCurrentListCheckBox = new JCheckBox("Add beer to current list?");
 
         JButton createNewBeerButton = new JButton("Create Beer");
 
@@ -457,22 +502,24 @@ public class BeerChanger {
         panel.add(new JLabel("Name: "), new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(name, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(new JLabel("Style: "), new GridBagConstraints(0, 2, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(style,                 new GridBagConstraints(1, 2, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("ABV: "),   new GridBagConstraints(0, 3, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(abv,                   new GridBagConstraints(1, 3, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("Brewery: "),   new GridBagConstraints(0, 4, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(brewery,                   new GridBagConstraints(1, 4, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("Location: "),   new GridBagConstraints(0, 5, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(location,                   new GridBagConstraints(1, 5, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("Price: "), new GridBagConstraints(0, 6, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(price, new GridBagConstraints(1, 6, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("Category"), new GridBagConstraints(0, 7, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(category, new GridBagConstraints(1, 7, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-
-        panel.add(createNewBeerButton, new GridBagConstraints(0, 8, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(style, new GridBagConstraints(1, 2, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("ABV: "), new GridBagConstraints(0, 3, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(abv, new GridBagConstraints(1, 3, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Pour Size: "), new GridBagConstraints(0, 4, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(pourSizeComboBox, new GridBagConstraints(1, 4, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Brewery: "), new GridBagConstraints(0, 5, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(brewery, new GridBagConstraints(1, 5, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Location: "), new GridBagConstraints(0, 6, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(location, new GridBagConstraints(1, 6, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Price: "), new GridBagConstraints(0, 7, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(price, new GridBagConstraints(1, 7, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Category: "), new GridBagConstraints(0, 8, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(categoryComboBox, new GridBagConstraints(1, 8, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(addToCurrentListCheckBox, new GridBagConstraints(1, 9, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(createNewBeerButton, new GridBagConstraints(0, 10, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
         final JFrame frame = new JFrame("Create New Beer");
-        frame.setSize(300, 300);
+        frame.setSize(300, 375);
         frame.getContentPane().add(panel);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -486,8 +533,12 @@ public class BeerChanger {
                 newBeer.setBrewery(brewery.getText());
                 newBeer.setLocation(location.getText());
                 newBeer.setPrice(price.getText());
-                newBeer.setCategory(category.getSelectedItem().toString());
+                newBeer.setCategory(categoryComboBox.getSelectedItem().toString());
+                newBeer.setPourSize(pourSizeComboBox.getSelectedItem().toString());
                 addBeerToAList(newBeer, DRAFT_BEER_MASTER_LIST_XML, draftBeerMasterSortedList);
+                if (addToCurrentListCheckBox.isSelected()) {
+                    addBeerToAList(newBeer, CURRENT_DRAFT_BEER_LIST_XML, currentDraftBeerSortedList);
+                }
                 frame.setVisible(false);
 
             }

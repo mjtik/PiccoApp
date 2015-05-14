@@ -1,0 +1,6 @@
+Enhanced at beer screen
+- Beer class has pour size
+- createDraftBeer has poursize option
+- 16,12,10,8oz options
+- checkbox to add to current list
+- some changes started to printList

@@ -9,8 +9,17 @@ public class Beer {
     String abv;
     String brewery;
     String location;
+    String pourSize;
 
     public Beer() {
+    }
+
+    public String getPourSize() {
+        return pourSize;
+    }
+
+    public void setPourSize(String pourSize) {
+        this.pourSize = pourSize;
     }
 
     public String getPrice() {
