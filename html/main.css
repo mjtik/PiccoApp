@@ -87,7 +87,55 @@ p1   {
 
 }
 
-#bottleBox{
+/*
+this deals with bottled list formatting
+*/
+div.bottleBox{
+    width: 720px;
     border-style: solid;
     border-width: thin;
     border-color: #000000;
+    font-size: 10px;
+
+}
+
+div.bottleCategoryHeader{
+    width: 100%;
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+div.beerName{
+    font-weight: bold;
+    width: 100px;
+    display: table-cell;
+}
+div.beerStyle{
+    font-style: italic;
+    width:100px;
+    display: table-cell;
+}
+
+div.abv{
+    width:100px;
+    display: table-cell;
+}
+
+div.brewery{
+    width:100px;
+    display: table-cell;
+}
+
+div.location{
+    width:100px;   
+    display: table-cell;
+}
+
+div.price{
+    width:100px;
+    display: table-cell;
+    text-align: right;
+}
+

@@ -10,4 +10,4 @@ FEATURE REQUESTS:
 5) Update beer list on website
 6) add beer pricer to create beer menu
 7) move html blocks to external txt files
-8)
+8) * for limited release beers

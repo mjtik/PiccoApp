@@ -171,6 +171,7 @@ public class BeerChanger {
         frame.setSize(540, 380);
         frame.getContentPane().add(panel);
         frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
 
@@ -305,6 +306,23 @@ public class BeerChanger {
 
     }
 
+    void printBottledBeer(Beer beer, StringBuilder stringBuilder, String bottleCategory){
+
+        if (stringBuilder.length() == 0) {
+            stringBuilder.append("<div class=\"bottleCategoryHeader\">" + bottleCategory + "</div>");
+
+        }
+        stringBuilder.append("<div style=\"display: table-row\">");
+        stringBuilder.append("<div class=\"beerName\">" + beer.getName() + "</div>");
+        stringBuilder.append("<div class=\"beerStyle\">" + beer.getStyle() + "</div>");
+        stringBuilder.append("<div class=\"abv\">" + beer.getAbv() + "%</div>");
+        stringBuilder.append("<div class=\"brewery\">" + beer.getBrewery() + "</div>");
+        stringBuilder.append("<div class=\"location\">" + beer.getLocation() + "</div>");
+        stringBuilder.append("<div class=\"price\">$" + beer.getPrice() + "</div>");
+        stringBuilder.append("</div>");
+
+    }
+
     void printList(){
 
         String indiaPaleAlesHTML;
@@ -315,8 +333,14 @@ public class BeerChanger {
         String darkHTML;
         String ciderHTML;
 
+        String bottlesAndCansHTML;
+        String tableBeerHTML;
+
         String headerHTML;
         String footerHTML;
+
+        String bottledListHeader = "<div class=\"bottleBox\">";
+        String bottledListFooter = "</div>";
 
 
         StringBuilder indiaPaleAlesBuilder = new StringBuilder();
@@ -327,7 +351,32 @@ public class BeerChanger {
         StringBuilder darkBuilder = new StringBuilder();
         StringBuilder ciderBuilder = new StringBuilder();
 
+        StringBuilder bottlesAndCansStringBuilder = new StringBuilder();
+        StringBuilder tableBeerStringBuilder = new StringBuilder();
 
+
+        //Bottled list
+
+
+        for (int i = 0; i <= currentBottledBeerSortedList.size() - 1;i++){
+
+            Beer beer = currentBottledBeerSortedList.get(i);
+
+            switch (beer.getBottleType()){
+                case BOTTLES_AND_CANS:
+                    printBottledBeer(beer, bottlesAndCansStringBuilder, BOTTLES_AND_CANS);
+                    break;
+                case TABLE_BEER:
+                    printBottledBeer(beer, tableBeerStringBuilder, TABLE_BEER);
+                    break;
+            }
+
+
+
+        }
+
+
+        //Draft List
         for (int i = 0; i <= currentDraftBeerSortedList.size() - 1; i++) {
 
             Beer beer = currentDraftBeerSortedList.get(i);
@@ -363,6 +412,8 @@ public class BeerChanger {
 
             }
 
+
+
         }
 
         indiaPaleAlesHTML = indiaPaleAlesBuilder.toString();
@@ -372,6 +423,9 @@ public class BeerChanger {
         belgianStyleHTML = belgianStyleBuilder.toString();
         darkHTML = darkBuilder.toString();
         ciderHTML = ciderBuilder.toString();
+
+        bottlesAndCansHTML = bottlesAndCansStringBuilder.toString();
+        tableBeerHTML = tableBeerStringBuilder.toString();
 
 
         File footerFile = new File(BEER_LIST_HTML_FOOTER);
@@ -383,7 +437,14 @@ public class BeerChanger {
             headerHTML = FileUtils.readFileToString(headerFile);
             footerHTML = FileUtils.readFileToString(footerFile);
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+
             bufferedWriter.write(headerHTML);
+
+            bufferedWriter.write(bottledListHeader);
+            bufferedWriter.write(bottlesAndCansHTML);
+            bufferedWriter.write(tableBeerHTML);
+            bufferedWriter.write(bottledListFooter);
+
             bufferedWriter.write(indiaPaleAlesHTML);
             bufferedWriter.write(paleAlesHTML);
             bufferedWriter.write(otherAlesHTML);
