@@ -9,17 +9,26 @@ public class Beer {
     String abv;
     String brewery;
     String location;
-    String pourSize;
+    String size;
+    String bottleType;
 
     public Beer() {
     }
 
-    public String getPourSize() {
-        return pourSize;
+    public String getBottleType() {
+        return bottleType;
     }
 
-    public void setPourSize(String pourSize) {
-        this.pourSize = pourSize;
+    public void setBottleType(String bottleType) {
+        this.bottleType = bottleType;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
     }
 
     public String getPrice() {

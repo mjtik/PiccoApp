@@ -42,6 +42,10 @@ public class BeerChanger {
     final String TWELVE_OZ = "12oz";
     final String TEN_OZ = "10oz";
     final String EIGHT_OZ = "8oz";
+
+    final String TABLE_BEER = "Table Beer";
+    final String BOTTLES_AND_CANS = "Bottles & Cans";
+
     final String DRAFT_BEER_MASTER_LIST_XML = "draftBeerMasterList.xml";
     final String CURRENT_DRAFT_BEER_LIST_XML = "currentDraftBeerList.xml";
     final String BOTTLED_BEER_MASTER_LIST_XML = "bottledBeerMasterList.xml";
@@ -49,6 +53,7 @@ public class BeerChanger {
 
     final String BEER_LIST_HTML_HEADER = "HTMLheader.txt";
     final String BEER_LIST_HTML_FOOTER = "HTMLfooter.txt";
+    String[] bottleType = {TABLE_BEER, BOTTLES_AND_CANS};
     String [] categories = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
     String[] pourSize = {SIXTEEN_OZ, TWELVE_OZ, TEN_OZ, EIGHT_OZ};
     SortedList<Beer> draftBeerMasterSortedList = new BeerXMLParser().parseXML(DRAFT_BEER_MASTER_LIST_XML);
@@ -278,18 +283,18 @@ public class BeerChanger {
 
     }
 
-    void printBeer(Beer beer, StringBuilder stringBuilder, String beerCategory) {
+    void printDraftBeer(Beer beer, StringBuilder stringBuilder, String beerCategory) {
 
         if (stringBuilder.length() == 0) {
             stringBuilder.append("<p class=\"beerStyleHeader\">" + beerCategory + "</p>");
         }
 
-        stringBuilder.append("<p class=\"beerName\">" + beer.getName() + "</p>");
+        stringBuilder.append("<p class=\"beerName\">" + beer.getName());
         // deal with adding pour size next to beer name is NOT 16oz
-        if (beer.getPourSize().equals(SIXTEEN_OZ)) {
+        if (beer.getSize().equals(SIXTEEN_OZ)) {
             stringBuilder.append("</p>");
         } else {
-            stringBuilder.append(" " + "(" + beer.getPourSize() + ")" + "</p>");
+            stringBuilder.append(" " + "(" + beer.getSize() + ")" + "</p>");
         }
 
         stringBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
@@ -329,31 +334,31 @@ public class BeerChanger {
 
             switch (beer.getCategory()){
                 case INDIA_PALE_ALES:
-                    printBeer(beer, indiaPaleAlesBuilder, INDIA_PALE_ALES);
+                    printDraftBeer(beer, indiaPaleAlesBuilder, INDIA_PALE_ALES);
                     break;
 
                 case PALE_ALES:
-                    printBeer(beer, paleAlesBuilder, PALE_ALES);
+                    printDraftBeer(beer, paleAlesBuilder, PALE_ALES);
                     break;
 
                 case OTHER_ALES:
-                    printBeer(beer, otherAlesBuilder, OTHER_ALES);
+                    printDraftBeer(beer, otherAlesBuilder, OTHER_ALES);
                     break;
 
                 case LAGERS:
-                    printBeer(beer, lagersBuilder, LAGERS);
+                    printDraftBeer(beer, lagersBuilder, LAGERS);
                     break;
 
                 case BELGIAN_STYLE:
-                    printBeer(beer, belgianStyleBuilder, BELGIAN_STYLE);
+                    printDraftBeer(beer, belgianStyleBuilder, BELGIAN_STYLE);
                     break;
 
                 case DARK:
-                    printBeer(beer, darkBuilder, DARK);
+                    printDraftBeer(beer, darkBuilder, DARK);
                     break;
 
                 case CIDER:
-                    printBeer(beer, ciderBuilder, CIDER);
+                    printDraftBeer(beer, ciderBuilder, CIDER);
                     break;
 
             }
@@ -449,7 +454,7 @@ public class BeerChanger {
                 newBeer.setLocation(location.getText());
                 newBeer.setPrice(price.getText());
                 newBeer.setCategory(categoryComboBox.getSelectedItem().toString());
-                newBeer.setPourSize(pourSizeComboBox.getSelectedItem().toString());
+                newBeer.setSize(pourSizeComboBox.getSelectedItem().toString());
                 addBeerToAList(newBeer, DRAFT_BEER_MASTER_LIST_XML, draftBeerMasterSortedList);
                 if (addToCurrentListCheckBox.isSelected()) {
                     addBeerToAList(newBeer, CURRENT_DRAFT_BEER_LIST_XML, currentDraftBeerSortedList);
@@ -470,9 +475,13 @@ public class BeerChanger {
         final JTextField name = new JTextField(15);
         final JTextField style = new JTextField(15);
         final JTextField abv = new JTextField(15);
+        final JTextField size = new JTextField(15);
         final JTextField brewery = new JTextField(15);
         final JTextField location = new JTextField(15);
         final JTextField price = new JTextField(15);
+        final JComboBox<String> bottleTypeComboBox = new JComboBox<>(bottleType);
+        final JComboBox<String> categoryComboBox = new JComboBox<>(categories);
+        final JCheckBox addToCurrentListCheckBox = new JCheckBox("Add beer to current list?");
 
         JButton createNewBeerButton = new JButton("Create Beer");
 
@@ -485,17 +494,23 @@ public class BeerChanger {
         panel.add(style, new GridBagConstraints(1, 2, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(new JLabel("ABV: "), new GridBagConstraints(0, 3, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(abv, new GridBagConstraints(1, 3, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("Brewery: "), new GridBagConstraints(0, 4, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(brewery, new GridBagConstraints(1, 4, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("Location: "), new GridBagConstraints(0, 5, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(location, new GridBagConstraints(1, 5, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("Price: "), new GridBagConstraints(0, 6, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(price, new GridBagConstraints(1, 6, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-
-        panel.add(createNewBeerButton, new GridBagConstraints(0, 7, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Size: "), new GridBagConstraints(0, 4, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(size, new GridBagConstraints(1, 4, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Bottle Type: "), new GridBagConstraints(0, 5, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(bottleTypeComboBox, new GridBagConstraints(1, 5, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Brewery: "), new GridBagConstraints(0, 6, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(brewery, new GridBagConstraints(1, 6, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Location: "), new GridBagConstraints(0, 7, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(location, new GridBagConstraints(1, 7, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Price: "), new GridBagConstraints(0, 8, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(price, new GridBagConstraints(1, 8, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Category: "), new GridBagConstraints(0, 9, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(categoryComboBox, new GridBagConstraints(1, 9, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(addToCurrentListCheckBox, new GridBagConstraints(1, 10, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(createNewBeerButton, new GridBagConstraints(0, 11, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
         final JFrame frame = new JFrame("Create New Beer");
-        frame.setSize(300, 300);
+        frame.setSize(300, 375);
         frame.getContentPane().add(panel);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -509,7 +524,13 @@ public class BeerChanger {
                 newBeer.setBrewery(brewery.getText());
                 newBeer.setLocation(location.getText());
                 newBeer.setPrice(price.getText());
+                newBeer.setCategory(categoryComboBox.getSelectedItem().toString());
+                newBeer.setSize(size.getText());
+                newBeer.setBottleType(bottleTypeComboBox.getSelectedItem().toString());
                 addBeerToAList(newBeer, BOTTLED_BEER_MASTER_LIST_XML, bottledBeerMasterSortedList);
+                if (addToCurrentListCheckBox.isSelected()) {
+                    addBeerToAList(newBeer, CURRENT_BOTTLED_BEER_LIST_XML, currentBottledBeerSortedList);
+                }
                 frame.setVisible(false);
 
             }
@@ -530,7 +551,7 @@ public class BeerChanger {
             beer.addContent(new Element("name").setText(newBeer.getName()));
             beer.addContent(new Element("style").setText(newBeer.getStyle()));
             beer.addContent(new Element("abv").setText(newBeer.getAbv()));
-            beer.addContent(new Element("pourSize").setText(newBeer.getPourSize()));
+            beer.addContent(new Element("size").setText(newBeer.getSize()));
             beer.addContent(new Element("brewery").setText(newBeer.getBrewery()));
             beer.addContent(new Element("location").setText(newBeer.getLocation()));
             beer.addContent(new Element("price").setText(newBeer.getPrice()));
@@ -630,7 +651,7 @@ public class BeerChanger {
                 editedBeer.setName(name.getText());
                 editedBeer.setStyle(style.getText());
                 editedBeer.setAbv(abv.getText());
-                editedBeer.setPourSize(pourSizeComboBox.getSelectedItem().toString());
+                editedBeer.setSize(pourSizeComboBox.getSelectedItem().toString());
                 editedBeer.setBrewery(brewery.getText());
                 editedBeer.setLocation(location.getText());
                 editedBeer.setPrice(price.getText());

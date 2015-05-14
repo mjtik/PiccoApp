@@ -2,17 +2,17 @@
  * Created by mtiko_000 on 4/22/2015.
  */
 
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
-
-
+import ca.odell.glazedlists.BasicEventList;
+import ca.odell.glazedlists.EventList;
+import ca.odell.glazedlists.SortedList;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
-import ca.odell.glazedlists.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
 
 
 public class BeerXMLParser {
@@ -39,6 +39,7 @@ public class BeerXMLParser {
                 beer.setName(element.getChildText("name"));
                 beer.setStyle(element.getChildText("style"));
                 beer.setAbv(element.getChildText("abv"));
+                beer.setSize(element.getChildText("size"));
                 beer.setBrewery(element.getChildText("brewery"));
                 beer.setLocation(element.getChildText("location"));
                 beer.setPrice(element.getChildText("price"));
