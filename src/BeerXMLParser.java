@@ -40,6 +40,7 @@ public class BeerXMLParser {
                 beer.setStyle(element.getChildText("style"));
                 beer.setAbv(element.getChildText("abv"));
                 beer.setSize(element.getChildText("size"));
+                beer.setBottleType((element.getChildText("bottleType")));
                 beer.setBrewery(element.getChildText("brewery"));
                 beer.setLocation(element.getChildText("location"));
                 beer.setPrice(element.getChildText("price"));

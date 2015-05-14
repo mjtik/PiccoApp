@@ -552,6 +552,7 @@ public class BeerChanger {
             beer.addContent(new Element("style").setText(newBeer.getStyle()));
             beer.addContent(new Element("abv").setText(newBeer.getAbv()));
             beer.addContent(new Element("size").setText(newBeer.getSize()));
+            beer.addContent(new Element("bottleType").setText(newBeer.getBottleType()));
             beer.addContent(new Element("brewery").setText(newBeer.getBrewery()));
             beer.addContent(new Element("location").setText(newBeer.getLocation()));
             beer.addContent(new Element("price").setText(newBeer.getPrice()));

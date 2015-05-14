@@ -1,3 +1,0 @@
-Bugfixes
-- XMLParser now has setSize
-- 12oz printing correctly in html

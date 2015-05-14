@@ -1,0 +1,3 @@
+Edit/add bottledBeer
+- XMLParser has bottleType
+- addBeerToAList has bottleType
