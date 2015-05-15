@@ -1,14 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beers>
-  <beer>
-    <name>Julius Echter</name>
-    <style>Hefeweizen</style>
-    <abv>4.90</abv>
-    <size>16.9</size>
-    <bottleType>Bottles &amp; Cans</bottleType>
-    <brewery>Wurzburger Hofbrau</brewery>
-    <location>Wurzburg, Germany</location>
-    <price>7.50</price>
-    <category>Other Ales</category>
-  </beer>
-</beers>
+<beers />

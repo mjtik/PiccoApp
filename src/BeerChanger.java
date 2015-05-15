@@ -160,7 +160,7 @@ public class BeerChanger {
         editBottledBeer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                editBottledBeer(bottledBeerMasterSortedList.get(bottledBeerMasterListJTable.getSelectedRow()), BOTTLED_BEER_MASTER_LIST_XML, bottledBeerMasterSortedList);
 
             }
         });
@@ -782,6 +782,124 @@ public class BeerChanger {
                 editedBeer.setLocation(location.getText());
                 editedBeer.setPrice(price.getText());
                 editedBeer.setCategory(category.getSelectedItem().toString());
+                addBeerToAList(editedBeer, fileName, sortedList);
+                frame.setVisible(false);
+
+            }
+        });
+
+        delete_Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                removeBeerFromAList(beer, fileName, sortedList);
+                frame.setVisible(false);
+            }
+        });
+
+    }
+
+    void editBottledBeer(final Beer beer, final String fileName, final SortedList<Beer> sortedList) {
+
+        final Beer editedBeer = new Beer();
+
+        final JTextField name = new JTextField(15);
+        name.setText(beer.getName());
+        final JTextField style = new JTextField(15);
+        style.setText(beer.getStyle());
+        final JTextField abv = new JTextField(15);
+        abv.setText(beer.getAbv());
+        final JTextField size = new JTextField(15);
+        size.setText(beer.getSize());
+        final JTextField brewery = new JTextField(15);
+        brewery.setText(beer.getBrewery());
+        final JTextField location = new JTextField(15);
+        location.setText(beer.getLocation());
+        final JTextField price = new JTextField(15);
+        price.setText(beer.getPrice());
+        final JComboBox<String> bottleTypeComboBox = new JComboBox<>(bottleType);
+
+        JButton save_Button = new JButton("Save");
+        JButton delete_Button = new JButton("Delete");
+
+        switch (beer.getBottleType()){
+            case TABLE_BEER:
+                bottleTypeComboBox.setSelectedIndex(0);
+                break;
+            case BOTTLES_AND_CANS:
+                bottleTypeComboBox.setSelectedIndex(1);
+                break;
+        }
+
+
+        JPanel panel = new JPanel();
+        GridBagLayout gbl = new GridBagLayout();
+        GridBagConstraints gbc = new GridBagConstraints();
+        panel.setLayout(gbl);
+
+        gbc.gridx = 0;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+        gbc.insets = new Insets(5,20,5,5);
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.fill = GridBagConstraints.BOTH;
+
+        panel.add(new JLabel("Name: "), gbc);
+        panel.add(new JLabel("Style: "),gbc);
+        panel.add(new JLabel("ABV: "), gbc);
+        panel.add(new JLabel("Size: "), gbc);
+        panel.add(new JLabel("Bottle Type: "), gbc);
+        panel.add(new JLabel("Brewery: "), gbc);
+        panel.add(new JLabel("Location: "), gbc);
+        panel.add(new JLabel("Price: "), gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        gbc.insets = new Insets(5,5,5,20);
+
+        panel.add(name,gbc);
+        panel.add(style, gbc);
+        panel.add(abv, gbc);
+        panel.add(size, gbc);
+        panel.add(brewery, gbc);
+        panel.add(location, gbc);
+        panel.add(price, gbc);
+        panel.add(bottleTypeComboBox,gbc);
+
+        gbc.insets = new Insets(5,5,5,5);
+        gbc.gridx = 1;
+        gbc.gridy = 10;
+        gbc.gridwidth = 1;
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.weightx = 1;
+        panel.add(save_Button, gbc);
+
+        gbc.gridx = 2;
+        gbc.gridy = 10;
+        gbc.insets = new Insets(5,5,5,20);
+        panel.add(delete_Button, gbc);
+
+
+        final JFrame frame = new JFrame("Edit Beer");
+        frame.setSize(300, 375);
+        frame.getContentPane().add(panel);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setVisible(true);
+
+        save_Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                removeBeerFromAList(beer, fileName, sortedList);
+
+                editedBeer.setName(name.getText());
+                editedBeer.setStyle(style.getText());
+                editedBeer.setAbv(abv.getText());
+                editedBeer.setSize(size.getText());
+                editedBeer.setBrewery(brewery.getText());
+                editedBeer.setLocation(location.getText());
+                editedBeer.setPrice(price.getText());
+                editedBeer.setBottleType(bottleTypeComboBox.getSelectedItem().toString());
                 addBeerToAList(editedBeer, fileName, sortedList);
                 frame.setVisible(false);
 
