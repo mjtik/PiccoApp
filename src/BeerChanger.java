@@ -29,7 +29,7 @@ import java.util.List;
 public class BeerChanger {
 
 
-    //these are the categorys beers are sorted into, the beer style may be different and more descriptive (American or English Pale Ale)
+    //these are the categories beers are sorted into, the beer style may be different and more descriptive (American or English Pale Ale)
     final String INDIA_PALE_ALES = "India Pale Ales";
     final String PALE_ALES = "Pale Ales";
     final String OTHER_ALES = "Other Ales";
@@ -47,13 +47,13 @@ public class BeerChanger {
     final String TABLE_BEER = "Table Beer";
     final String BOTTLES_AND_CANS = "Bottles & Cans";
 
-    final String DRAFT_BEER_MASTER_LIST_XML = "draftBeerMasterList.xml";
-    final String CURRENT_DRAFT_BEER_LIST_XML = "currentDraftBeerList.xml";
-    final String BOTTLED_BEER_MASTER_LIST_XML = "bottledBeerMasterList.xml";
-    final String CURRENT_BOTTLED_BEER_LIST_XML = "currentBottledBeerList.xml";
+    final String DRAFT_BEER_MASTER_LIST_XML = "XML\\draftBeerMasterList.xml";
+    final String CURRENT_DRAFT_BEER_LIST_XML = "XML\\currentDraftBeerList.xml";
+    final String BOTTLED_BEER_MASTER_LIST_XML = "XML\\bottledBeerMasterList.xml";
+    final String CURRENT_BOTTLED_BEER_LIST_XML = "XML\\currentBottledBeerList.xml";
 
-    final String BEER_LIST_HTML_HEADER = "HTMLheader.txt";
-    final String BEER_LIST_HTML_FOOTER = "HTMLfooter.txt";
+    final String BEER_LIST_HTML_HEADER = "html\\HTMLheader.txt";
+    final String BEER_LIST_HTML_FOOTER = "html\\HTMLfooter.txt";
     String[] bottleType = {TABLE_BEER, BOTTLES_AND_CANS};
     String [] categories = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
     String[] pourSize = {SIXTEEN_OZ, TWELVE_OZ, TEN_OZ, EIGHT_OZ};
@@ -276,9 +276,10 @@ public class BeerChanger {
 
 
         JFrame frame = new JFrame("Beer Menu Changer");
-        frame.setSize(540, 380);
+        frame.setSize(500, 400);
         frame.getContentPane().add(panel);
         frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
 
@@ -652,6 +653,9 @@ public class BeerChanger {
         final JComboBox<String> pourSizeComboBox = new JComboBox<>(pourSize);
         final JComboBox<String> category = new JComboBox<>(categories);
 
+        JButton save_Button = new JButton("Save");
+        JButton delete_Button = new JButton("Delete");
+
         switch (beer.getCategory()){
             case INDIA_PALE_ALES:
                 category.setSelectedIndex(0);
@@ -677,37 +681,61 @@ public class BeerChanger {
         }
 
 
-        JButton save = new JButton("Save");
+
 
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridBagLayout());
+        GridBagLayout gbl = new GridBagLayout();
+        GridBagConstraints gbc = new GridBagConstraints();
+        panel.setLayout(gbl);
 
-        panel.add(new JLabel("Name: "), new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(name, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("Style: "), new GridBagConstraints(0, 2, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(style, new GridBagConstraints(1, 2, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("ABV: "), new GridBagConstraints(0, 3, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(abv, new GridBagConstraints(1, 3, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("Pour Size: "), new GridBagConstraints(0, 4, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(pourSizeComboBox, new GridBagConstraints(1, 4, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("Brewery: "), new GridBagConstraints(0, 5, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(brewery, new GridBagConstraints(1, 5, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("Location: "), new GridBagConstraints(0, 6, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(location, new GridBagConstraints(1, 6, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("Price: "), new GridBagConstraints(0, 7, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(price, new GridBagConstraints(1, 7, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(new JLabel("Category"), new GridBagConstraints(0, 8, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(category, new GridBagConstraints(1, 8, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
-        panel.add(save, new GridBagConstraints(0, 9, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        gbc.gridx = 0;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+        gbc.insets = new Insets(5,5,5,5);
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.fill = GridBagConstraints.BOTH;
+
+        panel.add(new JLabel("Name: "), gbc);
+        panel.add(new JLabel("Style: "), gbc);
+        panel.add(new JLabel("ABV: "), gbc);
+        panel.add(new JLabel("Pour Size: "), gbc);
+        panel.add(new JLabel("Brewery: "), gbc);
+        panel.add(new JLabel("Location: "), gbc);
+        panel.add(new JLabel("Price: "), gbc);
+        panel.add(new JLabel("Category"), gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+
+        panel.add(name,gbc);
+        panel.add(style, gbc);
+        panel.add(abv, gbc);
+        panel.add(pourSizeComboBox, gbc);
+        panel.add(brewery, gbc);
+        panel.add(location, gbc);
+        panel.add(price, gbc);
+        panel.add(category,gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 10;
+        gbc.gridwidth = 1;
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.weightx = 1;
+        panel.add(save_Button, gbc);
+        gbc.gridx = 2;
+        gbc.gridy = 10;
+        panel.add(delete_Button, gbc);
+
 
         final JFrame frame = new JFrame("Edit Beer");
-        frame.setSize(300, 375);
+        frame.setSize(300, 350);
         frame.getContentPane().add(panel);
         frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
         frame.setVisible(true);
 
-        save.addActionListener(new ActionListener() {
+        save_Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -724,6 +752,14 @@ public class BeerChanger {
                 addBeerToAList(editedBeer, fileName, sortedList);
                 frame.setVisible(false);
 
+            }
+        });
+
+        delete_Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                removeBeerFromAList(beer, fileName, sortedList);
+                frame.setVisible(false);
             }
         });
 
