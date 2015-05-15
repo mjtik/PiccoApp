@@ -6,6 +6,7 @@ import ca.odell.glazedlists.FilterList;
 import ca.odell.glazedlists.SortedList;
 import ca.odell.glazedlists.swing.AdvancedTableModel;
 import ca.odell.glazedlists.swing.GlazedListsSwing;
+import ca.odell.glazedlists.swing.TableComparatorChooser;
 import ca.odell.glazedlists.swing.TextComponentMatcherEditor;
 import org.apache.commons.io.FileUtils;
 import org.jdom2.Document;
@@ -154,8 +155,8 @@ public class BeerChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                editDraftBeer(draftBeerMasterSortedList.get(bottledBeerMasterListJTable.getSelectedRow()));
-                draftBeerMasterSortedList.remove(bottledBeerMasterListJTable.getSelectedRow());
+
+
             }
         });
 
@@ -184,6 +185,8 @@ public class BeerChanger {
         FilterList<Beer> beerMasterListTextFilteredIssues = new FilterList<>(draftBeerMasterSortedList, new TextComponentMatcherEditor<>(beerMasterListFilterEdit, new BeerTextFilter()));
         AdvancedTableModel<Beer> beerMasterListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(beerMasterListTextFilteredIssues, new SimpleBeerTableFormat());
         final JTable beerMasterListJTable = new JTable(beerMasterListTableModel);
+        TableComparatorChooser<Beer> tableSorter = TableComparatorChooser.install(beerMasterListJTable, draftBeerMasterSortedList, TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
+
 
         //Right table for CurrentBeerList
         JTextField currentBeerListFilterEdit = new JTextField(10);
@@ -259,9 +262,8 @@ public class BeerChanger {
         editDraftBeer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectedBeer = draftBeerMasterSortedList.get(beerMasterListJTable.getSelectedRow());
-                editDraftBeer(selectedBeer);
-                draftBeerMasterSortedList.remove(beerMasterListJTable.getSelectedRow());
+
+                editDraftBeer(draftBeerMasterSortedList.get(beerMasterListJTable.getSelectedRow()), DRAFT_BEER_MASTER_LIST_XML, draftBeerMasterSortedList);
             }
         });
 
@@ -528,7 +530,6 @@ public class BeerChanger {
 
     }
 
-    //NOT READY!!
     void createNewBottledBeer() {
 
         final Beer newBeer = new Beer();
@@ -632,7 +633,7 @@ public class BeerChanger {
 
     }
 
-    void editDraftBeer(Beer beer) {
+    void editDraftBeer(final Beer beer, final String fileName, final SortedList<Beer> sortedList) {
 
         final Beer editedBeer = new Beer();
 
@@ -710,6 +711,8 @@ public class BeerChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                removeBeerFromAList(beer, fileName, sortedList);
+
                 editedBeer.setName(name.getText());
                 editedBeer.setStyle(style.getText());
                 editedBeer.setAbv(abv.getText());
@@ -718,7 +721,7 @@ public class BeerChanger {
                 editedBeer.setLocation(location.getText());
                 editedBeer.setPrice(price.getText());
                 editedBeer.setCategory(category.getSelectedItem().toString());
-                addBeerToAList(editedBeer, DRAFT_BEER_MASTER_LIST_XML, draftBeerMasterSortedList);
+                addBeerToAList(editedBeer, fileName, sortedList);
                 frame.setVisible(false);
 
             }
