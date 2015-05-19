@@ -1,4 +1,2 @@
-Sort draft beers by abv
-- getAbd --> getAbvString
-- added getAbvDouble
-- added draftAbvSorter
+Sort draft beers by abv (cont.)
+- modified printList to sort array for each category

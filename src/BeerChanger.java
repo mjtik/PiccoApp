@@ -352,9 +352,6 @@ public class BeerChanger {
         String headerHTML;
         String footerHTML;
 
-
-
-
         StringBuilder indiaPaleAlesBuilder = new StringBuilder();
         StringBuilder paleAlesBuilder = new StringBuilder();
         StringBuilder otherAlesBuilder = new StringBuilder();
@@ -366,6 +363,21 @@ public class BeerChanger {
         StringBuilder bottlesAndCansStringBuilder = new StringBuilder();
         StringBuilder tableBeerStringBuilder = new StringBuilder();
 
+        List<Beer> indiaPaleAles_ArrayList = new ArrayList();
+        List<Beer> paleAles_ArrayList = new ArrayList();
+        List<Beer> otherAles_ArrayList = new ArrayList();
+        List<Beer> lagers_ArrayList = new ArrayList();
+        List<Beer> belgianStyle_ArrayList = new ArrayList();
+        List<Beer> dark_ArrayList = new ArrayList();
+        List<Beer> cider_ArrayList = new ArrayList();
+        List<List> allCategories_ArrayList = new ArrayList();
+        allCategories_ArrayList.add(indiaPaleAles_ArrayList);
+        allCategories_ArrayList.add(paleAles_ArrayList);
+        allCategories_ArrayList.add(otherAles_ArrayList);
+        allCategories_ArrayList.add(lagers_ArrayList);
+        allCategories_ArrayList.add(belgianStyle_ArrayList);
+        allCategories_ArrayList.add(dark_ArrayList);
+        allCategories_ArrayList.add(cider_ArrayList);
 
         //Bottled list
 
@@ -387,45 +399,79 @@ public class BeerChanger {
 
         }
 
-
         //Draft List
+        //sort into categories and arrays
         for (int i = 0; i <= currentDraftBeerSortedList.size() - 1; i++) {
 
             Beer beer = currentDraftBeerSortedList.get(i);
 
             switch (beer.getCategory()){
                 case INDIA_PALE_ALES:
-                    printDraftBeer(beer, indiaPaleAlesBuilder, INDIA_PALE_ALES);
+                    indiaPaleAles_ArrayList.add(beer);
                     break;
 
                 case PALE_ALES:
-                    printDraftBeer(beer, paleAlesBuilder, PALE_ALES);
+                    paleAles_ArrayList.add(beer);
                     break;
 
                 case OTHER_ALES:
-                    printDraftBeer(beer, otherAlesBuilder, OTHER_ALES);
+                    otherAles_ArrayList.add(beer);
                     break;
 
                 case LAGERS:
-                    printDraftBeer(beer, lagersBuilder, LAGERS);
+                    lagers_ArrayList.add(beer);
                     break;
 
                 case BELGIAN_STYLE:
-                    printDraftBeer(beer, belgianStyleBuilder, BELGIAN_STYLE);
+                    belgianStyle_ArrayList.add(beer);
                     break;
 
                 case DARK:
-                    printDraftBeer(beer, darkBuilder, DARK);
+                    dark_ArrayList.add(beer);
                     break;
 
                 case CIDER:
-                    printDraftBeer(beer, ciderBuilder, CIDER);
+                    cider_ArrayList.add(beer);
                     break;
 
             }
 
+        }
 
+        // sort each category by abv
+        for (List l : allCategories_ArrayList){
 
+            Collections.sort(l, new draftAbvSorter());
+
+        }
+
+        //print all beers in each category
+        for (Beer b : indiaPaleAles_ArrayList){
+            printDraftBeer(b, indiaPaleAlesBuilder, INDIA_PALE_ALES);
+        }
+
+        for (Beer b : paleAles_ArrayList){
+            printDraftBeer(b, paleAlesBuilder, PALE_ALES);
+        }
+
+        for (Beer b : otherAles_ArrayList){
+            printDraftBeer(b, otherAlesBuilder, OTHER_ALES);
+        }
+
+        for (Beer b : lagers_ArrayList){
+            printDraftBeer(b, lagersBuilder, LAGERS);
+        }
+
+        for (Beer b : belgianStyle_ArrayList){
+            printDraftBeer(b, belgianStyleBuilder, BELGIAN_STYLE);
+        }
+
+        for (Beer b : dark_ArrayList){
+            printDraftBeer(b, darkBuilder, DARK);
+        }
+
+        for (Beer b : cider_ArrayList){
+            printDraftBeer(b, ciderBuilder, CIDER);
         }
 
         indiaPaleAlesHTML = indiaPaleAlesBuilder.toString();
