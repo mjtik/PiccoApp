@@ -1,1 +1,4 @@
-Sort draft beers into columns
+Sort draft beers by abv
+- getAbd --> getAbvString
+- added getAbvDouble
+- added draftAbvSorter

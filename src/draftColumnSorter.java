@@ -3,7 +3,7 @@ import java.util.Comparator;
 /**
  * Created by mtiko_000 on 5/16/2015.
  */
-public class draftSorter implements Comparator <String> {
+public class draftColumnSorter implements Comparator <String> {
 
     @Override
     public int compare(String o1, String o2) {

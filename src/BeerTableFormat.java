@@ -25,7 +25,7 @@ public class BeerTableFormat implements TableFormat<Beer> {
 
         if(column == 0)      return beer.getName();
         else if(column == 1) return beer.getStyle();
-        else if(column == 2) return beer.getAbv();
+        else if(column == 2) return beer.getAbvString();
         else if(column == 3) return beer.getBrewery();
         else if(column == 4) return beer.getLocation();
         else if(column == 5) return beer.getPrice();

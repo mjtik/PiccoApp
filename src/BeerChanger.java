@@ -312,7 +312,7 @@ public class BeerChanger {
         }
 
         stringBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-        stringBuilder.append("<p class=\"abv\">" + beer.getAbv() + "%</p>");
+        stringBuilder.append("<p class=\"abv\">" + beer.getAbvString() + "%</p>");
         stringBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
         stringBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
         stringBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
@@ -328,7 +328,7 @@ public class BeerChanger {
         stringBuilder.append("<div class=\"bottleWrapper\">");
         stringBuilder.append("<div class=\"beerName\">" + beer.getName() + "</div>");
         stringBuilder.append("<div class=\"beerStyle\">" + beer.getStyle() + "</div>");
-        stringBuilder.append("<div class=\"abv\">" + beer.getAbv() + "%</div>");
+        stringBuilder.append("<div class=\"abv\">" + beer.getAbvString() + "%</div>");
         stringBuilder.append("<div class=\"brewery\">" + beer.getBrewery() + "</div>");
         stringBuilder.append("<div class=\"location\">" + beer.getLocation() + "</div>");
         stringBuilder.append("<div class=\"price\">$" + beer.getPrice() + "</div>");
@@ -457,7 +457,7 @@ public class BeerChanger {
         draftBeerArray.add(darkHTML);
         draftBeerArray.add(ciderHTML);
         
-        Collections.sort(draftBeerArray, new draftSorter());
+        Collections.sort(draftBeerArray, new draftColumnSorter());
 
         try {
             headerHTML = FileUtils.readFileToString(headerFile);
@@ -683,7 +683,7 @@ public class BeerChanger {
             Element beer = new Element("beer");
             beer.addContent(new Element("name").setText(newBeer.getName()));
             beer.addContent(new Element("style").setText(newBeer.getStyle()));
-            beer.addContent(new Element("abv").setText(newBeer.getAbv()));
+            beer.addContent(new Element("abv").setText(newBeer.getAbvString()));
             beer.addContent(new Element("size").setText(newBeer.getSize()));
             beer.addContent(new Element("bottleType").setText(newBeer.getBottleType()));
             beer.addContent(new Element("brewery").setText(newBeer.getBrewery()));
@@ -713,7 +713,7 @@ public class BeerChanger {
         final JTextField style = new JTextField(15);
         style.setText(beer.getStyle());
         final JTextField abv = new JTextField(15);
-        abv.setText(beer.getAbv());
+        abv.setText(beer.getAbvString());
         final JTextField brewery = new JTextField(15);
         brewery.setText(beer.getBrewery());
         final JTextField location = new JTextField(15);
@@ -845,7 +845,7 @@ public class BeerChanger {
         final JTextField style = new JTextField(15);
         style.setText(beer.getStyle());
         final JTextField abv = new JTextField(15);
-        abv.setText(beer.getAbv());
+        abv.setText(beer.getAbvString());
         final JTextField size = new JTextField(15);
         size.setText(beer.getSize());
         final JTextField brewery = new JTextField(15);

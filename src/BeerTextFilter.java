@@ -10,7 +10,7 @@ public class BeerTextFilter implements TextFilterator<Beer>{
     public void getFilterStrings(List<String> baseList, Beer beer) {
         baseList.add(beer.getName());
         baseList.add(beer.getStyle());
-        baseList.add(beer.getAbv());
+        baseList.add(beer.getAbvString());
         baseList.add(beer.getBrewery());
         baseList.add(beer.getLocation());
         baseList.add(beer.getPrice());

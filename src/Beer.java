@@ -63,7 +63,7 @@ public class Beer {
         this.category = category;
     }
 
-    public String getAbv() {
+    public String getAbvString() {
         return this.abv;
     }
 
@@ -89,6 +89,10 @@ public class Beer {
 
     public String toString() {
         return this.getName();
+    }
+
+    public Double getAbvDouble() {
+        return Double.parseDouble(this.abv);
     }
 }
 /**
