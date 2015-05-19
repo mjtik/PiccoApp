@@ -24,6 +24,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BeerChanger {
@@ -37,7 +39,6 @@ public class BeerChanger {
     final String BELGIAN_STYLE = "Belgian Style";
     final String DARK = "Dark";
     final String CIDER = "Cider";
-
 
     final String SIXTEEN_OZ = "16oz";
     final String TWELVE_OZ = "12oz";
@@ -54,9 +55,14 @@ public class BeerChanger {
 
     final String BEER_LIST_HTML_HEADER = "html\\HTMLheader.txt";
     final String BEER_LIST_HTML_FOOTER = "html\\HTMLfooter.txt";
+
+    final String BOTTLED_LIST_HEADER = "<div class=\"bottleBox\">";
+    final String BOTTLED_LIST_FOOTER = "</div>";
+
     String[] bottleType = {TABLE_BEER, BOTTLES_AND_CANS};
     String [] categories = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
     String[] pourSize = {SIXTEEN_OZ, TWELVE_OZ, TEN_OZ, EIGHT_OZ};
+
     SortedList<Beer> draftBeerMasterSortedList = new BeerXMLParser().parseXML(DRAFT_BEER_MASTER_LIST_XML);
     SortedList<Beer> currentDraftBeerSortedList = new BeerXMLParser().parseXML(CURRENT_DRAFT_BEER_LIST_XML);
 
@@ -319,7 +325,7 @@ public class BeerChanger {
             stringBuilder.append("<div class=\"bottleCategoryHeader\">" + bottleCategory + "</div>");
 
         }
-        stringBuilder.append("<div style=\"display: table-row\">");
+        stringBuilder.append("<div class=\"bottleWrapper\">");
         stringBuilder.append("<div class=\"beerName\">" + beer.getName() + "</div>");
         stringBuilder.append("<div class=\"beerStyle\">" + beer.getStyle() + "</div>");
         stringBuilder.append("<div class=\"abv\">" + beer.getAbv() + "%</div>");
@@ -346,8 +352,7 @@ public class BeerChanger {
         String headerHTML;
         String footerHTML;
 
-        String bottledListHeader = "<div class=\"bottleBox\">";
-        String bottledListFooter = "</div>";
+
 
 
         StringBuilder indiaPaleAlesBuilder = new StringBuilder();
@@ -439,6 +444,20 @@ public class BeerChanger {
         File headerFile = new File(BEER_LIST_HTML_HEADER);
         File file = new File("html\\beerList.html");
 
+        /// sort beer categories by size
+        List<String> draftBeerArray = new ArrayList();
+        List<String> leftColumnArray = new ArrayList();
+        List<String> rightColumnArray = new ArrayList();
+
+        draftBeerArray.add(indiaPaleAlesHTML);
+        draftBeerArray.add(paleAlesHTML);
+        draftBeerArray.add(otherAlesHTML);
+        draftBeerArray.add(lagersHTML);
+        draftBeerArray.add(belgianStyleHTML);
+        draftBeerArray.add(darkHTML);
+        draftBeerArray.add(ciderHTML);
+        
+        Collections.sort(draftBeerArray, new draftSorter());
 
         try {
             headerHTML = FileUtils.readFileToString(headerFile);
@@ -447,20 +466,38 @@ public class BeerChanger {
 
             bufferedWriter.write(headerHTML);
 
-            bufferedWriter.write(bottledListHeader);
+            bufferedWriter.write(BOTTLED_LIST_HEADER);
             bufferedWriter.write(bottlesAndCansHTML);
             bufferedWriter.write(tableBeerHTML);
-            bufferedWriter.write(bottledListFooter);
+            bufferedWriter.write(BOTTLED_LIST_FOOTER);
 
-            bufferedWriter.write(indiaPaleAlesHTML);
-            bufferedWriter.write(paleAlesHTML);
-            bufferedWriter.write(otherAlesHTML);
-            bufferedWriter.write(lagersHTML);
-            bufferedWriter.write(belgianStyleHTML);
-            bufferedWriter.write(darkHTML);
-            bufferedWriter.write(ciderHTML);
+            for (int i=0;i<draftBeerArray.size();i++){
+
+                if ((i%2)==0){
+                    leftColumnArray.add(draftBeerArray.get(i));
+                } else {
+                    rightColumnArray.add((draftBeerArray.get(i)));
+                }
+
+            }
+            String test = "<div class=\"leftSide\">";
+            bufferedWriter.write(test);
+
+            for (String s : leftColumnArray){
+                bufferedWriter.write(s);
+            }
+            bufferedWriter.write("</div>");
+            bufferedWriter.write("<div class=\"rightSide\">");
+
+            for (String s : rightColumnArray){
+                bufferedWriter.write(s);
+            }
+
+            bufferedWriter.write("</div>");
+
             bufferedWriter.write(footerHTML);
             bufferedWriter.close();
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -516,6 +553,7 @@ public class BeerChanger {
         panel.add(location, gbc);
         panel.add(price, gbc);
         panel.add(categoryComboBox,gbc);
+        panel.add(addToCurrentListCheckBox, gbc);
 
 
         gbc.gridwidth = 1;

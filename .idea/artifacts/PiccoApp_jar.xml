@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PiccoApp:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/PiccoApp_jar</output-path>
+    <root id="archive" name="PiccoApp.jar">
+      <element id="module-output" name="PiccoApp" />
+      <element id="extracted-dir" path="C:/Program Files/Java/commons-io-2.4/commons-io-2.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files/Java/jdom-2.0.6/jdom-2.0.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files/Java/jdom-2.0.6/jdom-2.0.6-junit.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files/Java/jdom-2.0.6/jdom-2.0.6-contrib.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files/Java/jdom-2.0.6/jdom-2.0.6-javadoc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Program Files/Java/jdom-2.0.6/jdom-2.0.6-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/glazedlists_java15.jar" path-in-jar="/" />
+      <element id="dir-copy" path="$PROJECT_DIR$" />
+    </root>
+  </artifact>
+</component>

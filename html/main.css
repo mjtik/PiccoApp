@@ -4,7 +4,7 @@ html {
 
 body {
     margin-left: 10px;
-    Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+    font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;;
     color: #000000;
     background-color: #ffffff;
 }
