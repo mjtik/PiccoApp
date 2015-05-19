@@ -379,6 +379,9 @@ public class BeerChanger {
         allCategories_ArrayList.add(dark_ArrayList);
         allCategories_ArrayList.add(cider_ArrayList);
 
+        int leftColumnSize = 0;
+        int rightColumnSize = 0;
+
         //Bottled list
 
 
@@ -495,14 +498,16 @@ public class BeerChanger {
         List<String> leftColumnArray = new ArrayList();
         List<String> rightColumnArray = new ArrayList();
 
-        draftBeerArray.add(indiaPaleAlesHTML);
+
         draftBeerArray.add(paleAlesHTML);
         draftBeerArray.add(otherAlesHTML);
         draftBeerArray.add(lagersHTML);
         draftBeerArray.add(belgianStyleHTML);
         draftBeerArray.add(darkHTML);
         draftBeerArray.add(ciderHTML);
-        
+        draftBeerArray.add(indiaPaleAlesHTML);
+
+        //sorts each category by how many beers it has
         Collections.sort(draftBeerArray, new draftColumnSorter());
 
         try {
@@ -517,12 +522,19 @@ public class BeerChanger {
             bufferedWriter.write(tableBeerHTML);
             bufferedWriter.write(BOTTLED_LIST_FOOTER);
 
+            // sort into right and left columns depending on the size of each column
+            // to avoid being to big to print
             for (int i=0;i<draftBeerArray.size();i++){
 
-                if ((i%2)==0){
-                    leftColumnArray.add(draftBeerArray.get(i));
-                } else {
+
+                if (leftColumnSize > rightColumnSize){
                     rightColumnArray.add((draftBeerArray.get(i)));
+                    rightColumnSize += draftBeerArray.get(i).length();
+
+                } else {
+                    leftColumnArray.add(draftBeerArray.get(i));
+                    leftColumnSize += draftBeerArray.get(i).length();
+
                 }
 
             }

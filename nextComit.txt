@@ -1,2 +1,1 @@
-Sort draft beers by abv (cont.)
-- modified printList to sort array for each category
+Improved column sorting
