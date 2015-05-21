@@ -315,7 +315,7 @@ public class BeerChanger {
         stringBuilder.append("<p class=\"abv\">" + beer.getAbvString() + "%</p>");
         stringBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
         stringBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-        stringBuilder.append("<p class=\"price\">$" + beer.getPrice() + "</p>");
+        stringBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
 
     }
 
@@ -331,7 +331,7 @@ public class BeerChanger {
         stringBuilder.append("<div class=\"abv\">" + beer.getAbvString() + "%</div>");
         stringBuilder.append("<div class=\"brewery\">" + beer.getBrewery() + "</div>");
         stringBuilder.append("<div class=\"location\">" + beer.getLocation() + "</div>");
-        stringBuilder.append("<div class=\"price\">$" + beer.getPrice() + "</div>");
+        stringBuilder.append("<div class=\"price\">" + beer.getPrice() + "</div>");
         stringBuilder.append("</div>");
 
     }
@@ -572,7 +572,8 @@ public class BeerChanger {
         final JTextField abv = new JTextField(15);
         final JTextField brewery = new JTextField(15);
         final JTextField location = new JTextField(15);
-        final JTextField price = new JTextField(15);
+        final JFormattedTextField price = new JFormattedTextField(java.text.NumberFormat.getCurrencyInstance());
+        price.setValue(new Double(0.00) );
         final JComboBox<String> categoryComboBox = new JComboBox<>(categories);
         final JComboBox<String> pourSizeComboBox = new JComboBox<>(pourSize);
         final JCheckBox addToCurrentListCheckBox = new JCheckBox("Add beer to current list?");
@@ -629,6 +630,7 @@ public class BeerChanger {
         createNewBeer_Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 newBeer.setName(name.getText());
                 newBeer.setStyle(style.getText());
                 newBeer.setAbv(abv.getText());
