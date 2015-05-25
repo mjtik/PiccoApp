@@ -9,6 +9,8 @@ import ca.odell.glazedlists.swing.GlazedListsSwing;
 import ca.odell.glazedlists.swing.TableComparatorChooser;
 import ca.odell.glazedlists.swing.TextComponentMatcherEditor;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPClient;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -20,15 +22,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class BeerChanger {
+
+    //FTP info
+    final String SERVER = "ftp.piccorestaurant.com";
+    final int PORT = 21;
+    final String USER_NAME = "piccores";
+    String password = null;
+
 
 
     //these are the categories beers are sorted into, the beer style may be different and more descriptive (American or English Pale Ale)
@@ -48,13 +54,20 @@ public class BeerChanger {
     final String TABLE_BEER = "Table Beer";
     final String BOTTLES_AND_CANS = "Bottles & Cans";
 
-    final String DRAFT_BEER_MASTER_LIST_XML = "XML\\draftBeerMasterList.xml";
-    final String CURRENT_DRAFT_BEER_LIST_XML = "XML\\currentDraftBeerList.xml";
-    final String BOTTLED_BEER_MASTER_LIST_XML = "XML\\bottledBeerMasterList.xml";
-    final String CURRENT_BOTTLED_BEER_LIST_XML = "XML\\currentBottledBeerList.xml";
+    final String DRAFT_BEER_MASTER_LIST_XML;
+    final String CURRENT_DRAFT_BEER_LIST_XML;
+    final String BOTTLED_BEER_MASTER_LIST_XML;
+    final String CURRENT_BOTTLED_BEER_LIST_XML;
+    final String HOME_DIR;
 
-    final String BEER_LIST_HTML_HEADER = "html\\HTMLheader.txt";
-    final String BEER_LIST_HTML_FOOTER = "html\\HTMLfooter.txt";
+
+    final String BEER_LIST_HTML_HEADER = "\\html\\HTMLheader.txt";
+    final String BEER_LIST_HTML_FOOTER = "\\html\\HTMLfooter.txt";
+    File beerList_file = new File("\\html\\beerList.html");
+    File beerListHTML_file = new File("\\html\\beer.html");
+
+    //File testFile = new File(System.getProperty("user.home") + System.getProperty("file.separator") + "test.txt");
+
 
     final String BOTTLED_LIST_HEADER = "<div class=\"bottleBox\">";
     final String BOTTLED_LIST_FOOTER = "</div>";
@@ -63,18 +76,43 @@ public class BeerChanger {
     String [] categories = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
     String[] pourSize = {SIXTEEN_OZ, TWELVE_OZ, TEN_OZ, EIGHT_OZ};
 
-    SortedList<Beer> draftBeerMasterSortedList = new BeerXMLParser().parseXML(DRAFT_BEER_MASTER_LIST_XML);
-    SortedList<Beer> currentDraftBeerSortedList = new BeerXMLParser().parseXML(CURRENT_DRAFT_BEER_LIST_XML);
+    SortedList<Beer> draftBeerMasterSortedList;
+    SortedList<Beer> currentDraftBeerSortedList;
 
-    SortedList<Beer> bottledBeerMasterSortedList = new BeerXMLParser().parseXML(BOTTLED_BEER_MASTER_LIST_XML);
-    SortedList<Beer> currentBottledBeerSortedList = new BeerXMLParser().parseXML(CURRENT_BOTTLED_BEER_LIST_XML);
+    SortedList<Beer> bottledBeerMasterSortedList;
+    SortedList<Beer> currentBottledBeerSortedList;
 
     Beer selectedBeer = new Beer();
 
 
     public BeerChanger() {
 
+        //get passwords
+        try {
+            password = FileUtils.readFileToString(new File("No_Commit\\password.txt"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //check if directory is setup, if not, make one. (mkdir() does both)
+        HOME_DIR = System.getProperty("user.home")+ System.getProperty("file.separator") + "Picco App";
+        new File(HOME_DIR).mkdir();
+        new File(HOME_DIR + System.getProperty("file.separator") + "XML").mkdir();
+        new File(HOME_DIR + System.getProperty("file.separator") + "HTML").mkdir();
+
+        //set file paths
+        DRAFT_BEER_MASTER_LIST_XML = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";
+        CURRENT_DRAFT_BEER_LIST_XML = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
+        BOTTLED_BEER_MASTER_LIST_XML = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
+        CURRENT_BOTTLED_BEER_LIST_XML = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
+
+        draftBeerMasterSortedList = new BeerXMLParser().parseXML(DRAFT_BEER_MASTER_LIST_XML);
+        currentDraftBeerSortedList = new BeerXMLParser().parseXML(CURRENT_DRAFT_BEER_LIST_XML);
+        bottledBeerMasterSortedList = new BeerXMLParser().parseXML(BOTTLED_BEER_MASTER_LIST_XML);
+        currentBottledBeerSortedList = new BeerXMLParser().parseXML(CURRENT_BOTTLED_BEER_LIST_XML);
+
         displayDraftBeerChanger();
+
     }
 
     public void displayBottledBeerChanger() {
@@ -491,7 +529,7 @@ public class BeerChanger {
 
         File footerFile = new File(BEER_LIST_HTML_FOOTER);
         File headerFile = new File(BEER_LIST_HTML_HEADER);
-        File file = new File("html\\beerList.html");
+
 
         /// sort beer categories by size
         List<String> draftBeerArray = new ArrayList();
@@ -513,7 +551,7 @@ public class BeerChanger {
         try {
             headerHTML = FileUtils.readFileToString(headerFile);
             footerHTML = FileUtils.readFileToString(footerFile);
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(beerList_file));
 
             bufferedWriter.write(headerHTML);
 
@@ -555,6 +593,25 @@ public class BeerChanger {
 
             bufferedWriter.write(footerHTML);
             bufferedWriter.close();
+
+
+            FTPClient ftpClient = new FTPClient();
+
+            ftpClient.connect(SERVER, PORT);
+            ftpClient.login(USER_NAME, password);
+            ftpClient.enterLocalPassiveMode();
+            ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+
+            ftpClient.changeWorkingDirectory("/httpdocs");
+
+            String remoteFile = "beerlist.html";
+            InputStream inputStream = new FileInputStream(beerList_file);
+            boolean done = ftpClient.storeFile(remoteFile, inputStream);
+            if (done){
+                System.out.println("beerList_file uploaded");
+            }
+
+
             
         } catch (IOException e) {
             e.printStackTrace();

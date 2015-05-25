@@ -89,17 +89,6 @@
     <category>Dark</category>
   </beer>
   <beer>
-    <name>Cayuga Cruiser</name>
-    <style>Berliner Weissbier</style>
-    <abv>4.20</abv>
-    <size>16oz</size>
-    <bottleType />
-    <brewery>Ithaca</brewery>
-    <location>Ithaca, NY</location>
-    <price>6.00</price>
-    <category>Other Ales</category>
-  </beer>
-  <beer>
     <name>Spinnaker</name>
     <style>Hefeweizen</style>
     <abv>4.50</abv>
@@ -119,17 +108,6 @@
     <brewery>Grimm</brewery>
     <location>Brooklyn, NY</location>
     <price>7.75</price>
-    <category>Other Ales</category>
-  </beer>
-  <beer>
-    <name>Cayuga Cruiser</name>
-    <style>Berliner Weissbier</style>
-    <abv>4.20</abv>
-    <size>16oz</size>
-    <bottleType />
-    <brewery>Ithaca</brewery>
-    <location>Ithaca, NY</location>
-    <price>6.00</price>
     <category>Other Ales</category>
   </beer>
 </beers>

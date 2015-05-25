@@ -12,11 +12,18 @@ body {
 
 
 div.leftSide, div.rightSide{
-    width:290px;
+    width:320px;
     display:inline-block;
-    padding-left: 30px;
-    padding-right: 30px;
+    
     vertical-align: text-top;
+}
+
+div.leftSide{
+    margin-left: 30px;
+}
+
+div.rightSide{
+    margin-left: 40px;
 }
 
 p.beerStyleHeader{
@@ -87,12 +94,11 @@ p1   {
 this deals with bottled list formatting
 */
 div.bottleBox{
-    width: 640px;
+    width: 680px;
     border-style: solid;
     border-width: thin;
     border-color: #000000;
     margin-left: 30px;
-    padding: 10px 10px 10px 10px
 
 }
 
@@ -107,38 +113,38 @@ div.bottleCategoryHeader{
 }
 
 div.bottleWrapper{
-
-    display: table;
-    width: 100%;
-    margin-bottom: 5px;
+    padding: 0px 10px 10px 10px;
+    width: inherit;
 }
 
 div.beerName{
+    width: 150px;
     font-weight: bold;
-    width: 25%;
     display: table-cell;
 }
 div.beerStyle{
+    width: 150px;
     font-style: italic;
-    width:20%;
     display: table-cell;
 }
 
 div.abv{
-    width:8%;
+    width: 40px;
     display: table-cell;
 }
 
 div.brewery{
-    width:130px;
+   width: 140px;
     display: table-cell;
 }
 
 div.location{
+   width: 140px;
     display: table-cell;
 }
 
 div.price{
+    width: 40px;
     display: table-cell;
     text-align: right;
     
