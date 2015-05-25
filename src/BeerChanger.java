@@ -61,9 +61,10 @@ public class BeerChanger {
     final String HOME_DIR;
 
 
-    final String BEER_LIST_HTML_HEADER = "\\html\\HTMLheader.txt";
-    final String BEER_LIST_HTML_FOOTER = "\\html\\HTMLfooter.txt";
-    File beerList_file = new File("\\html\\beerList.html");
+    final String BEER_LIST_HTML_FOOTER;
+    final String BEER_LIST_HTML_HEADER;
+
+    File beerList_file;
     File beerListHTML_file = new File("\\html\\beer.html");
 
     //File testFile = new File(System.getProperty("user.home") + System.getProperty("file.separator") + "test.txt");
@@ -88,11 +89,7 @@ public class BeerChanger {
     public BeerChanger() {
 
         //get passwords
-        try {
-            password = FileUtils.readFileToString(new File("No_Commit\\password.txt"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
 
         //check if directory is setup, if not, make one. (mkdir() does both)
         HOME_DIR = System.getProperty("user.home")+ System.getProperty("file.separator") + "Picco App";
@@ -106,10 +103,21 @@ public class BeerChanger {
         BOTTLED_BEER_MASTER_LIST_XML = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
         CURRENT_BOTTLED_BEER_LIST_XML = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
 
+        BEER_LIST_HTML_FOOTER = HOME_DIR + "\\HTML\\HTMLfooter.txt";
+        BEER_LIST_HTML_HEADER = HOME_DIR + "\\HTML\\HTMLheader.txt";
+
         draftBeerMasterSortedList = new BeerXMLParser().parseXML(DRAFT_BEER_MASTER_LIST_XML);
         currentDraftBeerSortedList = new BeerXMLParser().parseXML(CURRENT_DRAFT_BEER_LIST_XML);
         bottledBeerMasterSortedList = new BeerXMLParser().parseXML(BOTTLED_BEER_MASTER_LIST_XML);
         currentBottledBeerSortedList = new BeerXMLParser().parseXML(CURRENT_BOTTLED_BEER_LIST_XML);
+
+        try {
+            password = FileUtils.readFileToString(new File(HOME_DIR + "\\No_Commit\\password.txt"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        beerList_file = new File(HOME_DIR + "\\html\\beerList.html");
 
         displayDraftBeerChanger();
 
@@ -576,8 +584,8 @@ public class BeerChanger {
                 }
 
             }
-            String test = "<div class=\"leftSide\">";
-            bufferedWriter.write(test);
+
+            bufferedWriter.write("<div class=\"leftSide\">");
 
             for (String s : leftColumnArray){
                 bufferedWriter.write(s);
