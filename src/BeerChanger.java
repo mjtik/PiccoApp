@@ -64,8 +64,8 @@ public class BeerChanger {
     final String BEER_LIST_HTML_FOOTER;
     final String BEER_LIST_HTML_HEADER;
 
-    File beerList_file;
-    File beerListHTML_file = new File("\\html\\beer.html");
+    File beerList_printFile;
+    File beerList_htmlFile;
 
     //File testFile = new File(System.getProperty("user.home") + System.getProperty("file.separator") + "test.txt");
 
@@ -117,7 +117,8 @@ public class BeerChanger {
             e.printStackTrace();
         }
 
-        beerList_file = new File(HOME_DIR + "\\html\\beerList.html");
+        beerList_printFile = new File(HOME_DIR + "\\html\\printList.html");
+        beerList_htmlFile = new File(HOME_DIR + "\\html\\beer.html");
 
         displayDraftBeerChanger();
 
@@ -395,8 +396,8 @@ public class BeerChanger {
         String bottlesAndCansHTML;
         String tableBeerHTML;
 
-        String headerHTML;
-        String footerHTML;
+        String printList_headerHTML;
+        String printList_footerHTML;
 
         StringBuilder indiaPaleAlesBuilder = new StringBuilder();
         StringBuilder paleAlesBuilder = new StringBuilder();
@@ -429,8 +430,6 @@ public class BeerChanger {
         int rightColumnSize = 0;
 
         //Bottled list
-
-
         for (int i = 0; i <= currentBottledBeerSortedList.size() - 1;i++){
 
             Beer beer = currentBottledBeerSortedList.get(i);
@@ -534,9 +533,8 @@ public class BeerChanger {
         bottlesAndCansHTML = bottlesAndCansStringBuilder.toString();
         tableBeerHTML = tableBeerStringBuilder.toString();
 
-
-        File footerFile = new File(BEER_LIST_HTML_FOOTER);
         File headerFile = new File(BEER_LIST_HTML_HEADER);
+        File footerFile = new File(BEER_LIST_HTML_FOOTER);
 
 
         /// sort beer categories by size
@@ -557,16 +555,17 @@ public class BeerChanger {
         Collections.sort(draftBeerArray, new draftColumnSorter());
 
         try {
-            headerHTML = FileUtils.readFileToString(headerFile);
-            footerHTML = FileUtils.readFileToString(footerFile);
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(beerList_file));
+            printList_headerHTML = FileUtils.readFileToString(headerFile);
+            printList_footerHTML = FileUtils.readFileToString(footerFile);
+            BufferedWriter printList_bufferedWriter = new BufferedWriter(new FileWriter(beerList_printFile));
+            BufferedWriter website_bufferedWriter = new BufferedWriter(new FileWriter(beerList_htmlFile));
 
-            bufferedWriter.write(headerHTML);
+            printList_bufferedWriter.write(printList_headerHTML);
 
-            bufferedWriter.write(BOTTLED_LIST_HEADER);
-            bufferedWriter.write(bottlesAndCansHTML);
-            bufferedWriter.write(tableBeerHTML);
-            bufferedWriter.write(BOTTLED_LIST_FOOTER);
+            printList_bufferedWriter.write(BOTTLED_LIST_HEADER);
+            printList_bufferedWriter.write(bottlesAndCansHTML);
+            printList_bufferedWriter.write(tableBeerHTML);
+            printList_bufferedWriter.write(BOTTLED_LIST_FOOTER);
 
             // sort into right and left columns depending on the size of each column
             // to avoid being to big to print
@@ -585,22 +584,22 @@ public class BeerChanger {
 
             }
 
-            bufferedWriter.write("<div class=\"leftSide\">");
+            printList_bufferedWriter.write("<div class=\"leftSide\">");
 
             for (String s : leftColumnArray){
-                bufferedWriter.write(s);
+                printList_bufferedWriter.write(s);
             }
-            bufferedWriter.write("</div>");
-            bufferedWriter.write("<div class=\"rightSide\">");
+            printList_bufferedWriter.write("</div>");
+            printList_bufferedWriter.write("<div class=\"rightSide\">");
 
             for (String s : rightColumnArray){
-                bufferedWriter.write(s);
+                printList_bufferedWriter.write(s);
             }
 
-            bufferedWriter.write("</div>");
+            printList_bufferedWriter.write("</div>");
 
-            bufferedWriter.write(footerHTML);
-            bufferedWriter.close();
+            printList_bufferedWriter.write(printList_footerHTML);
+            printList_bufferedWriter.close();
 
 
             FTPClient ftpClient = new FTPClient();
@@ -610,13 +609,13 @@ public class BeerChanger {
             ftpClient.enterLocalPassiveMode();
             ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
 
-            ftpClient.changeWorkingDirectory("/httpdocs");
+            ftpClient.changeWorkingDirectory("/httpdocs/test");
 
-            String remoteFile = "beerlist.html";
-            InputStream inputStream = new FileInputStream(beerList_file);
+            String remoteFile = "printList.html";
+            InputStream inputStream = new FileInputStream(beerList_printFile);
             boolean done = ftpClient.storeFile(remoteFile, inputStream);
             if (done){
-                System.out.println("beerList_file uploaded");
+                System.out.println("beerList_printFile uploaded");
             }
 
 
