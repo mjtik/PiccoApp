@@ -56,18 +56,18 @@ public class BeerChanger {
     final String TABLE_BEER = "Table Beer";
     final String BOTTLES_AND_CANS = "Bottles & Cans";
 
-    final String DRAFT_BEER_MASTER_LIST_XML;
-    final String CURRENT_DRAFT_BEER_LIST_XML;
-    final String BOTTLED_BEER_MASTER_LIST_XML;
-    final String CURRENT_BOTTLED_BEER_LIST_XML;
+    final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH;
+    final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH;
+    final String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH;
+    final String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH;
     final String HOME_DIR;
 
 
-    final String PRINT_LIST_HTML_FOOTER;
-    final String PRINT_LIST_HTML_HEADER;
+    final String PRINT_LIST_HTML_FOOTER_FILEPATH;
+    final String PRINT_LIST_HTML_HEADER_FILEPATH;
 
-    final String WEBSITE_HTML_FOOTER;
-    final String WEBSITE_HTML_HEADER;
+    final String WEBSITE_HTML_FOOTER_FILEPATH;
+    final String WEBSITE_HTML_HEADER_FILEPATH;
 
     String bottlesAndCansHTML;
     String tableBeerHTML;
@@ -106,22 +106,22 @@ public class BeerChanger {
         new File(HOME_DIR + System.getProperty("file.separator") + "HTML").mkdir();
 
         //set file paths
-        DRAFT_BEER_MASTER_LIST_XML = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";
-        CURRENT_DRAFT_BEER_LIST_XML = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
-        BOTTLED_BEER_MASTER_LIST_XML = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
-        CURRENT_BOTTLED_BEER_LIST_XML = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
+        DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";
+        CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
+        BOTTLED_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
+        CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
 
-        PRINT_LIST_HTML_FOOTER = HOME_DIR + "\\HTML\\printList_htmlFooter.txt";
-        PRINT_LIST_HTML_HEADER = HOME_DIR + "\\HTML\\printList_htmlHeader.txt";
+        PRINT_LIST_HTML_FOOTER_FILEPATH = HOME_DIR + HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
+        PRINT_LIST_HTML_HEADER_FILEPATH = HOME_DIR + HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
 
-        WEBSITE_HTML_FOOTER = HOME_DIR + "\\HTML\\website_htmlFooter.txt";
-        WEBSITE_HTML_HEADER = HOME_DIR + "\\HTML\\website_htmlHeader.txt";
+        WEBSITE_HTML_FOOTER_FILEPATH = HOME_DIR + HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlFooter.txt";
+        WEBSITE_HTML_HEADER_FILEPATH = HOME_DIR + HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlHeader.txt";
 
 
-        draftBeerMasterSortedList = new BeerXMLParser().parseXML(DRAFT_BEER_MASTER_LIST_XML);
-        currentDraftBeerSortedList = new BeerXMLParser().parseXML(CURRENT_DRAFT_BEER_LIST_XML);
-        bottledBeerMasterSortedList = new BeerXMLParser().parseXML(BOTTLED_BEER_MASTER_LIST_XML);
-        currentBottledBeerSortedList = new BeerXMLParser().parseXML(CURRENT_BOTTLED_BEER_LIST_XML);
+        draftBeerMasterSortedList = new BeerXMLParser().parseXML(DRAFT_BEER_MASTER_LIST_XML_FILEPATH);
+        currentDraftBeerSortedList = new BeerXMLParser().parseXML(CURRENT_DRAFT_BEER_LIST_XML_FILEPATH);
+        bottledBeerMasterSortedList = new BeerXMLParser().parseXML(BOTTLED_BEER_MASTER_LIST_XML_FILEPATH);
+        currentBottledBeerSortedList = new BeerXMLParser().parseXML(CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH);
 
         try {
             password = FileUtils.readFileToString(new File(HOME_DIR + "\\No_Commit\\password.txt"));
@@ -129,7 +129,7 @@ public class BeerChanger {
             e.printStackTrace();
         }
 
-        beerList_printFile = new File(HOME_DIR + "\\html\\printList.html");
+        beerList_printFile = new File(HOME_DIR + "\\html\\Beer_List.html");
         beerList_htmlFile = new File(HOME_DIR + "\\html\\beer.html");
 
         displayDraftBeerChanger();
@@ -201,7 +201,7 @@ public class BeerChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
                 selectedBeer = bottledBeerMasterSortedList.get(bottledBeerMasterListJTable.getSelectedRow());
-                addBeerToAList(selectedBeer, CURRENT_BOTTLED_BEER_LIST_XML, currentBottledBeerSortedList);
+                addBeerToAList(selectedBeer, CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH, currentBottledBeerSortedList);
 
             }
         });
@@ -210,7 +210,7 @@ public class BeerChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
                 selectedBeer = currentBottledBeerSortedList.get(currentBottledBeerListJTable.getSelectedRow());
-                removeBeerFromAList(selectedBeer, CURRENT_BOTTLED_BEER_LIST_XML, currentBottledBeerSortedList);
+                removeBeerFromAList(selectedBeer, CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH, currentBottledBeerSortedList);
 
             }
         });
@@ -225,7 +225,7 @@ public class BeerChanger {
         editBottledBeer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                editBottledBeer(bottledBeerMasterSortedList.get(bottledBeerMasterListJTable.getSelectedRow()), BOTTLED_BEER_MASTER_LIST_XML, bottledBeerMasterSortedList);
+                editBottledBeer(bottledBeerMasterSortedList.get(bottledBeerMasterListJTable.getSelectedRow()), BOTTLED_BEER_MASTER_LIST_XML_FILEPATH, bottledBeerMasterSortedList);
 
             }
         });
@@ -321,7 +321,7 @@ public class BeerChanger {
             }
         });
 
-        //if somehting is slecte din the master list, deselect it
+        //if something is selected in the master list, deselect it
         currentDraftBeerListJTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
@@ -335,7 +335,7 @@ public class BeerChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
                 selectedBeer = beerMasterListTableModel.getElementAt(beerMasterListJTable.getSelectedRow());
-                addBeerToAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML, currentDraftBeerSortedList);
+                addBeerToAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML_FILEPATH, currentDraftBeerSortedList);
             }
         });
 
@@ -343,7 +343,7 @@ public class BeerChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
                 selectedBeer = currentBeerListTableModel.getElementAt(currentDraftBeerListJTable.getSelectedRow());
-                removeBeerFromAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML, currentDraftBeerSortedList);
+                removeBeerFromAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML_FILEPATH, currentDraftBeerSortedList);
 
             }
         });
@@ -359,7 +359,7 @@ public class BeerChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
                 selectedBeer = beerMasterListTableModel.getElementAt(beerMasterListJTable.getSelectedRow());
-                editDraftBeer(selectedBeer, DRAFT_BEER_MASTER_LIST_XML, draftBeerMasterSortedList);
+                editDraftBeer(selectedBeer, DRAFT_BEER_MASTER_LIST_XML_FILEPATH, draftBeerMasterSortedList);
             }
         });
 
@@ -563,11 +563,11 @@ public class BeerChanger {
         bottlesAndCansHTML = bottlesAndCansStringBuilder.toString();
         tableBeerHTML = tableBeerStringBuilder.toString();
 
-        File printList_headerFile = new File(PRINT_LIST_HTML_HEADER);
-        File printList_footerFile = new File(PRINT_LIST_HTML_FOOTER);
+        File printList_headerFile = new File(PRINT_LIST_HTML_HEADER_FILEPATH);
+        File printList_footerFile = new File(PRINT_LIST_HTML_FOOTER_FILEPATH);
 
-        File website_headerFile = new File(WEBSITE_HTML_HEADER);
-        File website_footerFile = new File(WEBSITE_HTML_FOOTER);
+        File website_headerFile = new File(WEBSITE_HTML_HEADER_FILEPATH);
+        File website_footerFile = new File(WEBSITE_HTML_FOOTER_FILEPATH);
 
 
         /// sort beer categories by size
@@ -645,6 +645,7 @@ public class BeerChanger {
 
         // sort into right and left columns depending on the size of each column
         // to avoid being to big to print
+
         for (int i=0;i<draftBeerArray.size();i++){
 
 
@@ -660,6 +661,9 @@ public class BeerChanger {
 
         }
 
+            // header text for draft list "Draft Beer: All draft beers are served in 16oz glasses unless noted otherwise
+        bufferedWriter.write("<div id=\"draftHeader\">Draft Beer</div>\n" +
+                "    <div id=\"draftDescription\">All draft beers are served in 16oz glasses unless noted otherwise</div>");
         bufferedWriter.write("<div class=\"leftSide\">");
         for (String s : leftColumnArray){
             bufferedWriter.write(s);
@@ -694,7 +698,7 @@ public class BeerChanger {
         final JTextField price = new JTextField(15);
         final JComboBox<String> categoryComboBox = new JComboBox<>(categories);
         final JComboBox<String> pourSizeComboBox = new JComboBox<>(pourSize);
-        final JCheckBox addToCurrentListCheckBox = new JCheckBox("Add beer to current list?");
+        final JCheckBox addToCurrentListCheckBox = new JCheckBox("Add beer to current list");
 
         JButton createNewBeer_Button = new JButton("Create Beer");
 
@@ -757,9 +761,9 @@ public class BeerChanger {
                 newBeer.setPrice(price.getText());
                 newBeer.setCategory(categoryComboBox.getSelectedItem().toString());
                 newBeer.setSize(pourSizeComboBox.getSelectedItem().toString());
-                addBeerToAList(newBeer, DRAFT_BEER_MASTER_LIST_XML, draftBeerMasterSortedList);
+                addBeerToAList(newBeer, DRAFT_BEER_MASTER_LIST_XML_FILEPATH, draftBeerMasterSortedList);
                 if (addToCurrentListCheckBox.isSelected()) {
-                    addBeerToAList(newBeer, CURRENT_DRAFT_BEER_LIST_XML, currentDraftBeerSortedList);
+                    addBeerToAList(newBeer, CURRENT_DRAFT_BEER_LIST_XML_FILEPATH, currentDraftBeerSortedList);
                 }
                 frame.setVisible(false);
 
@@ -838,9 +842,9 @@ public class BeerChanger {
                 newBeer.setPrice(price.getText());
                 newBeer.setSize(size.getText());
                 newBeer.setBottleType(bottleTypeComboBox.getSelectedItem().toString());
-                addBeerToAList(newBeer, BOTTLED_BEER_MASTER_LIST_XML, bottledBeerMasterSortedList);
+                addBeerToAList(newBeer, BOTTLED_BEER_MASTER_LIST_XML_FILEPATH, bottledBeerMasterSortedList);
                 if (addToCurrentListCheckBox.isSelected()) {
-                    addBeerToAList(newBeer, CURRENT_BOTTLED_BEER_LIST_XML, currentBottledBeerSortedList);
+                    addBeerToAList(newBeer, CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH, currentBottledBeerSortedList);
                 }
                 frame.setVisible(false);
 
