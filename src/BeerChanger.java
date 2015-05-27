@@ -247,15 +247,15 @@ public class BeerChanger {
         //Left table for BeerMasterList
         JTextField beerMasterListFilterEdit = new JTextField(10);
         FilterList<Beer> beerMasterListTextFilteredIssues = new FilterList<>(draftBeerMasterSortedList, new TextComponentMatcherEditor<>(beerMasterListFilterEdit, new BeerTextFilter()));
-        AdvancedTableModel<Beer> beerMasterListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(beerMasterListTextFilteredIssues, new SimpleBeerTableFormat());
+        final AdvancedTableModel<Beer> beerMasterListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(beerMasterListTextFilteredIssues, new SimpleBeerTableFormat());
         final JTable beerMasterListJTable = new JTable(beerMasterListTableModel);
-        TableComparatorChooser<Beer> tableSorter = TableComparatorChooser.install(beerMasterListJTable, draftBeerMasterSortedList, TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
+        TableComparatorChooser.install(beerMasterListJTable, draftBeerMasterSortedList, TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
 
 
         //Right table for CurrentBeerList
         JTextField currentBeerListFilterEdit = new JTextField(10);
-        FilterList<Beer> currentBeerListTextFilteredIssues = new FilterList<>(currentDraftBeerSortedList, new TextComponentMatcherEditor<>(currentBeerListFilterEdit, new BeerTextFilter()));
-        AdvancedTableModel<Beer> currentBeerListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(currentBeerListTextFilteredIssues, new SimpleBeerTableFormat());
+        final FilterList<Beer> currentBeerListTextFilteredIssues = new FilterList<>(currentDraftBeerSortedList, new TextComponentMatcherEditor<>(currentBeerListFilterEdit, new BeerTextFilter()));
+        final AdvancedTableModel<Beer> currentBeerListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(currentBeerListTextFilteredIssues, new SimpleBeerTableFormat());
         final JTable currentDraftBeerListJTable = new JTable(currentBeerListTableModel);
 
 
@@ -309,16 +309,15 @@ public class BeerChanger {
         addDraftBeerToCurrentList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectedBeer = draftBeerMasterSortedList.get(beerMasterListJTable.getSelectedRow());
+                selectedBeer = beerMasterListTableModel.getElementAt(beerMasterListJTable.getSelectedRow());
                 addBeerToAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML, currentDraftBeerSortedList);
-                System.out.println(selectedBeer);
             }
         });
 
         removeDraftBeerFromCurrentList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectedBeer = currentDraftBeerSortedList.get(currentDraftBeerListJTable.getSelectedRow());
+                selectedBeer = currentBeerListTableModel.getElementAt(currentDraftBeerListJTable.getSelectedRow());
                 removeBeerFromAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML, currentDraftBeerSortedList);
 
             }
