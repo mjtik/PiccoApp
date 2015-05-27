@@ -246,9 +246,10 @@ public class BeerChanger {
 
         //Left table for BeerMasterList
         JTextField beerMasterListFilterEdit = new JTextField(10);
-        FilterList<Beer> beerMasterListTextFilteredIssues = new FilterList<>(draftBeerMasterSortedList, new TextComponentMatcherEditor<>(beerMasterListFilterEdit, new BeerTextFilter()));
+        final FilterList<Beer> beerMasterListTextFilteredIssues = new FilterList<>(draftBeerMasterSortedList, new TextComponentMatcherEditor<>(beerMasterListFilterEdit, new BeerTextFilter()));
         final AdvancedTableModel<Beer> beerMasterListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(beerMasterListTextFilteredIssues, new SimpleBeerTableFormat());
         final JTable beerMasterListJTable = new JTable(beerMasterListTableModel);
+        beerMasterListJTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         TableComparatorChooser.install(beerMasterListJTable, draftBeerMasterSortedList, TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
 
 
@@ -257,6 +258,8 @@ public class BeerChanger {
         final FilterList<Beer> currentBeerListTextFilteredIssues = new FilterList<>(currentDraftBeerSortedList, new TextComponentMatcherEditor<>(currentBeerListFilterEdit, new BeerTextFilter()));
         final AdvancedTableModel<Beer> currentBeerListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(currentBeerListTextFilteredIssues, new SimpleBeerTableFormat());
         final JTable currentDraftBeerListJTable = new JTable(currentBeerListTableModel);
+        currentDraftBeerListJTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        TableComparatorChooser.install(currentDraftBeerListJTable, currentDraftBeerSortedList, TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
 
 
         JPanel panel = new JPanel();
@@ -345,11 +348,6 @@ public class BeerChanger {
                 displayBottledBeerChanger();
             }
         });
-
-
-
-
-
 
 
     }
