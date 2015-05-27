@@ -61,8 +61,14 @@ public class BeerChanger {
     final String HOME_DIR;
 
 
-    final String BEER_LIST_HTML_FOOTER;
-    final String BEER_LIST_HTML_HEADER;
+    final String PRINT_LIST_HTML_FOOTER;
+    final String PRINT_LIST_HTML_HEADER;
+
+    final String WEBSITE_HTML_FOOTER;
+    final String WEBSITE_HTML_HEADER;
+
+    String bottlesAndCansHTML;
+    String tableBeerHTML;
 
     File beerList_printFile;
     File beerList_htmlFile;
@@ -103,8 +109,12 @@ public class BeerChanger {
         BOTTLED_BEER_MASTER_LIST_XML = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
         CURRENT_BOTTLED_BEER_LIST_XML = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
 
-        BEER_LIST_HTML_FOOTER = HOME_DIR + "\\HTML\\HTMLfooter.txt";
-        BEER_LIST_HTML_HEADER = HOME_DIR + "\\HTML\\HTMLheader.txt";
+        PRINT_LIST_HTML_FOOTER = HOME_DIR + "\\HTML\\printList_htmlFooter.txt";
+        PRINT_LIST_HTML_HEADER = HOME_DIR + "\\HTML\\printList_htmlHeader.txt";
+
+        WEBSITE_HTML_FOOTER = HOME_DIR + "\\HTML\\website_htmlFooter.txt";
+        WEBSITE_HTML_HEADER = HOME_DIR + "\\HTML\\website_htmlHeader.txt";
+
 
         draftBeerMasterSortedList = new BeerXMLParser().parseXML(DRAFT_BEER_MASTER_LIST_XML);
         currentDraftBeerSortedList = new BeerXMLParser().parseXML(CURRENT_DRAFT_BEER_LIST_XML);
@@ -301,6 +311,7 @@ public class BeerChanger {
             public void actionPerformed(ActionEvent e) {
                 selectedBeer = draftBeerMasterSortedList.get(beerMasterListJTable.getSelectedRow());
                 addBeerToAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML, currentDraftBeerSortedList);
+                System.out.println(selectedBeer);
             }
         });
 
@@ -393,11 +404,11 @@ public class BeerChanger {
         String darkHTML;
         String ciderHTML;
 
-        String bottlesAndCansHTML;
-        String tableBeerHTML;
-
         String printList_headerHTML;
         String printList_footerHTML;
+
+        String website_headerHTML;
+        String website_footerHTML;
 
         StringBuilder indiaPaleAlesBuilder = new StringBuilder();
         StringBuilder paleAlesBuilder = new StringBuilder();
@@ -533,8 +544,11 @@ public class BeerChanger {
         bottlesAndCansHTML = bottlesAndCansStringBuilder.toString();
         tableBeerHTML = tableBeerStringBuilder.toString();
 
-        File headerFile = new File(BEER_LIST_HTML_HEADER);
-        File footerFile = new File(BEER_LIST_HTML_FOOTER);
+        File printList_headerFile = new File(PRINT_LIST_HTML_HEADER);
+        File printList_footerFile = new File(PRINT_LIST_HTML_FOOTER);
+
+        File website_headerFile = new File(WEBSITE_HTML_HEADER);
+        File website_footerFile = new File(WEBSITE_HTML_FOOTER);
 
 
         /// sort beer categories by size
@@ -555,52 +569,17 @@ public class BeerChanger {
         Collections.sort(draftBeerArray, new draftColumnSorter());
 
         try {
-            printList_headerHTML = FileUtils.readFileToString(headerFile);
-            printList_footerHTML = FileUtils.readFileToString(footerFile);
+            printList_headerHTML = FileUtils.readFileToString(printList_headerFile);
+            printList_footerHTML = FileUtils.readFileToString(printList_footerFile);
+
+            website_headerHTML= FileUtils.readFileToString(website_headerFile);
+            website_footerHTML = FileUtils.readFileToString(website_footerFile);
+
             BufferedWriter printList_bufferedWriter = new BufferedWriter(new FileWriter(beerList_printFile));
             BufferedWriter website_bufferedWriter = new BufferedWriter(new FileWriter(beerList_htmlFile));
 
-            printList_bufferedWriter.write(printList_headerHTML);
-
-            printList_bufferedWriter.write(BOTTLED_LIST_HEADER);
-            printList_bufferedWriter.write(bottlesAndCansHTML);
-            printList_bufferedWriter.write(tableBeerHTML);
-            printList_bufferedWriter.write(BOTTLED_LIST_FOOTER);
-
-            // sort into right and left columns depending on the size of each column
-            // to avoid being to big to print
-            for (int i=0;i<draftBeerArray.size();i++){
-
-
-                if (leftColumnSize > rightColumnSize){
-                    rightColumnArray.add((draftBeerArray.get(i)));
-                    rightColumnSize += draftBeerArray.get(i).length();
-
-                } else {
-                    leftColumnArray.add(draftBeerArray.get(i));
-                    leftColumnSize += draftBeerArray.get(i).length();
-
-                }
-
-            }
-
-            printList_bufferedWriter.write("<div class=\"leftSide\">");
-
-            for (String s : leftColumnArray){
-                printList_bufferedWriter.write(s);
-            }
-            printList_bufferedWriter.write("</div>");
-            printList_bufferedWriter.write("<div class=\"rightSide\">");
-
-            for (String s : rightColumnArray){
-                printList_bufferedWriter.write(s);
-            }
-
-            printList_bufferedWriter.write("</div>");
-
-            printList_bufferedWriter.write(printList_footerHTML);
-            printList_bufferedWriter.close();
-
+            writeList (printList_bufferedWriter, printList_headerHTML, printList_footerHTML, draftBeerArray, rightColumnArray, leftColumnArray, leftColumnSize, rightColumnSize);
+            writeList (website_bufferedWriter, website_headerHTML, website_footerHTML, draftBeerArray, rightColumnArray, leftColumnArray, leftColumnSize, rightColumnSize);
 
             FTPClient ftpClient = new FTPClient();
 
@@ -611,11 +590,18 @@ public class BeerChanger {
 
             ftpClient.changeWorkingDirectory("/httpdocs/test");
 
-            String remoteFile = "printList.html";
-            InputStream inputStream = new FileInputStream(beerList_printFile);
-            boolean done = ftpClient.storeFile(remoteFile, inputStream);
-            if (done){
+            String printList_remoteFile = "printList.html";
+            InputStream printList_inputStream = new FileInputStream(beerList_printFile);
+            boolean printList_done = ftpClient.storeFile(printList_remoteFile, printList_inputStream);
+            if (printList_done){
                 System.out.println("beerList_printFile uploaded");
+            }
+
+            String website_remoteFile = "beer.html";
+            InputStream website_inputStream = new FileInputStream(beerList_htmlFile);
+            boolean website_done = ftpClient.storeFile(website_remoteFile, website_inputStream);
+            if (website_done){
+                System.out.println("beerList_website uploaded");
             }
 
 
@@ -624,6 +610,56 @@ public class BeerChanger {
             e.printStackTrace();
         }
 
+
+    }
+
+    void writeList (BufferedWriter bufferedWriter, String header, String footer, List<String> draftBeerArray, List<String> rightColumnArray, List<String> leftColumnArray, int leftColumnSize, int rightColumnSize){
+        try {
+        bufferedWriter.write(header);
+
+        bufferedWriter.write(BOTTLED_LIST_HEADER);
+        bufferedWriter.write(bottlesAndCansHTML);
+        bufferedWriter.write(tableBeerHTML);
+
+            bufferedWriter.write(BOTTLED_LIST_FOOTER);
+
+
+        // sort into right and left columns depending on the size of each column
+        // to avoid being to big to print
+        for (int i=0;i<draftBeerArray.size();i++){
+
+
+            if (leftColumnSize > rightColumnSize){
+                rightColumnArray.add((draftBeerArray.get(i)));
+                rightColumnSize += draftBeerArray.get(i).length();
+
+            } else {
+                leftColumnArray.add(draftBeerArray.get(i));
+                leftColumnSize += draftBeerArray.get(i).length();
+
+            }
+
+        }
+
+        bufferedWriter.write("<div class=\"leftSide\">");
+        for (String s : leftColumnArray){
+            bufferedWriter.write(s);
+        }
+        bufferedWriter.write("</div>");
+
+        bufferedWriter.write("<div class=\"rightSide\">");
+        for (String s : rightColumnArray){
+            bufferedWriter.write(s);
+        }
+
+        bufferedWriter.write("</div>");
+
+        bufferedWriter.write(footer);
+        bufferedWriter.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -636,8 +672,7 @@ public class BeerChanger {
         final JTextField abv = new JTextField(15);
         final JTextField brewery = new JTextField(15);
         final JTextField location = new JTextField(15);
-        final JFormattedTextField price = new JFormattedTextField(java.text.NumberFormat.getCurrencyInstance());
-        price.setValue(new Double(0.00) );
+        final JTextField price = new JTextField(15);
         final JComboBox<String> categoryComboBox = new JComboBox<>(categories);
         final JComboBox<String> pourSizeComboBox = new JComboBox<>(pourSize);
         final JCheckBox addToCurrentListCheckBox = new JCheckBox("Add beer to current list?");
