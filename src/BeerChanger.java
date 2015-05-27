@@ -19,6 +19,8 @@ import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -309,6 +311,26 @@ public class BeerChanger {
             }
         });
 
+        //if something is selected in current list, deselect it
+        beerMasterListJTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (currentDraftBeerListJTable.getSelectedRow()>-1){
+                    currentDraftBeerListJTable.clearSelection();
+                }
+            }
+        });
+
+        //if somehting is slecte din the master list, deselect it
+        currentDraftBeerListJTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (beerMasterListJTable.getSelectedRow()>-1){
+                    beerMasterListJTable.clearSelection();
+                }
+            }
+        });
+
         addDraftBeerToCurrentList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -336,8 +358,8 @@ public class BeerChanger {
         editDraftBeer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                editDraftBeer(draftBeerMasterSortedList.get(beerMasterListJTable.getSelectedRow()), DRAFT_BEER_MASTER_LIST_XML, draftBeerMasterSortedList);
+                selectedBeer = beerMasterListTableModel.getElementAt(beerMasterListJTable.getSelectedRow());
+                editDraftBeer(selectedBeer, DRAFT_BEER_MASTER_LIST_XML, draftBeerMasterSortedList);
             }
         });
 
