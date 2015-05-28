@@ -19,7 +19,6 @@ import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
@@ -278,10 +277,8 @@ public class BeerChanger {
         final JButton editDraftBeer = new JButton("Edit Draft Beer");
         final JButton editBottledBeerList = new JButton("Edit Bottled Beer List");
 
-        JMenuBar menuBar = new JMenuBar();
-        menuBar.setBorder(new BevelBorder(BevelBorder.RAISED));
-        JMenu fileMenu = new JMenu("File");
-        menuBar.add(fileMenu);
+
+
 
 
         panel.add(new JLabel("All Beer:"),      new GridBagConstraints(0, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
@@ -305,7 +302,6 @@ public class BeerChanger {
 
 
         final JFrame frame = new JFrame("Beer Menu Changer");
-        frame.setJMenuBar(menuBar);
         frame.setSize(500, 400);
         frame.getContentPane().add(panel);
         frame.setLocationRelativeTo(null);
