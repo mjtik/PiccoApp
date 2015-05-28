@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class BeerChanger {
+public class MenuChanger {
 
     //FTP info
     final String SERVER = "ftp.piccorestaurant.com";
@@ -94,7 +94,7 @@ public class BeerChanger {
     Beer selectedBeer = new Beer();
 
 
-    public BeerChanger() {
+    public MenuChanger() {
 
         //get passwords
 

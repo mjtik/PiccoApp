@@ -12,7 +12,7 @@ public class PiccoApp {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        new BeerChanger();
+        new MenuChanger();
 
     }
 
