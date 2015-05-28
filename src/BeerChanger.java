@@ -19,6 +19,7 @@ import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
@@ -111,11 +112,11 @@ public class BeerChanger {
         BOTTLED_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
         CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
 
-        PRINT_LIST_HTML_FOOTER_FILEPATH = HOME_DIR + HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
-        PRINT_LIST_HTML_HEADER_FILEPATH = HOME_DIR + HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
+        PRINT_LIST_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
+        PRINT_LIST_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
 
-        WEBSITE_HTML_FOOTER_FILEPATH = HOME_DIR + HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlFooter.txt";
-        WEBSITE_HTML_HEADER_FILEPATH = HOME_DIR + HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlHeader.txt";
+        WEBSITE_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlFooter.txt";
+        WEBSITE_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlHeader.txt";
 
 
         draftBeerMasterSortedList = new BeerXMLParser().parseXML(DRAFT_BEER_MASTER_LIST_XML_FILEPATH);
@@ -277,6 +278,12 @@ public class BeerChanger {
         final JButton editDraftBeer = new JButton("Edit Draft Beer");
         final JButton editBottledBeerList = new JButton("Edit Bottled Beer List");
 
+        JMenuBar menuBar = new JMenuBar();
+        menuBar.setBorder(new BevelBorder(BevelBorder.RAISED));
+        JMenu fileMenu = new JMenu("File");
+        menuBar.add(fileMenu);
+
+
         panel.add(new JLabel("All Beer:"),      new GridBagConstraints(0, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
         panel.add(new JLabel("Current List: "), new GridBagConstraints(2, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
 
@@ -298,6 +305,7 @@ public class BeerChanger {
 
 
         final JFrame frame = new JFrame("Beer Menu Changer");
+        frame.setJMenuBar(menuBar);
         frame.setSize(500, 400);
         frame.getContentPane().add(panel);
         frame.setLocationRelativeTo(null);
