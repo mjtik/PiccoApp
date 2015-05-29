@@ -60,20 +60,18 @@ public class MenuChanger {
     static final String BOTTLES_AND_CANS = "Bottles & Cans";
 
     //filepaths for xml files
-    static String DRAFT_BEER_MASTER_LIST_XML_FILEPATH;
-    static String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH;
-    static String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH;
-    static String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH;
+    static final String HOME_DIR = System.getProperty("user.home")+ System.getProperty("file.separator") + "Picco App";
+    static final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";;
+    static final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
+    static final String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
+    static final String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
+    static final String PRINT_LIST_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
+    static final String PRINT_LIST_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
 
-    //home dir, set in filesetup, run at launch
-    static String HOME_DIR;
+    static final String WEBSITE_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlFooter.txt";
+    static final String WEBSITE_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlHeader.txt";
 
 
-    static String PRINT_LIST_HTML_FOOTER_FILEPATH;
-    static String PRINT_LIST_HTML_HEADER_FILEPATH;
-
-    static String WEBSITE_HTML_FOOTER_FILEPATH;
-    static String WEBSITE_HTML_HEADER_FILEPATH;
 
     static String bottlesAndCansHTML;
     static String tableBeerHTML;
@@ -107,23 +105,9 @@ public class MenuChanger {
     public static void fileSetup() {
 
         //check if directory is setup, if not, make one. (mkdir() does both)
-        HOME_DIR = System.getProperty("user.home")+ System.getProperty("file.separator") + "Picco App";
         new File(HOME_DIR).mkdir();
         new File(HOME_DIR + System.getProperty("file.separator") + "XML").mkdir();
         new File(HOME_DIR + System.getProperty("file.separator") + "HTML").mkdir();
-
-        //set file paths
-        DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";
-        CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
-        BOTTLED_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
-        CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
-
-        PRINT_LIST_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
-        PRINT_LIST_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
-
-        WEBSITE_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlFooter.txt";
-        WEBSITE_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlHeader.txt";
-
 
         draftBeerMasterSortedList = new BeerXMLParser().parseXML(DRAFT_BEER_MASTER_LIST_XML_FILEPATH);
         currentDraftBeerSortedList = new BeerXMLParser().parseXML(CURRENT_DRAFT_BEER_LIST_XML_FILEPATH);
@@ -207,6 +191,7 @@ public class MenuChanger {
 
 
     }
+
 
     public static JPanel leftMenu_JPanel(){
         JPanel panel = new JPanel();
@@ -306,6 +291,8 @@ public class MenuChanger {
 
         rightJPanel panel = new rightJPanel();
 
+        draftBeerList draftBeerList_Master = new draftBeerList();
+
         Border paddingBorder = BorderFactory.createEmptyBorder(5,30,30,30);
         panel.setBorder(paddingBorder);
 
@@ -389,6 +376,7 @@ public class MenuChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
                 selectedBeer = beerMasterListTableModel.getElementAt(beerMasterListJTable.getSelectedRow());
+
                 addBeerToAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML_FILEPATH, currentDraftBeerSortedList);
             }
         });
@@ -1061,8 +1049,6 @@ public class MenuChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                removeBeerFromAList(beer, fileName, sortedList);
-
                 editedBeer.setName(name.getText());
                 editedBeer.setStyle(style.getText());
                 editedBeer.setAbv(abv.getText());
@@ -1071,7 +1057,6 @@ public class MenuChanger {
                 editedBeer.setLocation(location.getText());
                 editedBeer.setPrice(price.getText());
                 editedBeer.setCategory(category.getSelectedItem().toString());
-                addBeerToAList(editedBeer, fileName, sortedList);
                 frame.setVisible(false);
 
             }
@@ -1080,7 +1065,6 @@ public class MenuChanger {
         delete_Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                removeBeerFromAList(beer, fileName, sortedList);
                 frame.setVisible(false);
             }
         });
@@ -1239,6 +1223,51 @@ public class MenuChanger {
 
     }
 
+    public static class draftBeerList {
+
+        SortedList<Beer> sortedList;
+        String filePath;
+
+        public draftBeerList(String s) {
+            filePath = s;
+            sortedList = new BeerXMLParser().parseXML(filePath);
+
+        }
+
+        private void addBeer(Beer newBeer){
+
+            sortedList.add(newBeer);
+            XMLOutputter out = new XMLOutputter();
+
+            try {
+                Document doc = new SAXBuilder().build(filePath);
+
+                Element beer = new Element("beer");
+                beer.addContent(new Element("name").setText(newBeer.getName()));
+                beer.addContent(new Element("style").setText(newBeer.getStyle()));
+                beer.addContent(new Element("abv").setText(newBeer.getAbvString()));
+                beer.addContent(new Element("size").setText(newBeer.getSize()));
+                beer.addContent(new Element("bottleType").setText(newBeer.getBottleType()));
+                beer.addContent(new Element("brewery").setText(newBeer.getBrewery()));
+                beer.addContent(new Element("location").setText(newBeer.getLocation()));
+                beer.addContent(new Element("price").setText(newBeer.getPrice()));
+                beer.addContent(new Element("category").setText(newBeer.getCategory()));
+
+                doc.getRootElement().addContent(beer);
+
+                FileWriter writer = new FileWriter(filePath);
+                out.setFormat(Format.getPrettyFormat());
+                out.output(doc, writer);
+                writer.close();
+
+            } catch (JDOMException | IOException e) {
+                e.printStackTrace();
+            }
+
+
+        }
+
+    }
 
     public static class rightDropboxJPanel extends JPanel{
 
