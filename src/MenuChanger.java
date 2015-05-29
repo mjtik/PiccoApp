@@ -154,12 +154,36 @@ public class MenuChanger {
         }
         System.out.println("yes");
         JFrame frame = new JFrame("Beer Menu Changer");
-        frame.getContentPane().setLayout(new BorderLayout());
+        frame.setLayout(new GridBagLayout());
+        frame.getContentPane().setBackground(Color.LIGHT_GRAY);
 
         frame.setSize(600, 500);
-        frame.getContentPane().add(leftMenu_JPanel(), BorderLayout.WEST);
-        frame.getContentPane().add(beerDropbox_JPanel(), BorderLayout.EAST);
-        frame.getContentPane().add(draftBeer_JPanel(), BorderLayout.EAST);
+
+        GridBagConstraints gbc = new GridBagConstraints();
+
+        gbc.anchor = GridBagConstraints.FIRST_LINE_START;
+        gbc.weightx=0;
+        gbc.weighty=0;
+
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridheight = 3;
+        frame.add(leftMenu_JPanel(),gbc);
+
+        gbc.fill=GridBagConstraints.BOTH;
+        gbc.gridx=1;
+        gbc.gridy=0;
+        gbc.gridheight=1;
+        gbc.weightx=.4;
+        gbc.weighty=.2;
+        frame.add(beerDropbox_JPanel(),gbc);
+
+        gbc.gridx=1;
+        gbc.gridy=1;
+        gbc.gridheight=2;
+        gbc.weightx=3;
+        gbc.weighty=3;
+        frame.add(draftBeer_JPanel(),gbc);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -170,22 +194,22 @@ public class MenuChanger {
 
     public static JPanel leftMenu_JPanel(){
         JPanel panel = new JPanel();
-
+        panel.setLayout(new GridLayout(0,1));
         //buttons for leftMenu_Panel
-        JLabel filler = new JLabel();
-        filler.setPreferredSize(new Dimension(100,30));
-        final JLabel beer_JLabel = leftMenuJLabel("Beer");
-        JLabel wine_JLabel = leftMenuJLabel("Wine");
-        JLabel food_JLabel = leftMenuJLabel("Food");
-        JLabel icecream_JLabel = leftMenuJLabel("Ice Cream");
-
-        panel.setPreferredSize(new Dimension(100, 500));
+        JLabel filler_JLabel = leftMenuJLabel(" ");
+        final JLabel beer_JLabel = leftMenuJLabel("Beer  ");
+        JLabel wine_JLabel = leftMenuJLabel("Wine  ");
+        JLabel food_JLabel = leftMenuJLabel("Food  ");
+        JLabel icecream_JLabel = leftMenuJLabel("Ice Cream  ");
         panel.setBackground(Color.LIGHT_GRAY);
-        panel.add(filler);
+        panel.add(filler_JLabel);
         panel.add(beer_JLabel);
         panel.add(wine_JLabel);
         panel.add(food_JLabel);
         panel.add(icecream_JLabel);
+
+
+
 
         beer_JLabel.addMouseListener(new MouseAdapter() {
             @Override
@@ -206,7 +230,7 @@ public class MenuChanger {
         button.setBackground(Color.LIGHT_GRAY);
         button.setPreferredSize(new Dimension(100, 30));
         button.setForeground(Color.BLACK);
-        button.setHorizontalAlignment(SwingConstants.CENTER);
+        button.setHorizontalAlignment(SwingConstants.RIGHT);
         button.setOpaque(true);
 
         return button;
@@ -215,7 +239,6 @@ public class MenuChanger {
     public static class rightDropboxJPanel extends JPanel{
 
         public rightDropboxJPanel() {
-            setPreferredSize(new Dimension(500,100));
             setBackground(Color.BLUE);
         }
     }
@@ -223,8 +246,7 @@ public class MenuChanger {
     public static class rightJPanel extends JPanel {
 
         public rightJPanel() {
-            setPreferredSize(new Dimension(400,400));
-            setBackground(Color.BLUE);
+            setBackground(Color.RED);
         }
     }
 
