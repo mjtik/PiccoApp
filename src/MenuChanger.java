@@ -34,73 +34,73 @@ import java.util.List;
 public class MenuChanger {
 
     //FTP info
-    final String SERVER = "ftp.piccorestaurant.com";
-    final int PORT = 21;
-    final String USER_NAME = "piccores";
-    String password = null;
+    static final String SERVER = "ftp.piccorestaurant.com";
+    static final int PORT = 21;
+    static final String USER_NAME = "piccores";
+    static String password = null;
 
     //these are the categories beers are sorted into, the beer style may be different and more descriptive (American or English Pale Ale)
-    private final String INDIA_PALE_ALES = "India Pale Ales";
-    private final String PALE_ALES = "Pale Ales";
-    private final String OTHER_ALES = "Other Ales";
-    private final String LAGERS = "Lagers";
-    private final String BELGIAN_STYLE = "Belgian Style";
-    private final String DARK = "Dark";
-    private final String CIDER = "Cider";
+    static final String INDIA_PALE_ALES = "India Pale Ales";
+    static final String PALE_ALES = "Pale Ales";
+    static final String OTHER_ALES = "Other Ales";
+    static final String LAGERS = "Lagers";
+    static final String BELGIAN_STYLE = "Belgian Style";
+    static final String DARK = "Dark";
+    static final String CIDER = "Cider";
 
     // draft beer sizes, used to sort when printing
-    private final String SIXTEEN_OZ = "16oz";
-    private final String TWELVE_OZ = "12oz";
-    private final String TEN_OZ = "10oz";
-    private final String EIGHT_OZ = "8oz";
+    static final String SIXTEEN_OZ = "16oz";
+    static final String TWELVE_OZ = "12oz";
+    static final String TEN_OZ = "10oz";
+    static final String EIGHT_OZ = "8oz";
 
     //type of bottled beer, used for sorting
-    private final String TABLE_BEER = "Table Beer";
-    private final String BOTTLES_AND_CANS = "Bottles & Cans";
+    static final String TABLE_BEER = "Table Beer";
+    static final String BOTTLES_AND_CANS = "Bottles & Cans";
 
     //filepaths for xml files
-    private String DRAFT_BEER_MASTER_LIST_XML_FILEPATH;
-    private String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH;
-    private String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH;
-    private String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH;
+    static String DRAFT_BEER_MASTER_LIST_XML_FILEPATH;
+    static String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH;
+    static String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH;
+    static String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH;
 
     //home dir, set in filesetup, run at launch
-    private String HOME_DIR;
+    static String HOME_DIR;
 
 
-    private String PRINT_LIST_HTML_FOOTER_FILEPATH;
-    private String PRINT_LIST_HTML_HEADER_FILEPATH;
+    static String PRINT_LIST_HTML_FOOTER_FILEPATH;
+    static String PRINT_LIST_HTML_HEADER_FILEPATH;
 
-    private String WEBSITE_HTML_FOOTER_FILEPATH;
-    private String WEBSITE_HTML_HEADER_FILEPATH;
+    static String WEBSITE_HTML_FOOTER_FILEPATH;
+    static String WEBSITE_HTML_HEADER_FILEPATH;
 
-    private String bottlesAndCansHTML;
-    private String tableBeerHTML;
+    static String bottlesAndCansHTML;
+    static String tableBeerHTML;
 
-    private File beerList_printFile;
-    private File beerList_htmlFile;
+    static File beerList_printFile;
+    static File beerList_htmlFile;
 
     //File testFile = new File(System.getProperty("user.home") + System.getProperty("file.separator") + "test.txt");
 
 
-    final String BOTTLED_LIST_HEADER = "<div class=\"bottleBox\">";
-    final String BOTTLED_LIST_FOOTER = "</div>";
+    static final String BOTTLED_LIST_HEADER = "<div class=\"bottleBox\">";
+    static final String BOTTLED_LIST_FOOTER = "</div>";
 
-    String[] bottleType = {TABLE_BEER, BOTTLES_AND_CANS};
-    String [] categories = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
-    String[] pourSize = {SIXTEEN_OZ, TWELVE_OZ, TEN_OZ, EIGHT_OZ};
+    static String[] bottleType = {TABLE_BEER, BOTTLES_AND_CANS};
+    static String [] categories = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
+    static String[] pourSize = {SIXTEEN_OZ, TWELVE_OZ, TEN_OZ, EIGHT_OZ};
 
-    SortedList<Beer> draftBeerMasterSortedList;
-    SortedList<Beer> currentDraftBeerSortedList;
+    static SortedList<Beer> draftBeerMasterSortedList;
+    static SortedList<Beer> currentDraftBeerSortedList;
 
-    SortedList<Beer> bottledBeerMasterSortedList;
-    SortedList<Beer> currentBottledBeerSortedList;
+    static SortedList<Beer> bottledBeerMasterSortedList;
+    static SortedList<Beer> currentBottledBeerSortedList;
 
-    Beer selectedBeer = new Beer();
+    static Beer selectedBeer = new Beer();
     static Dimension rightPanelDimension = new Dimension(500,400);
     static Color rightPanelColor = Color.WHITE;
 
-    public void fileSetup() {
+    public static void fileSetup() {
 
         //check if directory is setup, if not, make one. (mkdir() does both)
         HOME_DIR = System.getProperty("user.home")+ System.getProperty("file.separator") + "Picco App";
@@ -135,14 +135,25 @@ public class MenuChanger {
         beerList_printFile = new File(HOME_DIR + "\\html\\Beer_List.html");
         beerList_htmlFile = new File(HOME_DIR + "\\html\\beer.html");
 
-        displayDraftBeerChanger();
 
+    }
+
+    public static void setUIFont (javax.swing.plaf.FontUIResource f){
+        java.util.Enumeration keys = UIManager.getDefaults().keys();
+        while (keys.hasMoreElements()) {
+            Object key = keys.nextElement();
+            Object value = UIManager.get (key);
+            if (value != null && value instanceof javax.swing.plaf.FontUIResource)
+                UIManager.put (key, f);
+        }
     }
 
     public static void createAndShowGUI(){
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            setUIFont (new javax.swing.plaf.FontUIResource(Font.SANS_SERIF, Font.PLAIN, 15));
+
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (InstantiationException e) {
@@ -152,8 +163,8 @@ public class MenuChanger {
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
-        System.out.println("yes");
-        JFrame frame = new JFrame("Beer Menu Changer");
+
+        JFrame frame = new JFrame("Menu Changer");
         frame.setLayout(new GridBagLayout());
         frame.getContentPane().setBackground(Color.LIGHT_GRAY);
 
@@ -194,7 +205,7 @@ public class MenuChanger {
 
     public static JPanel leftMenu_JPanel(){
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(0,1));
+        panel.setLayout(new GridLayout(0,1,0,0));
         //buttons for leftMenu_Panel
         JLabel filler_JLabel = leftMenuJLabel(" ");
         final JLabel beer_JLabel = leftMenuJLabel("Beer  ");
@@ -227,8 +238,10 @@ public class MenuChanger {
     public static JLabel leftMenuJLabel(String name){
 
         JLabel button = new JLabel(name);
+        Font bigFont = new Font(Font.SANS_SERIF, Font.PLAIN, 20);
+        button.setFont(bigFont);
         button.setBackground(Color.LIGHT_GRAY);
-        button.setPreferredSize(new Dimension(100, 30));
+        button.setPreferredSize(new Dimension(150, 50));
         button.setForeground(Color.BLACK);
         button.setHorizontalAlignment(SwingConstants.RIGHT);
         button.setOpaque(true);
@@ -236,19 +249,6 @@ public class MenuChanger {
         return button;
     }
 
-    public static class rightDropboxJPanel extends JPanel{
-
-        public rightDropboxJPanel() {
-            setBackground(Color.BLUE);
-        }
-    }
-
-    public static class rightJPanel extends JPanel {
-
-        public rightJPanel() {
-            setBackground(Color.RED);
-        }
-    }
 
     public static rightDropboxJPanel beerDropbox_JPanel (){
 
@@ -259,6 +259,127 @@ public class MenuChanger {
     public static rightJPanel draftBeer_JPanel (){
 
         rightJPanel panel = new rightJPanel();
+
+        //Left table for BeerMasterList
+        JTextField beerMasterListFilterEdit = new JTextField(10);
+        final FilterList<Beer> beerMasterListTextFilteredIssues = new FilterList<>(draftBeerMasterSortedList, new TextComponentMatcherEditor<>(beerMasterListFilterEdit, new BeerTextFilter()));
+        final AdvancedTableModel<Beer> beerMasterListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(beerMasterListTextFilteredIssues, new SimpleBeerTableFormat());
+        final JTable beerMasterListJTable = new JTable(beerMasterListTableModel);
+        beerMasterListJTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        TableComparatorChooser.install(beerMasterListJTable, draftBeerMasterSortedList, TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
+
+
+        //Right table for CurrentBeerList
+        JTextField currentBeerListFilterEdit = new JTextField(10);
+        final FilterList<Beer> currentBeerListTextFilteredIssues = new FilterList<>(currentDraftBeerSortedList, new TextComponentMatcherEditor<>(currentBeerListFilterEdit, new BeerTextFilter()));
+        final AdvancedTableModel<Beer> currentBeerListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(currentBeerListTextFilteredIssues, new SimpleBeerTableFormat());
+        final JTable currentDraftBeerListJTable = new JTable(currentBeerListTableModel);
+        currentDraftBeerListJTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        TableComparatorChooser.install(currentDraftBeerListJTable, currentDraftBeerSortedList, TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
+
+
+        panel.setLayout(new GridBagLayout());
+
+        JScrollPane beerMasterListScrollPane = new JScrollPane(beerMasterListJTable);
+        JScrollPane currentBeerListScrollPane = new JScrollPane(currentDraftBeerListJTable);
+
+        JButton createNewDraftBeerButton = new JButton("Create New Draft Beer");
+        final JButton addDraftBeerToCurrentList = new JButton("Add To Draft List");
+        final JButton removeDraftBeerFromCurrentList = new JButton("86 From Draft List");
+        final JButton printList = new JButton("Print Beer List");
+        final JButton editDraftBeer = new JButton("Edit Draft Beer");
+        final JButton editBottledBeerList = new JButton("Edit Bottled Beer List");
+
+
+
+
+
+        panel.add(new JLabel("All Beer:"),      new GridBagConstraints(0, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Current List: "), new GridBagConstraints(2, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+
+        panel.add(new JLabel("Filter: "),       new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(beerMasterListFilterEdit,     new GridBagConstraints(1, 1, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(new JLabel("Filter: "),       new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(currentBeerListFilterEdit,    new GridBagConstraints(3, 1, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+
+        panel.add(addDraftBeerToCurrentList, new GridBagConstraints(0, 2, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(removeDraftBeerFromCurrentList, new GridBagConstraints(2, 2, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+
+        panel.add(beerMasterListScrollPane, new GridBagConstraints(0, 3, 2, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(currentBeerListScrollPane, new GridBagConstraints(2, 3, 2, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+
+        panel.add(createNewDraftBeerButton, new GridBagConstraints(0, 4, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(editBottledBeerList, new GridBagConstraints(2, 4, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(editDraftBeer, new GridBagConstraints(0, 5, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+        panel.add(printList, new GridBagConstraints(2, 5, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 5, 5, 5), 0, 0));
+
+
+        createNewDraftBeerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                createNewDraftBeer();
+            }
+        });
+
+        //if something is selected in current list, deselect it
+        beerMasterListJTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (currentDraftBeerListJTable.getSelectedRow()>-1){
+                    currentDraftBeerListJTable.clearSelection();
+                }
+            }
+        });
+
+        //if something is selected in the master list, deselect it
+        currentDraftBeerListJTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (beerMasterListJTable.getSelectedRow()>-1){
+                    beerMasterListJTable.clearSelection();
+                }
+            }
+        });
+
+        addDraftBeerToCurrentList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                selectedBeer = beerMasterListTableModel.getElementAt(beerMasterListJTable.getSelectedRow());
+                addBeerToAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML_FILEPATH, currentDraftBeerSortedList);
+            }
+        });
+
+        removeDraftBeerFromCurrentList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                selectedBeer = currentBeerListTableModel.getElementAt(currentDraftBeerListJTable.getSelectedRow());
+                removeBeerFromAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML_FILEPATH, currentDraftBeerSortedList);
+
+            }
+        });
+
+        printList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                printList();
+            }
+        });
+
+        editDraftBeer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                selectedBeer = beerMasterListTableModel.getElementAt(beerMasterListJTable.getSelectedRow());
+                editDraftBeer(selectedBeer, DRAFT_BEER_MASTER_LIST_XML_FILEPATH, draftBeerMasterSortedList);
+            }
+        });
+
+        editBottledBeerList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+            }
+        });
         return panel;
     }
 
@@ -269,13 +390,14 @@ public class MenuChanger {
     }
 
 
-    public void displayBottledBeerChanger() {
+    public static void displayBottledBeerChanger() {
 
         //Left table for BeerMasterList
         JTextField bottledBeerMasterListFilterEdit = new JTextField(10);
         FilterList<Beer> bottledBeerMasterListTextFilteredIssues = new FilterList<>(bottledBeerMasterSortedList, new TextComponentMatcherEditor<>(bottledBeerMasterListFilterEdit, new BeerTextFilter()));
         AdvancedTableModel<Beer> bottledBeerMasterListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(bottledBeerMasterListTextFilteredIssues, new SimpleBeerTableFormat());
         final JTable bottledBeerMasterListJTable = new JTable(bottledBeerMasterListTableModel);
+
 
         //Right table for CurrentBeerList
         JTextField currentBottledBeerListFilterEdit = new JTextField(10);
@@ -377,7 +499,7 @@ public class MenuChanger {
 
     }
 
-    public void displayDraftBeerChanger() {
+    public static void displayDraftBeerChanger() {
 
         //Left table for BeerMasterList
         JTextField beerMasterListFilterEdit = new JTextField(10);
@@ -511,7 +633,7 @@ public class MenuChanger {
 
     }
 
-    void printDraftBeer(Beer beer, StringBuilder stringBuilder, String beerCategory) {
+    static void printDraftBeer(Beer beer, StringBuilder stringBuilder, String beerCategory) {
 
         if (stringBuilder.length() == 0) {
             stringBuilder.append("<p class=\"beerStyleHeader\">" + beerCategory + "</p>");
@@ -533,7 +655,7 @@ public class MenuChanger {
 
     }
 
-    void printBottledBeer(Beer beer, StringBuilder stringBuilder, String bottleCategory){
+    static void printBottledBeer(Beer beer, StringBuilder stringBuilder, String bottleCategory){
 
         if (stringBuilder.length() == 0) {
             stringBuilder.append("<div class=\"bottleCategoryHeader\">" + bottleCategory + "</div>");
@@ -550,7 +672,7 @@ public class MenuChanger {
 
     }
 
-    void printList(){
+    static void printList(){
 
         String indiaPaleAlesHTML;
         String paleAlesHTML;
@@ -769,7 +891,7 @@ public class MenuChanger {
 
     }
 
-    void writeList (BufferedWriter bufferedWriter, String header, String footer, List<String> draftBeerArray, List<String> rightColumnArray, List<String> leftColumnArray, int leftColumnSize, int rightColumnSize){
+    static void writeList (BufferedWriter bufferedWriter, String header, String footer, List<String> draftBeerArray, List<String> rightColumnArray, List<String> leftColumnArray, int leftColumnSize, int rightColumnSize){
         try {
         bufferedWriter.write(header);
 
@@ -823,7 +945,7 @@ public class MenuChanger {
 
     }
 
-    void createNewDraftBeer() {
+    static void createNewDraftBeer() {
 
         final Beer newBeer = new Beer();
 
@@ -910,7 +1032,7 @@ public class MenuChanger {
 
     }
 
-    void createNewBottledBeer() {
+    static void createNewBottledBeer() {
 
         final Beer newBeer = new Beer();
 
@@ -991,7 +1113,7 @@ public class MenuChanger {
 
     }
 
-    void addBeerToAList(Beer newBeer, String fileName, SortedList<Beer> sortedList) {
+    static void addBeerToAList(Beer newBeer, String fileName, SortedList<Beer> sortedList) {
 
         sortedList.add(newBeer);
         XMLOutputter out = new XMLOutputter();
@@ -1023,7 +1145,7 @@ public class MenuChanger {
 
     }
 
-    void editDraftBeer(final Beer beer, final String fileName, final SortedList<Beer> sortedList) {
+    static void editDraftBeer(final Beer beer, final String fileName, final SortedList<Beer> sortedList) {
 
         final Beer editedBeer = new Beer();
 
@@ -1155,7 +1277,7 @@ public class MenuChanger {
 
     }
 
-    void editBottledBeer(final Beer beer, final String fileName, final SortedList<Beer> sortedList) {
+    static void editBottledBeer(final Beer beer, final String fileName, final SortedList<Beer> sortedList) {
 
         final Beer editedBeer = new Beer();
 
@@ -1273,7 +1395,7 @@ public class MenuChanger {
 
     }
 
-    void removeBeerFromAList(Beer beer, String fileName, SortedList<Beer> sortedList) {
+    static void removeBeerFromAList(Beer beer, String fileName, SortedList<Beer> sortedList) {
 
         SAXBuilder builder = new SAXBuilder();
         String removeName = beer.getName();
@@ -1307,9 +1429,25 @@ public class MenuChanger {
 
     }
 
+    public static class rightDropboxJPanel extends JPanel{
+
+        public rightDropboxJPanel() {
+            setBackground(Color.WHITE);
+        }
+
+    }
+
+    public static class rightJPanel extends JPanel {
+
+        public rightJPanel() {
+            setBackground(Color.WHITE);
+        }
+    }
+
     public static void main(String[] args) {
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
+        fileSetup();
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 createAndShowGUI();
