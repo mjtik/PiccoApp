@@ -24,6 +24,8 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,43 +39,46 @@ public class MenuChanger {
     final String USER_NAME = "piccores";
     String password = null;
 
-
-
     //these are the categories beers are sorted into, the beer style may be different and more descriptive (American or English Pale Ale)
-    final String INDIA_PALE_ALES = "India Pale Ales";
-    final String PALE_ALES = "Pale Ales";
-    final String OTHER_ALES = "Other Ales";
-    final String LAGERS = "Lagers";
-    final String BELGIAN_STYLE = "Belgian Style";
-    final String DARK = "Dark";
-    final String CIDER = "Cider";
+    private final String INDIA_PALE_ALES = "India Pale Ales";
+    private final String PALE_ALES = "Pale Ales";
+    private final String OTHER_ALES = "Other Ales";
+    private final String LAGERS = "Lagers";
+    private final String BELGIAN_STYLE = "Belgian Style";
+    private final String DARK = "Dark";
+    private final String CIDER = "Cider";
 
-    final String SIXTEEN_OZ = "16oz";
-    final String TWELVE_OZ = "12oz";
-    final String TEN_OZ = "10oz";
-    final String EIGHT_OZ = "8oz";
+    // draft beer sizes, used to sort when printing
+    private final String SIXTEEN_OZ = "16oz";
+    private final String TWELVE_OZ = "12oz";
+    private final String TEN_OZ = "10oz";
+    private final String EIGHT_OZ = "8oz";
 
-    final String TABLE_BEER = "Table Beer";
-    final String BOTTLES_AND_CANS = "Bottles & Cans";
+    //type of bottled beer, used for sorting
+    private final String TABLE_BEER = "Table Beer";
+    private final String BOTTLES_AND_CANS = "Bottles & Cans";
 
-    final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH;
-    final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH;
-    final String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH;
-    final String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH;
-    final String HOME_DIR;
+    //filepaths for xml files
+    private String DRAFT_BEER_MASTER_LIST_XML_FILEPATH;
+    private String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH;
+    private String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH;
+    private String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH;
+
+    //home dir, set in filesetup, run at launch
+    private String HOME_DIR;
 
 
-    final String PRINT_LIST_HTML_FOOTER_FILEPATH;
-    final String PRINT_LIST_HTML_HEADER_FILEPATH;
+    private String PRINT_LIST_HTML_FOOTER_FILEPATH;
+    private String PRINT_LIST_HTML_HEADER_FILEPATH;
 
-    final String WEBSITE_HTML_FOOTER_FILEPATH;
-    final String WEBSITE_HTML_HEADER_FILEPATH;
+    private String WEBSITE_HTML_FOOTER_FILEPATH;
+    private String WEBSITE_HTML_HEADER_FILEPATH;
 
-    String bottlesAndCansHTML;
-    String tableBeerHTML;
+    private String bottlesAndCansHTML;
+    private String tableBeerHTML;
 
-    File beerList_printFile;
-    File beerList_htmlFile;
+    private File beerList_printFile;
+    private File beerList_htmlFile;
 
     //File testFile = new File(System.getProperty("user.home") + System.getProperty("file.separator") + "test.txt");
 
@@ -92,12 +97,10 @@ public class MenuChanger {
     SortedList<Beer> currentBottledBeerSortedList;
 
     Beer selectedBeer = new Beer();
+    static Dimension rightPanelDimension = new Dimension(500,400);
+    static Color rightPanelColor = Color.WHITE;
 
-
-    public MenuChanger() {
-
-        //get passwords
-
+    public void fileSetup() {
 
         //check if directory is setup, if not, make one. (mkdir() does both)
         HOME_DIR = System.getProperty("user.home")+ System.getProperty("file.separator") + "Picco App";
@@ -135,6 +138,114 @@ public class MenuChanger {
         displayDraftBeerChanger();
 
     }
+
+    public static void createAndShowGUI(){
+
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+        System.out.println("yes");
+        JFrame frame = new JFrame("Beer Menu Changer");
+        frame.getContentPane().setLayout(new BorderLayout());
+
+        frame.setSize(600, 500);
+        frame.getContentPane().add(leftMenu_JPanel(), BorderLayout.WEST);
+        frame.getContentPane().add(beerDropbox_JPanel(), BorderLayout.EAST);
+        frame.getContentPane().add(draftBeer_JPanel(), BorderLayout.EAST);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
+
+    }
+
+    public static JPanel leftMenu_JPanel(){
+        JPanel panel = new JPanel();
+
+        //buttons for leftMenu_Panel
+        JLabel filler = new JLabel();
+        filler.setPreferredSize(new Dimension(100,30));
+        final JLabel beer_JLabel = leftMenuJLabel("Beer");
+        JLabel wine_JLabel = leftMenuJLabel("Wine");
+        JLabel food_JLabel = leftMenuJLabel("Food");
+        JLabel icecream_JLabel = leftMenuJLabel("Ice Cream");
+
+        panel.setPreferredSize(new Dimension(100, 500));
+        panel.setBackground(Color.LIGHT_GRAY);
+        panel.add(filler);
+        panel.add(beer_JLabel);
+        panel.add(wine_JLabel);
+        panel.add(food_JLabel);
+        panel.add(icecream_JLabel);
+
+        beer_JLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                beer_JLabel.setBackground(rightPanelColor);
+            }
+        });
+
+
+
+        return panel;
+
+    }
+
+    public static JLabel leftMenuJLabel(String name){
+
+        JLabel button = new JLabel(name);
+        button.setBackground(Color.LIGHT_GRAY);
+        button.setPreferredSize(new Dimension(100, 30));
+        button.setForeground(Color.BLACK);
+        button.setHorizontalAlignment(SwingConstants.CENTER);
+        button.setOpaque(true);
+
+        return button;
+    }
+
+    public static class rightDropboxJPanel extends JPanel{
+
+        public rightDropboxJPanel() {
+            setPreferredSize(new Dimension(500,100));
+            setBackground(Color.BLUE);
+        }
+    }
+
+    public static class rightJPanel extends JPanel {
+
+        public rightJPanel() {
+            setPreferredSize(new Dimension(400,400));
+            setBackground(Color.BLUE);
+        }
+    }
+
+    public static rightDropboxJPanel beerDropbox_JPanel (){
+
+        rightDropboxJPanel panel = new rightDropboxJPanel();
+        return panel;
+    }
+
+    public static rightJPanel draftBeer_JPanel (){
+
+        rightJPanel panel = new rightJPanel();
+        return panel;
+    }
+
+    public static rightJPanel bottledBeer_JPanel (){
+
+        rightJPanel panel = new rightJPanel();
+        return panel;
+    }
+
 
     public void displayBottledBeerChanger() {
 
@@ -1172,6 +1283,16 @@ public class MenuChanger {
         sortedList.remove(beer);
 
 
+    }
+
+    public static void main(String[] args) {
+        //Schedule a job for the event-dispatching thread:
+        //creating and showing this application's GUI.
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                createAndShowGUI();
+            }
+        });
     }
 
 }
