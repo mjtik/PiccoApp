@@ -293,9 +293,18 @@ public class MenuChanger {
         editDraftBeer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try {
+                    new Beer().editBeer(beerMasterListTableModel.getElementAt(beerMasterListJTable.getSelectedRow()), draftBeerList_Master, draftBeerList_Current);
 
-                Beer beer = new Beer();
-                beer.editBeer(beer, draftBeerList_Master, draftBeerList_Current);
+                } catch (IndexOutOfBoundsException e1) {
+
+                    try {
+                        new Beer().editBeer(currentBeerListTableModel.getElementAt(currentDraftBeerListJTable.getSelectedRow()), draftBeerList_Master, draftBeerList_Current);
+                    } catch (IndexOutOfBoundsException e2) {
+
+                    }
+
+                }
 
             }
 
