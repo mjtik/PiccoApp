@@ -1,5 +1,8 @@
 package piccoapp;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
  * Created by mtiko_000 on 4/22/2015.
  */
@@ -14,16 +17,118 @@ public class Beer {
     String size;
     String bottleType;
 
+    //these are the categories beers are sorted into, the beer style may be different and more descriptive (American or English Pale Ale)
+    final String INDIA_PALE_ALES = "India Pale Ales";
+    final String PALE_ALES = "Pale Ales";
+    final String OTHER_ALES = "Other Ales";
+    final String LAGERS = "Lagers";
+    final String BELGIAN_STYLE = "Belgian Style";
+    final String DARK = "Dark";
+    final String CIDER = "Cider";
+    final String [] categories_Array = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
+
+    // draft beer sizes, used to sort when printing
+    final String SIXTEEN_OZ = "16oz";
+    final String TWELVE_OZ = "12oz";
+    final String TEN_OZ = "10oz";
+    final String EIGHT_OZ = "8oz";
+    final String[] pourSize_Array = {SIXTEEN_OZ, TWELVE_OZ, TEN_OZ, EIGHT_OZ};
+
+    //type of bottled beer, used for sorting
+    final String TABLE_BEER = "Table Beer";
+    final String BOTTLES_AND_CANS = "Bottles & Cans";
+    final String[] bottleType_Array = {TABLE_BEER, BOTTLES_AND_CANS};
+
     public Beer() {
+
     }
 
+    private Beer createNewBeer(){
+        Beer newBeer = new Beer();
+
+        final JTextField name = new JTextField(15);
+        final JTextField style = new JTextField(15);
+        final JTextField abv = new JTextField(15);
+        final JTextField brewery = new JTextField(15);
+        final JTextField location = new JTextField(15);
+        final JTextField price = new JTextField(15);
+        final JComboBox<String> categoryComboBox = new JComboBox<>(categories_Array);
+        final JComboBox<String> pourSizeComboBox = new JComboBox<>(pourSize_Array);
+        final JCheckBox addToCurrentListCheckBox = new JCheckBox("Add beer to current list");
+
+        JButton createNewBeer_Button = new JButton("Create Beer");
+
+        JPanel panel = new JPanel();
+        GridBagLayout gbl = new GridBagLayout();
+        GridBagConstraints gbc = new GridBagConstraints();
+        panel.setLayout(gbl);
+
+        gbc.gridx = 0;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+        gbc.insets = new Insets(5,5,5,5);
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.fill = GridBagConstraints.BOTH;
+
+        panel.add(new JLabel("Name: "), gbc);
+        panel.add(new JLabel("Style: "), gbc);
+        panel.add(new JLabel("ABV: "), gbc);
+        panel.add(new JLabel("Pour Size: "), gbc);
+        panel.add(new JLabel("Brewery: "), gbc);
+        panel.add(new JLabel("Location: "), gbc);
+        panel.add(new JLabel("Price: "), gbc);
+        panel.add(new JLabel("Category"), gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+
+        panel.add(name,gbc);
+        panel.add(style, gbc);
+        panel.add(abv, gbc);
+        panel.add(pourSizeComboBox, gbc);
+        panel.add(brewery, gbc);
+        panel.add(location, gbc);
+        panel.add(price, gbc);
+        panel.add(categoryComboBox,gbc);
+        panel.add(addToCurrentListCheckBox, gbc);
 
 
+        gbc.gridwidth = 1;
+        gbc.fill = GridBagConstraints.BOTH;
+        panel.add(createNewBeer_Button, gbc);
 
 
+        final JFrame frame = new JFrame("Create New Beer");
+        frame.setSize(400, 500);
+        frame.getContentPane().add(panel);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setVisible(true);
+
+       /* createNewBeer_Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                newBeer.setName(name.getText());
+                newBeer.setStyle(style.getText());
+                newBeer.setAbv(abv.getText());
+                newBeer.setBrewery(brewery.getText());
+                newBeer.setLocation(location.getText());
+                newBeer.setPrice(price.getText());
+                newBeer.setCategory(categoryComboBox.getSelectedItem().toString());
+                newBeer.setSize(pourSizeComboBox.getSelectedItem().toString());
+                addBeerToAList(newBeer, DRAFT_BEER_MASTER_LIST_XML_FILEPATH, draftBeerMasterSortedList);
+                if (addToCurrentListCheckBox.isSelected()) {
+                    addBeerToAList(newBeer, CURRENT_DRAFT_BEER_LIST_XML_FILEPATH, currentDraftBeerSortedList);
+                }
+                frame.setVisible(false);
+
+            }
+        });*/
 
 
-
+        return newBeer;
+    }
 
 // mutators
     public String getBottleType() {
