@@ -1,6 +1,7 @@
-/**
+package piccoapp; /**
  * Created by mtiko_000 on 4/27/2015.
  */
+
 import ca.odell.glazedlists.gui.TableFormat;
 
 /**

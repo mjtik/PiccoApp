@@ -1,3 +1,5 @@
+package piccoapp;
+
 /**
  * Created by mtiko_000 on 4/22/2015.
  */
@@ -15,6 +17,15 @@ public class Beer {
     public Beer() {
     }
 
+
+
+
+
+
+
+
+
+// mutators
     public String getBottleType() {
         return bottleType;
     }

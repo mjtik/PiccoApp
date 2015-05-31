@@ -1,3 +1,5 @@
+package piccoapp;
+
 import ca.odell.glazedlists.gui.TableFormat;
 
 /**
