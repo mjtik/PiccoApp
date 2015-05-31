@@ -46,7 +46,7 @@ public class Beer {
 
     }
 
-    private Beer createNewBeer(final draftBeerList draftBeerList_Master, final draftBeerList draftBeerList_Current){
+    private void createNewBeer(final draftBeerList draftBeerList_Master, final draftBeerList draftBeerList_Current){
         final Beer newBeer = new Beer();
 
         final JTextField name = new JTextField(15);
@@ -130,11 +130,141 @@ public class Beer {
             }
         });
 
-
-        return newBeer;
     }
 
-// mutators
+    private void editBeer(Beer beer, final draftBeerList draftBeerList_Master, final draftBeerList draftBeerList_Current){
+        Beer beerToEdit = beer;
+
+        final JTextField name = new JTextField(15);
+        name.setText(beerToEdit.getName());
+        final JTextField style = new JTextField(15);
+        style.setText(beerToEdit.getStyle());
+        final JTextField abv = new JTextField(15);
+        abv.setText(beerToEdit.getAbvString());
+        final JTextField brewery = new JTextField(15);
+        brewery.setText(beerToEdit.getBrewery());
+        final JTextField location = new JTextField(15);
+        location.setText(beerToEdit.getLocation());
+        final JTextField price = new JTextField(15);
+        price.setText(beerToEdit.getPrice());
+        final JComboBox<String> pourSizeComboBox = new JComboBox<>(pourSize_Array);
+        final JComboBox<String> category = new JComboBox<>(categories_Array);
+
+        JButton save_Button = new JButton("Save");
+        JButton delete_Button = new JButton("Delete");
+
+        switch (beerToEdit.getCategory()){
+            case INDIA_PALE_ALES:
+                category.setSelectedIndex(0);
+                break;
+            case PALE_ALES:
+                category.setSelectedIndex(1);
+                break;
+            case OTHER_ALES:
+                category.setSelectedIndex(2);
+                break;
+            case LAGERS:
+                category.setSelectedIndex(3);
+                break;
+            case BELGIAN_STYLE:
+                category.setSelectedIndex(4);
+                break;
+            case DARK:
+                category.setSelectedIndex(5);
+                break;
+            case CIDER:
+                category.setSelectedIndex(6);
+                break;
+        }
+
+
+        JPanel panel = new JPanel();
+        GridBagLayout gbl = new GridBagLayout();
+        GridBagConstraints gbc = new GridBagConstraints();
+        panel.setLayout(gbl);
+
+        gbc.gridx = 0;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+        gbc.insets = new Insets(5,20,5,5);
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.fill = GridBagConstraints.BOTH;
+
+        panel.add(new JLabel("Name: "), gbc);
+        panel.add(new JLabel("Style: "), gbc);
+        panel.add(new JLabel("ABV: "), gbc);
+        panel.add(new JLabel("Pour Size: "), gbc);
+        panel.add(new JLabel("Brewery: "), gbc);
+        panel.add(new JLabel("Location: "), gbc);
+        panel.add(new JLabel("Price: "), gbc);
+        panel.add(new JLabel("Category"), gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        gbc.insets = new Insets(5,5,5,20);
+
+        panel.add(name,gbc);
+        panel.add(style, gbc);
+        panel.add(abv, gbc);
+        panel.add(pourSizeComboBox, gbc);
+        panel.add(brewery, gbc);
+        panel.add(location, gbc);
+        panel.add(price, gbc);
+        panel.add(category,gbc);
+
+        gbc.insets = new Insets(5,5,5,5);
+        gbc.gridx = 1;
+        gbc.gridy = 10;
+        gbc.gridwidth = 1;
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.weightx = 1;
+        panel.add(save_Button, gbc);
+
+        gbc.gridx = 2;
+        gbc.gridy = 10;
+        gbc.insets = new Insets(5,5,5,20);
+        panel.add(delete_Button, gbc);
+
+
+        final JFrame frame = new JFrame("Edit Beer");
+        frame.setSize(400, 500);
+        frame.getContentPane().add(panel);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setVisible(true);
+
+        save_Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                editedBeer.setName(name.getText());
+                editedBeer.setStyle(style.getText());
+                editedBeer.setAbv(abv.getText());
+                editedBeer.setSize(pourSizeComboBox.getSelectedItem().toString());
+                editedBeer.setBrewery(brewery.getText());
+                editedBeer.setLocation(location.getText());
+                editedBeer.setPrice(price.getText());
+                editedBeer.setCategory(category.getSelectedItem().toString());
+                frame.setVisible(false);
+
+            }
+        });
+
+        delete_Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+            }
+        });
+    }
+
+
+
+    ///////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////
+    // mutators ///////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////
     public String getBottleType() {
         return bottleType;
     }
