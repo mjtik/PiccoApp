@@ -34,73 +34,72 @@ import java.util.List;
 public class MenuChanger {
 
     //FTP info
-    static final String SERVER = "ftp.piccorestaurant.com";
-    static final int PORT = 21;
-    static final String USER_NAME = "piccores";
-    static String password = null;
+    final String SERVER = "ftp.piccorestaurant.com";
+    final int PORT = 21;
+    final String USER_NAME = "piccores";
+    String password = null;
 
-    //these are the categories beers are sorted into, the beer style may be different and more descriptive (American or English Pale Ale)
-    static final String INDIA_PALE_ALES = "India Pale Ales";
-    static final String PALE_ALES = "Pale Ales";
-    static final String OTHER_ALES = "Other Ales";
-    static final String LAGERS = "Lagers";
-    static final String BELGIAN_STYLE = "Belgian Style";
-    static final String DARK = "Dark";
-    static final String CIDER = "Cider";
-
-    // draft beer sizes, used to sort when printing
-    static final String SIXTEEN_OZ = "16oz";
-    static final String TWELVE_OZ = "12oz";
-    static final String TEN_OZ = "10oz";
-    static final String EIGHT_OZ = "8oz";
-
-    //type of bottled beer, used for sorting
-    static final String TABLE_BEER = "Table Beer";
-    static final String BOTTLES_AND_CANS = "Bottles & Cans";
 
     //filepaths for xml files
-    static final String HOME_DIR = System.getProperty("user.home")+ System.getProperty("file.separator") + "Picco App";
-    static final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";;
-    static final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
-    static final String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
-    static final String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
-    static final String PRINT_LIST_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
-    static final String PRINT_LIST_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
+    final String HOME_DIR = System.getProperty("user.home")+ System.getProperty("file.separator") + "Picco App";
+    final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";;
+    final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
+    final String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
+    final String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
+    final String PRINT_LIST_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
+    final String PRINT_LIST_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
 
-    static final String WEBSITE_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlFooter.txt";
-    static final String WEBSITE_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlHeader.txt";
+    final String WEBSITE_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlFooter.txt";
+    final String WEBSITE_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlHeader.txt";
 
+    final File beerList_printFile = new File(HOME_DIR + "\\html\\Beer_List.html");
+    final File beerList_htmlFile = new File(HOME_DIR + "\\html\\beer.html");
 
 
     static String bottlesAndCansHTML;
     static String tableBeerHTML;
 
-    static File beerList_printFile;
-    static File beerList_htmlFile;
-
-    //File testFile = new File(System.getProperty("user.home") + System.getProperty("file.separator") + "test.txt");
 
 
-    static final String BOTTLED_LIST_HEADER = "<div class=\"bottleBox\">";
-    static final String BOTTLED_LIST_FOOTER = "</div>";
 
-    static String[] bottleType = {TABLE_BEER, BOTTLES_AND_CANS};
-    static String [] categories = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
-    static String[] pourSize = {SIXTEEN_OZ, TWELVE_OZ, TEN_OZ, EIGHT_OZ};
+    final String BOTTLED_LIST_HEADER = "<div class=\"bottleBox\">";
+    final String BOTTLED_LIST_FOOTER = "</div>";
 
 
+    //these are the categories beers are sorted into, the beer style may be different and more descriptive (American or English Pale Ale)
+    final String INDIA_PALE_ALES = "India Pale Ales";
+    final String PALE_ALES = "Pale Ales";
+    final String OTHER_ALES = "Other Ales";
+    final String LAGERS = "Lagers";
+    final String BELGIAN_STYLE = "Belgian Style";
+    final String DARK = "Dark";
+    final String CIDER = "Cider";
+    final String [] categories = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
+
+    // draft beer sizes, used to sort when printing
+    final String SIXTEEN_OZ = "16oz";
+    final String TWELVE_OZ = "12oz";
+    final String TEN_OZ = "10oz";
+    final String EIGHT_OZ = "8oz";
+    final String[] pourSize = {SIXTEEN_OZ, TWELVE_OZ, TEN_OZ, EIGHT_OZ};
+
+    //type of bottled beer, used for sorting
+    final String TABLE_BEER = "Table Beer";
+    final String BOTTLES_AND_CANS = "Bottles & Cans";
+    final String[] bottleType = {TABLE_BEER, BOTTLES_AND_CANS};
 
     static SortedList<Beer> bottledBeerMasterSortedList;
     static SortedList<Beer> currentBottledBeerSortedList;
 
-    static Beer selectedBeer = new Beer();
     static Dimension rightPanelDimension = new Dimension(500,400);
     static Color rightPanelColor = Color.WHITE;
 
-    static final Insets rightComponentInsets = new Insets(5, 20, 5, 5);
-    static final Insets leftComponentInsets = new Insets(5, 5, 5, 20);
+    // insets for right panel components when two scroll lists are in view.
+    // Keeps a little space in GBL in between sides.
+    final Insets rightComponentInsets = new Insets(5, 20, 5, 5);
+    final Insets leftComponentInsets = new Insets(5, 5, 5, 20);
 
-    public static void fileSetup() {
+    public void fileSetup() {
 
         //check if directory is setup, if not, make one. (mkdir() does both)
         new File(HOME_DIR).mkdir();
@@ -116,8 +115,7 @@ public class MenuChanger {
             e.printStackTrace();
         }
 
-        beerList_printFile = new File(HOME_DIR + "\\html\\Beer_List.html");
-        beerList_htmlFile = new File(HOME_DIR + "\\html\\beer.html");
+
 
 
     }
