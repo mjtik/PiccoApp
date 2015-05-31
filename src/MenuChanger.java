@@ -92,7 +92,7 @@ public class MenuChanger {
     static SortedList<Beer> currentBottledBeerSortedList;
 
     static Dimension rightPanelDimension = new Dimension(500,400);
-    static Color rightPanelColor = Color.WHITE;
+    final Color rightPanelColor = Color.WHITE;
 
     // insets for right panel components when two scroll lists are in view.
     // Keeps a little space in GBL in between sides.
@@ -105,12 +105,13 @@ public class MenuChanger {
         new File(HOME_DIR).mkdir();
         new File(HOME_DIR + System.getProperty("file.separator") + "XML").mkdir();
         new File(HOME_DIR + System.getProperty("file.separator") + "HTML").mkdir();
+        new File(HOME_DIR + System.getProperty("file.separator") + "Data").mkdir();
 
         bottledBeerMasterSortedList = new BeerXMLParser().parseXML(BOTTLED_BEER_MASTER_LIST_XML_FILEPATH);
         currentBottledBeerSortedList = new BeerXMLParser().parseXML(CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH);
 
         try {
-            password = FileUtils.readFileToString(new File(HOME_DIR + "\\No_Commit\\password.txt"));
+            password = FileUtils.readFileToString(new File(HOME_DIR + "\\Data\\hamsandwich.txt"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -120,7 +121,7 @@ public class MenuChanger {
 
     }
 
-    public static void setUIFont (javax.swing.plaf.FontUIResource f){
+    public void setUIFont (javax.swing.plaf.FontUIResource f){
         java.util.Enumeration keys = UIManager.getDefaults().keys();
         while (keys.hasMoreElements()) {
             Object key = keys.nextElement();
@@ -130,7 +131,7 @@ public class MenuChanger {
         }
     }
 
-    public static void createAndShowGUI(){
+    public void createAndShowGUI(){
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -187,7 +188,7 @@ public class MenuChanger {
     }
 
 
-    public static JPanel leftMenu_JPanel(){
+    public JPanel leftMenu_JPanel(){
         JPanel panel = new JPanel();
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -280,8 +281,7 @@ public class MenuChanger {
         return panel;
     }
 
-    public static rightJPanel draftBeer_JPanel (){
-
+    public rightJPanel draftBeer_JPanel (){
 
         rightJPanel panel = new rightJPanel();
 
@@ -370,19 +370,14 @@ public class MenuChanger {
         addDraftBeerToCurrentList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectedBeer = beerMasterListTableModel.getElementAt(beerMasterListJTable.getSelectedRow());
-                draftBeerList_Current.addBeer(selectedBeer);
-
-
-                //addBeerToAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML_FILEPATH, currentDraftBeerSortedList);
+                draftBeerList_Current.addBeer(beerMasterListTableModel.getElementAt(beerMasterListJTable.getSelectedRow()));
             }
         });
 
         removeDraftBeerFromCurrentList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectedBeer = currentBeerListTableModel.getElementAt(currentDraftBeerListJTable.getSelectedRow());
-                draftBeerList_Current.removeBeer(selectedBeer);
+                draftBeerList_Current.removeBeer(currentBeerListTableModel.getElementAt(currentDraftBeerListJTable.getSelectedRow()));
 
                 //removeBeerFromAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML_FILEPATH, currentDraftBeerSortedList);
 
@@ -401,14 +396,12 @@ public class MenuChanger {
             public void actionPerformed(ActionEvent e) {
 
                 try {
-                    selectedBeer = beerMasterListTableModel.getElementAt(beerMasterListJTable.getSelectedRow());
-                    editDraftBeer(selectedBeer);
+                    editDraftBeer(beerMasterListTableModel.getElementAt(beerMasterListJTable.getSelectedRow()));
                 }
                 catch(ArrayIndexOutOfBoundsException e2) {
 
                     try{
-                        selectedBeer = currentBeerListTableModel.getElementAt(currentDraftBeerListJTable.getSelectedRow());
-                        editDraftBeer(selectedBeer);
+                        editDraftBeer(currentBeerListTableModel.getElementAt(currentDraftBeerListJTable.getSelectedRow()));
                     }
                     catch(ArrayIndexOutOfBoundsException e3) {
                     }
@@ -742,7 +735,7 @@ public class MenuChanger {
 
     }
 
-    static void createNewDraftBeer() {
+    public void createNewDraftBeer() {
 
         final Beer newBeer = new Beer();
 
