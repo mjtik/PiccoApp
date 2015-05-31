@@ -18,6 +18,7 @@ public class Beer {
     String location;
     String size;
     String bottleType;
+    int id;
 
     //these are the categories beers are sorted into, the beer style may be different and more descriptive (American or English Pale Ale)
     final String INDIA_PALE_ALES = "India Pale Ales";
