@@ -25,7 +25,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -41,9 +40,9 @@ public class MenuChanger {
 
 
     //filepaths for xml files
-    final String HOME_DIR = System.getProperty("user.home")+ System.getProperty("file.separator") + "Picco App";
-    final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";;
-    final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
+    static final String HOME_DIR = System.getProperty("user.home")+ System.getProperty("file.separator") + "Picco App";
+    static final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";;
+    static final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
     final String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
     final String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
     final String PRINT_LIST_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
@@ -70,12 +69,12 @@ public class MenuChanger {
     static SortedList<Beer> currentBottledBeerSortedList;
 
     static Dimension rightPanelDimension = new Dimension(500,400);
-    final Color rightPanelColor = Color.WHITE;
+    static final Color rightPanelColor = Color.WHITE;
 
     // insets for right panel components when two scroll lists are in view.
     // Keeps a little space in GBL in between sides.
-    final Insets rightComponentInsets = new Insets(5, 20, 5, 5);
-    final Insets leftComponentInsets = new Insets(5, 5, 5, 20);
+    static final Insets rightComponentInsets = new Insets(5, 20, 5, 5);
+    static final Insets leftComponentInsets = new Insets(5, 5, 5, 20);
 
     public void fileSetup() {
 
@@ -99,7 +98,7 @@ public class MenuChanger {
 
     }
 
-    public void setUIFont (javax.swing.plaf.FontUIResource f){
+    public static void setUIFont (javax.swing.plaf.FontUIResource f){
         java.util.Enumeration keys = UIManager.getDefaults().keys();
         while (keys.hasMoreElements()) {
             Object key = keys.nextElement();
@@ -109,7 +108,7 @@ public class MenuChanger {
         }
     }
 
-    public void createAndShowGUI(){
+    public static void createAndShowGUI(){
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -166,7 +165,7 @@ public class MenuChanger {
     }
 
 
-    public JPanel leftMenu_JPanel(){
+    public static JPanel leftMenu_JPanel(){
         JPanel panel = new JPanel();
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -259,7 +258,7 @@ public class MenuChanger {
         return panel;
     }
 
-    public rightJPanel draftBeer_JPanel (){
+    public static rightJPanel draftBeer_JPanel(){
 
         rightJPanel panel = new rightJPanel();
 
@@ -321,7 +320,8 @@ public class MenuChanger {
         createNewDraftBeerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                createNewDraftBeer();
+                Beer beer = new Beer();
+                beer.createNewDraftBeer(draftBeerList_Master, draftBeerList_Current);
             }
         });
 
@@ -373,17 +373,8 @@ public class MenuChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                try {
-                    editDraftBeer(beerMasterListTableModel.getElementAt(beerMasterListJTable.getSelectedRow()));
-                }
-                catch(ArrayIndexOutOfBoundsException e2) {
-
-                    try{
-                        editDraftBeer(currentBeerListTableModel.getElementAt(currentDraftBeerListJTable.getSelectedRow()));
-                    }
-                    catch(ArrayIndexOutOfBoundsException e3) {
-                    }
-                    }
+                Beer beer = new Beer();
+                beer.editBeer(beer,draftBeerList_Master,draftBeerList_Current);
 
                 }
 
@@ -401,44 +392,44 @@ public class MenuChanger {
     }
 
 
-    void printDraftBeer(Beer beer, StringBuilder stringBuilder, String beerCategory) {
-
-        if (stringBuilder.length() == 0) {
-            stringBuilder.append("<p class=\"beerStyleHeader\">" + beerCategory + "</p>");
-        }
-
-        stringBuilder.append("<p class=\"beerName\">" + beer.getName());
-        // deal with adding pour size next to beer name is NOT 16oz
-        if (beer.getSize().equals(SIXTEEN_OZ)) {
-            stringBuilder.append("</p>");
-        } else {
-            stringBuilder.append(" " + "(" + beer.getSize() + ")" + "</p>");
-        }
-
-        stringBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-        stringBuilder.append("<p class=\"abv\">" + beer.getAbvString() + "%</p>");
-        stringBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
-        stringBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-        stringBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
-
-    }
-
-    static void printBottledBeer(Beer beer, StringBuilder stringBuilder, String bottleCategory){
-
-        if (stringBuilder.length() == 0) {
-            stringBuilder.append("<div class=\"bottleCategoryHeader\">" + bottleCategory + "</div>");
-
-        }
-        stringBuilder.append("<div class=\"bottleWrapper\">");
-        stringBuilder.append("<div class=\"beerName\">" + beer.getName() + "</div>");
-        stringBuilder.append("<div class=\"beerStyle\">" + beer.getStyle() + "</div>");
-        stringBuilder.append("<div class=\"abv\">" + beer.getAbvString() + "%</div>");
-        stringBuilder.append("<div class=\"brewery\">" + beer.getBrewery() + "</div>");
-        stringBuilder.append("<div class=\"location\">" + beer.getLocation() + "</div>");
-        stringBuilder.append("<div class=\"price\">" + beer.getPrice() + "</div>");
-        stringBuilder.append("</div>");
-
-    }
+//    void printDraftBeer(Beer beer, StringBuilder stringBuilder, String beerCategory) {
+//
+//        if (stringBuilder.length() == 0) {
+//            stringBuilder.append("<p class=\"beerStyleHeader\">" + beerCategory + "</p>");
+//        }
+//
+//        stringBuilder.append("<p class=\"beerName\">" + beer.getName());
+//        // deal with adding pour size next to beer name is NOT 16oz
+//        if (beer.getSize().equals(SIXTEEN_OZ)) {
+//            stringBuilder.append("</p>");
+//        } else {
+//            stringBuilder.append(" " + "(" + beer.getSize() + ")" + "</p>");
+//        }
+//
+//        stringBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
+//        stringBuilder.append("<p class=\"abv\">" + beer.getAbvString() + "%</p>");
+//        stringBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
+//        stringBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
+//        stringBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+//
+//    }
+//
+//    static void printBottledBeer(Beer beer, StringBuilder stringBuilder, String bottleCategory){
+//
+//        if (stringBuilder.length() == 0) {
+//            stringBuilder.append("<div class=\"bottleCategoryHeader\">" + bottleCategory + "</div>");
+//
+//        }
+//        stringBuilder.append("<div class=\"bottleWrapper\">");
+//        stringBuilder.append("<div class=\"beerName\">" + beer.getName() + "</div>");
+//        stringBuilder.append("<div class=\"beerStyle\">" + beer.getStyle() + "</div>");
+//        stringBuilder.append("<div class=\"abv\">" + beer.getAbvString() + "%</div>");
+//        stringBuilder.append("<div class=\"brewery\">" + beer.getBrewery() + "</div>");
+//        stringBuilder.append("<div class=\"location\">" + beer.getLocation() + "</div>");
+//        stringBuilder.append("<div class=\"price\">" + beer.getPrice() + "</div>");
+//        stringBuilder.append("</div>");
+//
+//    }
 
     /*static void printList(){
 
@@ -659,7 +650,7 @@ public class MenuChanger {
 
     }*/
 
-    static void writeList (BufferedWriter bufferedWriter, String header, String footer, List<String> draftBeerArray, List<String> rightColumnArray, List<String> leftColumnArray, int leftColumnSize, int rightColumnSize){
+    /*static void writeList (BufferedWriter bufferedWriter, String header, String footer, List<String> draftBeerArray, List<String> rightColumnArray, List<String> leftColumnArray, int leftColumnSize, int rightColumnSize){
         try {
         bufferedWriter.write(header);
 
@@ -711,11 +702,11 @@ public class MenuChanger {
             e.printStackTrace();
         }
 
-    }
+    }*/
 
 
 
-    static void createNewBottledBeer() {
+    /*static void createNewBottledBeer() {
 
         final Beer newBeer = new Beer();
 
@@ -794,42 +785,10 @@ public class MenuChanger {
         });
 
 
-    }
-
-    static void addBeerToAList(Beer newBeer, String fileName, SortedList<Beer> sortedList) {
-
-        sortedList.add(newBeer);
-        XMLOutputter out = new XMLOutputter();
-
-        try {
-            Document doc = new SAXBuilder().build(fileName);
-
-            Element beer = new Element("beer");
-            beer.addContent(new Element("name").setText(newBeer.getName()));
-            beer.addContent(new Element("style").setText(newBeer.getStyle()));
-            beer.addContent(new Element("abv").setText(newBeer.getAbvString()));
-            beer.addContent(new Element("size").setText(newBeer.getSize()));
-            beer.addContent(new Element("bottleType").setText(newBeer.getBottleType()));
-            beer.addContent(new Element("brewery").setText(newBeer.getBrewery()));
-            beer.addContent(new Element("location").setText(newBeer.getLocation()));
-            beer.addContent(new Element("price").setText(newBeer.getPrice()));
-            beer.addContent(new Element("category").setText(newBeer.getCategory()));
-
-            doc.getRootElement().addContent(beer);
-
-            FileWriter writer = new FileWriter(fileName);
-            out.setFormat(Format.getPrettyFormat());
-            out.output(doc, writer);
-            writer.close();
-
-        } catch (JDOMException | IOException e) {
-            e.printStackTrace();
-        }
-
-    }
+    }*/
 
 
-    static void editBottledBeer(final Beer beer, final String fileName, final SortedList<Beer> sortedList) {
+    /*static void editBottledBeer(final Beer beer, final String fileName, final SortedList<Beer> sortedList) {
 
         final Beer editedBeer = new Beer();
 
@@ -945,7 +904,7 @@ public class MenuChanger {
             }
         });
 
-    }
+    }*/
 
     static void removeBeerFromAList(Beer beer, String fileName, SortedList<Beer> sortedList) {
 
@@ -999,7 +958,7 @@ public class MenuChanger {
     public static void main(String[] args) {
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
-        fileSetup();
+        //fileSetup();
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 createAndShowGUI();

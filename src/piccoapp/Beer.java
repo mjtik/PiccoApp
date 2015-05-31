@@ -18,7 +18,6 @@ public class Beer {
     String location;
     String size;
     String bottleType;
-    int id;
 
     //these are the categories beers are sorted into, the beer style may be different and more descriptive (American or English Pale Ale)
     final String INDIA_PALE_ALES = "India Pale Ales";
@@ -46,7 +45,7 @@ public class Beer {
 
     }
 
-    private void createNewBeer(final draftBeerList draftBeerList_Master, final draftBeerList draftBeerList_Current){
+    public void createNewDraftBeer(final draftBeerList draftBeerList_Master, final draftBeerList draftBeerList_Current){
         final Beer newBeer = new Beer();
 
         final JTextField name = new JTextField(15);
@@ -132,8 +131,10 @@ public class Beer {
 
     }
 
-    private void editBeer(Beer b, final draftBeerList draftBeerList_Master, final draftBeerList draftBeerList_Current){
+    public void editBeer(Beer b, final draftBeerList draftBeerList_Master, final draftBeerList draftBeerList_Current){
         final Beer beer = b;
+
+        System.out.println(beer);
 
         final JTextField name = new JTextField(15);
         name.setText(beer.getName());
@@ -237,14 +238,38 @@ public class Beer {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                beer.setName(name.getText());
-                beer.setStyle(style.getText());
-                beer.setAbv(abv.getText());
-                beer.setSize(pourSizeComboBox.getSelectedItem().toString());
-                beer.setBrewery(brewery.getText());
-                beer.setLocation(location.getText());
-                beer.setPrice(price.getText());
-                beer.setCategory(category.getSelectedItem().toString());
+                Beer newBeer = new Beer();
+
+                newBeer.setName(name.getText());
+                newBeer.setStyle(style.getText());
+                newBeer.setAbv(abv.getText());
+                newBeer.setSize(pourSizeComboBox.getSelectedItem().toString());
+                newBeer.setBrewery(brewery.getText());
+                newBeer.setLocation(location.getText());
+                newBeer.setPrice(price.getText());
+                newBeer.setCategory(category.getSelectedItem().toString());
+
+                //search for previous versions of the beer in master and current list and remove them and add the new beer
+                for (int i = 0; i < draftBeerList_Master.getSortedList().size(); i++){
+
+                    if (beer.getName().equals(draftBeerList_Master.getSortedList().get(i).getName())){
+
+                        draftBeerList_Master.removeBeer(draftBeerList_Master.getSortedList().get(i));
+                        draftBeerList_Master.addBeer(newBeer);
+
+                    }
+                }
+
+                for (int i = 0; i < draftBeerList_Current.getSortedList().size(); i++){
+
+                    if (beer.getName().equals(draftBeerList_Current.getSortedList().get(i).getName())){
+
+                        draftBeerList_Current.removeBeer(draftBeerList_Current.getSortedList().get(i));
+                        draftBeerList_Current.addBeer(newBeer);
+
+                    }
+                }
+
                 frame.setVisible(false);
 
             }
