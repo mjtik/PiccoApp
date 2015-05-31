@@ -9,8 +9,6 @@ import ca.odell.glazedlists.swing.GlazedListsSwing;
 import ca.odell.glazedlists.swing.TableComparatorChooser;
 import ca.odell.glazedlists.swing.TextComponentMatcherEditor;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.net.ftp.FTP;
-import org.apache.commons.net.ftp.FTPClient;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -27,9 +25,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 public class MenuChanger {
@@ -89,8 +88,7 @@ public class MenuChanger {
     static String [] categories = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
     static String[] pourSize = {SIXTEEN_OZ, TWELVE_OZ, TEN_OZ, EIGHT_OZ};
 
-    static SortedList<Beer> draftBeerMasterSortedList;
-    static SortedList<Beer> currentDraftBeerSortedList;
+
 
     static SortedList<Beer> bottledBeerMasterSortedList;
     static SortedList<Beer> currentBottledBeerSortedList;
@@ -109,8 +107,6 @@ public class MenuChanger {
         new File(HOME_DIR + System.getProperty("file.separator") + "XML").mkdir();
         new File(HOME_DIR + System.getProperty("file.separator") + "HTML").mkdir();
 
-        draftBeerMasterSortedList = new BeerXMLParser().parseXML(DRAFT_BEER_MASTER_LIST_XML_FILEPATH);
-        currentDraftBeerSortedList = new BeerXMLParser().parseXML(CURRENT_DRAFT_BEER_LIST_XML_FILEPATH);
         bottledBeerMasterSortedList = new BeerXMLParser().parseXML(BOTTLED_BEER_MASTER_LIST_XML_FILEPATH);
         currentBottledBeerSortedList = new BeerXMLParser().parseXML(CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH);
 
@@ -291,28 +287,29 @@ public class MenuChanger {
 
         rightJPanel panel = new rightJPanel();
 
-        draftBeerList draftBeerList_Master = new draftBeerList();
+        final draftBeerList draftBeerList_Master = new draftBeerList(DRAFT_BEER_MASTER_LIST_XML_FILEPATH);
+        final draftBeerList draftBeerList_Current = new draftBeerList(CURRENT_DRAFT_BEER_LIST_XML_FILEPATH);
 
         Border paddingBorder = BorderFactory.createEmptyBorder(5,30,30,30);
         panel.setBorder(paddingBorder);
 
         //Left table for BeerMasterList
         JTextField beerMasterListFilterEdit = new JTextField(10);
-        final FilterList<Beer> beerMasterListTextFilteredIssues = new FilterList<>(draftBeerMasterSortedList, new TextComponentMatcherEditor<>(beerMasterListFilterEdit, new BeerTextFilter()));
+        final FilterList<Beer> beerMasterListTextFilteredIssues = new FilterList<>(draftBeerList_Master.getSortedList(), new TextComponentMatcherEditor<>(beerMasterListFilterEdit, new BeerTextFilter()));
         final AdvancedTableModel<Beer> beerMasterListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(beerMasterListTextFilteredIssues, new SimpleBeerTableFormat());
         final JTable beerMasterListJTable = new JTable(beerMasterListTableModel);
         beerMasterListJTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        TableComparatorChooser.install(beerMasterListJTable, draftBeerMasterSortedList, TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
+        TableComparatorChooser.install(beerMasterListJTable, draftBeerList_Master.getSortedList(), TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
         beerMasterListJTable.setRowHeight(25);
 
 
         //Right table for CurrentBeerList
         JTextField currentBeerListFilterEdit = new JTextField(10);
-        final FilterList<Beer> currentBeerListTextFilteredIssues = new FilterList<>(currentDraftBeerSortedList, new TextComponentMatcherEditor<>(currentBeerListFilterEdit, new BeerTextFilter()));
+        final FilterList<Beer> currentBeerListTextFilteredIssues = new FilterList<>(draftBeerList_Current.getSortedList(), new TextComponentMatcherEditor<>(currentBeerListFilterEdit, new BeerTextFilter()));
         final AdvancedTableModel<Beer> currentBeerListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(currentBeerListTextFilteredIssues, new SimpleBeerTableFormat());
         final JTable currentDraftBeerListJTable = new JTable(currentBeerListTableModel);
         currentDraftBeerListJTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        TableComparatorChooser.install(currentDraftBeerListJTable, currentDraftBeerSortedList, TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
+        TableComparatorChooser.install(currentDraftBeerListJTable, draftBeerList_Current.getSortedList(), TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
         currentDraftBeerListJTable.setRowHeight(25);
 
 
@@ -376,8 +373,10 @@ public class MenuChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
                 selectedBeer = beerMasterListTableModel.getElementAt(beerMasterListJTable.getSelectedRow());
+                draftBeerList_Current.addBeer(selectedBeer);
 
-                addBeerToAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML_FILEPATH, currentDraftBeerSortedList);
+
+                //addBeerToAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML_FILEPATH, currentDraftBeerSortedList);
             }
         });
 
@@ -385,7 +384,9 @@ public class MenuChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
                 selectedBeer = currentBeerListTableModel.getElementAt(currentDraftBeerListJTable.getSelectedRow());
-                removeBeerFromAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML_FILEPATH, currentDraftBeerSortedList);
+                draftBeerList_Current.removeBeer(selectedBeer);
+
+                //removeBeerFromAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML_FILEPATH, currentDraftBeerSortedList);
 
             }
         });
@@ -393,7 +394,7 @@ public class MenuChanger {
         printList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                printList();
+                //printList();
             }
         });
 
@@ -470,7 +471,7 @@ public class MenuChanger {
 
     }
 
-    static void printList(){
+    /*static void printList(){
 
         String indiaPaleAlesHTML;
         String paleAlesHTML;
@@ -687,7 +688,7 @@ public class MenuChanger {
         }
 
 
-    }
+    }*/
 
     static void writeList (BufferedWriter bufferedWriter, String header, String footer, List<String> draftBeerArray, List<String> rightColumnArray, List<String> leftColumnArray, int leftColumnSize, int rightColumnSize){
         try {
@@ -806,7 +807,7 @@ public class MenuChanger {
         frame.setResizable(false);
         frame.setVisible(true);
 
-        createNewBeer_Button.addActionListener(new ActionListener() {
+       /* createNewBeer_Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -825,7 +826,7 @@ public class MenuChanger {
                 frame.setVisible(false);
 
             }
-        });
+        });*/
 
 
     }
@@ -1225,16 +1226,24 @@ public class MenuChanger {
 
     public static class draftBeerList {
 
-        SortedList<Beer> sortedList;
-        String filePath;
+        private SortedList<Beer> sortedList;
+        private String filePath;
 
-        public draftBeerList(String s) {
+        public SortedList<Beer> getSortedList() {
+            return sortedList;
+        }
+
+        public void setSortedList(SortedList<Beer> sortedList) {
+            this.sortedList = sortedList;
+        }
+
+        private draftBeerList(String s) {
             filePath = s;
             sortedList = new BeerXMLParser().parseXML(filePath);
 
         }
 
-        private void addBeer(Beer newBeer){
+        public void addBeer(Beer newBeer){
 
             sortedList.add(newBeer);
             XMLOutputter out = new XMLOutputter();
@@ -1266,6 +1275,39 @@ public class MenuChanger {
 
 
         }
+
+        public void removeBeer(Beer beer){
+            SAXBuilder builder = new SAXBuilder();
+            String removeName = beer.getName();
+
+            try {
+                Document document = builder.build(filePath);
+                Element rootNode = document.getRootElement();
+                List <Element> beers = rootNode.getChildren("beer");
+
+                for(int i=0;i<=beers.size()-1;i++) {
+
+                    Element element = beers.get(i);
+                    if (removeName.equals(element.getChildText("name"))){
+
+                        beers.remove(i);
+                    }
+
+                }
+
+                XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
+                outputter.output(document, new FileWriter(filePath));
+
+
+
+            } catch (JDOMException | IOException e) {
+                e.printStackTrace();
+            }
+
+            sortedList.remove(beer);
+
+        }
+
 
     }
 
