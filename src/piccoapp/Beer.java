@@ -2,6 +2,8 @@ package piccoapp;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by mtiko_000 on 4/22/2015.
@@ -43,8 +45,8 @@ public class Beer {
 
     }
 
-    private Beer createNewBeer(){
-        Beer newBeer = new Beer();
+    private Beer createNewBeer(final draftBeerList draftBeerList_Master, final draftBeerList draftBeerList_Current){
+        final Beer newBeer = new Beer();
 
         final JTextField name = new JTextField(15);
         final JTextField style = new JTextField(15);
@@ -105,7 +107,8 @@ public class Beer {
         frame.setResizable(false);
         frame.setVisible(true);
 
-       /* createNewBeer_Button.addActionListener(new ActionListener() {
+        createNewBeer_Button.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -117,14 +120,14 @@ public class Beer {
                 newBeer.setPrice(price.getText());
                 newBeer.setCategory(categoryComboBox.getSelectedItem().toString());
                 newBeer.setSize(pourSizeComboBox.getSelectedItem().toString());
-                addBeerToAList(newBeer, DRAFT_BEER_MASTER_LIST_XML_FILEPATH, draftBeerMasterSortedList);
+                draftBeerList_Master.addBeer(newBeer);
                 if (addToCurrentListCheckBox.isSelected()) {
-                    addBeerToAList(newBeer, CURRENT_DRAFT_BEER_LIST_XML_FILEPATH, currentDraftBeerSortedList);
+                    draftBeerList_Current.addBeer(newBeer);
                 }
                 frame.setVisible(false);
 
             }
-        });*/
+        });
 
 
         return newBeer;
