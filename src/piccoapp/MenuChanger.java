@@ -32,93 +32,59 @@ import java.util.List;
 
 public class MenuChanger {
 
-    //FTP info
-    final String SERVER = "ftp.piccorestaurant.com";
-    final int PORT = 21;
-    final String USER_NAME = "piccores";
-    String password = null;
-
-
-    //filepaths for xml files
-<<<<<<< HEAD
-    static final String HOME_DIR = System.getProperty("user.home")+ System.getProperty("file.separator") + "Picco App";
-    static final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";;
-    static final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
-=======
-    final String HOME_DIR = System.getProperty("user.home")+ System.getProperty("file.separator") + "Picco App";
-    final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";
-    final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
->>>>>>> origin/Panel/Tab
-    final String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
-    final String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
-    final String PRINT_LIST_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
-    final String PRINT_LIST_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
-
-    final String WEBSITE_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlFooter.txt";
-    final String WEBSITE_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlHeader.txt";
-
-    final File beerList_printFile = new File(HOME_DIR + "\\html\\Beer_List.html");
-    final File beerList_htmlFile = new File(HOME_DIR + "\\html\\beer.html");
-
-
-    static String bottlesAndCansHTML;
-    static String tableBeerHTML;
-
-
-
-
-    final String BOTTLED_LIST_HEADER = "<div class=\"bottleBox\">";
-    final String BOTTLED_LIST_FOOTER = "</div>";
-
-
-    static SortedList<Beer> bottledBeerMasterSortedList;
-    static SortedList<Beer> currentBottledBeerSortedList;
-
-    static Dimension rightPanelDimension = new Dimension(500,400);
+    static final String HOME_DIR = System.getProperty("user.home") + System.getProperty("file.separator") + "Picco App";
     static final Color rightPanelColor = Color.WHITE;
-
     // insets for right panel components when two scroll lists are in view.
     // Keeps a little space in GBL in between sides.
     static final Insets rightComponentInsets = new Insets(5, 20, 5, 5);
     static final Insets leftComponentInsets = new Insets(5, 5, 5, 20);
 
-    public void fileSetup() {
 
-        //check if directory is setup, if not, make one. (mkdir() does both)
-        new File(HOME_DIR).mkdir();
-        new File(HOME_DIR + System.getProperty("file.separator") + "XML").mkdir();
-        new File(HOME_DIR + System.getProperty("file.separator") + "HTML").mkdir();
-        new File(HOME_DIR + System.getProperty("file.separator") + "Data").mkdir();
+    //filepaths for xml files
+<<<<<<< HEAD
+    static String bottlesAndCansHTML;
+    static String tableBeerHTML;
+    static SortedList<Beer> bottledBeerMasterSortedList;
+=======
+    static SortedList<Beer> currentBottledBeerSortedList;
+    static Dimension rightPanelDimension = new Dimension(500, 400);
+    //FTP info
+    final String SERVER = "ftp.piccorestaurant.com";
+>>>>>>> origin/Panel/Tab
+    final int PORT = 21;
+    final String USER_NAME = "piccores";
+    final String HOME_DIR = System.getProperty("user.home") + System.getProperty("file.separator") + "Picco App";
+    static final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";
+    static final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
+    final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";
+    final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
+    final String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
+    final String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
+    final String PRINT_LIST_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
+    final String PRINT_LIST_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
+    final String WEBSITE_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlFooter.txt";
+    final String WEBSITE_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlHeader.txt";
+    final File beerList_printFile = new File(HOME_DIR + "\\html\\Beer_List.html");
+    final File beerList_htmlFile = new File(HOME_DIR + "\\html\\beer.html");
+    final String BOTTLED_LIST_HEADER = "<div class=\"bottleBox\">";
+    final String BOTTLED_LIST_FOOTER = "</div>";
+    String password = null;
 
-        bottledBeerMasterSortedList = new BeerXMLParser().parseXML(BOTTLED_BEER_MASTER_LIST_XML_FILEPATH);
-        currentBottledBeerSortedList = new BeerXMLParser().parseXML(CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH);
-
-        try {
-            password = FileUtils.readFileToString(new File(HOME_DIR + "\\Data\\hamsandwich.txt"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-
-
-    }
-
-    public static void setUIFont (javax.swing.plaf.FontUIResource f){
+    public static void setUIFont(javax.swing.plaf.FontUIResource f) {
         java.util.Enumeration keys = UIManager.getDefaults().keys();
         while (keys.hasMoreElements()) {
             Object key = keys.nextElement();
-            Object value = UIManager.get (key);
+            Object value = UIManager.get(key);
             if (value != null && value instanceof javax.swing.plaf.FontUIResource)
-                UIManager.put (key, f);
+                UIManager.put(key, f);
         }
     }
 
-    public static void createAndShowGUI(){
+    public static void createAndShowGUI() {
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            setUIFont (new javax.swing.plaf.FontUIResource("Segoe UI", Font.PLAIN, 16));
+            setUIFont(new javax.swing.plaf.FontUIResource("Segoe UI", Font.PLAIN, 16));
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -139,28 +105,28 @@ public class MenuChanger {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.anchor = GridBagConstraints.FIRST_LINE_START;
 
-        gbc.weightx=.2;
-        gbc.weighty=0;
+        gbc.weightx = .2;
+        gbc.weighty = 0;
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.gridheight = 3;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        frame.add(leftMenu_JPanel(),gbc);
+        frame.add(leftMenu_JPanel(), gbc);
 
-        gbc.fill=GridBagConstraints.BOTH;
-        gbc.gridx=1;
-        gbc.gridy=0;
-        gbc.gridheight=1;
-        gbc.weightx=.4;
-        gbc.weighty=.2;
-        frame.add(beerDropbox_JPanel(),gbc);
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.gridheight = 1;
+        gbc.weightx = .4;
+        gbc.weighty = .2;
+        frame.add(beerDropbox_JPanel(), gbc);
 
-        gbc.gridx=1;
-        gbc.gridy=1;
-        gbc.gridheight=2;
-        gbc.weightx=3;
-        gbc.weighty=3;
-        frame.add(draftBeer_JPanel(),gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        gbc.gridheight = 2;
+        gbc.weightx = 3;
+        gbc.weighty = 3;
+        frame.add(draftBeer_JPanel(), gbc);
 
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
@@ -170,8 +136,7 @@ public class MenuChanger {
 
     }
 
-
-    public static JPanel leftMenu_JPanel(){
+    public static JPanel leftMenu_JPanel() {
         JPanel panel = new JPanel();
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -186,23 +151,21 @@ public class MenuChanger {
 
         gbc.anchor = GridBagConstraints.FIRST_LINE_START;
 
-        gbc.weightx=1;
+        gbc.weightx = 1;
         gbc.weighty=0;
         gbc.gridx = 0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
         gbc.gridy = 0;
-        panel.add(filler_JLabel,gbc);
+        panel.add(filler_JLabel, gbc);
         gbc.gridy = 1;
-        panel.add(beer_JLabel,gbc);
+        panel.add(beer_JLabel, gbc);
         gbc.gridy = 2;
-        panel.add(wine_JLabel,gbc);
+        panel.add(wine_JLabel, gbc);
         gbc.gridy = 3;
-        panel.add(food_JLabel,gbc);
+        panel.add(food_JLabel, gbc);
         gbc.gridy = 4;
-        panel.add(icecream_JLabel,gbc);
-
-
+        panel.add(icecream_JLabel, gbc);
 
 
         beer_JLabel.addMouseListener(new MouseAdapter() {
@@ -213,65 +176,18 @@ public class MenuChanger {
         });
 
 
-
         return panel;
 
     }
 
-    public  JLabel leftMenuJLabel(String name){
-
-        JLabel button = new JLabel(name);
-        //Font bigFont = new Font(Font.SANS_SERIF, Font.PLAIN, 20);
-        //button.setFont(bigFont);
-        Border paddingBorder = BorderFactory.createEmptyBorder(10,30,10,10);
-        button.setBorder(paddingBorder);
-        button.setBackground(Color.LIGHT_GRAY);
-        button.setForeground(Color.BLACK);
-        button.setOpaque(true);
-
-        return button;
-    }
-
-    public  rightDropboxJPanel beerDropbox_JPanel (){
-
-        rightDropboxJPanel panel = new rightDropboxJPanel();
-
-        Border paddingBorder = BorderFactory.createEmptyBorder(30,30,5,30);
-        panel.setBorder(paddingBorder);
-
-        GridBagConstraints gbc = new GridBagConstraints();
-        panel.setLayout(new GridBagLayout());
-
-
-        gbc.weighty = 1;
-        gbc.anchor= GridBagConstraints.WEST;
-        gbc.insets = new Insets(5, 5, 5, 5);
-
-        String [] choices = {"Draft", "Bottle/Can"};
-        JComboBox<String> beerDropbox = new JComboBox<>(choices);
-        beerDropbox.setEnabled(false);
-        JLabel beerDropBox_Label = new JLabel("Please select beer type:");
-
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.weightx = .1;
-        panel.add(beerDropBox_Label, gbc);
-        gbc.gridx = 1;
-        gbc.gridy = 0;
-        gbc.weightx = 1;
-        panel.add(beerDropbox, gbc);
-
-        return panel;
-    }
-
-    public static rightJPanel draftBeer_JPanel(){
+    public static rightJPanel draftBeer_JPanel() {
 
         rightJPanel panel = new rightJPanel();
 
         final draftBeerList draftBeerList_Master = new draftBeerList(DRAFT_BEER_MASTER_LIST_XML_FILEPATH);
         final draftBeerList draftBeerList_Current = new draftBeerList(CURRENT_DRAFT_BEER_LIST_XML_FILEPATH);
 
-        Border paddingBorder = BorderFactory.createEmptyBorder(5,30,30,30);
+        Border paddingBorder = BorderFactory.createEmptyBorder(5, 30, 30, 30);
         panel.setBorder(paddingBorder);
 
         //Left table for BeerMasterList
@@ -305,12 +221,12 @@ public class MenuChanger {
         final JButton printList = new JButton("Print");
         final JButton editDraftBeer = new JButton("Edit");
 
-        panel.add(new JLabel("All Beer:"),      new GridBagConstraints(0, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
+        panel.add(new JLabel("All Beer:"), new GridBagConstraints(0, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
         panel.add(new JLabel("Current List: "), new GridBagConstraints(2, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, rightComponentInsets, 0, 0));
-        panel.add(new JLabel("Filter: "),       new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
-        panel.add(beerMasterListFilterEdit,     new GridBagConstraints(1, 1, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
-        panel.add(new JLabel("Filter: "),       new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, rightComponentInsets, 0, 0));
-        panel.add(currentBeerListFilterEdit,    new GridBagConstraints(3, 1, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, rightComponentInsets, 0, 0));
+        panel.add(new JLabel("Filter: "), new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
+        panel.add(beerMasterListFilterEdit, new GridBagConstraints(1, 1, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
+        panel.add(new JLabel("Filter: "), new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, rightComponentInsets, 0, 0));
+        panel.add(currentBeerListFilterEdit, new GridBagConstraints(3, 1, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, rightComponentInsets, 0, 0));
 
         panel.add(addDraftBeerToCurrentList, new GridBagConstraints(0, 2, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
         panel.add(removeDraftBeerFromCurrentList, new GridBagConstraints(2, 2, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, rightComponentInsets, 0, 0));
@@ -327,12 +243,10 @@ public class MenuChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Beer beer = new Beer();
-<<<<<<< HEAD
+
                 beer.createNewDraftBeer(draftBeerList_Master, draftBeerList_Current);
-=======
                 beer.createNewBeer(draftBeerList_Master, draftBeerList_Current);
 
->>>>>>> origin/Panel/Tab
             }
         });
 
@@ -340,7 +254,7 @@ public class MenuChanger {
         beerMasterListJTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                if (currentDraftBeerListJTable.getSelectedRow()>-1){
+                if (currentDraftBeerListJTable.getSelectedRow() > -1) {
                     currentDraftBeerListJTable.clearSelection();
                 }
             }
@@ -385,9 +299,9 @@ public class MenuChanger {
             public void actionPerformed(ActionEvent e) {
 
                 Beer beer = new Beer();
-                beer.editBeer(beer,draftBeerList_Master,draftBeerList_Current);
+                beer.editBeer(beer, draftBeerList_Master, draftBeerList_Current);
 
-                }
+            }
 
 
         });
@@ -396,10 +310,76 @@ public class MenuChanger {
         return panel;
     }
 
-    public static rightJPanel bottledBeer_JPanel (){
+    public static rightJPanel bottledBeer_JPanel() {
 
         rightJPanel panel = new rightJPanel();
         return panel;
+    }
+
+    static void removeBeerFromAList(Beer beer, String fileName, SortedList<Beer> sortedList) {
+
+        SAXBuilder builder = new SAXBuilder();
+        String removeName = beer.getName();
+
+        try {
+            Document document = builder.build(fileName);
+            Element rootNode = document.getRootElement();
+            List<Element> beers = rootNode.getChildren("beer");
+
+            for (int i = 0; i <= beers.size() - 1; i++) {
+
+                Element element = beers.get(i);
+                if (removeName.equals(element.getChildText("name"))) {
+
+                    beers.remove(i);
+                }
+
+            }
+
+            XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
+            outputter.output(document, new FileWriter(fileName));
+
+
+        } catch (JDOMException | IOException e) {
+            e.printStackTrace();
+        }
+
+        sortedList.remove(beer);
+
+
+    }
+
+    public static void main(String[] args) {
+        //Schedule a job for the event-dispatching thread:
+        //creating and showing this application's GUI.
+        //fileSetup();
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                createAndShowGUI();
+            }
+        });
+    }
+
+    public void fileSetup() {
+
+        //check if directory is setup, if not, make one. (mkdir() does both)
+        new File(HOME_DIR).mkdir();
+        new File(HOME_DIR + System.getProperty("file.separator") + "XML").mkdir();
+        new File(HOME_DIR + System.getProperty("file.separator") + "HTML").mkdir();
+        new File(HOME_DIR + System.getProperty("file.separator") + "Data").mkdir();
+
+        bottledBeerMasterSortedList = new BeerXMLParser().parseXML(BOTTLED_BEER_MASTER_LIST_XML_FILEPATH);
+        currentBottledBeerSortedList = new BeerXMLParser().parseXML(CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH);
+
+        try {
+            password = FileUtils.readFileToString(new File(HOME_DIR + "\\Data\\hamsandwich.txt"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+
     }
 
 
@@ -917,38 +897,50 @@ public class MenuChanger {
 
     }*/
 
-    static void removeBeerFromAList(Beer beer, String fileName, SortedList<Beer> sortedList) {
+    public JLabel leftMenuJLabel(String name) {
 
-        SAXBuilder builder = new SAXBuilder();
-        String removeName = beer.getName();
+        JLabel button = new JLabel(name);
+        //Font bigFont = new Font(Font.SANS_SERIF, Font.PLAIN, 20);
+        //button.setFont(bigFont);
+        Border paddingBorder = BorderFactory.createEmptyBorder(10, 30, 10, 10);
+        button.setBorder(paddingBorder);
+        button.setBackground(Color.LIGHT_GRAY);
+        button.setForeground(Color.BLACK);
+        button.setOpaque(true);
 
-        try {
-            Document document = builder.build(fileName);
-            Element rootNode = document.getRootElement();
-            List <Element> beers = rootNode.getChildren("beer");
+        return button;
+    }
 
-            for(int i=0;i<=beers.size()-1;i++) {
+    public rightDropboxJPanel beerDropbox_JPanel() {
 
-                Element element = beers.get(i);
-                if (removeName.equals(element.getChildText("name"))){
+        rightDropboxJPanel panel = new rightDropboxJPanel();
 
-                    beers.remove(i);
-                }
+        Border paddingBorder = BorderFactory.createEmptyBorder(30, 30, 5, 30);
+        panel.setBorder(paddingBorder);
 
-            }
-
-            XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
-            outputter.output(document, new FileWriter(fileName));
-
-
-
-        } catch (JDOMException | IOException e) {
-            e.printStackTrace();
-        }
-
-        sortedList.remove(beer);
+        GridBagConstraints gbc = new GridBagConstraints();
+        panel.setLayout(new GridBagLayout());
 
 
+        gbc.weighty = 1;
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.insets = new Insets(5, 5, 5, 5);
+
+        String[] choices = {"Draft", "Bottle/Can"};
+        JComboBox<String> beerDropbox = new JComboBox<>(choices);
+        beerDropbox.setEnabled(false);
+        JLabel beerDropBox_Label = new JLabel("Please select beer type:");
+
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = .1;
+        panel.add(beerDropBox_Label, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.weightx = 1;
+        panel.add(beerDropbox, gbc);
+
+        return panel;
     }
 
     public static class rightDropboxJPanel extends JPanel{
@@ -964,17 +956,6 @@ public class MenuChanger {
         public rightJPanel() {
             setBackground(Color.WHITE);
         }
-    }
-
-    public static void main(String[] args) {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
-        //fileSetup();
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                createAndShowGUI();
-            }
-        });
     }
 
 }

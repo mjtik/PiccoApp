@@ -9,6 +9,25 @@ import java.awt.event.ActionListener;
  * Created by mtiko_000 on 4/22/2015.
  */
 public class Beer {
+    //these are the categories beers are sorted into, the beer style may be different and more descriptive (American or English Pale Ale)
+    final String INDIA_PALE_ALES = "India Pale Ales";
+    final String PALE_ALES = "Pale Ales";
+    final String OTHER_ALES = "Other Ales";
+    final String LAGERS = "Lagers";
+    final String BELGIAN_STYLE = "Belgian Style";
+    final String DARK = "Dark";
+    final String CIDER = "Cider";
+    final String [] categories_Array = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
+    // draft beer sizes, used to sort when printing
+    final String SIXTEEN_OZ = "16oz";
+    final String TWELVE_OZ = "12oz";
+    final String TEN_OZ = "10oz";
+    final String EIGHT_OZ = "8oz";
+    final String[] pourSize_Array = {SIXTEEN_OZ, TWELVE_OZ, TEN_OZ, EIGHT_OZ};
+    //type of bottled beer, used for sorting
+    final String TABLE_BEER = "Table Beer";
+    final String BOTTLES_AND_CANS = "Bottles & Cans";
+    final String[] bottleType_Array = {TABLE_BEER, BOTTLES_AND_CANS};
     String price;
     String name;
     String style;
@@ -19,37 +38,13 @@ public class Beer {
     String size;
     String bottleType;
 
-    //these are the categories beers are sorted into, the beer style may be different and more descriptive (American or English Pale Ale)
-    final String INDIA_PALE_ALES = "India Pale Ales";
-    final String PALE_ALES = "Pale Ales";
-    final String OTHER_ALES = "Other Ales";
-    final String LAGERS = "Lagers";
-    final String BELGIAN_STYLE = "Belgian Style";
-    final String DARK = "Dark";
-    final String CIDER = "Cider";
-    final String [] categories_Array = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
-
-    // draft beer sizes, used to sort when printing
-    final String SIXTEEN_OZ = "16oz";
-    final String TWELVE_OZ = "12oz";
-    final String TEN_OZ = "10oz";
-    final String EIGHT_OZ = "8oz";
-    final String[] pourSize_Array = {SIXTEEN_OZ, TWELVE_OZ, TEN_OZ, EIGHT_OZ};
-
-    //type of bottled beer, used for sorting
-    final String TABLE_BEER = "Table Beer";
-    final String BOTTLES_AND_CANS = "Bottles & Cans";
-    final String[] bottleType_Array = {TABLE_BEER, BOTTLES_AND_CANS};
-
     public Beer() {
 
     }
 
-<<<<<<< HEAD
+
     public void createNewDraftBeer(final draftBeerList draftBeerList_Master, final draftBeerList draftBeerList_Current){
-=======
-    public void createNewBeer(final draftBeerList draftBeerList_Master, final draftBeerList draftBeerList_Current){
->>>>>>> origin/Panel/Tab
+
         final Beer newBeer = new Beer();
 
         final JTextField name = new JTextField(15);
@@ -374,13 +369,6 @@ public class Beer {
         return Double.parseDouble(this.abv);
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 }
 /**
  * Created by mtiko_000 on 4/22/2015.
