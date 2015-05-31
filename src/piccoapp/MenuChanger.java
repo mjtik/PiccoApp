@@ -32,8 +32,8 @@ import java.util.List;
 
 public class MenuChanger {
 
-    static final String HOME_DIR = System.getProperty("user.home") + System.getProperty("file.separator") + "Picco App";
     static final Color rightPanelColor = Color.WHITE;
+
     // insets for right panel components when two scroll lists are in view.
     // Keeps a little space in GBL in between sides.
     static final Insets rightComponentInsets = new Insets(5, 20, 5, 5);
@@ -41,29 +41,24 @@ public class MenuChanger {
 
 
     //filepaths for xml files
-<<<<<<< HEAD
+    static final String HOME_DIR = System.getProperty("user.home") + System.getProperty("file.separator") + "Picco App";
     static String bottlesAndCansHTML;
     static String tableBeerHTML;
     static SortedList<Beer> bottledBeerMasterSortedList;
-=======
     static SortedList<Beer> currentBottledBeerSortedList;
     static Dimension rightPanelDimension = new Dimension(500, 400);
     //FTP info
     final String SERVER = "ftp.piccorestaurant.com";
->>>>>>> origin/Panel/Tab
     final int PORT = 21;
     final String USER_NAME = "piccores";
-    final String HOME_DIR = System.getProperty("user.home") + System.getProperty("file.separator") + "Picco App";
-    static final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";
-    static final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
-    final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";
-    final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
     final String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
     final String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
     final String PRINT_LIST_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
     final String PRINT_LIST_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
     final String WEBSITE_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlFooter.txt";
     final String WEBSITE_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlHeader.txt";
+
+
     final File beerList_printFile = new File(HOME_DIR + "\\html\\Beer_List.html");
     final File beerList_htmlFile = new File(HOME_DIR + "\\html\\beer.html");
     final String BOTTLED_LIST_HEADER = "<div class=\"bottleBox\">";
@@ -182,10 +177,12 @@ public class MenuChanger {
 
     public static rightJPanel draftBeer_JPanel() {
 
-        rightJPanel panel = new rightJPanel();
-
+        final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";
+        final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
         final draftBeerList draftBeerList_Master = new draftBeerList(DRAFT_BEER_MASTER_LIST_XML_FILEPATH);
         final draftBeerList draftBeerList_Current = new draftBeerList(CURRENT_DRAFT_BEER_LIST_XML_FILEPATH);
+
+        rightJPanel panel = new rightJPanel();
 
         Border paddingBorder = BorderFactory.createEmptyBorder(5, 30, 30, 30);
         panel.setBorder(paddingBorder);
@@ -245,7 +242,6 @@ public class MenuChanger {
                 Beer beer = new Beer();
 
                 beer.createNewDraftBeer(draftBeerList_Master, draftBeerList_Current);
-                beer.createNewBeer(draftBeerList_Master, draftBeerList_Current);
 
             }
         });
@@ -360,26 +356,18 @@ public class MenuChanger {
         });
     }
 
-    public void fileSetup() {
+    public static JLabel leftMenuJLabel(String name) {
 
-        //check if directory is setup, if not, make one. (mkdir() does both)
-        new File(HOME_DIR).mkdir();
-        new File(HOME_DIR + System.getProperty("file.separator") + "XML").mkdir();
-        new File(HOME_DIR + System.getProperty("file.separator") + "HTML").mkdir();
-        new File(HOME_DIR + System.getProperty("file.separator") + "Data").mkdir();
+        JLabel button = new JLabel(name);
+        //Font bigFont = new Font(Font.SANS_SERIF, Font.PLAIN, 20);
+        //button.setFont(bigFont);
+        Border paddingBorder = BorderFactory.createEmptyBorder(10, 30, 10, 10);
+        button.setBorder(paddingBorder);
+        button.setBackground(Color.LIGHT_GRAY);
+        button.setForeground(Color.BLACK);
+        button.setOpaque(true);
 
-        bottledBeerMasterSortedList = new BeerXMLParser().parseXML(BOTTLED_BEER_MASTER_LIST_XML_FILEPATH);
-        currentBottledBeerSortedList = new BeerXMLParser().parseXML(CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH);
-
-        try {
-            password = FileUtils.readFileToString(new File(HOME_DIR + "\\Data\\hamsandwich.txt"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-
-
+        return button;
     }
 
 
@@ -897,21 +885,7 @@ public class MenuChanger {
 
     }*/
 
-    public JLabel leftMenuJLabel(String name) {
-
-        JLabel button = new JLabel(name);
-        //Font bigFont = new Font(Font.SANS_SERIF, Font.PLAIN, 20);
-        //button.setFont(bigFont);
-        Border paddingBorder = BorderFactory.createEmptyBorder(10, 30, 10, 10);
-        button.setBorder(paddingBorder);
-        button.setBackground(Color.LIGHT_GRAY);
-        button.setForeground(Color.BLACK);
-        button.setOpaque(true);
-
-        return button;
-    }
-
-    public rightDropboxJPanel beerDropbox_JPanel() {
+    public static rightDropboxJPanel beerDropbox_JPanel() {
 
         rightDropboxJPanel panel = new rightDropboxJPanel();
 
@@ -941,6 +915,28 @@ public class MenuChanger {
         panel.add(beerDropbox, gbc);
 
         return panel;
+    }
+
+    public void fileSetup() {
+
+        //check if directory is setup, if not, make one. (mkdir() does both)
+        new File(HOME_DIR).mkdir();
+        new File(HOME_DIR + System.getProperty("file.separator") + "XML").mkdir();
+        new File(HOME_DIR + System.getProperty("file.separator") + "HTML").mkdir();
+        new File(HOME_DIR + System.getProperty("file.separator") + "Data").mkdir();
+
+        bottledBeerMasterSortedList = new BeerXMLParser().parseXML(BOTTLED_BEER_MASTER_LIST_XML_FILEPATH);
+        currentBottledBeerSortedList = new BeerXMLParser().parseXML(CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH);
+
+        try {
+            password = FileUtils.readFileToString(new File(HOME_DIR + "\\Data\\hamsandwich.txt"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+
     }
 
     public static class rightDropboxJPanel extends JPanel{
