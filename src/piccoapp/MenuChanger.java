@@ -40,9 +40,15 @@ public class MenuChanger {
 
 
     //filepaths for xml files
+<<<<<<< HEAD
     static final String HOME_DIR = System.getProperty("user.home")+ System.getProperty("file.separator") + "Picco App";
     static final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";;
     static final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
+=======
+    final String HOME_DIR = System.getProperty("user.home")+ System.getProperty("file.separator") + "Picco App";
+    final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";
+    final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
+>>>>>>> origin/Panel/Tab
     final String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
     final String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
     final String PRINT_LIST_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
@@ -212,7 +218,7 @@ public class MenuChanger {
 
     }
 
-    public static JLabel leftMenuJLabel(String name){
+    public  JLabel leftMenuJLabel(String name){
 
         JLabel button = new JLabel(name);
         //Font bigFont = new Font(Font.SANS_SERIF, Font.PLAIN, 20);
@@ -226,7 +232,7 @@ public class MenuChanger {
         return button;
     }
 
-    public static rightDropboxJPanel beerDropbox_JPanel (){
+    public  rightDropboxJPanel beerDropbox_JPanel (){
 
         rightDropboxJPanel panel = new rightDropboxJPanel();
 
@@ -321,7 +327,12 @@ public class MenuChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Beer beer = new Beer();
+<<<<<<< HEAD
                 beer.createNewDraftBeer(draftBeerList_Master, draftBeerList_Current);
+=======
+                beer.createNewBeer(draftBeerList_Master, draftBeerList_Current);
+
+>>>>>>> origin/Panel/Tab
             }
         });
 

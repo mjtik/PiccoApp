@@ -45,7 +45,11 @@ public class Beer {
 
     }
 
+<<<<<<< HEAD
     public void createNewDraftBeer(final draftBeerList draftBeerList_Master, final draftBeerList draftBeerList_Current){
+=======
+    public void createNewBeer(final draftBeerList draftBeerList_Master, final draftBeerList draftBeerList_Current){
+>>>>>>> origin/Panel/Tab
         final Beer newBeer = new Beer();
 
         final JTextField name = new JTextField(15);
@@ -368,6 +372,14 @@ public class Beer {
 
     public Double getAbvDouble() {
         return Double.parseDouble(this.abv);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
 /**

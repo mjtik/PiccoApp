@@ -45,6 +45,7 @@ public class BeerXMLParser {
                 beer.setLocation(element.getChildText("location"));
                 beer.setPrice(element.getChildText("price"));
                 beer.setCategory(element.getChildText("category"));
+                beer.setId(i);
 
                 beerEventList.add(beer);
 

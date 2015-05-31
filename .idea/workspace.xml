@@ -1,0 +1,1417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="PiccoApp:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list id="04ed97b4-2618-4588-9144-4e6085151b39" name="Rejected commit: Default" comment="" />
+    <list id="05e7192f-49ce-469a-937f-50f271875955" name="Created Bottled Beer List Editor - removed first menu, focusing on beer. (cherry picked from commit 5e27023)" comment="Created Bottled Beer List Editor&#10;- removed first menu, focusing on beer.&#10;(cherry picked from commit 5e27023)" />
+    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="More adjustments to editBeer" />
+    <ignored path="PiccoApp.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/PiccoApp$PiccoApp.coverage" NAME="PiccoApp Coverage Results" MODIFIED="1431630623057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="PiccoApp" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.69023746">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="draftBeerList.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/piccoapp/draftBeerList.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="69" column="15" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="15" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#draftBeerList#0;class#draftBeerList#0" expanded="false" />
+                    <element signature="method#addBeer#0;class#draftBeerList#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="BeerXMLParser.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/piccoapp/BeerXMLParser.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="26" column="37" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="37" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MenuChanger.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.12625538">
+                  <caret line="335" column="11" selection-start-line="335" selection-start-column="11" selection-end-line="335" selection-end-column="11" />
+                  <folding>
+                    <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="method#leftMenu_JPanel#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="e#7925#7984#0" expanded="false" />
+                    <element signature="method#beerDropbox_JPanel#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="e#16356#16609#0" expanded="true" />
+                    <element signature="e#16608#16609#0" expanded="true" />
+                    <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="e#16774#16862#0" expanded="false" />
+                    <element signature="method#removeBeerFromAList#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="class#rightDropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="class#rightJPanel#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="e#37132#37182#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SimpleBeerTableFormat.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/piccoapp/SimpleBeerTableFormat.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Beer.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/piccoapp/Beer.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="133" column="18" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#3883#4720#0" expanded="true" />
+                    <element signature="e#4719#4720#0" expanded="true" />
+                    <element signature="e#8316#9921#0" expanded="true" />
+                    <element signature="e#9920#9921#0" expanded="true" />
+                    <element signature="e#9965#10131#0" expanded="true" />
+                    <element signature="e#10130#10131#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="Beer.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/piccoapp/Beer.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0014347202">
+                  <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+                  <folding>
+                    <element signature="docComment;class#Beer#0" expanded="false" />
+                    <element signature="method#createNewDraftBeer#0;class#Beer#0" expanded="false" />
+                    <element signature="method#editBeer#0;class#Beer#0" expanded="false" />
+                    <element signature="e#9965#10131#0" expanded="true" />
+                    <element signature="e#10130#10131#0" expanded="true" />
+                    <element signature="e#11911#11912#0" expanded="true" />
+                    <element signature="e#11948#11949#0" expanded="true" />
+                    <element signature="e#11984#11985#0" expanded="true" />
+                    <element signature="e#12035#12036#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="V0.2" />
+      </map>
+    </option>
+    <option name="RESET_MODE" value="SOFT" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$USER_HOME$/Downloads/glazedlists-1.9.0-tutorial/source/com/publicobject/glazedlists/tutorial/chapter2/IssuesBrowser2.java" />
+        <option value="$PROJECT_DIR$/beers.xml" />
+        <option value="$USER_HOME$/Downloads/glazedlists-1.9.0-tutorial/source/com/publicobject/glazedlists/tutorial/chapter3/IssuesBrowser3.java" />
+        <option value="$USER_HOME$/Downloads/glazedlists-1.9.0-tutorial/source/com/publicobject/glazedlists/tutorial/chapter3/IssueTextFilterator.java" />
+        <option value="$PROJECT_DIR$/src/SimpleBeerTableFormat.java" />
+        <option value="$PROJECT_DIR$/src/XMLParser.java" />
+        <option value="$PROJECT_DIR$/src/BeerXMLWriter.java" />
+        <option value="$PROJECT_DIR$/src/BeerXMLDeleter.java" />
+        <option value="$PROJECT_DIR$/src/CreateNewBeer.java" />
+        <option value="$PROJECT_DIR$/CurrentBeerList.xml" />
+        <option value="$PROJECT_DIR$/BeerMasterList.xml" />
+        <option value="$PROJECT_DIR$/bottledBeerMasterList.xml" />
+        <option value="$PROJECT_DIR$/HTMLfooter.txt" />
+        <option value="$PROJECT_DIR$/currentDraftBeerList.xml" />
+        <option value="$PROJECT_DIR$/HTMLheader.txt" />
+        <option value="$PROJECT_DIR$/draftBeerMasterList.xml" />
+        <option value="$PROJECT_DIR$/src/nextComit.txt" />
+        <option value="$PROJECT_DIR$/Feature Requests.txt" />
+        <option value="$PROJECT_DIR$/currentBottledBeerList.xml" />
+        <option value="$PROJECT_DIR$/XML/currentBottledBeerList.xml" />
+        <option value="$PROJECT_DIR$/XML/bottledBeerMasterList.xml" />
+        <option value="$PROJECT_DIR$/html/main.css" />
+        <option value="$PROJECT_DIR$/src/PiccoApp.java" />
+        <option value="$PROJECT_DIR$/src/BeerXMLParser.java" />
+        <option value="$PROJECT_DIR$/src/BeerTextFilter.java" />
+        <option value="$PROJECT_DIR$/src/draftSorter.java" />
+        <option value="$PROJECT_DIR$/src/draftColumnSorter.java" />
+        <option value="$PROJECT_DIR$/src/draftAbvSorter.java" />
+        <option value="$PROJECT_DIR$/nextComit.txt" />
+        <option value="$PROJECT_DIR$/no_commit/password.txt" />
+        <option value="$PROJECT_DIR$/html/beerList.html" />
+        <option value="$PROJECT_DIR$/html/beer_webHeader.html" />
+        <option value="$PROJECT_DIR$/html/webHeader.html" />
+        <option value="$PROJECT_DIR$/html/webFooter.html" />
+        <option value="$PROJECT_DIR$/html/HTMLheader.txt" />
+        <option value="$PROJECT_DIR$/src/test.html" />
+        <option value="$USER_HOME$/Picco App/HTML/Beer.html" />
+        <option value="$PROJECT_DIR$/html/Beer.html" />
+        <option value="$USER_HOME$/Picco App/HTML/webList.css" />
+        <option value="$USER_HOME$/Picco App/HTML/beerTest.html" />
+        <option value="$USER_HOME$/Picco App/HTML/Beer_List.html" />
+        <option value="$USER_HOME$/Picco App/HTML/beer.html" />
+        <option value="$USER_HOME$/Picco App/XML/bottledBeerMasterList.xml" />
+        <option value="$USER_HOME$/Picco App/XML/currentBottledBeerList.xml" />
+        <option value="$PROJECT_DIR$/src/BeerChanger.java" />
+        <option value="$PROJECT_DIR$/src/MenuChanger.java" />
+        <option value="$PROJECT_DIR$/src/Beer.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/BeerXMLParser.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/draftBeerList.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/Beer.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" />
+      </list>
+    </option>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1184" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Abstraction issuesJava</id>
+          </State>
+          <State>
+            <id>Code style issuesJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>Memory issuesJava</id>
+          </State>
+          <State>
+            <id>Performance issuesJava</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>StringConcatenationInsideStringBufferAppend</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PiccoApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PiccoApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Picco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PiccoApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Picco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PiccoApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Picco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="piccoapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Picco App/HTML" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="56" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="67" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="67" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="684" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="56" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="68" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="68" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="695" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mtiko_000\SkyDrive\Programing\Picco\html" />
+      <recent name="C:\Users\mtiko_000\SkyDrive\Programing\Picco" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mtiko_000\SkyDrive\Programing\Picco\html" />
+      <recent name="C:\Users\mtiko_000\SkyDrive\Programing\Picco\XML" />
+      <recent name="C:\Users\mtiko_000\SkyDrive\Programing\Picco" />
+      <recent name="C:\Users\mtiko_000\SkyDrive\Programing\Picco\src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MenuChanger">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="MenuChanger" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="JAR_PATH" value="$PROJECT_DIR$/glazedlists_java15.jar" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="v0.2" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="PiccoApp" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="PiccoApp" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="MenuChanger" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="piccoapp.MenuChanger" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="PiccoApp" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Application.v0.2" />
+      <item index="1" class="java.lang.String" itemvalue="Application.MenuChanger" />
+    </list>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_FIELDS" />
+  </component>
+  <component name="TaskManager">
+    <task id="Default" summary="Default task">
+      <created>1429741011934</created>
+      <option name="number" value="Default" />
+      <updated>1431666732292</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added beer editor for MasterList">
+      <created>1430788635214</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1431706550534</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Bugfixes&#10;- XMLParser now has setSize&#10;- 12oz printing correctly in html&#10;">
+      <created>1431630830857</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1431630830857</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Edit/add bottledBeer&#10;- XMLParser has bottleType&#10;- addBeerToAList has bottleType">
+      <created>1431631225383</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1431631225383</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Started Printing bottled beers with drafts">
+      <created>1431635887540</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1431635887540</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Bugfix in editDraftBeer window&#10;- beer is only removed if it is edited&#10;- once beer is saved, old beer is removed.&#10;- simplified with use of existing functions">
+      <created>1431665748358</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1431665748358</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Update editBottledBeer functionality">
+      <created>1431666722772</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1431706793297</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Add delete beer option to edit window">
+      <created>1431706786667</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1431708109759</updated>
+    </task>
+    <task active="true" id="LOCAL-00038" summary="Adjusting GridBagLayout in edit beer">
+      <changelist id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="" />
+      <created>1431708106604</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1431708109761</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Adjusted gridbaglayout in edit beer&#10;- fixed default close operation">
+      <created>1431711347240</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1431711347240</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Adjusting GridBagLayout in edit bottled beer">
+      <created>1431713290323</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1431713290323</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Bugfixes to bottled beer creator/editor">
+      <created>1431714953167</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1431714953167</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Draft beers now sort into columns&#10;- edits to css layout">
+      <created>1432059803086</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1432059803086</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Sort draft beers by abv&#10;- getAbd --&gt; getAbvString&#10;- added getAbvDouble&#10;- added draftAbvSorter">
+      <created>1432061461393</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1432061461393</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Sort draft beers by abv (cont.)&#10;- modified printList to sort array for each category">
+      <created>1432063897288</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1432063897288</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Improved column sorting&#10;- sorts based on the size of each column">
+      <created>1432065525836</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1432065525836</updated>
+    </task>
+    <task id="LOCAL-00046" summary="CSS formatting">
+      <created>1432179542031</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1432179542031</updated>
+    </task>
+    <task id="LOCAL-00047" summary="More CSS formatting">
+      <created>1432179613441</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1432179613441</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Moved xml &amp; html files/folders to users home dir">
+      <created>1432574170035</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1432574170036</updated>
+    </task>
+    <task id="LOCAL-00049" summary="fixes file associations in printlist()">
+      <created>1432575265959</created>
+      <option name="number" value="00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1432575265959</updated>
+    </task>
+    <task id="LOCAL-00050" summary="fixes more file associations in printlist()">
+      <created>1432578066623</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1432578066623</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Commit...not sure what. Stuff is broken.&#10;- text filter search will select the row from the unfiltered list. this is true in draft and bottles beer changers.&#10;- need inproved formatting for printlist&#10;- need improved printing of website">
+      <created>1432693034292</created>
+      <option name="number" value="00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1432693034292</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Fixed textfilter sort.">
+      <created>1432696867137</created>
+      <option name="number" value="00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1432696867140</updated>
+    </task>
+    <task id="LOCAL-00053" summary="JLists in createDraftBeer are now single selection&#10;- also added sorting to current beer list">
+      <created>1432699229011</created>
+      <option name="number" value="00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1432699229011</updated>
+    </task>
+    <task id="LOCAL-00054" summary="In createDraftBeer, only a one column can be selected at a time">
+      <created>1432700279450</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1432700279451</updated>
+    </task>
+    <task id="LOCAL-00055" summary="More Fixing filepaths&#10;- headers and footer txt files are in user dir. (Picco App folder)">
+      <created>1432705649971</created>
+      <option name="number" value="00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1432705649971</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Star transition to JMenubar layout with diffent panels">
+      <created>1432843195363</created>
+      <option name="number" value="00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1432843195364</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Removed Menubar">
+      <created>1432843822920</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1432843822921</updated>
+    </task>
+    <task id="LOCAL-00058" summary="BeerChanger is now MenuChanger">
+      <created>1432853776067</created>
+      <option name="number" value="00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1432853776068</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Worried about system crash">
+      <created>1432873083122</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1432873083122</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Basic gridBagLayout for new interface">
+      <created>1432876434821</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1432876434823</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Created ultimate Sigleton. Will revise in the future.&#10; - added draftBeerJPanel">
+      <created>1432911306715</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1432911306715</updated>
+    </task>
+    <task id="LOCAL-00062" summary="More layout adjustments&#10;- edit button now works for both columns">
+      <created>1432919359474</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1432919359474</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Began removing static everyting&#10;- filepaths moved out of fileSetup&#10;- started ne draftBeerList class that will perform repetitive functions">
+      <created>1432922962398</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1432922962398</updated>
+    </task>
+    <task id="LOCAL-00064" summary="More organizing. App Broken right now.">
+      <created>1433047467725</created>
+      <option name="number" value="00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1433047467728</updated>
+    </task>
+    <task id="LOCAL-00065" summary="V0.2&#10;- Size added to bottled list&#10;- sixes for bottled and draft beer now normal font weight">
+      <created>1433047946744</created>
+      <option name="number" value="00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1433047946744</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Spacing and () fixed on bottled beer list">
+      <created>1433048095826</created>
+      <option name="number" value="00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1433048095826</updated>
+    </task>
+    <task id="LOCAL-00067" summary="clarified entry of bottled beer sizes. &#10;- beer should be entered in oz">
+      <created>1433048333617</created>
+      <option name="number" value="00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1433048333617</updated>
+    </task>
+    <task id="LOCAL-00068" summary="removed space between number and oz in bottled list">
+      <created>1433048740892</created>
+      <option name="number" value="00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1433048740892</updated>
+    </task>
+    <task id="LOCAL-00069" summary="More Static removed, class variables organized">
+      <created>1433074934616</created>
+      <option name="number" value="00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1433074934618</updated>
+    </task>
+    <task id="LOCAL-00070" summary="More Static removed, variables declared final">
+      <created>1433075967157</created>
+      <option name="number" value="00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1433075967157</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Created package piccoapp&#10;- moved draftBeerList class out of menuChanger">
+      <created>1433077231238</created>
+      <option name="number" value="00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1433077231238</updated>
+    </task>
+    <task id="LOCAL-00072" summary="createNewBeer moved to Beer class&#10;- final beer string variables moved to beer class">
+      <created>1433077854847</created>
+      <option name="number" value="00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1433077854847</updated>
+    </task>
+    <task id="LOCAL-00073" summary="createNewBeer button fixed">
+      <created>1433078165929</created>
+      <option name="number" value="00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1433078165929</updated>
+    </task>
+    <task id="LOCAL-00074" summary="variable int id added to Beer class to enable better editing in the future">
+      <created>1433078308195</created>
+      <option name="number" value="00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1433078308195</updated>
+    </task>
+    <task id="LOCAL-00075" summary="editBeer moved to Beer class&#10;- not working">
+      <created>1433079062032</created>
+      <option name="number" value="00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1433079062032</updated>
+    </task>
+    <task id="LOCAL-00076" summary="editBeer moved to Beer class&#10;- not working">
+      <created>1433079682370</created>
+      <option name="number" value="00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1433079682370</updated>
+    </task>
+    <task id="LOCAL-00077" summary="editBeer variables fixed&#10;- copy of method removed from draftBeerList">
+      <created>1433079992376</created>
+      <option name="number" value="00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1433079992376</updated>
+    </task>
+    <task id="LOCAL-00078" summary="id mutator added to Beer class&#10;- id set in BeerXMLParser via int counter">
+      <created>1433080684242</created>
+      <option name="number" value="00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1433080684242</updated>
+    </task>
+    <task id="LOCAL-00079" summary="More adjustments to editBeer">
+      <created>1433086390932</created>
+      <option name="number" value="00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1433086390932</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
+    <option name="clearContext" value="false" />
+    <option name="createChangelist" value="false" />
+    <option name="createBranch" value="false" />
+    <servers>
+      <GitHub shared="false" url="https://github.com">
+        <commitMessageFormat>{id} {summary}</commitMessageFormat>
+        <password />
+        <token>dfc8df9cdf9bdfcbdf93dfcfdf92df93df9edfccdf9bdfc8dfcedfc9df9bdfcedf9cdfccdf9cdf9fdfcbdfccdf98df9fdfcedf98df9adf9ddf99dfccdf9edf99dfcfdfcbdfc8dfc9df9edf9adf9adf9f</token>
+        <option name="loginAnonymously" value="false" />
+        <option name="preferredCloseTaskState" />
+        <option name="preferredOpenTaskState" />
+        <option name="repoAuthor" value="mjtik" />
+        <option name="repoName" value="PiccoApp" />
+        <option name="shouldFormatCommitMessage" value="false" />
+        <option name="useHttpAuthentication" value="false" />
+        <option name="useProxy" value="false" />
+        <option name="user" value="mjtik" />
+        <username />
+      </GitHub>
+    </servers>
+  </component>
+  <component name="TodoView" selected-index="2">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1184" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874015" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32688588" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3172147" sideWeight="0.5403694" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29400387" sideWeight="0.49604222" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.311412" sideWeight="0.4596306" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.327853" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15936676" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25628626" sideWeight="0.49815303" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16253299" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39074802" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288201" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3220503" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32591876" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288201" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.087877184" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26499033" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2791712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="In createDraftBeer, only a one column can be selected at a time" />
+    <MESSAGE value="More Fixing filepaths&#10;- headers and footer txt files are in user dir. (Picco App folder)" />
+    <MESSAGE value="Star transition to JMenubar layout with diffent panels" />
+    <MESSAGE value="Removed Menubar" />
+    <MESSAGE value="BeerChanger is now MenuChanger" />
+    <MESSAGE value="Worried about system crash" />
+    <MESSAGE value="Basic gridBagLayout for new interface" />
+    <MESSAGE value="Created ultimate Sigleton. Will revise in the future.&#10; - added draftBeerJPanel" />
+    <MESSAGE value="More layout adjustments&#10;- edit button now works for both columns" />
+    <MESSAGE value="Began removing static everyting&#10;- filepaths moved out of fileSetup&#10;- started ne draftBeerList class that will perform repetitive functions" />
+    <MESSAGE value="More organizing. App Broken right now." />
+    <MESSAGE value="V0.2&#10;- Size added to bottled list&#10;- sixes for bottled and draft beer now normal font weight" />
+    <MESSAGE value="Spacing and () fixed on bottled beer list" />
+    <MESSAGE value="clarified entry of bottled beer sizes. &#10;- beer should be entered in oz" />
+    <MESSAGE value="removed space between number and oz in bottled list" />
+    <MESSAGE value="More Static removed, class variables organized" />
+    <MESSAGE value="More Static removed, variables declared final" />
+    <MESSAGE value="Created package piccoapp&#10;- moved draftBeerList class out of menuChanger" />
+    <MESSAGE value="createNewBeer moved to Beer class&#10;- final beer string variables moved to beer class" />
+    <MESSAGE value="createNewBeer button fixed" />
+    <MESSAGE value="variable int id added to Beer class to enable better editing in the future" />
+    <MESSAGE value="editBeer moved to Beer class&#10;- not working" />
+    <MESSAGE value="editBeer variables fixed&#10;- copy of method removed from draftBeerList" />
+    <MESSAGE value="id mutator added to Beer class&#10;- id set in BeerXMLParser via int counter" />
+    <MESSAGE value="More adjustments to editBeer" />
+    <option name="LAST_COMMIT_MESSAGE" value="More adjustments to editBeer" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="20" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/BeerTextFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/Beer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="30" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/BeerTableFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/BeerXMLParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="141" selection-start-line="71" selection-start-column="141" selection-end-line="71" selection-end-column="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/BeerTextFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/Beer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="30" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/BeerTableFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/BeerXMLParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="141" selection-start-line="71" selection-start-column="141" selection-end-line="71" selection-end-column="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/BeerTextFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/Beer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/BeerXMLParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiccoApp.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/BeerXMLParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/IdeaProjects/Picco/out/production/Picco/Beer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.035490606">
+          <caret line="5" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/awt/event/ActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44964394">
+          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdom-2.0.6/jdom-2.0.6-sources.jar!/org/jdom2/Document.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27670395">
+          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiccoApp.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.033966035">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/io/FileInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Feature Requests.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20752798">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/glazedlists_java15-1.9.1/extensions/hibernate/source/ca/odell/glazedlists/hibernate/PersistentEventList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49155146">
+          <caret line="119" column="11" selection-start-line="119" selection-start-column="11" selection-end-line="119" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/BeerTableFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3044776">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/draftColumnSorter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/draftAbvSorter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nextComit.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15658915">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Picco App/HTML/printList.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Picco App/HTML/webList.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Picco App/HTML/Beer_List.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3552769">
+          <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22482197">
+          <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/jre/lib/rt.jar!/java/lang/Object.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08872651">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Picco App/HTML/beer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/javax/swing/plaf/basic/BasicArrowButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32858595">
+          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/BeerTextFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/awt/event/MouseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51576805">
+          <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/awt/GridBagLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="707" column="0" selection-start-line="707" selection-start-column="0" selection-end-line="707" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/glazedlists_java15.jar!/ca/odell/glazedlists/FilterList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23068893">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/javax/swing/JLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="599" column="23" selection-start-line="599" selection-start-column="20" selection-end-line="599" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/javax/swing/SwingConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Picco App/XML/bottledBeerMasterList.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2195122">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Picco App/XML/currentBottledBeerList.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14634146">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/SimpleBeerTableFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/BeerXMLParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/glazedlists_java15.jar!/ca/odell/glazedlists/TransformedList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7053292">
+          <caret line="73" column="19" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/glazedlists_java15.jar!/ca/odell/glazedlists/SortedList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1598746">
+          <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+          <folding>
+            <element signature="method#create#0;class#SortedList#0" expanded="false" />
+            <element signature="method#SortedList#1;class#SortedList#0" expanded="false" />
+            <element signature="method#setMode#0;class#SortedList#0" expanded="false" />
+            <element signature="method#listChanged#0;class#SortedList#0" expanded="false" />
+            <element signature="method#insertByUnsortedNode#0;class#SortedList#0" expanded="false" />
+            <element signature="method#deleteByUnsortedNode#0;class#SortedList#0" expanded="false" />
+            <element signature="method#getSourceIndex#0;class#SortedList#0" expanded="false" />
+            <element signature="method#setComparator#0;class#SortedList#0" expanded="false" />
+            <element signature="method#indexOf#0;class#SortedList#0" expanded="false" />
+            <element signature="method#lastIndexOf#0;class#SortedList#0" expanded="false" />
+            <element signature="method#lastSortIndex#0;class#SortedList#0" expanded="false" />
+            <element signature="docComment;method#indexOfSimulated#0;class#SortedList#0" expanded="false" />
+            <element signature="method#indexOfSimulated#0;class#SortedList#0" expanded="false" />
+            <element signature="method#next#0;class#SortedListIterator#0;class#SortedList#0" expanded="false" />
+            <element signature="class#ElementRawOrderComparator#0;class#SortedList#0" expanded="false" />
+            <element signature="method#ElementRawOrderComparator#0;class#ElementRawOrderComparator#0;class#SortedList#0" expanded="false" />
+            <element signature="method#compare#0;class#ElementRawOrderComparator#0;class#SortedList#0" expanded="false" />
+            <element signature="class#ElementComparator#0;class#SortedList#0" expanded="false" />
+            <element signature="method#compare#0;class#ElementComparator#0;class#SortedList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/draftBeerList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="15" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#draftBeerList#0;class#draftBeerList#0" expanded="false" />
+            <element signature="method#addBeer#0;class#draftBeerList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22577423">
+          <caret line="258" column="0" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/Beer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="133" column="18" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3883#4720#0" expanded="true" />
+            <element signature="e#4719#4720#0" expanded="true" />
+            <element signature="e#8316#9921#0" expanded="true" />
+            <element signature="e#9920#9921#0" expanded="true" />
+            <element signature="e#9965#10131#0" expanded="true" />
+            <element signature="e#10130#10131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12625538">
+          <caret line="335" column="11" selection-start-line="335" selection-start-column="11" selection-end-line="335" selection-end-column="11" />
+          <folding>
+            <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#leftMenu_JPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="e#7925#7984#0" expanded="false" />
+            <element signature="method#beerDropbox_JPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="e#16356#16609#0" expanded="true" />
+            <element signature="e#16608#16609#0" expanded="true" />
+            <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="e#16774#16862#0" expanded="false" />
+            <element signature="method#removeBeerFromAList#0;class#MenuChanger#0" expanded="false" />
+            <element signature="class#rightDropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="class#rightJPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
+            <element signature="e#37132#37182#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>PiccoApp:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>commons-net-3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>PiccoApp</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>glazedlists_java15</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
