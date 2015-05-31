@@ -42,7 +42,7 @@ public class MenuChanger {
 
     //filepaths for xml files
     final String HOME_DIR = System.getProperty("user.home")+ System.getProperty("file.separator") + "Picco App";
-    final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";;
+    final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";
     final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
     final String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
     final String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
@@ -213,7 +213,7 @@ public class MenuChanger {
 
     }
 
-    public static JLabel leftMenuJLabel(String name){
+    public  JLabel leftMenuJLabel(String name){
 
         JLabel button = new JLabel(name);
         //Font bigFont = new Font(Font.SANS_SERIF, Font.PLAIN, 20);
@@ -227,7 +227,7 @@ public class MenuChanger {
         return button;
     }
 
-    public static rightDropboxJPanel beerDropbox_JPanel (){
+    public  rightDropboxJPanel beerDropbox_JPanel (){
 
         rightDropboxJPanel panel = new rightDropboxJPanel();
 
@@ -321,7 +321,9 @@ public class MenuChanger {
         createNewDraftBeerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                createNewDraftBeer();
+                Beer beer = new Beer();
+                beer.createNewBeer(draftBeerList_Master, draftBeerList_Current);
+
             }
         });
 
