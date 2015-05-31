@@ -132,28 +132,28 @@ public class Beer {
 
     }
 
-    private void editBeer(Beer beer, final draftBeerList draftBeerList_Master, final draftBeerList draftBeerList_Current){
-        Beer beerToEdit = beer;
+    private void editBeer(Beer b, final draftBeerList draftBeerList_Master, final draftBeerList draftBeerList_Current){
+        final Beer beer = b;
 
         final JTextField name = new JTextField(15);
-        name.setText(beerToEdit.getName());
+        name.setText(beer.getName());
         final JTextField style = new JTextField(15);
-        style.setText(beerToEdit.getStyle());
+        style.setText(beer.getStyle());
         final JTextField abv = new JTextField(15);
-        abv.setText(beerToEdit.getAbvString());
+        abv.setText(beer.getAbvString());
         final JTextField brewery = new JTextField(15);
-        brewery.setText(beerToEdit.getBrewery());
+        brewery.setText(beer.getBrewery());
         final JTextField location = new JTextField(15);
-        location.setText(beerToEdit.getLocation());
+        location.setText(beer.getLocation());
         final JTextField price = new JTextField(15);
-        price.setText(beerToEdit.getPrice());
+        price.setText(beer.getPrice());
         final JComboBox<String> pourSizeComboBox = new JComboBox<>(pourSize_Array);
         final JComboBox<String> category = new JComboBox<>(categories_Array);
 
         JButton save_Button = new JButton("Save");
         JButton delete_Button = new JButton("Delete");
 
-        switch (beerToEdit.getCategory()){
+        switch (beer.getCategory()){
             case INDIA_PALE_ALES:
                 category.setSelectedIndex(0);
                 break;
@@ -237,14 +237,14 @@ public class Beer {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                editedBeer.setName(name.getText());
-                editedBeer.setStyle(style.getText());
-                editedBeer.setAbv(abv.getText());
-                editedBeer.setSize(pourSizeComboBox.getSelectedItem().toString());
-                editedBeer.setBrewery(brewery.getText());
-                editedBeer.setLocation(location.getText());
-                editedBeer.setPrice(price.getText());
-                editedBeer.setCategory(category.getSelectedItem().toString());
+                beer.setName(name.getText());
+                beer.setStyle(style.getText());
+                beer.setAbv(abv.getText());
+                beer.setSize(pourSizeComboBox.getSelectedItem().toString());
+                beer.setBrewery(brewery.getText());
+                beer.setLocation(location.getText());
+                beer.setPrice(price.getText());
+                beer.setCategory(category.getSelectedItem().toString());
                 frame.setVisible(false);
 
             }

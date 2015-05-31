@@ -99,9 +99,6 @@ public class draftBeerList {
 
     }
 
-    void editDraftBeer(Beer beer, draftBeerList draftBeerList_Master, draftBeerList draftBeerList_Current){
-
-    }
 
 
 }
