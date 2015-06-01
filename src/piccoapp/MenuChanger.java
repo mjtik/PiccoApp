@@ -121,7 +121,6 @@ public class MenuChanger {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
-
     }
 
 
@@ -171,12 +170,17 @@ public class MenuChanger {
 
     public static JPanel beerCard() {
 
-        final String DRAFTBEER_CARD = "Draft Beer Card";
-        final String BOTTLEDBEER_CARD = "Bottled Beer Card";
+        final String DRAFTBEER = "Draft";
+        final String BOTTLEDBEER = "Bottle/Can";
+        String[] choices = {DRAFTBEER, BOTTLEDBEER};
+        String heading = "Please select beer type:";
+        final CardLayout cardLayout = new CardLayout();
+        final JPanel cards = new JPanel(cardLayout);
 
-        JPanel cards = new JPanel(new CardLayout());
-        cards.add(draftBeer_JPanel(), DRAFTBEER_CARD);
-        cards.add(bottledBeer_JPanel(), BOTTLEDBEER_CARD);
+        final dropboxJPanel dropboxJPanel = new dropboxJPanel(choices, heading);
+        cards.add(draftBeer_JPanel(), DRAFTBEER);
+        cards.add(bottledBeer_JPanel(), BOTTLEDBEER);
+
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
@@ -186,7 +190,7 @@ public class MenuChanger {
         gbc.weightx = .1;
         gbc.weighty = .1;
         gbc.fill = GridBagConstraints.BOTH;
-        panel.add(beerDropbox_JPanel(), gbc);
+        panel.add(dropboxJPanel, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 1;
@@ -194,8 +198,23 @@ public class MenuChanger {
         gbc.weightx = 1;
         gbc.weighty = 3;
         gbc.fill = GridBagConstraints.BOTH;
-        panel.add(draftBeer_JPanel(), gbc);
+        panel.add(cards, gbc);
 
+        dropboxJPanel.dropbox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String selection = dropboxJPanel.dropbox.getSelectedItem().toString();
+                System.out.println(selection);
+                switch (selection) {
+                    case DRAFTBEER:
+                        cardLayout.show(cards, DRAFTBEER);
+                        break;
+                    case BOTTLEDBEER:
+                        cardLayout.show(cards, BOTTLEDBEER);
+                        break;
+                }
+            }
+        });
 
         return panel;
 
@@ -373,36 +392,74 @@ public class MenuChanger {
         return button;
     }
 
-    public static rightDropboxJPanel beerDropbox_JPanel() {
+    public static class dropboxJPanel extends JPanel {
 
-        rightDropboxJPanel panel = new rightDropboxJPanel();
+        public JComboBox<String> dropbox;
 
-        Border paddingBorder = BorderFactory.createEmptyBorder(30, 30, 5, 30);
-        panel.setBorder(paddingBorder);
+        public dropboxJPanel(String[] choices, String heading) {
 
-        GridBagConstraints gbc = new GridBagConstraints();
-        panel.setLayout(new GridBagLayout());
+            Border paddingBorder = BorderFactory.createEmptyBorder(30, 30, 5, 30);
+            this.setBorder(paddingBorder);
+
+            GridBagConstraints gbc = new GridBagConstraints();
+            this.setLayout(new GridBagLayout());
 
 
-        gbc.weighty = 1;
-        gbc.anchor = GridBagConstraints.FIRST_LINE_START;
-        gbc.insets = new Insets(5, 5, 5, 5);
+            gbc.weighty = 1;
+            gbc.anchor = GridBagConstraints.FIRST_LINE_START;
+            gbc.insets = new Insets(5, 5, 5, 5);
 
-        String[] choices = {"Draft", "Bottle/Can"};
-        JComboBox<String> beerDropbox = new JComboBox<>(choices);
-        beerDropbox.setEnabled(false);
-        JLabel beerDropBox_Label = new JLabel("Please select beer type:");
+            dropbox = new JComboBox<>(choices);
+            JLabel beerDropBox_Label = new JLabel(heading);
 
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.weightx = 0;
-        panel.add(beerDropBox_Label, gbc);
-        gbc.gridx = 1;
-        gbc.gridy = 0;
-        gbc.weightx = 5;
-        panel.add(beerDropbox, gbc);
+            gbc.gridx = 0;
+            gbc.gridy = 0;
+            gbc.weightx = 0;
+            this.add(beerDropBox_Label, gbc);
+            gbc.gridx = 1;
+            gbc.gridy = 0;
+            gbc.weightx = 5;
+            this.add(dropbox, gbc);
 
-        return panel;
+        }
+
+
+
+
+    }
+
+    public static class dropboxJPanel extends JPanel {
+
+        public JComboBox<String> dropbox;
+
+        public dropboxJPanel(String[] choices, String heading) {
+
+            Border paddingBorder = BorderFactory.createEmptyBorder(30, 30, 5, 30);
+            this.setBorder(paddingBorder);
+
+            GridBagConstraints gbc = new GridBagConstraints();
+            this.setLayout(new GridBagLayout());
+
+
+            gbc.weighty = 1;
+            gbc.anchor = GridBagConstraints.FIRST_LINE_START;
+            gbc.insets = new Insets(5, 5, 5, 5);
+
+            dropbox = new JComboBox<>(choices);
+            JLabel beerDropBox_Label = new JLabel(heading);
+
+            gbc.gridx = 0;
+            gbc.gridy = 0;
+            gbc.weightx = 0;
+            this.add(beerDropBox_Label, gbc);
+            gbc.gridx = 1;
+            gbc.gridy = 0;
+            gbc.weightx = 5;
+            this.add(dropbox, gbc);
+
+        }
+
+
     }
 
     public void fileSetup() {
@@ -422,14 +479,6 @@ public class MenuChanger {
             e.printStackTrace();
         }
 
-
-    }
-
-    public static class rightDropboxJPanel extends JPanel {
-
-        public rightDropboxJPanel() {
-            setBackground(Color.WHITE);
-        }
 
     }
 
