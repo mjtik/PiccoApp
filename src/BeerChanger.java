@@ -35,10 +35,6 @@ public class BeerChanger {
     final String SERVER = "ftp.piccorestaurant.com";
     final int PORT = 21;
     final String USER_NAME = "piccores";
-    String password = null;
-
-
-
     //these are the categories beers are sorted into, the beer style may be different and more descriptive (American or English Pale Ale)
     final String INDIA_PALE_ALES = "India Pale Ales";
     final String PALE_ALES = "Pale Ales";
@@ -47,40 +43,30 @@ public class BeerChanger {
     final String BELGIAN_STYLE = "Belgian Style";
     final String DARK = "Dark";
     final String CIDER = "Cider";
-
     final String SIXTEEN_OZ = "16oz";
     final String TWELVE_OZ = "12oz";
     final String TEN_OZ = "10oz";
     final String EIGHT_OZ = "8oz";
-
     final String TABLE_BEER = "Table Beer";
     final String BOTTLES_AND_CANS = "Bottles & Cans";
-
     final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH;
     final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH;
     final String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH;
     final String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH;
     final String HOME_DIR;
-
-
     final String PRINT_LIST_HTML_FOOTER_FILEPATH;
     final String PRINT_LIST_HTML_HEADER_FILEPATH;
-
     final String WEBSITE_HTML_FOOTER_FILEPATH;
     final String WEBSITE_HTML_HEADER_FILEPATH;
-
+    final String BOTTLED_LIST_HEADER = "<div class=\"bottleBox\">";
+    final String BOTTLED_LIST_FOOTER = "</div>";
+    String password = null;
     String bottlesAndCansHTML;
     String tableBeerHTML;
 
+    //File testFile = new File(System.getProperty("user.home") + System.getProperty("file.separator") + "test.txt");
     File beerList_printFile;
     File beerList_htmlFile;
-
-    //File testFile = new File(System.getProperty("user.home") + System.getProperty("file.separator") + "test.txt");
-
-
-    final String BOTTLED_LIST_HEADER = "<div class=\"bottleBox\">";
-    final String BOTTLED_LIST_FOOTER = "</div>";
-
     String[] bottleType = {TABLE_BEER, BOTTLES_AND_CANS};
     String [] categories = {INDIA_PALE_ALES, PALE_ALES, OTHER_ALES, LAGERS, BELGIAN_STYLE, DARK, CIDER};
     String[] pourSize = {SIXTEEN_OZ, TWELVE_OZ, TEN_OZ, EIGHT_OZ};
@@ -403,7 +389,7 @@ public class BeerChanger {
 
         }
         stringBuilder.append("<div class=\"bottleWrapper\">");
-        stringBuilder.append("<div class=\"beerName\">" + beer.getName() + "</div>");
+        stringBuilder.append("<div class=\"beerName\">" + beer.getName() + "<span style=\"font-weight:normal;\"" + " (" + beer.getSize() + ")</span>" + "</div>");
         stringBuilder.append("<div class=\"beerStyle\">" + beer.getStyle() + "</div>");
         stringBuilder.append("<div class=\"abv\">" + beer.getAbvString() + "%</div>");
         stringBuilder.append("<div class=\"brewery\">" + beer.getBrewery() + "</div>");
