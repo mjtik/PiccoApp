@@ -95,6 +95,13 @@ public class MenuChanger {
         frame.setLayout(new GridBagLayout());
         frame.getContentPane().setBackground(Color.LIGHT_GRAY);
 
+        JPanel cards = new JPanel(new CardLayout());
+        final String DRAFTBEER_CARD = "Draft Beer Card";
+        final String BOTTLEDBEER_CARD = "Bottled Beer Card";
+        cards.add(draftBeer_JPanel(), DRAFTBEER_CARD);
+        cards.add(bottledBeer_JPanel(), BOTTLEDBEER_CARD);
+
+
         frame.setSize(840, 700);
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -121,7 +128,7 @@ public class MenuChanger {
         gbc.gridheight = 2;
         gbc.weightx = 3;
         gbc.weighty = 3;
-        frame.add(draftBeer_JPanel(), gbc);
+        frame.add(cards, gbc);
 
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
@@ -173,6 +180,15 @@ public class MenuChanger {
 
         return panel;
 
+    }
+
+    public static rightJPanel welcome_JPanel() {
+        rightJPanel panel = new rightJPanel();
+
+        JLabel welcomeText = new JLabel("Welcome to Menu Changer");
+        panel.add(welcomeText);
+
+        return panel;
     }
 
     public static rightJPanel draftBeer_JPanel() {
