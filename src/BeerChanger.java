@@ -9,8 +9,6 @@ import ca.odell.glazedlists.swing.GlazedListsSwing;
 import ca.odell.glazedlists.swing.TableComparatorChooser;
 import ca.odell.glazedlists.swing.TextComponentMatcherEditor;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.net.ftp.FTP;
-import org.apache.commons.net.ftp.FTPClient;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -24,7 +22,10 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -585,29 +586,6 @@ public class BeerChanger {
 
             writeList (printList_bufferedWriter, printList_headerHTML, printList_footerHTML, draftBeerArray, rightColumnArray, leftColumnArray, leftColumnSize, rightColumnSize);
             writeList (website_bufferedWriter, website_headerHTML, website_footerHTML, draftBeerArray, rightColumnArray, leftColumnArray, leftColumnSize, rightColumnSize);
-
-            FTPClient ftpClient = new FTPClient();
-
-            ftpClient.connect(SERVER, PORT);
-            ftpClient.login(USER_NAME, password);
-            ftpClient.enterLocalPassiveMode();
-            ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
-
-            ftpClient.changeWorkingDirectory("/httpdocs/test");
-
-            String printList_remoteFile = "printList.html";
-            InputStream printList_inputStream = new FileInputStream(beerList_printFile);
-            boolean printList_done = ftpClient.storeFile(printList_remoteFile, printList_inputStream);
-            if (printList_done){
-                System.out.println("beerList_printFile uploaded");
-            }
-
-            String website_remoteFile = "beer.html";
-            InputStream website_inputStream = new FileInputStream(beerList_htmlFile);
-            boolean website_done = ftpClient.storeFile(website_remoteFile, website_inputStream);
-            if (website_done){
-                System.out.println("beerList_website uploaded");
-            }
 
 
             
