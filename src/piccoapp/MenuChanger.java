@@ -9,12 +9,6 @@ import ca.odell.glazedlists.swing.GlazedListsSwing;
 import ca.odell.glazedlists.swing.TableComparatorChooser;
 import ca.odell.glazedlists.swing.TextComponentMatcherEditor;
 import org.apache.commons.io.FileUtils;
-import org.jdom2.Document;
-import org.jdom2.Element;
-import org.jdom2.JDOMException;
-import org.jdom2.input.SAXBuilder;
-import org.jdom2.output.Format;
-import org.jdom2.output.XMLOutputter;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -26,9 +20,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
 
 public class MenuChanger {
 
@@ -95,40 +87,34 @@ public class MenuChanger {
         frame.setLayout(new GridBagLayout());
         frame.getContentPane().setBackground(Color.LIGHT_GRAY);
 
-        JPanel cards = new JPanel(new CardLayout());
-        final String DRAFTBEER_CARD = "Draft Beer Card";
-        final String BOTTLEDBEER_CARD = "Bottled Beer Card";
-        cards.add(draftBeer_JPanel(), DRAFTBEER_CARD);
-        cards.add(bottledBeer_JPanel(), BOTTLEDBEER_CARD);
+        JPanel categoryCards = new JPanel(new CardLayout());
 
+        final String BEER_CARD = "Beer Card";
 
-        frame.setSize(840, 700);
+        categoryCards.add(beerCard(), BEER_CARD);
+
+        frame.setSize(840, 800);
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.anchor = GridBagConstraints.FIRST_LINE_START;
 
-        gbc.weightx = .2;
-        gbc.weighty = 0;
+
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.gridheight = 3;
+        gbc.gridheight = 1;
+        gbc.weightx = .1;
+        gbc.weighty = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         frame.add(leftMenu_JPanel(), gbc);
 
-        gbc.fill = GridBagConstraints.BOTH;
+
         gbc.gridx = 1;
         gbc.gridy = 0;
         gbc.gridheight = 1;
-        gbc.weightx = .4;
-        gbc.weighty = .2;
-        frame.add(beerDropbox_JPanel(), gbc);
-
-        gbc.gridx = 1;
-        gbc.gridy = 1;
-        gbc.gridheight = 2;
-        gbc.weightx = 3;
-        gbc.weighty = 3;
-        frame.add(cards, gbc);
+        gbc.weightx = 1;
+        gbc.weighty = 1;
+        gbc.fill = GridBagConstraints.BOTH;
+        frame.add(categoryCards, gbc);
 
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
@@ -137,6 +123,7 @@ public class MenuChanger {
 
 
     }
+
 
     public static JPanel leftMenu_JPanel() {
         JPanel panel = new JPanel();
@@ -182,23 +169,46 @@ public class MenuChanger {
 
     }
 
-    public static rightJPanel welcome_JPanel() {
-        rightJPanel panel = new rightJPanel();
+    public static JPanel beerCard() {
 
-        JLabel welcomeText = new JLabel("Welcome to Menu Changer");
-        panel.add(welcomeText);
+        final String DRAFTBEER_CARD = "Draft Beer Card";
+        final String BOTTLEDBEER_CARD = "Bottled Beer Card";
+
+        JPanel cards = new JPanel(new CardLayout());
+        cards.add(draftBeer_JPanel(), DRAFTBEER_CARD);
+        cards.add(bottledBeer_JPanel(), BOTTLEDBEER_CARD);
+        JPanel panel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridheight = 1;
+        gbc.weightx = .1;
+        gbc.weighty = .1;
+        gbc.fill = GridBagConstraints.BOTH;
+        panel.add(beerDropbox_JPanel(), gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridheight = 1;
+        gbc.weightx = 1;
+        gbc.weighty = 3;
+        gbc.fill = GridBagConstraints.BOTH;
+        panel.add(draftBeer_JPanel(), gbc);
+
 
         return panel;
+
     }
 
-    public static rightJPanel draftBeer_JPanel() {
+    public static rightContentJPanel draftBeer_JPanel() {
 
         final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";
         final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
         final draftBeerList draftBeerList_Master = new draftBeerList(DRAFT_BEER_MASTER_LIST_XML_FILEPATH);
         final draftBeerList draftBeerList_Current = new draftBeerList(CURRENT_DRAFT_BEER_LIST_XML_FILEPATH);
 
-        rightJPanel panel = new rightJPanel();
+        rightContentJPanel panel = new rightContentJPanel();
 
         Border paddingBorder = BorderFactory.createEmptyBorder(5, 30, 30, 30);
         panel.setBorder(paddingBorder);
@@ -332,43 +342,10 @@ public class MenuChanger {
         return panel;
     }
 
-    public static rightJPanel bottledBeer_JPanel() {
+    public static rightContentJPanel bottledBeer_JPanel() {
 
-        rightJPanel panel = new rightJPanel();
+        rightContentJPanel panel = new rightContentJPanel();
         return panel;
-    }
-
-    static void removeBeerFromAList(Beer beer, String fileName, SortedList<Beer> sortedList) {
-
-        SAXBuilder builder = new SAXBuilder();
-        String removeName = beer.getName();
-
-        try {
-            Document document = builder.build(fileName);
-            Element rootNode = document.getRootElement();
-            List<Element> beers = rootNode.getChildren("beer");
-
-            for (int i = 0; i <= beers.size() - 1; i++) {
-
-                Element element = beers.get(i);
-                if (removeName.equals(element.getChildText("name"))) {
-
-                    beers.remove(i);
-                }
-
-            }
-
-            XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
-            outputter.output(document, new FileWriter(fileName));
-
-
-        } catch (JDOMException | IOException e) {
-            e.printStackTrace();
-        }
-
-        sortedList.remove(beer);
-
-
     }
 
     public static void main(String[] args) {
@@ -395,6 +372,74 @@ public class MenuChanger {
 
         return button;
     }
+
+    public static rightDropboxJPanel beerDropbox_JPanel() {
+
+        rightDropboxJPanel panel = new rightDropboxJPanel();
+
+        Border paddingBorder = BorderFactory.createEmptyBorder(30, 30, 5, 30);
+        panel.setBorder(paddingBorder);
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        panel.setLayout(new GridBagLayout());
+
+
+        gbc.weighty = 1;
+        gbc.anchor = GridBagConstraints.FIRST_LINE_START;
+        gbc.insets = new Insets(5, 5, 5, 5);
+
+        String[] choices = {"Draft", "Bottle/Can"};
+        JComboBox<String> beerDropbox = new JComboBox<>(choices);
+        beerDropbox.setEnabled(false);
+        JLabel beerDropBox_Label = new JLabel("Please select beer type:");
+
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 0;
+        panel.add(beerDropBox_Label, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.weightx = 5;
+        panel.add(beerDropbox, gbc);
+
+        return panel;
+    }
+
+    public void fileSetup() {
+
+        //check if directory is setup, if not, make one. (mkdir() does both)
+        new File(HOME_DIR).mkdir();
+        new File(HOME_DIR + System.getProperty("file.separator") + "XML").mkdir();
+        new File(HOME_DIR + System.getProperty("file.separator") + "HTML").mkdir();
+        new File(HOME_DIR + System.getProperty("file.separator") + "Data").mkdir();
+
+        bottledBeerMasterSortedList = new BeerXMLParser().parseXML(BOTTLED_BEER_MASTER_LIST_XML_FILEPATH);
+        currentBottledBeerSortedList = new BeerXMLParser().parseXML(CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH);
+
+        try {
+            password = FileUtils.readFileToString(new File(HOME_DIR + "\\Data\\hamsandwich.txt"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public static class rightDropboxJPanel extends JPanel {
+
+        public rightDropboxJPanel() {
+            setBackground(Color.WHITE);
+        }
+
+    }
+
+    public static class rightContentJPanel extends JPanel {
+
+        public rightContentJPanel() {
+            setBackground(Color.WHITE);
+        }
+    }
+
 
 
 //    void printDraftBeer(Beer beer, StringBuilder stringBuilder, String beerCategory) {
@@ -911,73 +956,6 @@ public class MenuChanger {
 
     }*/
 
-    public static rightDropboxJPanel beerDropbox_JPanel() {
 
-        rightDropboxJPanel panel = new rightDropboxJPanel();
-
-        Border paddingBorder = BorderFactory.createEmptyBorder(30, 30, 5, 30);
-        panel.setBorder(paddingBorder);
-
-        GridBagConstraints gbc = new GridBagConstraints();
-        panel.setLayout(new GridBagLayout());
-
-
-        gbc.weighty = 1;
-        gbc.anchor = GridBagConstraints.WEST;
-        gbc.insets = new Insets(5, 5, 5, 5);
-
-        String[] choices = {"Draft", "Bottle/Can"};
-        JComboBox<String> beerDropbox = new JComboBox<>(choices);
-        beerDropbox.setEnabled(false);
-        JLabel beerDropBox_Label = new JLabel("Please select beer type:");
-
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.weightx = .1;
-        panel.add(beerDropBox_Label, gbc);
-        gbc.gridx = 1;
-        gbc.gridy = 0;
-        gbc.weightx = 1;
-        panel.add(beerDropbox, gbc);
-
-        return panel;
-    }
-
-    public void fileSetup() {
-
-        //check if directory is setup, if not, make one. (mkdir() does both)
-        new File(HOME_DIR).mkdir();
-        new File(HOME_DIR + System.getProperty("file.separator") + "XML").mkdir();
-        new File(HOME_DIR + System.getProperty("file.separator") + "HTML").mkdir();
-        new File(HOME_DIR + System.getProperty("file.separator") + "Data").mkdir();
-
-        bottledBeerMasterSortedList = new BeerXMLParser().parseXML(BOTTLED_BEER_MASTER_LIST_XML_FILEPATH);
-        currentBottledBeerSortedList = new BeerXMLParser().parseXML(CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH);
-
-        try {
-            password = FileUtils.readFileToString(new File(HOME_DIR + "\\Data\\hamsandwich.txt"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-
-
-    }
-
-    public static class rightDropboxJPanel extends JPanel{
-
-        public rightDropboxJPanel() {
-            setBackground(Color.WHITE);
-        }
-
-    }
-
-    public static class rightJPanel extends JPanel {
-
-        public rightJPanel() {
-            setBackground(Color.WHITE);
-        }
-    }
 
 }
