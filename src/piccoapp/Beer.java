@@ -131,9 +131,8 @@ public class Beer {
     }
 
     public void editBeer(Beer b, final draftBeerList draftBeerList_Master, final draftBeerList draftBeerList_Current){
-        final Beer beer = b;
 
-        System.out.println(beer);
+        final Beer beer = b;
 
         final JTextField name = new JTextField(15);
         name.setText(beer.getName());
@@ -277,6 +276,40 @@ public class Beer {
         delete_Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //confirm delete
+                int response = JOptionPane.showConfirmDialog(null, "Do you want to delete " + beer.getName() + " from the master list? \r\n (you cannot undo)", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                switch (response) {
+                    case JOptionPane.NO_OPTION:
+                        break;
+
+                    case JOptionPane.YES_OPTION:
+
+                        //search for versions of the beer in master and current list and remove them
+                        for (int i = 0; i < draftBeerList_Master.getSortedList().size(); i++) {
+
+                            if (beer.getName().equals(draftBeerList_Master.getSortedList().get(i).getName())) {
+
+                                draftBeerList_Master.removeBeer(draftBeerList_Master.getSortedList().get(i));
+
+                            }
+                        }
+
+                        for (int i = 0; i < draftBeerList_Current.getSortedList().size(); i++) {
+
+                            if (beer.getName().equals(draftBeerList_Current.getSortedList().get(i).getName())) {
+
+                                draftBeerList_Current.removeBeer(draftBeerList_Current.getSortedList().get(i));
+
+                            }
+                        }
+
+                        break;
+
+                }
+
+
+
+
                 frame.setVisible(false);
             }
         });

@@ -255,9 +255,9 @@ public class MenuChanger {
         createNewDraftBeerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Beer beer = new Beer();
 
-                beer.createNewDraftBeer(draftBeerList_Master, draftBeerList_Current);
+
+                new Beer().createNewDraftBeer(draftBeerList_Master, draftBeerList_Current);
 
             }
         });
@@ -285,16 +285,17 @@ public class MenuChanger {
         addDraftBeerToCurrentList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 draftBeerList_Current.addBeer(beerMasterListTableModel.getElementAt(beerMasterListJTable.getSelectedRow()));
+
             }
         });
 
         removeDraftBeerFromCurrentList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                draftBeerList_Current.removeBeer(currentBeerListTableModel.getElementAt(currentDraftBeerListJTable.getSelectedRow()));
 
-                //removeBeerFromAList(selectedBeer, CURRENT_DRAFT_BEER_LIST_XML_FILEPATH, currentDraftBeerSortedList);
+                draftBeerList_Current.removeBeer(currentBeerListTableModel.getElementAt(currentDraftBeerListJTable.getSelectedRow()));
 
             }
         });
