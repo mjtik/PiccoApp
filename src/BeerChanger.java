@@ -390,13 +390,14 @@ public class BeerChanger {
 
         }
         stringBuilder.append("<div class=\"bottleWrapper\">");
-        stringBuilder.append("<div class=\"beerName\">" + beer.getName() + "<span style=\"font-weight:normal;\"" + " (" + beer.getSize() + ")</span>" + "</div>");
+        stringBuilder.append("<div class=\"beerName\">" + beer.getName() + "<span style=\"font-weight:normal;\">" + " (" + beer.getSize() + "oz)</span>" + "</div>");
         stringBuilder.append("<div class=\"beerStyle\">" + beer.getStyle() + "</div>");
         stringBuilder.append("<div class=\"abv\">" + beer.getAbvString() + "%</div>");
         stringBuilder.append("<div class=\"brewery\">" + beer.getBrewery() + "</div>");
         stringBuilder.append("<div class=\"location\">" + beer.getLocation() + "</div>");
         stringBuilder.append("<div class=\"price\">" + beer.getPrice() + "</div>");
         stringBuilder.append("</div>");
+        System.out.println(beer.getSize());
 
     }
 
