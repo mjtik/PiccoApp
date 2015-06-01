@@ -8,9 +8,9 @@
   <component name="ChangeListManager">
     <list id="04ed97b4-2618-4588-9144-4e6085151b39" name="Rejected commit: Default" comment="" />
     <list id="05e7192f-49ce-469a-937f-50f271875955" name="Created Bottled Beer List Editor - removed first menu, focusing on beer. (cherry picked from commit 5e27023)" comment="Created Bottled Beer List Editor&#10;- removed first menu, focusing on beer.&#10;(cherry picked from commit 5e27023)" />
-    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="Cleaned up MenuChanger class after Git disaster">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="removed ftp upload (suspected bug)">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BeerChanger.java" afterPath="$PROJECT_DIR$/src/BeerChanger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PiccoApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +38,18 @@
       <file leaf-file-name="BeerChanger.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BeerChanger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30890805">
-              <caret line="588" column="0" selection-start-line="588" selection-start-column="0" selection-end-line="588" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.55">
+              <caret line="104" column="76" selection-start-line="104" selection-start-column="76" selection-end-line="104" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileUtils.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/commons-io-2.4/commons-io-2.4-sources.jar!/org/apache/commons/io/FileUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="298" column="0" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -414,12 +424,6 @@
       <option name="project" value="LOCAL" />
       <updated>1431706550534</updated>
     </task>
-    <task id="LOCAL-00033" summary="Bugfix in editDraftBeer window&#10;- beer is only removed if it is edited&#10;- once beer is saved, old beer is removed.&#10;- simplified with use of existing functions">
-      <created>1431665748358</created>
-      <option name="number" value="00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1431665748358</updated>
-    </task>
     <task id="LOCAL-00035" summary="Update editBottledBeer functionality">
       <created>1431666722772</created>
       <option name="number" value="00035" />
@@ -703,7 +707,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433189409170</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="removed ftp upload (suspected bug)">
+      <created>1433189576591</created>
+      <option name="number" value="00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1433189576591</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -742,10 +752,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874015" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32677165" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.294971" sideWeight="0.51029027" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31044486" sideWeight="0.42058048" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.294971" sideWeight="0.48970976" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31044486" sideWeight="0.44274408" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.294971" sideWeight="0.48970976" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31044486" sideWeight="0.57941955" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.327853" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2817942" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -806,7 +816,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Removed Menubar" />
     <MESSAGE value="BeerChanger is now MenuChanger" />
     <MESSAGE value="Worried about system crash" />
     <MESSAGE value="Basic gridBagLayout for new interface" />
@@ -831,7 +840,8 @@
     <MESSAGE value="Cleaned up Beer class after Git disaster" />
     <MESSAGE value="Cleaned up MenuChanger class after Git disaster" />
     <MESSAGE value="size now in printed bottle list" />
-    <option name="LAST_COMMIT_MESSAGE" value="size now in printed bottle list" />
+    <MESSAGE value="removed ftp upload (suspected bug)" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed ftp upload (suspected bug)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1028,10 +1038,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/commons-io-2.4/commons-io-2.4-sources.jar!/org/apache/commons/io/FileUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="298" column="0" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/BeerChanger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30890805">
-          <caret line="588" column="0" selection-start-line="588" selection-start-column="0" selection-end-line="588" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.55">
+          <caret line="104" column="76" selection-start-line="104" selection-start-column="76" selection-end-line="104" selection-end-column="76" />
           <folding />
         </state>
       </provider>
