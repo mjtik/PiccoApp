@@ -15,10 +15,16 @@ import java.util.List;
 /**
  * Created by mtiko_000 on 5/31/2015.
  */
-public class draftBeerList {
+public class beerList {
 
     private SortedList<Beer> sortedList;
     private String filePath;
+
+    beerList(String s) {
+        filePath = s;
+        sortedList = new BeerXMLParser().parseXML(filePath);
+
+    }
 
     public SortedList<Beer> getSortedList() {
         return sortedList;
@@ -26,12 +32,6 @@ public class draftBeerList {
 
     public void setSortedList(SortedList<Beer> sortedList) {
         this.sortedList = sortedList;
-    }
-
-    draftBeerList(String s) {
-        filePath = s;
-        sortedList = new BeerXMLParser().parseXML(filePath);
-
     }
 
     public void addBeer(Beer newBeer){
