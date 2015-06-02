@@ -732,6 +732,7 @@ public class Beer {
         for (int i = 0; i <= bottledBeerList_Current.getSortedList().size() - 1; i++) {
 
             Beer beer = bottledBeerList_Current.getSortedList().get(i);
+            System.out.println(beer);
 
             switch (beer.getBottleType()) {
                 case BOTTLES_AND_CANS:
