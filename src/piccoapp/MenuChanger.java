@@ -427,7 +427,7 @@ public class MenuChanger {
             public void actionPerformed(ActionEvent e) {
 
 
-                new Beer().createNewDraftBeer(beerList_Master, beerList_Current);
+                new Beer().createNewBottledBeer(beerList_Master, beerList_Current);
 
             }
         });
@@ -586,44 +586,46 @@ public class MenuChanger {
 
 
 
-//    void printDraftBeer(Beer beer, StringBuilder stringBuilder, String beerCategory) {
-//
-//        if (stringBuilder.length() == 0) {
-//            stringBuilder.append("<p class=\"beerStyleHeader\">" + beerCategory + "</p>");
-//        }
-//
-//        stringBuilder.append("<p class=\"beerName\">" + beer.getName());
-//        // deal with adding pour size next to beer name is NOT 16oz
-//        if (beer.getSize().equals(SIXTEEN_OZ)) {
-//            stringBuilder.append("</p>");
-//        } else {
-//            stringBuilder.append(" " + "(" + beer.getSize() + ")" + "</p>");
-//        }
-//
-//        stringBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-//        stringBuilder.append("<p class=\"abv\">" + beer.getAbvString() + "%</p>");
-//        stringBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
-//        stringBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-//        stringBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
-//
-//    }
-//
-//    static void printBottledBeer(Beer beer, StringBuilder stringBuilder, String bottleCategory){
-//
-//        if (stringBuilder.length() == 0) {
-//            stringBuilder.append("<div class=\"bottleCategoryHeader\">" + bottleCategory + "</div>");
-//
-//        }
-//        stringBuilder.append("<div class=\"bottleWrapper\">");
-//        stringBuilder.append("<div class=\"beerName\">" + beer.getName() + "</div>");
-//        stringBuilder.append("<div class=\"beerStyle\">" + beer.getStyle() + "</div>");
-//        stringBuilder.append("<div class=\"abv\">" + beer.getAbvString() + "%</div>");
-//        stringBuilder.append("<div class=\"brewery\">" + beer.getBrewery() + "</div>");
-//        stringBuilder.append("<div class=\"location\">" + beer.getLocation() + "</div>");
-//        stringBuilder.append("<div class=\"price\">" + beer.getPrice() + "</div>");
-//        stringBuilder.append("</div>");
-//
-//    }
+/*
+void printDraftBeer(Beer beer, StringBuilder stringBuilder, String beerCategory) {
+
+if (stringBuilder.length() == 0) {
+stringBuilder.append("<p class=\"beerStyleHeader\">" + beerCategory + "</p>");
+}
+
+stringBuilder.append("<p class=\"beerName\">" + beer.getName());
+// deal with adding pour size next to beer name is NOT 16oz
+if (beer.getSize().equals(SIXTEEN_OZ)) {
+stringBuilder.append("</p>");
+} else {
+stringBuilder.append(" " + "(" + beer.getSize() + ")" + "</p>");
+}
+
+stringBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
+stringBuilder.append("<p class=\"abv\">" + beer.getAbvString() + "%</p>");
+stringBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
+stringBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
+stringBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
+
+}
+
+static void printBottledBeer(Beer beer, StringBuilder stringBuilder, String bottleCategory){
+
+if (stringBuilder.length() == 0) {
+stringBuilder.append("<div class=\"bottleCategoryHeader\">" + bottleCategory + "</div>");
+
+}
+stringBuilder.append("<div class=\"bottleWrapper\">");
+stringBuilder.append("<div class=\"beerName\">" + beer.getName() + "</div>");
+stringBuilder.append("<div class=\"beerStyle\">" + beer.getStyle() + "</div>");
+stringBuilder.append("<div class=\"abv\">" + beer.getAbvString() + "%</div>");
+stringBuilder.append("<div class=\"brewery\">" + beer.getBrewery() + "</div>");
+stringBuilder.append("<div class=\"location\">" + beer.getLocation() + "</div>");
+stringBuilder.append("<div class=\"price\">" + beer.getPrice() + "</div>");
+stringBuilder.append("</div>");
+
+}
+*/
 
     /*static void printList(){
 
@@ -898,88 +900,6 @@ public class MenuChanger {
 
     }*/
 
-
-
-    /*static void createNewBottledBeer() {
-
-        final Beer newBeer = new Beer();
-
-        final JTextField name = new JTextField(15);
-        final JTextField style = new JTextField(15);
-        final JTextField abv = new JTextField(15);
-        final JTextField size = new JTextField(15);
-        final JTextField brewery = new JTextField(15);
-        final JTextField location = new JTextField(15);
-        final JTextField price = new JTextField(15);
-        final JComboBox<String> bottleTypeComboBox = new JComboBox<>(bottleType);
-        final JCheckBox addToCurrentListCheckBox = new JCheckBox("Add beer to current list?");
-
-        JButton createNewBeerButton = new JButton("Create Beer");
-
-        JPanel panel = new JPanel();
-        GridBagLayout gbl = new GridBagLayout();
-        GridBagConstraints gbc = new GridBagConstraints();
-        panel.setLayout(gbl);
-
-        gbc.gridx = 0;
-        gbc.gridy = GridBagConstraints.RELATIVE;
-        gbc.insets = new Insets(5,5,5,5);
-        gbc.anchor = GridBagConstraints.CENTER;
-        gbc.fill = GridBagConstraints.BOTH;
-
-        panel.add(new JLabel("Name: "), gbc);
-        panel.add(new JLabel("Style: "),gbc);
-        panel.add(new JLabel("ABV: "), gbc);
-        panel.add(new JLabel("Size: "), gbc);
-        panel.add(new JLabel("Bottle Type: "), gbc);
-        panel.add(new JLabel("Brewery: "), gbc);
-        panel.add(new JLabel("Location: "), gbc);
-        panel.add(new JLabel("Price: "), gbc);
-
-        gbc.gridx = 1;
-        gbc.gridy = GridBagConstraints.RELATIVE;
-        gbc.gridwidth = GridBagConstraints.REMAINDER;
-
-        panel.add(name, gbc);
-        panel.add(style, gbc);
-        panel.add(abv, gbc);
-        panel.add(size, gbc);
-        panel.add(bottleTypeComboBox, gbc);
-        panel.add(brewery, gbc);
-        panel.add(location, gbc);
-        panel.add(price, gbc);
-        panel.add(addToCurrentListCheckBox, gbc);
-        panel.add(createNewBeerButton, gbc);
-
-        final JFrame frame = new JFrame("Create New Beer");
-        frame.setSize(300, 380);
-        frame.getContentPane().add(panel);
-        frame.setLocationRelativeTo(null);
-        frame.setResizable(false);
-        frame.setVisible(true);
-
-        createNewBeerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                newBeer.setName(name.getText());
-                newBeer.setStyle(style.getText());
-                newBeer.setAbv(abv.getText());
-                newBeer.setBrewery(brewery.getText());
-                newBeer.setLocation(location.getText());
-                newBeer.setPrice(price.getText());
-                newBeer.setSize(size.getText());
-                newBeer.setBottleType(bottleTypeComboBox.getSelectedItem().toString());
-                addBeerToAList(newBeer, BOTTLED_BEER_MASTER_LIST_XML_FILEPATH, bottledBeerMasterSortedList);
-                if (addToCurrentListCheckBox.isSelected()) {
-                    addBeerToAList(newBeer, CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH, currentBottledBeerSortedList);
-                }
-                frame.setVisible(false);
-
-            }
-        });
-
-
-    }*/
 
 
 

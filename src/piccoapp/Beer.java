@@ -130,6 +130,88 @@ public class Beer {
 
     }
 
+    public void createNewBottledBeer(final beerList beerList_Master, final beerList beerList_Current) {
+
+        final Beer newBeer = new Beer();
+
+        final JTextField name = new JTextField(15);
+        final JTextField style = new JTextField(15);
+        final JTextField abv = new JTextField(15);
+        final JTextField size = new JTextField(15);
+        final JTextField brewery = new JTextField(15);
+        final JTextField location = new JTextField(15);
+        final JTextField price = new JTextField(15);
+        final JComboBox<String> bottleTypeComboBox = new JComboBox<>(bottleType_Array);
+        final JCheckBox addToCurrentListCheckBox = new JCheckBox("Add beer to current list?");
+
+        JButton createNewBeer_Button = new JButton("Create Beer");
+
+        JPanel panel = new JPanel();
+        GridBagLayout gbl = new GridBagLayout();
+        GridBagConstraints gbc = new GridBagConstraints();
+        panel.setLayout(gbl);
+
+        gbc.gridx = 0;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.fill = GridBagConstraints.BOTH;
+
+        panel.add(new JLabel("Name: "), gbc);
+        panel.add(new JLabel("Style: "), gbc);
+        panel.add(new JLabel("ABV: "), gbc);
+        panel.add(new JLabel("Size: "), gbc);
+        panel.add(new JLabel("Bottle Type: "), gbc);
+        panel.add(new JLabel("Brewery: "), gbc);
+        panel.add(new JLabel("Location: "), gbc);
+        panel.add(new JLabel("Price: "), gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+
+        panel.add(name, gbc);
+        panel.add(style, gbc);
+        panel.add(abv, gbc);
+        panel.add(size, gbc);
+        panel.add(bottleTypeComboBox, gbc);
+        panel.add(brewery, gbc);
+        panel.add(location, gbc);
+        panel.add(price, gbc);
+        panel.add(addToCurrentListCheckBox, gbc);
+        panel.add(createNewBeer_Button, gbc);
+
+        final JFrame frame = new JFrame("Create New Beer");
+        frame.setSize(400, 500);
+        frame.getContentPane().add(panel);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setVisible(true);
+
+        createNewBeer_Button.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                newBeer.setName(name.getText());
+                newBeer.setName(name.getText());
+                newBeer.setStyle(style.getText());
+                newBeer.setAbv(abv.getText());
+                newBeer.setBrewery(brewery.getText());
+                newBeer.setLocation(location.getText());
+                newBeer.setPrice(price.getText());
+                newBeer.setSize(size.getText());
+                newBeer.setBottleType(bottleTypeComboBox.getSelectedItem().toString());
+                if (addToCurrentListCheckBox.isSelected()) {
+                    beerList_Current.addBeer(newBeer);
+                }
+                frame.setVisible(false);
+
+            }
+        });
+
+    }
+
     public void editDraftBeer(Beer b, final beerList beerList_Master, final beerList beerList_Current) {
 
         final Beer beer = b;
