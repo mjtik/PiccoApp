@@ -14,6 +14,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,9 +27,9 @@ public class MenuChanger {
     //filepaths for xml files
     public static final String HOME_DIR = System.getProperty("user.home") + System.getProperty("file.separator") + "Picco App";
     //colors for UI
-    static final Color one = Color.WHITE;
-    static final Color two = Color.DARK_GRAY;
-    static final Color three = Color.LIGHT_GRAY;
+    public static final Color one = Color.WHITE;
+    public static final Color two = Color.DARK_GRAY;
+    public static final Color three = Color.LIGHT_GRAY;
     static final Color rightPanelColor = one;
     // insets for right panel components when two scroll lists are in view.
     // Keeps a little space in GBL in between sides.
@@ -221,7 +222,7 @@ public class MenuChanger {
         JTextField beerMasterListFilterEdit = new JTextField(10);
         final FilterList<Beer> beerMasterListTextFilteredIssues = new FilterList<>(beerList_Master.getSortedList(), new TextComponentMatcherEditor<>(beerMasterListFilterEdit, new BeerTextFilter()));
         final AdvancedTableModel<Beer> beerMasterListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(beerMasterListTextFilteredIssues, new SimpleBeerTableFormat());
-        final JTable beerMasterListJTable = new JTable(beerMasterListTableModel);
+        final customTable beerMasterListJTable = new customTable(beerMasterListTableModel);
         beerMasterListJTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         TableComparatorChooser.install(beerMasterListJTable, beerList_Master.getSortedList(), TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
         beerMasterListJTable.setRowHeight(25);
@@ -242,14 +243,14 @@ public class MenuChanger {
 
         panel.setLayout(new GridBagLayout());
 
-        JScrollPane beerMasterListScrollPane = new JScrollPane(beerMasterListJTable);
+        customScrollPane beerMasterListScrollPane = new customScrollPane(beerMasterListJTable);
         JScrollPane currentBeerListScrollPane = new JScrollPane(currentDraftBeerListJTable);
 
 
-        JButton createNewDraftBeerButton = new JButton("New");
-        final JButton addDraftBeerToCurrentList = new JButton("Add To List");
-        final JButton removeDraftBeerFromCurrentList = new JButton("86 From List");
-        final JButton printList = new JButton("Print");
+        customButton createNewDraftBeerButton = new customButton("New");
+        final customButton addDraftBeerToCurrentList = new customButton("Add To List");
+        final customButton removeDraftBeerFromCurrentList = new customButton("86 From List");
+        final customButton printList = new customButton("Print");
         final customButton editDraftBeer = new customButton("Edit");
 
 
@@ -385,11 +386,11 @@ public class MenuChanger {
         JScrollPane beerMasterListScrollPane = new JScrollPane(beerMasterListJTable);
         JScrollPane currentBeerListScrollPane = new JScrollPane(currentDraftBeerListJTable);
 
-        JButton createNewDraftBeerButton = new JButton("New");
-        final JButton addDraftBeerToCurrentList = new JButton("Add To List");
-        final JButton removeDraftBeerFromCurrentList = new JButton("86 From List");
-        final JButton printList = new JButton("Print");
-        final JButton editBottledBeer = new JButton("Edit");
+        customButton createNewDraftBeerButton = new customButton("New");
+        final customButton addDraftBeerToCurrentList = new customButton("Add To List");
+        final customButton removeDraftBeerFromCurrentList = new customButton("86 From List");
+        final customButton printList = new customButton("Print");
+        final customButton editBottledBeer = new customButton("Edit");
 
         panel.add(new JLabel("All Beer:"), new GridBagConstraints(0, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
         panel.add(new JLabel("Current List: "), new GridBagConstraints(2, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, rightComponentInsets, 0, 0));
@@ -529,15 +530,12 @@ public class MenuChanger {
 
     }
 
-    public static class customButton extends JButton {
+    public static class customTable extends JTable {
 
-        public customButton(String s) {
-            this.setBorderPainted(false);
-            this.setBackground(three);
-            this.setForeground(one);
-            this.setFocusPainted(false);
-            this.setForeground(Color.BLACK);
-            this.setText(s);
+        public customTable(TableModel dm) {
+            super(dm);
+            this.setBackground(one);
+            this.setShowGrid(false);
         }
     }
 

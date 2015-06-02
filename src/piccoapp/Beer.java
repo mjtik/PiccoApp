@@ -135,7 +135,7 @@ public class Beer {
         final JComboBox<String> pourSizeComboBox = new JComboBox<>(pourSize_Array);
         final JCheckBox addToCurrentListCheckBox = new JCheckBox("Add beer to current list");
 
-        JButton createNewBeer_Button = new JButton("Create Beer");
+        customButton createNewBeer_Button = new customButton("Create Beer");
 
         JPanel panel = new JPanel();
         GridBagLayout gbl = new GridBagLayout();
@@ -222,7 +222,7 @@ public class Beer {
         final JComboBox<String> bottleTypeComboBox = new JComboBox<>(bottleType_Array);
         final JCheckBox addToCurrentListCheckBox = new JCheckBox("Add beer to current list?");
 
-        JButton createNewBeer_Button = new JButton("Create Beer");
+        customButton createNewBeer_Button = new customButton("Create Beer");
 
         JPanel panel = new JPanel();
         GridBagLayout gbl = new GridBagLayout();
@@ -309,8 +309,8 @@ public class Beer {
         final JComboBox<String> pourSizeComboBox = new JComboBox<>(pourSize_Array);
         final JComboBox<String> category = new JComboBox<>(categories_Array);
 
-        JButton save_Button = new JButton("Save");
-        JButton delete_Button = new JButton("Delete");
+        customButton save_Button = new customButton("Save");
+        customButton delete_Button = new customButton("Delete");
 
         switch (beer.getCategory()){
             case INDIA_PALE_ALES:
@@ -495,8 +495,8 @@ public class Beer {
         price.setText(beer.getPrice());
         final JComboBox<String> bottleTypeComboBox = new JComboBox<String>(bottleType_Array);
 
-        JButton save_Button = new JButton("Save");
-        JButton delete_Button = new JButton("Delete");
+        customButton save_Button = new customButton("Save");
+        customButton delete_Button = new customButton("Delete");
 
         switch (beer.getBottleType()) {
             case TABLE_BEER:
