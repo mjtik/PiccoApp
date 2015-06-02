@@ -143,6 +143,8 @@ public class MenuChanger {
         gbc.gridy = 4;
         panel.add(icecream_JLabel, gbc);
 
+        beer_JLabel.setBackground(three);
+        beer_JLabel.setForeground(Color.BLACK);
 
         beer_JLabel.addMouseListener(new MouseAdapter() {
             @Override
@@ -321,7 +323,7 @@ public class MenuChanger {
         printList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Beer().printList(draftBeerList_Current, beerList_Current);
+                new Beer().printList(draftBeerList_Current, bottledBeerList_Current);
             }
         });
 
@@ -486,16 +488,7 @@ public class MenuChanger {
         return panel;
     }
 
-    public static void main(String[] args) {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
-        //fileSetup();
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                createAndShowGUI();
-            }
-        });
-    }
+
 
     public static JLabel leftMenuJLabel(String name) {
 
@@ -507,6 +500,17 @@ public class MenuChanger {
         button.setOpaque(true);
 
         return button;
+    }
+
+    public static void main(String[] args) {
+        //Schedule a job for the event-dispatching thread:
+        //creating and showing this application's GUI.
+        //fileSetup();
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                createAndShowGUI();
+            }
+        });
     }
 
     public void fileSetup() {
@@ -525,7 +529,6 @@ public class MenuChanger {
 
 
     }
-
 
     public static class dropboxJPanel extends JPanel {
 
@@ -567,9 +570,6 @@ public class MenuChanger {
             setBackground(one);
         }
     }
-
-
-
 
 
 
