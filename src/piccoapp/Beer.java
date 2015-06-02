@@ -654,7 +654,7 @@ public class Beer {
         if (beer.getSize().equals(SIXTEEN_OZ)) {
             stringBuilder.append("</p>");
         } else {
-            stringBuilder.append(" " + "(" + beer.getSize() + ")" + "</p>");
+            stringBuilder.append("<span style=\"font-weight:normal;\"> (" + beer.getSize() + ")</span>" + "</p>");
         }
 
         stringBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
@@ -672,7 +672,7 @@ public class Beer {
 
         }
         stringBuilder.append("<div class=\"bottleWrapper\">");
-        stringBuilder.append("<div class=\"beerName\">" + beer.getName() + "</div>");
+        stringBuilder.append("<div class=\"beerName\">" + beer.getName() + "<span style=\"font-weight:normal;\"> (" + beer.getSize() + "oz)</span>" + "</div>");
         stringBuilder.append("<div class=\"beerStyle\">" + beer.getStyle() + "</div>");
         stringBuilder.append("<div class=\"abv\">" + beer.getAbvString() + "%</div>");
         stringBuilder.append("<div class=\"brewery\">" + beer.getBrewery() + "</div>");
