@@ -24,36 +24,24 @@ import java.io.IOException;
 
 public class MenuChanger {
 
+    //filepaths for xml files
+    public static final String HOME_DIR = System.getProperty("user.home") + System.getProperty("file.separator") + "Picco App";
     static final Color rightPanelColor = Color.WHITE;
-
     // insets for right panel components when two scroll lists are in view.
     // Keeps a little space in GBL in between sides.
     static final Insets rightComponentInsets = new Insets(5, 20, 5, 5);
     static final Insets leftComponentInsets = new Insets(5, 5, 5, 20);
-
-
-    //filepaths for xml files
-    static final String HOME_DIR = System.getProperty("user.home") + System.getProperty("file.separator") + "Picco App";
-    static String bottlesAndCansHTML;
-    static String tableBeerHTML;
+    static final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";
+    static final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
+    static final beerList draftBeerList_Master = new beerList(DRAFT_BEER_MASTER_LIST_XML_FILEPATH);
+    static final beerList draftBeerList_Current = new beerList(CURRENT_DRAFT_BEER_LIST_XML_FILEPATH);
+    static final String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
+    static final String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
+    static final beerList bottledBeerList_Master = new beerList(BOTTLED_BEER_MASTER_LIST_XML_FILEPATH);
+    static final beerList bottledBeerList_Current = new beerList(CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH);
     static SortedList<Beer> bottledBeerMasterSortedList;
     static SortedList<Beer> currentBottledBeerSortedList;
     static Dimension rightPanelDimension = new Dimension(500, 400);
-    //FTP info
-    final String SERVER = "ftp.piccorestaurant.com";
-    final int PORT = 21;
-    final String USER_NAME = "piccores";
-
-    final String PRINT_LIST_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
-    final String PRINT_LIST_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
-    final String WEBSITE_HTML_FOOTER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlFooter.txt";
-    final String WEBSITE_HTML_HEADER_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlHeader.txt";
-
-
-    final File beerList_printFile = new File(HOME_DIR + "\\html\\Beer_List.html");
-    final File beerList_htmlFile = new File(HOME_DIR + "\\html\\beer.html");
-    final String BOTTLED_LIST_HEADER = "<div class=\"bottleBox\">";
-    final String BOTTLED_LIST_FOOTER = "</div>";
     String password = null;
 
     public static void setUIFont(javax.swing.plaf.FontUIResource f) {
@@ -139,7 +127,7 @@ public class MenuChanger {
         gbc.anchor = GridBagConstraints.FIRST_LINE_START;
 
         gbc.weightx = 1;
-        gbc.weighty=0;
+        gbc.weighty = 0;
         gbc.gridx = 0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
@@ -177,8 +165,8 @@ public class MenuChanger {
         final JPanel cards = new JPanel(cardLayout);
 
         final dropboxJPanel dropboxJPanel = new dropboxJPanel(choices, heading);
-        cards.add(draftBeer_JPanel(), DRAFTBEER);
-        cards.add(bottledBeer_JPanel(), BOTTLEDBEER);
+        cards.add(draftBeer_JPanel(draftBeerList_Master, draftBeerList_Current), DRAFTBEER);
+        cards.add(bottledBeer_JPanel(bottledBeerList_Master, bottledBeerList_Current), BOTTLEDBEER);
 
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -219,12 +207,7 @@ public class MenuChanger {
 
     }
 
-    public static rightContentJPanel draftBeer_JPanel() {
-
-        final String DRAFT_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "draftBeerMasterList.xml";
-        final String CURRENT_DRAFT_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentDraftBeerList.xml";
-        final beerList beerList_Master = new beerList(DRAFT_BEER_MASTER_LIST_XML_FILEPATH);
-        final beerList beerList_Current = new beerList(CURRENT_DRAFT_BEER_LIST_XML_FILEPATH);
+    public static rightContentJPanel draftBeer_JPanel(final beerList beerList_Master, final beerList beerList_Current) {
 
         rightContentJPanel panel = new rightContentJPanel();
 
@@ -331,7 +314,7 @@ public class MenuChanger {
         printList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //printList();
+                new Beer().printList(draftBeerList_Current, beerList_Current);
             }
         });
 
@@ -360,13 +343,9 @@ public class MenuChanger {
         return panel;
     }
 
+    public static rightContentJPanel bottledBeer_JPanel(final beerList beerList_Master, final beerList beerList_Current) {
 
-    public static rightContentJPanel bottledBeer_JPanel() {
 
-        final String BOTTLED_BEER_MASTER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "bottledBeerMasterList.xml";
-        final String CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") + "XML" + System.getProperty("file.separator") + "currentBottledBeerList.xml";
-        final beerList beerList_Master = new beerList(BOTTLED_BEER_MASTER_LIST_XML_FILEPATH);
-        final beerList beerList_Current = new beerList(CURRENT_BOTTLED_BEER_LIST_XML_FILEPATH);
 
         rightContentJPanel panel = new rightContentJPanel();
 
@@ -473,7 +452,7 @@ public class MenuChanger {
         printList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //printList();
+                new Beer().printList(draftBeerList_Current, beerList_Current);
             }
         });
 
@@ -585,320 +564,6 @@ public class MenuChanger {
     }
 
 
-
-/*
-void printDraftBeer(Beer beer, StringBuilder stringBuilder, String beerCategory) {
-
-if (stringBuilder.length() == 0) {
-stringBuilder.append("<p class=\"beerStyleHeader\">" + beerCategory + "</p>");
-}
-
-stringBuilder.append("<p class=\"beerName\">" + beer.getName());
-// deal with adding pour size next to beer name is NOT 16oz
-if (beer.getSize().equals(SIXTEEN_OZ)) {
-stringBuilder.append("</p>");
-} else {
-stringBuilder.append(" " + "(" + beer.getSize() + ")" + "</p>");
-}
-
-stringBuilder.append("<p1 class=\"beerStyle\">" + beer.getStyle() + "</p1>");
-stringBuilder.append("<p class=\"abv\">" + beer.getAbvString() + "%</p>");
-stringBuilder.append("<p1 class=\"brewery\">" + beer.getBrewery() + "</p1>");
-stringBuilder.append("<p class=\"location\">" + beer.getLocation() + "</p>");
-stringBuilder.append("<p class=\"price\">" + beer.getPrice() + "</p>");
-
-}
-
-static void printBottledBeer(Beer beer, StringBuilder stringBuilder, String bottleCategory){
-
-if (stringBuilder.length() == 0) {
-stringBuilder.append("<div class=\"bottleCategoryHeader\">" + bottleCategory + "</div>");
-
-}
-stringBuilder.append("<div class=\"bottleWrapper\">");
-stringBuilder.append("<div class=\"beerName\">" + beer.getName() + "</div>");
-stringBuilder.append("<div class=\"beerStyle\">" + beer.getStyle() + "</div>");
-stringBuilder.append("<div class=\"abv\">" + beer.getAbvString() + "%</div>");
-stringBuilder.append("<div class=\"brewery\">" + beer.getBrewery() + "</div>");
-stringBuilder.append("<div class=\"location\">" + beer.getLocation() + "</div>");
-stringBuilder.append("<div class=\"price\">" + beer.getPrice() + "</div>");
-stringBuilder.append("</div>");
-
-}
-*/
-
-    /*static void printList(){
-
-        String indiaPaleAlesHTML;
-        String paleAlesHTML;
-        String otherAlesHTML;
-        String lagersHTML;
-        String belgianStyleHTML;
-        String darkHTML;
-        String ciderHTML;
-
-        String printList_headerHTML;
-        String printList_footerHTML;
-
-        String website_headerHTML;
-        String website_footerHTML;
-
-        StringBuilder indiaPaleAlesBuilder = new StringBuilder();
-        StringBuilder paleAlesBuilder = new StringBuilder();
-        StringBuilder otherAlesBuilder = new StringBuilder();
-        StringBuilder lagersBuilder = new StringBuilder();
-        StringBuilder belgianStyleBuilder = new StringBuilder();
-        StringBuilder darkBuilder = new StringBuilder();
-        StringBuilder ciderBuilder = new StringBuilder();
-
-        StringBuilder bottlesAndCansStringBuilder = new StringBuilder();
-        StringBuilder tableBeerStringBuilder = new StringBuilder();
-
-        List<Beer> indiaPaleAles_ArrayList = new ArrayList();
-        List<Beer> paleAles_ArrayList = new ArrayList();
-        List<Beer> otherAles_ArrayList = new ArrayList();
-        List<Beer> lagers_ArrayList = new ArrayList();
-        List<Beer> belgianStyle_ArrayList = new ArrayList();
-        List<Beer> dark_ArrayList = new ArrayList();
-        List<Beer> cider_ArrayList = new ArrayList();
-        List<List> allCategories_ArrayList = new ArrayList();
-        allCategories_ArrayList.add(indiaPaleAles_ArrayList);
-        allCategories_ArrayList.add(paleAles_ArrayList);
-        allCategories_ArrayList.add(otherAles_ArrayList);
-        allCategories_ArrayList.add(lagers_ArrayList);
-        allCategories_ArrayList.add(belgianStyle_ArrayList);
-        allCategories_ArrayList.add(dark_ArrayList);
-        allCategories_ArrayList.add(cider_ArrayList);
-
-        int leftColumnSize = 0;
-        int rightColumnSize = 0;
-
-        //Bottled list
-        for (int i = 0; i <= currentBottledBeerSortedList.size() - 1;i++){
-
-            Beer beer = currentBottledBeerSortedList.get(i);
-
-            switch (beer.getBottleType()){
-                case BOTTLES_AND_CANS:
-                    printBottledBeer(beer, bottlesAndCansStringBuilder, BOTTLES_AND_CANS);
-                    break;
-                case TABLE_BEER:
-                    printBottledBeer(beer, tableBeerStringBuilder, TABLE_BEER);
-                    break;
-            }
-
-
-
-        }
-
-        //Draft List
-        //sort into categories and arrays
-        for (int i = 0; i <= currentDraftBeerSortedList.size() - 1; i++) {
-
-            Beer beer = currentDraftBeerSortedList.get(i);
-
-            switch (beer.getCategory()){
-                case INDIA_PALE_ALES:
-                    indiaPaleAles_ArrayList.add(beer);
-                    break;
-
-                case PALE_ALES:
-                    paleAles_ArrayList.add(beer);
-                    break;
-
-                case OTHER_ALES:
-                    otherAles_ArrayList.add(beer);
-                    break;
-
-                case LAGERS:
-                    lagers_ArrayList.add(beer);
-                    break;
-
-                case BELGIAN_STYLE:
-                    belgianStyle_ArrayList.add(beer);
-                    break;
-
-                case DARK:
-                    dark_ArrayList.add(beer);
-                    break;
-
-                case CIDER:
-                    cider_ArrayList.add(beer);
-                    break;
-
-            }
-
-        }
-
-        // sort each category by abv
-        for (List l : allCategories_ArrayList){
-
-            Collections.sort(l, new draftAbvSorter());
-
-        }
-
-        //print all beers in each category
-        for (Beer b : indiaPaleAles_ArrayList){
-            printDraftBeer(b, indiaPaleAlesBuilder, INDIA_PALE_ALES);
-        }
-
-        for (Beer b : paleAles_ArrayList){
-            printDraftBeer(b, paleAlesBuilder, PALE_ALES);
-        }
-
-        for (Beer b : otherAles_ArrayList){
-            printDraftBeer(b, otherAlesBuilder, OTHER_ALES);
-        }
-
-        for (Beer b : lagers_ArrayList){
-            printDraftBeer(b, lagersBuilder, LAGERS);
-        }
-
-        for (Beer b : belgianStyle_ArrayList){
-            printDraftBeer(b, belgianStyleBuilder, BELGIAN_STYLE);
-        }
-
-        for (Beer b : dark_ArrayList){
-            printDraftBeer(b, darkBuilder, DARK);
-        }
-
-        for (Beer b : cider_ArrayList){
-            printDraftBeer(b, ciderBuilder, CIDER);
-        }
-
-        indiaPaleAlesHTML = indiaPaleAlesBuilder.toString();
-        paleAlesHTML = paleAlesBuilder.toString();
-        otherAlesHTML = otherAlesBuilder.toString();
-        lagersHTML = lagersBuilder.toString();
-        belgianStyleHTML = belgianStyleBuilder.toString();
-        darkHTML = darkBuilder.toString();
-        ciderHTML = ciderBuilder.toString();
-
-        bottlesAndCansHTML = bottlesAndCansStringBuilder.toString();
-        tableBeerHTML = tableBeerStringBuilder.toString();
-
-        File printList_headerFile = new File(PRINT_LIST_HTML_HEADER_FILEPATH);
-        File printList_footerFile = new File(PRINT_LIST_HTML_FOOTER_FILEPATH);
-
-        File website_headerFile = new File(WEBSITE_HTML_HEADER_FILEPATH);
-        File website_footerFile = new File(WEBSITE_HTML_FOOTER_FILEPATH);
-
-
-        /// sort beer categories by size
-        List<String> draftBeerArray = new ArrayList();
-        List<String> leftColumnArray = new ArrayList();
-        List<String> rightColumnArray = new ArrayList();
-
-
-        draftBeerArray.add(paleAlesHTML);
-        draftBeerArray.add(otherAlesHTML);
-        draftBeerArray.add(lagersHTML);
-        draftBeerArray.add(belgianStyleHTML);
-        draftBeerArray.add(darkHTML);
-        draftBeerArray.add(ciderHTML);
-        draftBeerArray.add(indiaPaleAlesHTML);
-
-        //sorts each category by how many beers it has
-        Collections.sort(draftBeerArray, new draftColumnSorter());
-
-        try {
-            printList_headerHTML = FileUtils.readFileToString(printList_headerFile);
-            printList_footerHTML = FileUtils.readFileToString(printList_footerFile);
-
-            website_headerHTML= FileUtils.readFileToString(website_headerFile);
-            website_footerHTML = FileUtils.readFileToString(website_footerFile);
-
-            BufferedWriter printList_bufferedWriter = new BufferedWriter(new FileWriter(beerList_printFile));
-            BufferedWriter website_bufferedWriter = new BufferedWriter(new FileWriter(beerList_htmlFile));
-
-            writeList (printList_bufferedWriter, printList_headerHTML, printList_footerHTML, draftBeerArray, rightColumnArray, leftColumnArray, leftColumnSize, rightColumnSize);
-            writeList (website_bufferedWriter, website_headerHTML, website_footerHTML, draftBeerArray, rightColumnArray, leftColumnArray, leftColumnSize, rightColumnSize);
-
-            FTPClient ftpClient = new FTPClient();
-
-            ftpClient.connect(SERVER, PORT);
-            ftpClient.login(USER_NAME, password);
-            ftpClient.enterLocalPassiveMode();
-            ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
-
-            ftpClient.changeWorkingDirectory("/httpdocs/test");
-
-            String printList_remoteFile = "printList.html";
-            InputStream printList_inputStream = new FileInputStream(beerList_printFile);
-            boolean printList_done = ftpClient.storeFile(printList_remoteFile, printList_inputStream);
-            if (printList_done){
-                System.out.println("beerList_printFile uploaded");
-            }
-
-            String website_remoteFile = "beer.html";
-            InputStream website_inputStream = new FileInputStream(beerList_htmlFile);
-            boolean website_done = ftpClient.storeFile(website_remoteFile, website_inputStream);
-            if (website_done){
-                System.out.println("beerList_website uploaded");
-            }
-
-
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-    }*/
-
-    /*static void writeList (BufferedWriter bufferedWriter, String header, String footer, List<String> draftBeerArray, List<String> rightColumnArray, List<String> leftColumnArray, int leftColumnSize, int rightColumnSize){
-        try {
-        bufferedWriter.write(header);
-
-        bufferedWriter.write(BOTTLED_LIST_HEADER);
-        bufferedWriter.write(bottlesAndCansHTML);
-        bufferedWriter.write(tableBeerHTML);
-
-            bufferedWriter.write(BOTTLED_LIST_FOOTER);
-
-
-        // sort into right and left columns depending on the size of each column
-        // to avoid being to big to print
-
-        for (int i=0;i<draftBeerArray.size();i++){
-
-
-            if (leftColumnSize > rightColumnSize){
-                rightColumnArray.add((draftBeerArray.get(i)));
-                rightColumnSize += draftBeerArray.get(i).length();
-
-            } else {
-                leftColumnArray.add(draftBeerArray.get(i));
-                leftColumnSize += draftBeerArray.get(i).length();
-
-            }
-
-        }
-
-            // header text for draft list "Draft Beer: All draft beers are served in 16oz glasses unless noted otherwise
-        bufferedWriter.write("<div id=\"draftHeader\">Draft Beer</div>\n" +
-                "    <div id=\"draftDescription\">All draft beers are served in 16oz glasses unless noted otherwise</div>");
-        bufferedWriter.write("<div class=\"leftSide\">");
-        for (String s : leftColumnArray){
-            bufferedWriter.write(s);
-        }
-        bufferedWriter.write("</div>");
-
-        bufferedWriter.write("<div class=\"rightSide\">");
-        for (String s : rightColumnArray){
-            bufferedWriter.write(s);
-        }
-
-        bufferedWriter.write("</div>");
-
-        bufferedWriter.write(footer);
-        bufferedWriter.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }*/
 
 
 
