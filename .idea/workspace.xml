@@ -8,9 +8,10 @@
   <component name="ChangeListManager">
     <list id="04ed97b4-2618-4588-9144-4e6085151b39" name="Rejected commit: Default" comment="" />
     <list id="05e7192f-49ce-469a-937f-50f271875955" name="Created Bottled Beer List Editor - removed first menu, focusing on beer. (cherry picked from commit 5e27023)" comment="Created Bottled Beer List Editor&#10;- removed first menu, focusing on beer.&#10;(cherry picked from commit 5e27023)" />
-    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="UI Changes&#10;- colors given variables so it's esier to change&#10;- custom button class created">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/piccoapp/customTableCell.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/piccoapp/customTableHeader.java" />
+    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="custom table header">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/piccoapp/customTable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$1.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$2.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$3.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$4.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$5.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$5.class" />
@@ -21,7 +22,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PiccoApp_jar/PiccoApp.jar" afterPath="$PROJECT_DIR$/out/artifacts/PiccoApp_jar/PiccoApp.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" afterPath="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/customScrollPane.java" afterPath="$PROJECT_DIR$/src/piccoapp/customScrollPane.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PiccoApp.iws" />
@@ -52,16 +52,43 @@
           <file leaf-file-name="MenuChanger.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.54345655">
-                  <caret line="530" column="5" selection-start-line="530" selection-start-column="5" selection-end-line="530" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.7982018">
+                  <caret line="381" column="0" selection-start-line="381" selection-start-column="0" selection-end-line="381" selection-end-column="0" />
+                  <folding>
+                    <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="method#leftMenu_JPanel#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="e#23226#23276#0" expanded="false" />
+                    <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+                    <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="customTable.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/piccoapp/customTable.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
-                    <element signature="e#13036#13246#0" expanded="true" />
-                    <element signature="e#13245#13246#0" expanded="true" />
-                    <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-                    <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="customTableCell.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/piccoapp/customTableCell.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -141,7 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/SimpleBeerTableFormat.java" />
         <option value="$PROJECT_DIR$/src/XMLParser.java" />
         <option value="$PROJECT_DIR$/src/BeerXMLWriter.java" />
         <option value="$PROJECT_DIR$/src/BeerXMLDeleter.java" />
@@ -191,6 +217,7 @@
         <option value="$PROJECT_DIR$/src/piccoapp/Beer.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/customScrollPane.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/customTableHeader.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/customTable.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" />
       </list>
     </option>
@@ -504,12 +531,6 @@
       <option name="number" value="Default" />
       <updated>1431666732292</updated>
     </task>
-    <task id="LOCAL-00040" summary="Adjusting GridBagLayout in edit bottled beer">
-      <created>1431713290323</created>
-      <option name="number" value="00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1431713290323</updated>
-    </task>
     <task id="LOCAL-00041" summary="Bugfixes to bottled beer creator/editor">
       <created>1431714953167</created>
       <option name="number" value="00041" />
@@ -798,7 +819,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433214437889</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="custom table header">
+      <created>1433222999701</created>
+      <option name="number" value="00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1433222999701</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -901,7 +928,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Began removing static everyting&#10;- filepaths moved out of fileSetup&#10;- started ne draftBeerList class that will perform repetitive functions" />
     <MESSAGE value="More organizing. App Broken right now." />
     <MESSAGE value="V0.2&#10;- Size added to bottled list&#10;- sixes for bottled and draft beer now normal font weight" />
     <MESSAGE value="Spacing and () fixed on bottled beer list" />
@@ -926,7 +952,8 @@
     <MESSAGE value="Bottled list card added" />
     <MESSAGE value="Edit &amp; Create New Beer buttons work on bottled card" />
     <MESSAGE value="UI Changes&#10;- colors given variables so it's esier to change&#10;- custom button class created" />
-    <option name="LAST_COMMIT_MESSAGE" value="UI Changes&#10;- colors given variables so it's esier to change&#10;- custom button class created" />
+    <MESSAGE value="custom table header" />
+    <option name="LAST_COMMIT_MESSAGE" value="custom table header" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -946,12 +973,17 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="275" column="21" selection-start-line="275" selection-start-column="21" selection-end-line="275" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#leftMenu_JPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#13036#13246#0" expanded="true" />
-            <element signature="e#13245#13246#0" expanded="true" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
+            <element signature="e#23226#23276#0" expanded="false" />
+            <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
+            <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -989,12 +1021,17 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="460" column="56" selection-start-line="460" selection-start-column="56" selection-end-line="460" selection-end-column="56" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#leftMenu_JPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#13036#13246#0" expanded="true" />
-            <element signature="e#13245#13246#0" expanded="true" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
+            <element signature="e#23226#23276#0" expanded="false" />
+            <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
+            <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1017,12 +1054,17 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="323" column="93" selection-start-line="323" selection-start-column="93" selection-end-line="323" selection-end-column="93" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#leftMenu_JPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#13036#13246#0" expanded="true" />
-            <element signature="e#13245#13246#0" expanded="true" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
+            <element signature="e#23226#23276#0" expanded="false" />
+            <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
+            <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1314,17 +1356,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/customTableCell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54345655">
-          <caret line="530" column="5" selection-start-line="530" selection-start-column="5" selection-end-line="530" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/customTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7982018">
+          <caret line="381" column="0" selection-start-line="381" selection-start-column="0" selection-end-line="381" selection-end-column="0" />
+          <folding>
+            <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#leftMenu_JPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#13036#13246#0" expanded="true" />
-            <element signature="e#13245#13246#0" expanded="true" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
+            <element signature="e#23226#23276#0" expanded="false" />
+            <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
+            <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
           </folding>
         </state>
       </provider>

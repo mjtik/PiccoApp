@@ -14,7 +14,6 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -112,7 +111,6 @@ public class MenuChanger {
         frame.setVisible(true);
 
     }
-
 
     public static JPanel leftMenu_JPanel() {
         JPanel panel = new JPanel();
@@ -225,17 +223,17 @@ public class MenuChanger {
         final customTable beerMasterListJTable = new customTable(beerMasterListTableModel);
         beerMasterListJTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         TableComparatorChooser.install(beerMasterListJTable, beerList_Master.getSortedList(), TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
-        beerMasterListJTable.setRowHeight(25);
+
 
 
         //Right table for CurrentBeerList
         JTextField currentBeerListFilterEdit = new JTextField(10);
         final FilterList<Beer> currentBeerListTextFilteredIssues = new FilterList<>(beerList_Current.getSortedList(), new TextComponentMatcherEditor<>(currentBeerListFilterEdit, new BeerTextFilter()));
         final AdvancedTableModel<Beer> currentBeerListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(currentBeerListTextFilteredIssues, new SimpleBeerTableFormat());
-        final JTable currentDraftBeerListJTable = new JTable(currentBeerListTableModel);
+        final customTable currentDraftBeerListJTable = new customTable(currentBeerListTableModel);
         currentDraftBeerListJTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         TableComparatorChooser.install(currentDraftBeerListJTable, beerList_Current.getSortedList(), TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
-        currentDraftBeerListJTable.setRowHeight(25);
+
 
         currentDraftBeerListJTable.getTableHeader().setOpaque(false);
 
@@ -244,7 +242,7 @@ public class MenuChanger {
         panel.setLayout(new GridBagLayout());
 
         customScrollPane beerMasterListScrollPane = new customScrollPane(beerMasterListJTable);
-        JScrollPane currentBeerListScrollPane = new JScrollPane(currentDraftBeerListJTable);
+        customScrollPane currentBeerListScrollPane = new customScrollPane(currentDraftBeerListJTable);
 
 
         customButton createNewDraftBeerButton = new customButton("New");
@@ -365,26 +363,24 @@ public class MenuChanger {
         JTextField beerMasterListFilterEdit = new JTextField(10);
         final FilterList<Beer> beerMasterListTextFilteredIssues = new FilterList<>(beerList_Master.getSortedList(), new TextComponentMatcherEditor<>(beerMasterListFilterEdit, new BeerTextFilter()));
         final AdvancedTableModel<Beer> beerMasterListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(beerMasterListTextFilteredIssues, new SimpleBeerTableFormat());
-        final JTable beerMasterListJTable = new JTable(beerMasterListTableModel);
+        final customTable beerMasterListJTable = new customTable(beerMasterListTableModel);
         beerMasterListJTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         TableComparatorChooser.install(beerMasterListJTable, beerList_Master.getSortedList(), TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
-        beerMasterListJTable.setRowHeight(25);
 
 
         //Right table for CurrentBeerList
         JTextField currentBeerListFilterEdit = new JTextField(10);
         final FilterList<Beer> currentBeerListTextFilteredIssues = new FilterList<>(beerList_Current.getSortedList(), new TextComponentMatcherEditor<>(currentBeerListFilterEdit, new BeerTextFilter()));
         final AdvancedTableModel<Beer> currentBeerListTableModel = GlazedListsSwing.eventTableModelWithThreadProxyList(currentBeerListTextFilteredIssues, new SimpleBeerTableFormat());
-        final JTable currentDraftBeerListJTable = new JTable(currentBeerListTableModel);
+        final customTable currentDraftBeerListJTable = new customTable(currentBeerListTableModel);
         currentDraftBeerListJTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         TableComparatorChooser.install(currentDraftBeerListJTable, beerList_Current.getSortedList(), TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
-        currentDraftBeerListJTable.setRowHeight(25);
 
 
         panel.setLayout(new GridBagLayout());
 
-        JScrollPane beerMasterListScrollPane = new JScrollPane(beerMasterListJTable);
-        JScrollPane currentBeerListScrollPane = new JScrollPane(currentDraftBeerListJTable);
+        customScrollPane beerMasterListScrollPane = new customScrollPane(beerMasterListJTable);
+        customScrollPane currentBeerListScrollPane = new customScrollPane(currentDraftBeerListJTable);
 
         customButton createNewDraftBeerButton = new customButton("New");
         final customButton addDraftBeerToCurrentList = new customButton("Add To List");
@@ -530,15 +526,6 @@ public class MenuChanger {
 
     }
 
-    public static class customTable extends JTable {
-
-        public customTable(TableModel dm) {
-            super(dm);
-            this.setBackground(one);
-            this.setShowGrid(false);
-            this.getTableHeader().setDefaultRenderer(new customTableHeader());
-        }
-    }
 
     public static class dropboxJPanel extends JPanel {
 
