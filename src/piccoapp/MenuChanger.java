@@ -23,10 +23,13 @@ import java.io.File;
 import java.io.IOException;
 
 public class MenuChanger {
-
     //filepaths for xml files
     public static final String HOME_DIR = System.getProperty("user.home") + System.getProperty("file.separator") + "Picco App";
-    static final Color rightPanelColor = Color.WHITE;
+    //colors for UI
+    static final Color one = Color.WHITE;
+    static final Color two = Color.DARK_GRAY;
+    static final Color three = Color.LIGHT_GRAY;
+    static final Color rightPanelColor = one;
     // insets for right panel components when two scroll lists are in view.
     // Keeps a little space in GBL in between sides.
     static final Insets rightComponentInsets = new Insets(5, 20, 5, 5);
@@ -55,11 +58,10 @@ public class MenuChanger {
     }
 
     public static void createAndShowGUI() {
+        setUIFont(new javax.swing.plaf.FontUIResource("Segoe UI", Font.PLAIN, 16));
 
-        try {
+        /*try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            setUIFont(new javax.swing.plaf.FontUIResource("Segoe UI", Font.PLAIN, 16));
-
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (InstantiationException e) {
@@ -68,11 +70,11 @@ public class MenuChanger {
             e.printStackTrace();
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
-        }
+        }*/
 
         JFrame frame = new JFrame("Menu Changer");
         frame.setLayout(new GridBagLayout());
-        frame.getContentPane().setBackground(Color.LIGHT_GRAY);
+        frame.getContentPane().setBackground(two);
 
         JPanel categoryCards = new JPanel(new CardLayout());
 
@@ -122,7 +124,7 @@ public class MenuChanger {
         JLabel wine_JLabel = leftMenuJLabel("Wine  ");
         JLabel food_JLabel = leftMenuJLabel("Food  ");
         JLabel icecream_JLabel = leftMenuJLabel("Ice Cream  ");
-        panel.setBackground(Color.LIGHT_GRAY);
+        panel.setBackground(three);
 
         gbc.anchor = GridBagConstraints.FIRST_LINE_START;
 
@@ -146,7 +148,8 @@ public class MenuChanger {
         beer_JLabel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                beer_JLabel.setBackground(rightPanelColor);
+                beer_JLabel.setBackground(three);
+                beer_JLabel.setForeground(Color.BLACK);
             }
         });
 
@@ -233,17 +236,22 @@ public class MenuChanger {
         TableComparatorChooser.install(currentDraftBeerListJTable, beerList_Current.getSortedList(), TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
         currentDraftBeerListJTable.setRowHeight(25);
 
+        currentDraftBeerListJTable.getTableHeader().setOpaque(false);
+
+
 
         panel.setLayout(new GridBagLayout());
 
         JScrollPane beerMasterListScrollPane = new JScrollPane(beerMasterListJTable);
         JScrollPane currentBeerListScrollPane = new JScrollPane(currentDraftBeerListJTable);
 
+
         JButton createNewDraftBeerButton = new JButton("New");
         final JButton addDraftBeerToCurrentList = new JButton("Add To List");
         final JButton removeDraftBeerFromCurrentList = new JButton("86 From List");
         final JButton printList = new JButton("Print");
-        final JButton editDraftBeer = new JButton("Edit");
+        final customButton editDraftBeer = new customButton("Edit");
+
 
         panel.add(new JLabel("All Beer:"), new GridBagConstraints(0, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
         panel.add(new JLabel("Current List: "), new GridBagConstraints(2, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, rightComponentInsets, 0, 0));
@@ -495,12 +503,10 @@ public class MenuChanger {
     public static JLabel leftMenuJLabel(String name) {
 
         JLabel button = new JLabel(name);
-        //Font bigFont = new Font(Font.SANS_SERIF, Font.PLAIN, 20);
-        //button.setFont(bigFont);
         Border paddingBorder = BorderFactory.createEmptyBorder(10, 30, 10, 10);
         button.setBorder(paddingBorder);
-        button.setBackground(Color.LIGHT_GRAY);
-        button.setForeground(Color.BLACK);
+        button.setBackground(two);
+        button.setForeground(one);
         button.setOpaque(true);
 
         return button;
@@ -523,6 +529,18 @@ public class MenuChanger {
 
     }
 
+    public static class customButton extends JButton {
+
+        public customButton(String s) {
+            this.setBorderPainted(false);
+            this.setBackground(three);
+            this.setForeground(one);
+            this.setFocusPainted(false);
+            this.setForeground(Color.BLACK);
+            this.setText(s);
+        }
+    }
+
     public static class dropboxJPanel extends JPanel {
 
         public JComboBox<String> dropbox;
@@ -531,6 +549,7 @@ public class MenuChanger {
 
             Border paddingBorder = BorderFactory.createEmptyBorder(30, 30, 5, 30);
             this.setBorder(paddingBorder);
+            this.setBackground(one);
 
             GridBagConstraints gbc = new GridBagConstraints();
             this.setLayout(new GridBagLayout());
@@ -559,7 +578,7 @@ public class MenuChanger {
     public static class rightContentJPanel extends JPanel {
 
         public rightContentJPanel() {
-            setBackground(Color.WHITE);
+            setBackground(one);
         }
     }
 
