@@ -536,6 +536,7 @@ public class MenuChanger {
             super(dm);
             this.setBackground(one);
             this.setShowGrid(false);
+            this.getTableHeader().setDefaultRenderer(new customTableHeader());
         }
     }
 

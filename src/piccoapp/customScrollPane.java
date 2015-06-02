@@ -10,8 +10,9 @@ public class customScrollPane extends JScrollPane {
 
     public customScrollPane(Component view) {
         super(view);
-        this.setBackground(MenuChanger.one);
-        this.setForeground(Color.blue);
+        this.getViewport().setBackground(MenuChanger.one);
+        this.setBorder(BorderFactory.createLineBorder(MenuChanger.three, 1, true));
+
 
     }
 }
