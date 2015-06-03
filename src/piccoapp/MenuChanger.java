@@ -323,7 +323,7 @@ public class MenuChanger {
         printList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Beer().printList(draftBeerList_Current, bottledBeerList_Current);
+                new Beer().printBeerList(draftBeerList_Current, bottledBeerList_Current);
             }
         });
 
@@ -459,7 +459,7 @@ public class MenuChanger {
         printList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Beer().printList(draftBeerList_Current, bottledBeerList_Current);
+                new Beer().printBeerList(draftBeerList_Current, bottledBeerList_Current);
             }
         });
 

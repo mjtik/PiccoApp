@@ -1,15 +1,9 @@
 package piccoapp;
 
-import org.apache.commons.io.FileUtils;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -37,15 +31,7 @@ public class Beer {
     static final String TABLE_BEER = "Table Beer";
     static final String BOTTLES_AND_CANS = "Bottles & Cans";
     static final String[] bottleType_Array = {TABLE_BEER, BOTTLES_AND_CANS};
-    //filepaths for html files for printing
-    static final File beerList_printFile = new File(MenuChanger.HOME_DIR + "\\html\\Beer_List.html");
-    static final File beerList_Window_printFile = new File(MenuChanger.HOME_DIR + "\\html\\Beer_List_Window.html");
-    static final File beerList_htmlFile = new File(MenuChanger.HOME_DIR + "\\html\\beer.html");
-    //headers and footers for printlist
-    static final String BOTTLED_LIST_HEADER = "<div class=\"bottleBox\">";
-    static final String BOTTLED_LIST_FOOTER = "</div>";
-    static final String PRINT_LIST_HTML_FOOTER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
-    static final String PRINT_LIST_HTML_HEADER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
+
     static String bottlesAndCansHTML;
     static String tableBeerHTML;
     final String WEBSITE_HTML_FOOTER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlFooter.txt";
@@ -66,71 +52,6 @@ public class Beer {
     String bottleType;
 
     public Beer() {
-
-    }
-
-    static void writeList(BufferedWriter bufferedWriter, List<String> draftBeerArray, List<String> rightColumnArray, List<String> leftColumnArray, boolean printBottles_Boolean) {
-        try {
-
-            //setup header and footer files
-            File printList_headerFile = new File(PRINT_LIST_HTML_HEADER_FILEPATH);
-            File printList_footerFile = new File(PRINT_LIST_HTML_FOOTER_FILEPATH);
-            String printList_headerHTML = FileUtils.readFileToString(printList_headerFile);
-            String printList_footerHTML = FileUtils.readFileToString(printList_footerFile);
-
-            bufferedWriter.write(printList_headerHTML);
-
-            //print the bottled list if printBottles is true, otherwise, skip it because it's for the window menu
-            if (printBottles_Boolean) {
-                System.out.println(printBottles_Boolean);
-                bufferedWriter.write(BOTTLED_LIST_HEADER);
-                bufferedWriter.write(bottlesAndCansHTML);
-                bufferedWriter.write(tableBeerHTML);
-                bufferedWriter.write(BOTTLED_LIST_FOOTER);
-            }
-
-            /*sort into right and left columns depending on the size of each column
-            to avoid being to big to print*/
-
-            int leftColumnSize = 0;
-            int rightColumnSize = 0;
-
-            for (int i = 0; i < draftBeerArray.size(); i++) {
-
-                if (leftColumnSize > rightColumnSize) {
-                    rightColumnArray.add((draftBeerArray.get(i)));
-                    rightColumnSize += draftBeerArray.get(i).length();
-
-                } else {
-                    leftColumnArray.add(draftBeerArray.get(i));
-                    leftColumnSize += draftBeerArray.get(i).length();
-
-                }
-
-            }
-
-            // header text for draft list "Draft Beer: All draft beers are served in 16oz glasses unless noted otherwise
-            bufferedWriter.write("<div id=\"draftHeader\">Draft Beer</div>\n" +
-                    "    <div id=\"draftDescription\">All draft beers are served in 16oz glasses unless noted otherwise</div>");
-            bufferedWriter.write("<div class=\"leftSide\">");
-            for (String s : leftColumnArray) {
-                bufferedWriter.write(s);
-            }
-            bufferedWriter.write("</div>");
-
-            bufferedWriter.write("<div class=\"rightSide\">");
-            for (String s : rightColumnArray) {
-                bufferedWriter.write(s);
-            }
-
-            bufferedWriter.write("</div>");
-
-            bufferedWriter.write(printList_footerHTML);
-            bufferedWriter.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
     }
 
@@ -695,9 +616,11 @@ public class Beer {
 
     }
 
-    public void printList(beerList draftBeerList_Current, beerList bottledBeerList_Current) {
 
-        boolean printBottles_Boolean = false;
+    public void printBeerList(beerList draftBeerList_Current, beerList bottledBeerList_Current) {
+
+        final String BOTTLED_LIST_HEADER = "<div class=\"bottleBox\">";
+        final String BOTTLED_LIST_FOOTER = "</div>";
 
         String indiaPaleAlesHTML;
         String paleAlesHTML;
@@ -755,6 +678,17 @@ public class Beer {
 
 
         }
+
+        bottlesAndCansHTML = bottlesAndCansStringBuilder.toString();
+        tableBeerHTML = tableBeerStringBuilder.toString();
+
+        StringBuilder bottledBeerList_StringBuilder = new StringBuilder();
+        bottledBeerList_StringBuilder.append(BOTTLED_LIST_HEADER);
+        bottledBeerList_StringBuilder.append(bottlesAndCansHTML);
+        bottledBeerList_StringBuilder.append(tableBeerHTML);
+        bottledBeerList_StringBuilder.append(BOTTLED_LIST_FOOTER);
+
+        String bottledBeerListHTML = bottledBeerList_StringBuilder.toString();
 
         //Draft List
         //sort into categories and arrays
@@ -831,6 +765,7 @@ public class Beer {
             printDraftBeer(b, ciderBuilder, CIDER);
         }
 
+
         indiaPaleAlesHTML = indiaPaleAlesBuilder.toString();
         paleAlesHTML = paleAlesBuilder.toString();
         otherAlesHTML = otherAlesBuilder.toString();
@@ -838,14 +773,6 @@ public class Beer {
         belgianStyleHTML = belgianStyleBuilder.toString();
         darkHTML = darkBuilder.toString();
         ciderHTML = ciderBuilder.toString();
-
-        bottlesAndCansHTML = bottlesAndCansStringBuilder.toString();
-        tableBeerHTML = tableBeerStringBuilder.toString();
-
-
-        File website_headerFile = new File(WEBSITE_HTML_HEADER_FILEPATH);
-        File website_footerFile = new File(WEBSITE_HTML_FOOTER_FILEPATH);
-
 
         /// sort beer categories by size
         List<String> draftBeerArray = new ArrayList();
@@ -864,18 +791,49 @@ public class Beer {
         //sorts each category by how many beers it has
         Collections.sort(draftBeerArray, new draftColumnSorter());
 
-        try {
+        int leftColumnSize = 0;
+        int rightColumnSize = 0;
 
+        //sorts categories into left and right columns by size, so page doesn't overflow
+        for (int i = 0; i < draftBeerArray.size(); i++) {
 
-            website_headerHTML = FileUtils.readFileToString(website_headerFile);
-            website_footerHTML = FileUtils.readFileToString(website_footerFile);
+            if (leftColumnSize > rightColumnSize) {
+                rightColumnArray.add((draftBeerArray.get(i)));
+                rightColumnSize += draftBeerArray.get(i).length();
 
-            BufferedWriter printList_bufferedWriter = new BufferedWriter(new FileWriter(beerList_printFile));
-            BufferedWriter printList_Window_bufferedWriter = new BufferedWriter(new FileWriter(beerList_Window_printFile));
-            //BufferedWriter website_bufferedWriter = new BufferedWriter(new FileWriter(beerList_htmlFile));
+            } else {
+                leftColumnArray.add(draftBeerArray.get(i));
+                leftColumnSize += draftBeerArray.get(i).length();
 
-            writeList(printList_bufferedWriter, draftBeerArray, rightColumnArray, leftColumnArray, printBottles_Boolean == false);
-            writeList(printList_Window_bufferedWriter, draftBeerArray, rightColumnArray, leftColumnArray, printBottles_Boolean == true);
+            }
+
+        }
+
+        //build string containing draft beer list. Can be used in any menu or the website
+        StringBuilder draftBeer_StringBuilder = new StringBuilder();
+
+        // header text for draft list "Draft Beer: All draft beers are served in 16oz glasses unless noted otherwise
+        draftBeer_StringBuilder.append("<div id=\"draftHeader\">Draft Beer</div>\n" +
+                "    <div id=\"draftDescription\">All draft beers are served in 16oz glasses unless noted otherwise</div>");
+        draftBeer_StringBuilder.append("<div class=\"leftSide\">");
+        for (String s : leftColumnArray) {
+            draftBeer_StringBuilder.append(s);
+        }
+        draftBeer_StringBuilder.append("</div>");
+
+        draftBeer_StringBuilder.append("<div class=\"rightSide\">");
+        for (String s : rightColumnArray) {
+            draftBeer_StringBuilder.append(s);
+        }
+
+        draftBeer_StringBuilder.append("</div>");
+
+        String draftBeerListHTML = draftBeer_StringBuilder.toString();
+
+        //write in house beer list
+        new menuPrinter().writeBeerList(bottledBeerListHTML, draftBeerListHTML);
+        //write window draft list
+        new menuPrinter().writeWindowBeerList(draftBeerListHTML);
             //writeList(website_bufferedWriter, website_headerHTML, website_footerHTML, draftBeerArray, rightColumnArray, leftColumnArray);
 
 
@@ -904,12 +862,8 @@ public class Beer {
             }*/
 
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
     }
+
 
     ///////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////

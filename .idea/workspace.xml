@@ -8,13 +8,15 @@
   <component name="ChangeListManager">
     <list id="04ed97b4-2618-4588-9144-4e6085151b39" name="Rejected commit: Default" comment="" />
     <list id="05e7192f-49ce-469a-937f-50f271875955" name="Created Bottled Beer List Editor - removed first menu, focusing on beer. (cherry picked from commit 5e27023)" comment="Created Bottled Beer List Editor&#10;- removed first menu, focusing on beer.&#10;(cherry picked from commit 5e27023)" />
-    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="Added sizes to bottled list, made draft sizes normal weight">
+    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="Now printing window list">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/piccoapp/draftBeerHeadderText.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/piccoapp/menuPrinter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer$1.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer$2.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer$3.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PiccoApp_jar/PiccoApp.jar" afterPath="$PROJECT_DIR$/out/artifacts/PiccoApp_jar/PiccoApp.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/Beer.java" afterPath="$PROJECT_DIR$/src/piccoapp/Beer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" afterPath="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PiccoApp.iws" />
@@ -39,147 +41,93 @@
     <favorites_list name="PiccoApp" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="MenuChanger.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="348" column="11" selection-start-line="348" selection-start-column="11" selection-end-line="348" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-                <element signature="e#14999#15666#0" expanded="true" />
-                <element signature="e#15665#15666#0" expanded="true" />
-                <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-                <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
-                <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
-                <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
-                <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
-                <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Beer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/piccoapp/Beer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19131334">
-              <caret line="813" column="12" selection-start-line="813" selection-start-column="12" selection-end-line="813" selection-end-column="12" />
-              <folding>
-                <element signature="docComment;class#Beer#0" expanded="false" />
-                <element signature="method#Beer#0;class#Beer#0" expanded="false" />
-                <element signature="method#createNewDraftBeer#0;class#Beer#0" expanded="false" />
-                <element signature="method#createNewBottledBeer#0;class#Beer#0" expanded="false" />
-                <element signature="e#8840#9639#0" expanded="true" />
-                <element signature="e#9638#9639#0" expanded="true" />
-                <element signature="method#editDraftBeer#0;class#Beer#0" expanded="false" />
-                <element signature="method#editBottledBeer#0;class#Beer#0" expanded="false" />
-                <element signature="e#17153#17161#0" expanded="true" />
-                <element signature="e#19428#20968#0" expanded="true" />
-                <element signature="e#20967#20968#0" expanded="true" />
-                <element signature="e#21012#22479#0" expanded="true" />
-                <element signature="e#22478#22479#0" expanded="true" />
-                <element signature="method#printDraftBeer#0;class#Beer#0" expanded="false" />
-                <element signature="e#26951#26963#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="draftColumnSorter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/piccoapp/draftColumnSorter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modules.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vcs.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="7" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="7" />
-              <folding>
-                <marker date="1433345175469" expanded="true" signature="84750:84775" placeholder="..." />
-                <marker date="1433345175469" expanded="true" signature="84750:84792" placeholder="..." />
-                <marker date="1433345175469" expanded="true" signature="84750:84810" placeholder="..." />
-                <marker date="1433345175469" expanded="true" signature="84750:84823" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customTable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/piccoapp/customTable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customTableCell.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/piccoapp/customTableCell.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdvancedTableModel.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/glazedlists_java15.jar!/ca/odell/glazedlists/swing/AdvancedTableModel.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/piccoapp/customButton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.3936102">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="beerList.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/piccoapp/beerList.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Beer.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/piccoapp/Beer.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-1.1191827">
+                  <caret line="681" column="26" selection-start-line="681" selection-start-column="26" selection-end-line="681" selection-end-column="26" />
+                  <folding>
+                    <element signature="docComment;class#Beer#0" expanded="false" />
+                    <element signature="method#Beer#0;class#Beer#0" expanded="false" />
+                    <element signature="method#createNewDraftBeer#0;class#Beer#0" expanded="false" />
+                    <element signature="e#4787#5614#0" expanded="true" />
+                    <element signature="e#5613#5614#0" expanded="true" />
+                    <element signature="method#createNewBottledBeer#0;class#Beer#0" expanded="false" />
+                    <element signature="e#7956#8755#0" expanded="true" />
+                    <element signature="e#8754#8755#0" expanded="true" />
+                    <element signature="e#12323#13882#0" expanded="true" />
+                    <element signature="e#13881#13882#0" expanded="true" />
+                    <element signature="e#13926#15395#0" expanded="true" />
+                    <element signature="e#15394#15395#0" expanded="true" />
+                    <element signature="e#16269#16277#0" expanded="true" />
+                    <element signature="e#18544#20084#0" expanded="true" />
+                    <element signature="e#20083#20084#0" expanded="true" />
+                    <element signature="e#20128#21595#0" expanded="true" />
+                    <element signature="e#21594#21595#0" expanded="true" />
+                    <element signature="e#26697#26709#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="draftBeerHeadderText.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/piccoapp/draftBeerHeadderText.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-0.65384614">
+                  <caret line="1" column="80" selection-start-line="1" selection-start-column="80" selection-end-line="1" selection-end-column="80" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="menuPrinter.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/piccoapp/menuPrinter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="menuPrinter.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/piccoapp/menuPrinter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.77185017">
+                  <caret line="61" column="45" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Html5" />
       </list>
     </option>
   </component>
@@ -196,9 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/XMLParser.java" />
-        <option value="$PROJECT_DIR$/src/BeerXMLWriter.java" />
-        <option value="$PROJECT_DIR$/src/BeerXMLDeleter.java" />
         <option value="$PROJECT_DIR$/src/CreateNewBeer.java" />
         <option value="$PROJECT_DIR$/CurrentBeerList.xml" />
         <option value="$PROJECT_DIR$/BeerMasterList.xml" />
@@ -246,7 +191,10 @@
         <option value="$PROJECT_DIR$/src/piccoapp/customTableHeader.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/customTable.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" />
+        <option value="$USER_HOME$/Picco App/HTML/Beer_List_Window.html" />
+        <option value="$PROJECT_DIR$/src/piccoapp/draftBeerHeadderText.html" />
         <option value="$PROJECT_DIR$/src/piccoapp/Beer.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/menuPrinter.java" />
       </list>
     </option>
   </component>
@@ -256,8 +204,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1184" />
+    <option name="width" value="1932" />
+    <option name="height" value="1064" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -319,8 +267,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -387,7 +335,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -426,6 +374,7 @@
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="piccoapp" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -579,12 +528,6 @@
       <created>1429741011934</created>
       <option name="number" value="Default" />
       <updated>1431666732292</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Improved column sorting&#10;- sorts based on the size of each column">
-      <created>1432065525836</created>
-      <option name="number" value="00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1432065525836</updated>
     </task>
     <task id="LOCAL-00046" summary="CSS formatting">
       <created>1432179542031</created>
@@ -874,7 +817,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433271377635</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Now printing window list">
+      <created>1433345887839</created>
+      <option name="number" value="00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1433345887840</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -906,57 +855,59 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1184" extended-state="6" />
+    <frame x="-9" y="-9" width="1932" height="1064" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874015" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32591876" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31594488" sideWeight="0.5614776" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14990328" sideWeight="0.49182057" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3065764" sideWeight="0.43852243" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.327853" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31509846" sideWeight="0.5614776" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47592998" sideWeight="0.49182057" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30634573" sideWeight="0.43852243" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.327853" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2126649" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17151932" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2560175" sideWeight="0.49815303" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16253299" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39074802" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25628626" sideWeight="0.49815303" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288201" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874015" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32591876" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31509846" sideWeight="0.5614776" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3220503" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32591876" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288201" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47592998" sideWeight="0.49182057" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30634573" sideWeight="0.43852243" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.327853" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.087877184" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17151932" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26499033" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2791712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2560175" sideWeight="0.49815303" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16253299" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39074802" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -977,7 +928,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="removed space between number and oz in bottled list" />
     <MESSAGE value="More Static removed, class variables organized" />
     <MESSAGE value="More Static removed, variables declared final" />
     <MESSAGE value="Created package piccoapp&#10;- moved draftBeerList class out of menuChanger" />
@@ -1002,7 +952,8 @@
     <MESSAGE value="fixed wrong variable being passed to printlist()" />
     <MESSAGE value="fixed variable passed to printlist() in bottledbeercard" />
     <MESSAGE value="Added sizes to bottled list, made draft sizes normal weight" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added sizes to bottled list, made draft sizes normal weight" />
+    <MESSAGE value="Now printing window list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now printing window list" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1012,7 +963,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="22" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1020,59 +971,12 @@
     <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="275" column="21" selection-start-line="275" selection-start-column="21" selection-end-line="275" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#14999#15666#0" expanded="true" />
-            <element signature="e#15665#15666#0" expanded="true" />
-            <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
-            <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/glazedlists_java15.jar!/ca/odell/glazedlists/swing/AdvancedTableModel.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/customButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/customScrollPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
           <caret line="460" column="56" selection-start-line="460" selection-start-column="56" selection-end-line="460" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#14999#15666#0" expanded="true" />
-            <element signature="e#15665#15666#0" expanded="true" />
+            <element signature="e#15003#15670#0" expanded="true" />
+            <element signature="e#15669#15670#0" expanded="true" />
             <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
@@ -1097,8 +1001,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#14999#15666#0" expanded="true" />
-            <element signature="e#15665#15666#0" expanded="true" />
+            <element signature="e#15003#15670#0" expanded="true" />
+            <element signature="e#15669#15670#0" expanded="true" />
             <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
@@ -1326,36 +1230,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/beerList.java">
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/customTableHeader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9769022">
-          <caret line="101" column="4" selection-start-line="101" selection-start-column="4" selection-end-line="101" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.19572368">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/glazedlists_java15.jar!/ca/odell/glazedlists/swing/AdvancedTableModel.class">
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/customScrollPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
+        <state vertical-scroll-proportion="0.39144737">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/customButton.java">
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        <state vertical-scroll-proportion="1.0252526">
+          <caret line="348" column="11" selection-start-line="348" selection-start-column="11" selection-end-line="348" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
+            <element signature="e#15003#15670#0" expanded="true" />
+            <element signature="e#15669#15670#0" expanded="true" />
+            <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
+            <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/customTable.java">
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/draftColumnSorter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding />
+        <state vertical-scroll-proportion="0.30050504">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1379,87 +1290,106 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="7" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="7" />
-          <folding>
-            <marker date="1433345175469" expanded="true" signature="84750:84775" placeholder="..." />
-            <marker date="1433345175469" expanded="true" signature="84750:84792" placeholder="..." />
-            <marker date="1433345175469" expanded="true" signature="84750:84810" placeholder="..." />
-            <marker date="1433345175469" expanded="true" signature="84750:84823" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/customTableHeader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19572368">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/customScrollPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39144737">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/draftColumnSorter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/customTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6439394">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/piccoapp/customTableCell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.30050504">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/glazedlists_java15.jar!/ca/odell/glazedlists/swing/AdvancedTableModel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5040431">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/customButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3989899">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Picco App/HTML/Beer_List_Window.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.01871345">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_20/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3325766">
+          <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/beerList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="348" column="11" selection-start-line="348" selection-start-column="11" selection-end-line="348" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#14999#15666#0" expanded="true" />
-            <element signature="e#15665#15666#0" expanded="true" />
-            <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
-            <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
-          </folding>
+          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/draftBeerHeadderText.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="1" column="80" selection-start-line="1" selection-start-column="80" selection-end-line="1" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/piccoapp/Beer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19131334">
-          <caret line="813" column="12" selection-start-line="813" selection-start-column="12" selection-end-line="813" selection-end-column="12" />
+        <state vertical-scroll-proportion="-1.1191827">
+          <caret line="681" column="26" selection-start-line="681" selection-start-column="26" selection-end-line="681" selection-end-column="26" />
           <folding>
             <element signature="docComment;class#Beer#0" expanded="false" />
             <element signature="method#Beer#0;class#Beer#0" expanded="false" />
             <element signature="method#createNewDraftBeer#0;class#Beer#0" expanded="false" />
+            <element signature="e#4787#5614#0" expanded="true" />
+            <element signature="e#5613#5614#0" expanded="true" />
             <element signature="method#createNewBottledBeer#0;class#Beer#0" expanded="false" />
-            <element signature="e#8840#9639#0" expanded="true" />
-            <element signature="e#9638#9639#0" expanded="true" />
-            <element signature="method#editDraftBeer#0;class#Beer#0" expanded="false" />
-            <element signature="method#editBottledBeer#0;class#Beer#0" expanded="false" />
-            <element signature="e#17153#17161#0" expanded="true" />
-            <element signature="e#19428#20968#0" expanded="true" />
-            <element signature="e#20967#20968#0" expanded="true" />
-            <element signature="e#21012#22479#0" expanded="true" />
-            <element signature="e#22478#22479#0" expanded="true" />
-            <element signature="method#printDraftBeer#0;class#Beer#0" expanded="false" />
-            <element signature="e#26951#26963#0" expanded="false" />
+            <element signature="e#7956#8755#0" expanded="true" />
+            <element signature="e#8754#8755#0" expanded="true" />
+            <element signature="e#12323#13882#0" expanded="true" />
+            <element signature="e#13881#13882#0" expanded="true" />
+            <element signature="e#13926#15395#0" expanded="true" />
+            <element signature="e#15394#15395#0" expanded="true" />
+            <element signature="e#16269#16277#0" expanded="true" />
+            <element signature="e#18544#20084#0" expanded="true" />
+            <element signature="e#20083#20084#0" expanded="true" />
+            <element signature="e#20128#21595#0" expanded="true" />
+            <element signature="e#21594#21595#0" expanded="true" />
+            <element signature="e#26697#26709#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/menuPrinter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77185017">
+          <caret line="61" column="45" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
