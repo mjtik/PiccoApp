@@ -12,6 +12,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by mtiko_000 on 4/22/2015.
@@ -38,14 +39,15 @@ public class Beer {
     static final String[] bottleType_Array = {TABLE_BEER, BOTTLES_AND_CANS};
     //filepaths for html files for printing
     static final File beerList_printFile = new File(MenuChanger.HOME_DIR + "\\html\\Beer_List.html");
+    static final File beerList_Window_printFile = new File(MenuChanger.HOME_DIR + "\\html\\Beer_List_Window.html");
     static final File beerList_htmlFile = new File(MenuChanger.HOME_DIR + "\\html\\beer.html");
     //headers and footers for printlist
     static final String BOTTLED_LIST_HEADER = "<div class=\"bottleBox\">";
     static final String BOTTLED_LIST_FOOTER = "</div>";
+    static final String PRINT_LIST_HTML_FOOTER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
+    static final String PRINT_LIST_HTML_HEADER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
     static String bottlesAndCansHTML;
     static String tableBeerHTML;
-    final String PRINT_LIST_HTML_FOOTER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
-    final String PRINT_LIST_HTML_HEADER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
     final String WEBSITE_HTML_FOOTER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlFooter.txt";
     final String WEBSITE_HTML_HEADER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlHeader.txt";
     //FTP info
@@ -67,22 +69,33 @@ public class Beer {
 
     }
 
-    static void writeList(BufferedWriter bufferedWriter, String header, String footer, java.util.List<String> draftBeerArray, java.util.List<String> rightColumnArray, java.util.List<String> leftColumnArray, int leftColumnSize, int rightColumnSize) {
+    static void writeList(BufferedWriter bufferedWriter, List<String> draftBeerArray, List<String> rightColumnArray, List<String> leftColumnArray, boolean printBottles_Boolean) {
         try {
-            bufferedWriter.write(header);
 
-            bufferedWriter.write(BOTTLED_LIST_HEADER);
-            bufferedWriter.write(bottlesAndCansHTML);
-            bufferedWriter.write(tableBeerHTML);
+            //setup header and footer files
+            File printList_headerFile = new File(PRINT_LIST_HTML_HEADER_FILEPATH);
+            File printList_footerFile = new File(PRINT_LIST_HTML_FOOTER_FILEPATH);
+            String printList_headerHTML = FileUtils.readFileToString(printList_headerFile);
+            String printList_footerHTML = FileUtils.readFileToString(printList_footerFile);
 
-            bufferedWriter.write(BOTTLED_LIST_FOOTER);
+            bufferedWriter.write(printList_headerHTML);
 
+            //print the bottled list if printBottles is true, otherwise, skip it because it's for the window menu
+            if (printBottles_Boolean) {
+                System.out.println(printBottles_Boolean);
+                bufferedWriter.write(BOTTLED_LIST_HEADER);
+                bufferedWriter.write(bottlesAndCansHTML);
+                bufferedWriter.write(tableBeerHTML);
+                bufferedWriter.write(BOTTLED_LIST_FOOTER);
+            }
 
-            // sort into right and left columns depending on the size of each column
-            // to avoid being to big to print
+            /*sort into right and left columns depending on the size of each column
+            to avoid being to big to print*/
+
+            int leftColumnSize = 0;
+            int rightColumnSize = 0;
 
             for (int i = 0; i < draftBeerArray.size(); i++) {
-
 
                 if (leftColumnSize > rightColumnSize) {
                     rightColumnArray.add((draftBeerArray.get(i)));
@@ -112,7 +125,7 @@ public class Beer {
 
             bufferedWriter.write("</div>");
 
-            bufferedWriter.write(footer);
+            bufferedWriter.write(printList_footerHTML);
             bufferedWriter.close();
 
         } catch (IOException e) {
@@ -684,6 +697,8 @@ public class Beer {
 
     public void printList(beerList draftBeerList_Current, beerList bottledBeerList_Current) {
 
+        boolean printBottles_Boolean = false;
+
         String indiaPaleAlesHTML;
         String paleAlesHTML;
         String otherAlesHTML;
@@ -691,9 +706,6 @@ public class Beer {
         String belgianStyleHTML;
         String darkHTML;
         String ciderHTML;
-
-        String printList_headerHTML;
-        String printList_footerHTML;
 
         String website_headerHTML;
         String website_footerHTML;
@@ -709,14 +721,15 @@ public class Beer {
         StringBuilder bottlesAndCansStringBuilder = new StringBuilder();
         StringBuilder tableBeerStringBuilder = new StringBuilder();
 
-        java.util.List<Beer> indiaPaleAles_ArrayList = new ArrayList();
-        java.util.List<Beer> paleAles_ArrayList = new ArrayList();
-        java.util.List<Beer> otherAles_ArrayList = new ArrayList();
-        java.util.List<Beer> lagers_ArrayList = new ArrayList();
-        java.util.List<Beer> belgianStyle_ArrayList = new ArrayList();
-        java.util.List<Beer> dark_ArrayList = new ArrayList();
-        java.util.List<Beer> cider_ArrayList = new ArrayList();
-        java.util.List<java.util.List> allCategories_ArrayList = new ArrayList();
+        List<Beer> indiaPaleAles_ArrayList = new ArrayList();
+        List<Beer> paleAles_ArrayList = new ArrayList();
+        List<Beer> otherAles_ArrayList = new ArrayList();
+        List<Beer> lagers_ArrayList = new ArrayList();
+        List<Beer> belgianStyle_ArrayList = new ArrayList();
+        List<Beer> dark_ArrayList = new ArrayList();
+        List<Beer> cider_ArrayList = new ArrayList();
+        List<java.util.List> allCategories_ArrayList = new ArrayList();
+
         allCategories_ArrayList.add(indiaPaleAles_ArrayList);
         allCategories_ArrayList.add(paleAles_ArrayList);
         allCategories_ArrayList.add(otherAles_ArrayList);
@@ -724,9 +737,6 @@ public class Beer {
         allCategories_ArrayList.add(belgianStyle_ArrayList);
         allCategories_ArrayList.add(dark_ArrayList);
         allCategories_ArrayList.add(cider_ArrayList);
-
-        int leftColumnSize = 0;
-        int rightColumnSize = 0;
 
         //Bottled list
         for (int i = 0; i <= bottledBeerList_Current.getSortedList().size() - 1; i++) {
@@ -786,7 +796,7 @@ public class Beer {
         }
 
         // sort each category by abv
-        for (java.util.List l : allCategories_ArrayList) {
+        for (List l : allCategories_ArrayList) {
 
             Collections.sort(l, new draftAbvSorter());
 
@@ -832,17 +842,15 @@ public class Beer {
         bottlesAndCansHTML = bottlesAndCansStringBuilder.toString();
         tableBeerHTML = tableBeerStringBuilder.toString();
 
-        File printList_headerFile = new File(PRINT_LIST_HTML_HEADER_FILEPATH);
-        File printList_footerFile = new File(PRINT_LIST_HTML_FOOTER_FILEPATH);
 
         File website_headerFile = new File(WEBSITE_HTML_HEADER_FILEPATH);
         File website_footerFile = new File(WEBSITE_HTML_FOOTER_FILEPATH);
 
 
         /// sort beer categories by size
-        java.util.List<String> draftBeerArray = new ArrayList();
-        java.util.List<String> leftColumnArray = new ArrayList();
-        java.util.List<String> rightColumnArray = new ArrayList();
+        List<String> draftBeerArray = new ArrayList();
+        List<String> leftColumnArray = new ArrayList();
+        List<String> rightColumnArray = new ArrayList();
 
 
         draftBeerArray.add(paleAlesHTML);
@@ -857,17 +865,20 @@ public class Beer {
         Collections.sort(draftBeerArray, new draftColumnSorter());
 
         try {
-            printList_headerHTML = FileUtils.readFileToString(printList_headerFile);
-            printList_footerHTML = FileUtils.readFileToString(printList_footerFile);
+
 
             website_headerHTML = FileUtils.readFileToString(website_headerFile);
             website_footerHTML = FileUtils.readFileToString(website_footerFile);
 
             BufferedWriter printList_bufferedWriter = new BufferedWriter(new FileWriter(beerList_printFile));
-            BufferedWriter website_bufferedWriter = new BufferedWriter(new FileWriter(beerList_htmlFile));
+            BufferedWriter printList_Window_bufferedWriter = new BufferedWriter(new FileWriter(beerList_Window_printFile));
+            //BufferedWriter website_bufferedWriter = new BufferedWriter(new FileWriter(beerList_htmlFile));
 
-            writeList(printList_bufferedWriter, printList_headerHTML, printList_footerHTML, draftBeerArray, rightColumnArray, leftColumnArray, leftColumnSize, rightColumnSize);
-            writeList(website_bufferedWriter, website_headerHTML, website_footerHTML, draftBeerArray, rightColumnArray, leftColumnArray, leftColumnSize, rightColumnSize);
+            writeList(printList_bufferedWriter, draftBeerArray, rightColumnArray, leftColumnArray, printBottles_Boolean == false);
+            writeList(printList_Window_bufferedWriter, draftBeerArray, rightColumnArray, leftColumnArray, printBottles_Boolean == true);
+            //writeList(website_bufferedWriter, website_headerHTML, website_footerHTML, draftBeerArray, rightColumnArray, leftColumnArray);
+
+
 
            /* FTPClient ftpClient = new FTPClient();
 

@@ -8,15 +8,13 @@
   <component name="ChangeListManager">
     <list id="04ed97b4-2618-4588-9144-4e6085151b39" name="Rejected commit: Default" comment="" />
     <list id="05e7192f-49ce-469a-937f-50f271875955" name="Created Bottled Beer List Editor - removed first menu, focusing on beer. (cherry picked from commit 5e27023)" comment="Created Bottled Beer List Editor&#10;- removed first menu, focusing on beer.&#10;(cherry picked from commit 5e27023)" />
-    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="customCells">
+    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="Added sizes to bottled list, made draft sizes normal weight">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer$1.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer$2.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer$3.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/Beer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/PiccoApp_jar/PiccoApp.jar" afterPath="$PROJECT_DIR$/out/artifacts/PiccoApp_jar/PiccoApp.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/Beer.java" afterPath="$PROJECT_DIR$/src/piccoapp/Beer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/PiccoApp/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" afterPath="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PiccoApp.iml" afterPath="$PROJECT_DIR$/PiccoApp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/PiccoApp_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/PiccoApp_jar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PiccoApp.iws" />
@@ -41,162 +39,142 @@
     <favorites_list name="PiccoApp" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="MenuChanger.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.47900113">
-                  <caret line="354" column="121" selection-start-line="354" selection-start-column="121" selection-end-line="354" selection-end-column="121" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-                    <element signature="e#6042#6267#0" expanded="true" />
-                    <element signature="e#6266#6267#0" expanded="true" />
-                    <element signature="e#13010#13220#0" expanded="true" />
-                    <element signature="e#13219#13220#0" expanded="true" />
-                    <element signature="e#13362#13653#0" expanded="true" />
-                    <element signature="e#13652#13653#0" expanded="true" />
-                    <element signature="e#13804#14083#0" expanded="true" />
-                    <element signature="e#14082#14083#0" expanded="true" />
-                    <element signature="e#14139#14386#0" expanded="true" />
-                    <element signature="e#14385#14386#0" expanded="true" />
-                    <element signature="e#14447#14704#0" expanded="true" />
-                    <element signature="e#14703#14704#0" expanded="true" />
-                    <element signature="e#14744#14955#0" expanded="true" />
-                    <element signature="e#14954#14955#0" expanded="true" />
-                    <element signature="e#14999#15666#0" expanded="true" />
-                    <element signature="e#15665#15666#0" expanded="true" />
-                    <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-                    <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
-                    <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
-                    <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
-                    <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
-                    <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Beer.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/piccoapp/Beer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="731" column="43" selection-start-line="731" selection-start-column="43" selection-end-line="731" selection-end-column="43" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="modules.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="vcs.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="0" column="7" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="7" />
-                  <folding>
-                    <marker date="1433270400363" expanded="true" signature="90558:90583" placeholder="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="customTable.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/piccoapp/customTable.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="customTableCell.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/piccoapp/customTableCell.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="AdvancedTableModel.class" pinned="false" current-in-tab="false">
-            <entry file="jar://$PROJECT_DIR$/glazedlists_java15.jar!/ca/odell/glazedlists/swing/AdvancedTableModel.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="customButton.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/piccoapp/customButton.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="customScrollPane.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/piccoapp/customScrollPane.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="customTableHeader.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/piccoapp/customTableHeader.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.13507378">
-                  <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-                  <folding>
-                    <element signature="e#259#260#0" expanded="true" />
-                    <element signature="e#329#330#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="MenuChanger.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="348" column="11" selection-start-line="348" selection-start-column="11" selection-end-line="348" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
+                <element signature="e#14999#15666#0" expanded="true" />
+                <element signature="e#15665#15666#0" expanded="true" />
+                <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
+                <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
+                <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
+                <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+                <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+                <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Beer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/piccoapp/Beer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.19131334">
+              <caret line="813" column="12" selection-start-line="813" selection-start-column="12" selection-end-line="813" selection-end-column="12" />
+              <folding>
+                <element signature="docComment;class#Beer#0" expanded="false" />
+                <element signature="method#Beer#0;class#Beer#0" expanded="false" />
+                <element signature="method#createNewDraftBeer#0;class#Beer#0" expanded="false" />
+                <element signature="method#createNewBottledBeer#0;class#Beer#0" expanded="false" />
+                <element signature="e#8840#9639#0" expanded="true" />
+                <element signature="e#9638#9639#0" expanded="true" />
+                <element signature="method#editDraftBeer#0;class#Beer#0" expanded="false" />
+                <element signature="method#editBottledBeer#0;class#Beer#0" expanded="false" />
+                <element signature="e#17153#17161#0" expanded="true" />
+                <element signature="e#19428#20968#0" expanded="true" />
+                <element signature="e#20967#20968#0" expanded="true" />
+                <element signature="e#21012#22479#0" expanded="true" />
+                <element signature="e#22478#22479#0" expanded="true" />
+                <element signature="method#printDraftBeer#0;class#Beer#0" expanded="false" />
+                <element signature="e#26951#26963#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="draftColumnSorter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/piccoapp/draftColumnSorter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modules.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vcs.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="7" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="7" />
+              <folding>
+                <marker date="1433345175469" expanded="true" signature="84750:84775" placeholder="..." />
+                <marker date="1433345175469" expanded="true" signature="84750:84792" placeholder="..." />
+                <marker date="1433345175469" expanded="true" signature="84750:84810" placeholder="..." />
+                <marker date="1433345175469" expanded="true" signature="84750:84823" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customTable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/piccoapp/customTable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customTableCell.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/piccoapp/customTableCell.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdvancedTableModel.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/glazedlists_java15.jar!/ca/odell/glazedlists/swing/AdvancedTableModel.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customButton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/piccoapp/customButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -267,8 +245,8 @@
         <option value="$PROJECT_DIR$/src/piccoapp/customScrollPane.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/customTableHeader.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/customTable.java" />
-        <option value="$PROJECT_DIR$/src/piccoapp/Beer.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/Beer.java" />
       </list>
     </option>
   </component>
@@ -279,7 +257,7 @@
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
-    <option name="height" value="1064" />
+    <option name="height" value="1184" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -602,18 +580,6 @@
       <option name="number" value="Default" />
       <updated>1431666732292</updated>
     </task>
-    <task id="LOCAL-00043" summary="Sort draft beers by abv&#10;- getAbd --&gt; getAbvString&#10;- added getAbvDouble&#10;- added draftAbvSorter">
-      <created>1432061461393</created>
-      <option name="number" value="00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1432061461393</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Sort draft beers by abv (cont.)&#10;- modified printList to sort array for each category">
-      <created>1432063897288</created>
-      <option name="number" value="00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1432063897288</updated>
-    </task>
     <task id="LOCAL-00045" summary="Improved column sorting&#10;- sorts based on the size of each column">
       <created>1432065525836</created>
       <option name="number" value="00045" />
@@ -896,7 +862,19 @@
       <option name="project" value="LOCAL" />
       <updated>1433270294535</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="fixed variable passed to printlist() in bottledbeercard">
+      <created>1433270548657</created>
+      <option name="number" value="00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1433270548657</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Added sizes to bottled list, made draft sizes normal weight">
+      <created>1433271377635</created>
+      <option name="number" value="00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1433271377635</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -928,7 +906,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1064" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1184" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -937,8 +915,8 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31594488" sideWeight="0.5614776" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44091904" sideWeight="0.49182057" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30743983" sideWeight="0.43852243" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14990328" sideWeight="0.49182057" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3065764" sideWeight="0.43852243" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.327853" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2126649" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -999,8 +977,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Spacing and () fixed on bottled beer list" />
-    <MESSAGE value="clarified entry of bottled beer sizes. &#10;- beer should be entered in oz" />
     <MESSAGE value="removed space between number and oz in bottled list" />
     <MESSAGE value="More Static removed, class variables organized" />
     <MESSAGE value="More Static removed, variables declared final" />
@@ -1024,7 +1000,9 @@
     <MESSAGE value="custom table header" />
     <MESSAGE value="customCells" />
     <MESSAGE value="fixed wrong variable being passed to printlist()" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed wrong variable being passed to printlist()" />
+    <MESSAGE value="fixed variable passed to printlist() in bottledbeercard" />
+    <MESSAGE value="Added sizes to bottled list, made draft sizes normal weight" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added sizes to bottled list, made draft sizes normal weight" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1034,22 +1012,11 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="21" />
+      <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/customTableHeader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#259#260#0" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1057,20 +1024,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#6042#6267#0" expanded="true" />
-            <element signature="e#6266#6267#0" expanded="true" />
-            <element signature="e#13010#13220#0" expanded="true" />
-            <element signature="e#13219#13220#0" expanded="true" />
-            <element signature="e#13362#13653#0" expanded="true" />
-            <element signature="e#13652#13653#0" expanded="true" />
-            <element signature="e#13804#14083#0" expanded="true" />
-            <element signature="e#14082#14083#0" expanded="true" />
-            <element signature="e#14139#14386#0" expanded="true" />
-            <element signature="e#14385#14386#0" expanded="true" />
-            <element signature="e#14447#14704#0" expanded="true" />
-            <element signature="e#14703#14704#0" expanded="true" />
-            <element signature="e#14744#14955#0" expanded="true" />
-            <element signature="e#14954#14955#0" expanded="true" />
             <element signature="e#14999#15666#0" expanded="true" />
             <element signature="e#15665#15666#0" expanded="true" />
             <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
@@ -1106,7 +1059,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1118,20 +1071,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#6042#6267#0" expanded="true" />
-            <element signature="e#6266#6267#0" expanded="true" />
-            <element signature="e#13010#13220#0" expanded="true" />
-            <element signature="e#13219#13220#0" expanded="true" />
-            <element signature="e#13362#13653#0" expanded="true" />
-            <element signature="e#13652#13653#0" expanded="true" />
-            <element signature="e#13804#14083#0" expanded="true" />
-            <element signature="e#14082#14083#0" expanded="true" />
-            <element signature="e#14139#14386#0" expanded="true" />
-            <element signature="e#14385#14386#0" expanded="true" />
-            <element signature="e#14447#14704#0" expanded="true" />
-            <element signature="e#14703#14704#0" expanded="true" />
-            <element signature="e#14744#14955#0" expanded="true" />
-            <element signature="e#14954#14955#0" expanded="true" />
             <element signature="e#14999#15666#0" expanded="true" />
             <element signature="e#15665#15666#0" expanded="true" />
             <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
@@ -1158,20 +1097,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#6042#6267#0" expanded="true" />
-            <element signature="e#6266#6267#0" expanded="true" />
-            <element signature="e#13010#13220#0" expanded="true" />
-            <element signature="e#13219#13220#0" expanded="true" />
-            <element signature="e#13362#13653#0" expanded="true" />
-            <element signature="e#13652#13653#0" expanded="true" />
-            <element signature="e#13804#14083#0" expanded="true" />
-            <element signature="e#14082#14083#0" expanded="true" />
-            <element signature="e#14139#14386#0" expanded="true" />
-            <element signature="e#14385#14386#0" expanded="true" />
-            <element signature="e#14447#14704#0" expanded="true" />
-            <element signature="e#14703#14704#0" expanded="true" />
-            <element signature="e#14744#14955#0" expanded="true" />
-            <element signature="e#14954#14955#0" expanded="true" />
             <element signature="e#14999#15666#0" expanded="true" />
             <element signature="e#15665#15666#0" expanded="true" />
             <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
@@ -1426,31 +1351,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/customScrollPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/customTableCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/piccoapp/customTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1475,51 +1380,54 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="7" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="7" />
           <folding>
-            <marker date="1433270400363" expanded="true" signature="90558:90583" placeholder="..." />
+            <marker date="1433345175469" expanded="true" signature="84750:84775" placeholder="..." />
+            <marker date="1433345175469" expanded="true" signature="84750:84792" placeholder="..." />
+            <marker date="1433345175469" expanded="true" signature="84750:84810" placeholder="..." />
+            <marker date="1433345175469" expanded="true" signature="84750:84823" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/piccoapp/customTableHeader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13507378">
+        <state vertical-scroll-proportion="0.19572368">
           <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/customScrollPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39144737">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
-            <element signature="e#259#260#0" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/Beer.java">
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/draftColumnSorter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="731" column="43" selection-start-line="731" selection-start-column="43" selection-end-line="731" selection-end-column="43" />
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/customTableCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47900113">
-          <caret line="354" column="121" selection-start-line="354" selection-start-column="121" selection-end-line="354" selection-end-column="121" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="348" column="11" selection-start-line="348" selection-start-column="11" selection-end-line="348" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#6042#6267#0" expanded="true" />
-            <element signature="e#6266#6267#0" expanded="true" />
-            <element signature="e#13010#13220#0" expanded="true" />
-            <element signature="e#13219#13220#0" expanded="true" />
-            <element signature="e#13362#13653#0" expanded="true" />
-            <element signature="e#13652#13653#0" expanded="true" />
-            <element signature="e#13804#14083#0" expanded="true" />
-            <element signature="e#14082#14083#0" expanded="true" />
-            <element signature="e#14139#14386#0" expanded="true" />
-            <element signature="e#14385#14386#0" expanded="true" />
-            <element signature="e#14447#14704#0" expanded="true" />
-            <element signature="e#14703#14704#0" expanded="true" />
-            <element signature="e#14744#14955#0" expanded="true" />
-            <element signature="e#14954#14955#0" expanded="true" />
             <element signature="e#14999#15666#0" expanded="true" />
             <element signature="e#15665#15666#0" expanded="true" />
             <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
@@ -1528,6 +1436,30 @@
             <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/Beer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19131334">
+          <caret line="813" column="12" selection-start-line="813" selection-start-column="12" selection-end-line="813" selection-end-column="12" />
+          <folding>
+            <element signature="docComment;class#Beer#0" expanded="false" />
+            <element signature="method#Beer#0;class#Beer#0" expanded="false" />
+            <element signature="method#createNewDraftBeer#0;class#Beer#0" expanded="false" />
+            <element signature="method#createNewBottledBeer#0;class#Beer#0" expanded="false" />
+            <element signature="e#8840#9639#0" expanded="true" />
+            <element signature="e#9638#9639#0" expanded="true" />
+            <element signature="method#editDraftBeer#0;class#Beer#0" expanded="false" />
+            <element signature="method#editBottledBeer#0;class#Beer#0" expanded="false" />
+            <element signature="e#17153#17161#0" expanded="true" />
+            <element signature="e#19428#20968#0" expanded="true" />
+            <element signature="e#20967#20968#0" expanded="true" />
+            <element signature="e#21012#22479#0" expanded="true" />
+            <element signature="e#22478#22479#0" expanded="true" />
+            <element signature="method#printDraftBeer#0;class#Beer#0" expanded="false" />
+            <element signature="e#26951#26963#0" expanded="false" />
           </folding>
         </state>
       </provider>
