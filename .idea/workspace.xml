@@ -8,9 +8,7 @@
   <component name="ChangeListManager">
     <list id="04ed97b4-2618-4588-9144-4e6085151b39" name="Rejected commit: Default" comment="" />
     <list id="05e7192f-49ce-469a-937f-50f271875955" name="Created Bottled Beer List Editor - removed first menu, focusing on beer. (cherry picked from commit 5e27023)" comment="Created Bottled Beer List Editor&#10;- removed first menu, focusing on beer.&#10;(cherry picked from commit 5e27023)" />
-    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="First commit on new machine. Fixed dependencies">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/Beer.java" afterPath="$PROJECT_DIR$/src/piccoapp/Beer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/menuPrinter.java" afterPath="$PROJECT_DIR$/src/piccoapp/menuPrinter.java" />
+    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="Added filepaths for webList">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PiccoApp.iws" />
@@ -92,7 +90,7 @@
         <entry file="file://$PROJECT_DIR$/src/piccoapp/menuPrinter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.62542564">
-              <caret line="30" column="176" selection-start-line="30" selection-start-column="176" selection-end-line="30" selection-end-column="176" />
+              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -586,12 +584,6 @@
       <option name="number" value="Default" />
       <updated>1431666732292</updated>
     </task>
-    <task id="LOCAL-00047" summary="More CSS formatting">
-      <created>1432179613441</created>
-      <option name="number" value="00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1432179613441</updated>
-    </task>
     <task id="LOCAL-00048" summary="Moved xml &amp; html files/folders to users home dir">
       <created>1432574170035</created>
       <option name="number" value="00048" />
@@ -880,7 +872,13 @@
       <option name="project" value="LOCAL" />
       <updated>1435200725260</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Added filepaths for webList">
+      <created>1435202251387</created>
+      <option name="number" value="00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1435202251387</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -985,7 +983,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="More Static removed, variables declared final" />
     <MESSAGE value="Created package piccoapp&#10;- moved draftBeerList class out of menuChanger" />
     <MESSAGE value="createNewBeer moved to Beer class&#10;- final beer string variables moved to beer class" />
     <MESSAGE value="createNewBeer button fixed" />
@@ -1010,7 +1007,8 @@
     <MESSAGE value="Added sizes to bottled list, made draft sizes normal weight" />
     <MESSAGE value="Now printing window list" />
     <MESSAGE value="First commit on new machine. Fixed dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit on new machine. Fixed dependencies" />
+    <MESSAGE value="Added filepaths for webList" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added filepaths for webList" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1239,6 +1237,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="7" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1341,7 +1340,7 @@
     <entry file="file://$PROJECT_DIR$/src/piccoapp/menuPrinter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.62542564">
-          <caret line="30" column="176" selection-start-line="30" selection-start-column="176" selection-end-line="30" selection-end-column="176" />
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
