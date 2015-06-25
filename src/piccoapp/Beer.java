@@ -847,13 +847,6 @@ public class Beer {
 
             ftpClient.changeWorkingDirectory("/httpdocs/test");
 
-            String printList_remoteFile = "printList.html";
-            InputStream printList_inputStream = new FileInputStream(beerList_printFile);
-            boolean printList_done = ftpClient.storeFile(printList_remoteFile, printList_inputStream);
-            if (printList_done) {
-                System.out.println("beerList_printFile uploaded");
-            }
-
             String website_remoteFile = "beer.html";
             InputStream website_inputStream = new FileInputStream(beerList_htmlFile);
             boolean website_done = ftpClient.storeFile(website_remoteFile, website_inputStream);
