@@ -1,4 +1,4 @@
-package piccoapp.tables.sorbet;
+package piccoapp.tables.iceCream;
 
 import ca.odell.glazedlists.TextFilterator;
 import piccoapp.menuItems.IceCream;

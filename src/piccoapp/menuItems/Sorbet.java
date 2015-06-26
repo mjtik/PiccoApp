@@ -11,4 +11,8 @@ public class Sorbet {
 
         Sorbet.flavor = flavor;
     }
+
+    public static String getFlavor() {
+        return flavor;
+    }
 }

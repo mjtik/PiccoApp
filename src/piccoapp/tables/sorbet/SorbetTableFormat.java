@@ -3,12 +3,12 @@ package piccoapp.tables.sorbet; /**
  */
 
 import ca.odell.glazedlists.gui.TableFormat;
-import piccoapp.menuItems.IceCream;
+import piccoapp.menuItems.Sorbet;
 
 /**
  * Created by mtiko_000 on 4/22/2015.
  */
-public class IceCreamTableFormat implements TableFormat<IceCream> {
+public class SorbetTableFormat implements TableFormat<Sorbet> {
 
     public int getColumnCount() {
         return 1;
@@ -20,10 +20,10 @@ public class IceCreamTableFormat implements TableFormat<IceCream> {
         throw new IllegalStateException();
     }
 
-    public Object getColumnValue(IceCream iceCream, int column) {
+    public Object getColumnValue(Sorbet sorbet, int column) {
 
 
-        if (column == 0) return iceCream.getFlavor();
+        if (column == 0) return Sorbet.getFlavor();
 
         throw new IllegalStateException();
     }

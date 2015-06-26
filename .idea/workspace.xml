@@ -8,9 +8,13 @@
   <component name="ChangeListManager">
     <list id="04ed97b4-2618-4588-9144-4e6085151b39" name="Rejected commit: Default" comment="" />
     <list id="05e7192f-49ce-469a-937f-50f271875955" name="Created Bottled Beer List Editor - removed first menu, focusing on beer. (cherry picked from commit 5e27023)" comment="Created Bottled Beer List Editor&#10;- removed first menu, focusing on beer.&#10;(cherry picked from commit 5e27023)" />
-    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="Organised">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTableFormat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTextFilter.java" />
+    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="Created IceCream TableFormat &amp; TextFilter">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/piccoapp/tables/iceCream/IceCreamTableFormat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/piccoapp/tables/iceCream/IceCreamTextFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/piccoapp/tables/sorbet/SorbetTableFormat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/piccoapp/tables/sorbet/SorbetTextFilter.java" />
+      <change type="MOVED" beforePath="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\tables\sorbet\IceCreamTableFormat.java" afterPath="$PROJECT_DIR$/src/piccoapp/tables/iceCream/IceCreamTableFormat.java" />
+      <change type="MOVED" beforePath="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\tables\sorbet\IceCreamTextFilter.java" afterPath="$PROJECT_DIR$/src/piccoapp/tables/iceCream/IceCreamTextFilter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/menuItems/Sorbet.java" afterPath="$PROJECT_DIR$/src/piccoapp/menuItems/Sorbet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -50,24 +54,49 @@
         </entry>
       </file>
       <file leaf-file-name="IceCreamTableFormat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTableFormat.java">
+        <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/iceCream/IceCreamTableFormat.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IceCreamTextFilter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTextFilter.java">
+      <file leaf-file-name="IceCreamTextFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/iceCream/IceCreamTextFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19744483">
-              <caret line="14" column="43" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="43" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="43" />
               <folding>
-                <element signature="e#361#362#0" expanded="true" />
-                <element signature="e#411#412#0" expanded="true" />
+                <element signature="e#332#333#0" expanded="true" />
+                <element signature="e#382#383#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SorbetTextFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/sorbet/SorbetTextFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+              <folding>
+                <element signature="e#356#357#0" expanded="true" />
+                <element signature="e#404#405#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SorbetTableFormat.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/sorbet/SorbetTableFormat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.43437862">
+              <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,16 +106,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="draftColumnSorter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/piccoapp/draftColumnSorter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -130,8 +149,10 @@
         <entry file="file://$PROJECT_DIR$/src/piccoapp/menuItems/Sorbet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-              <folding />
+              <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+              <folding>
+                <element signature="e#266#267#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -176,9 +197,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/currentBottledBeerList.xml" />
-        <option value="$PROJECT_DIR$/XML/currentBottledBeerList.xml" />
-        <option value="$PROJECT_DIR$/XML/bottledBeerMasterList.xml" />
         <option value="$PROJECT_DIR$/html/main.css" />
         <option value="$PROJECT_DIR$/src/PiccoApp.java" />
         <option value="$PROJECT_DIR$/src/BeerXMLParser.java" />
@@ -224,9 +242,12 @@
         <option value="$PROJECT_DIR$/src/piccoapp/tables/beer/SimpleBeerTableFormat.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/tables/iceCream/IceCreamTableFormat.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/tables/sorbet/SimpleBeerTableFormat.java" />
-        <option value="$PROJECT_DIR$/src/piccoapp/menuItems/Sorbet.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTableFormat.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/tables/iceCream/IceCreamTextFilter.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTextFilter.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/tables/sorbet/SorbetTextFilter.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/menuItems/Sorbet.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/tables/sorbet/SorbetTableFormat.java" />
       </list>
     </option>
   </component>
@@ -424,6 +445,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="iceCream" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PiccoApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PiccoApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="piccoapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tables" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="beer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -499,6 +546,7 @@
       <recent name="piccoapp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\tables\sorbet" />
       <recent name="C:\Users\mtiko_000\SkyDrive\Programing\Picco\html" />
       <recent name="C:\Users\mtiko_000\SkyDrive\Programing\Picco" />
     </key>
@@ -708,12 +756,6 @@
       <created>1429741011934</created>
       <option name="number" value="Default" />
       <updated>1431666732292</updated>
-    </task>
-    <task id="LOCAL-00053" summary="JLists in createDraftBeer are now single selection&#10;- also added sorting to current beer list">
-      <created>1432699229011</created>
-      <option name="number" value="00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1432699229011</updated>
     </task>
     <task id="LOCAL-00054" summary="In createDraftBeer, only a one column can be selected at a time">
       <created>1432700279450</created>
@@ -1003,7 +1045,13 @@
       <option name="project" value="LOCAL" />
       <updated>1435346848746</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Created IceCream TableFormat &amp; TextFilter">
+      <created>1435348173295</created>
+      <option name="number" value="00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1435348173295</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -1108,7 +1156,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="editBeer moved to Beer class&#10;- not working" />
     <MESSAGE value="editBeer variables fixed&#10;- copy of method removed from draftBeerList" />
     <MESSAGE value="id mutator added to Beer class&#10;- id set in BeerXMLParser via int counter" />
     <MESSAGE value="More adjustments to editBeer" />
@@ -1133,7 +1180,8 @@
     <MESSAGE value="Created Flavor class for ice cream and sorbets" />
     <MESSAGE value="Flavor class changed to two separate classes for ice cream and sorbet" />
     <MESSAGE value="Organised" />
-    <option name="LAST_COMMIT_MESSAGE" value="Organised" />
+    <MESSAGE value="Created IceCream TableFormat &amp; TextFilter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created IceCream TableFormat &amp; TextFilter" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1575,14 +1623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/menuItems/Sorbet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/beer/BeerTableFormat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1611,22 +1651,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTableFormat.java">
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/iceCream/IceCreamTableFormat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTextFilter.java">
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/iceCream/IceCreamTextFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19744483">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="43" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="43" />
           <folding>
-            <element signature="e#361#362#0" expanded="true" />
-            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/menuItems/Sorbet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <folding>
+            <element signature="e#266#267#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/sorbet/SorbetTextFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding>
+            <element signature="e#356#357#0" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/sorbet/SorbetTableFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43437862">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
