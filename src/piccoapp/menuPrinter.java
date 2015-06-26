@@ -1,11 +1,10 @@
 package piccoapp;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPClient;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by mtiko_000 on 6/3/2015.
@@ -28,11 +27,19 @@ public class menuPrinter {
     File printList_footerFile = new File(PRINT_LIST_HTML_FOOTER_FILEPATH);
     String printList_headerHTML;
     String printList_footerHTML;
+    File webList_headerFile = new File(WEB_LIST_HTML_HEADER);
+    File webList_footerFile = new File(WEB_LIST_HTML_FOOTER);
+    String webList_footerHTML;
+    String webList_headerHTML;
+
+
 
     public menuPrinter() {
         try {
             printList_headerHTML = FileUtils.readFileToString(printList_headerFile);
             printList_footerHTML = FileUtils.readFileToString(printList_footerFile);
+            webList_footerHTML = FileUtils.readFileToString(webList_footerFile);
+            webList_headerHTML = FileUtils.readFileToString(webList_headerFile);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -40,7 +47,6 @@ public class menuPrinter {
     }
 
     public void writeBeerList(String bottledBeerListHTML, String draftBeerListHTML) {
-        System.out.println(bottledBeerListHTML);
 
         try {
             BufferedWriter printList_bufferedWriter = new BufferedWriter(new FileWriter(beerList_printFile));
@@ -68,6 +74,44 @@ public class menuPrinter {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+    }
+
+    public void writeWebBeerList(String bottledBeerListHTML, String draftBeerListHTML) {
+        try {
+            BufferedWriter printList_bufferedWriter = new BufferedWriter(new FileWriter(beerList_htmlFile));
+            printList_bufferedWriter.write(webList_headerHTML);
+            printList_bufferedWriter.write(draftBeerListHTML);
+            printList_bufferedWriter.write(bottledBeerListHTML);
+            printList_bufferedWriter.write(webList_footerHTML);
+            printList_bufferedWriter.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        FTPClient ftpClient = new FTPClient();
+
+        try {
+            ftpClient.connect(MenuChanger.SERVER, MenuChanger.PORT);
+            ftpClient.login(MenuChanger.USER_NAME, MenuChanger.password);
+            ftpClient.enterLocalPassiveMode();
+            ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+
+            ftpClient.changeWorkingDirectory("/subdomains/test/httpdocs/");
+
+            String website_remoteFile = "beer.html";
+            InputStream website_inputStream = new FileInputStream(beerList_htmlFile);
+            boolean website_done = ftpClient.storeFile(website_remoteFile, website_inputStream);
+            if (website_done) {
+                System.out.println("beerList_website uploaded");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
 
     }
 

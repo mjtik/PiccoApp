@@ -36,10 +36,7 @@ public class Beer {
     static String tableBeerHTML;
     final String WEBSITE_HTML_FOOTER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlFooter.txt";
     final String WEBSITE_HTML_HEADER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "website_htmlHeader.txt";
-    //FTP info
-    final String SERVER = "ftp.piccorestaurant.com";
-    final int PORT = 21;
-    final String USER_NAME = "piccores";
+
 
     String price;
     String name;
@@ -834,25 +831,8 @@ public class Beer {
         new menuPrinter().writeBeerList(bottledBeerListHTML, draftBeerListHTML);
         //write window draft list
         new menuPrinter().writeWindowBeerList(draftBeerListHTML);
-            //writeList(website_bufferedWriter, website_headerHTML, website_footerHTML, draftBeerArray, rightColumnArray, leftColumnArray);
-
-
-
-           /* FTPClient ftpClient = new FTPClient();
-
-            ftpClient.connect(SERVER, PORT);
-            ftpClient.login(USER_NAME, password);
-            ftpClient.enterLocalPassiveMode();
-            ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
-
-            ftpClient.changeWorkingDirectory("/httpdocs/test");
-
-            String website_remoteFile = "beer.html";
-            InputStream website_inputStream = new FileInputStream(beerList_htmlFile);
-            boolean website_done = ftpClient.storeFile(website_remoteFile, website_inputStream);
-            if (website_done) {
-                System.out.println("beerList_website uploaded");
-            }*/
+        //write website draft list
+        new menuPrinter().writeWebBeerList(bottledBeerListHTML, draftBeerListHTML);
 
 
     }

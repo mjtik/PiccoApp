@@ -29,6 +29,10 @@ public class MenuChanger {
     public static final Color one = Color.WHITE;
     public static final Color two = Color.DARK_GRAY;
     public static final Color three = Color.LIGHT_GRAY;
+    //FTP info
+    static final String SERVER = "ftp.piccorestaurant.com";
+    static final int PORT = 21;
+    static final String USER_NAME = "piccores";
     static final Color rightPanelColor = one;
     // insets for right panel components when two scroll lists are in view.
     // Keeps a little space in GBL in between sides.
@@ -45,7 +49,7 @@ public class MenuChanger {
     static SortedList<Beer> bottledBeerMasterSortedList;
     static SortedList<Beer> currentBottledBeerSortedList;
     static Dimension rightPanelDimension = new Dimension(500, 400);
-    String password = null;
+    static String password = null;
 
     public static void setUIFont(javax.swing.plaf.FontUIResource f) {
         java.util.Enumeration keys = UIManager.getDefaults().keys();
@@ -506,6 +510,7 @@ public class MenuChanger {
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
         //fileSetup();
+        fileSetup();
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 createAndShowGUI();
@@ -513,7 +518,7 @@ public class MenuChanger {
         });
     }
 
-    public void fileSetup() {
+    public static void fileSetup() {
 
         //check if directory is setup, if not, make one. (mkdir() does both)
         new File(HOME_DIR).mkdir();
