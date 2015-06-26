@@ -1,4 +1,4 @@
-package piccoapp;
+package piccoapp.lists;
 
 import ca.odell.glazedlists.SortedList;
 import org.jdom2.Document;

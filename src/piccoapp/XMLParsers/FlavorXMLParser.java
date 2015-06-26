@@ -9,20 +9,19 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
-import piccoapp.menuItems.IceCream;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
 
-public class IceCreamXMLParser {
+public class FlavorXMLParser {
 
-    EventList<IceCream> iceCreamEventList = new BasicEventList<>();
+    EventList<Sorbet> sorbetEventList = new BasicEventList<>();
 
-    public SortedList<IceCream> parseXML(String fileName) {
+    public SortedList<Sorbet> parseXML(String fileName) {
 
-        SortedList<IceCream> sortedIceCream = new SortedList<IceCream>(iceCreamEventList, null);
+        SortedList<Sorbet> sortedSorbet = new SortedList<Sorbet>(sorbetEventList, null);
 
         SAXBuilder builder = new SAXBuilder();
         File file = new File(fileName);
@@ -30,13 +29,13 @@ public class IceCreamXMLParser {
         try {
             Document document = builder.build(file);
             Element rootNode = document.getRootElement();
-            List<Element> iceCreamList = rootNode.getChildren("flavor");
+            List<Element> sorbetList = rootNode.getChildren("flavor");
 
-            for (int i = 0; i <= iceCreamList.size() - 1; i++) {
+            for (int i = 0; i <= sorbetList.size() - 1; i++) {
 
-                Element element = iceCreamList.get(i);
-                IceCream iceCream = new IceCream(element.getChildText("name"));
-                iceCreamEventList.add(iceCream);
+                Element element = sorbetList.get(i);
+                Sorbet sorbet = new Sorbet(element.getChildText("name"));
+                sorbetEventList.add(sorbet);
 
             }
 
@@ -47,7 +46,7 @@ public class IceCreamXMLParser {
             e.printStackTrace();
         }
 
-        return sortedIceCream;
+        return sortedSorbet;
 
     }
 

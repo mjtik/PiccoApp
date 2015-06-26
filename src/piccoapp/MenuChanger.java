@@ -12,6 +12,7 @@ import org.apache.commons.io.FileUtils;
 import piccoapp.customUI.customButton;
 import piccoapp.customUI.customScrollPane;
 import piccoapp.customUI.customTable;
+import piccoapp.lists.beerList;
 import piccoapp.menuItems.Beer;
 import piccoapp.tables.beer.BeerTextFilter;
 import piccoapp.tables.beer.SimpleBeerTableFormat;
