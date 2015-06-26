@@ -8,23 +8,10 @@
   <component name="ChangeListManager">
     <list id="04ed97b4-2618-4588-9144-4e6085151b39" name="Rejected commit: Default" comment="" />
     <list id="05e7192f-49ce-469a-937f-50f271875955" name="Created Bottled Beer List Editor - removed first menu, focusing on beer. (cherry picked from commit 5e27023)" comment="Created Bottled Beer List Editor&#10;- removed first menu, focusing on beer.&#10;(cherry picked from commit 5e27023)" />
-    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="Flavor class changed to two separate classes for ice cream and sorbet">
-      <change type="DELETED" beforePath="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\draftBeerHeadderText.html" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\Beer.java" afterPath="$PROJECT_DIR$/src/piccoapp/menuItems/Beer.java" />
-      <change type="MOVED" beforePath="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\BeerTableFormat.java" afterPath="$PROJECT_DIR$/src/piccoapp/tables/beer/BeerTableFormat.java" />
-      <change type="MOVED" beforePath="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\BeerTextFilter.java" afterPath="$PROJECT_DIR$/src/piccoapp/tables/beer/BeerTextFilter.java" />
-      <change type="MOVED" beforePath="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\BeerXMLParser.java" afterPath="$PROJECT_DIR$/src/piccoapp/XMLParsers/BeerXMLParser.java" />
-      <change type="MOVED" beforePath="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\IceCream.java" afterPath="$PROJECT_DIR$/src/piccoapp/menuItems/IceCream.java" />
-      <change type="MOVED" beforePath="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\SimpleBeerTableFormat.java" afterPath="$PROJECT_DIR$/src/piccoapp/tables/beer/SimpleBeerTableFormat.java" />
-      <change type="MOVED" beforePath="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\Sorbet.java" afterPath="$PROJECT_DIR$/src/piccoapp/menuItems/Sorbet.java" />
-      <change type="MOVED" beforePath="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\customButton.java" afterPath="$PROJECT_DIR$/src/piccoapp/customUI/customButton.java" />
-      <change type="MOVED" beforePath="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\customScrollPane.java" afterPath="$PROJECT_DIR$/src/piccoapp/customUI/customScrollPane.java" />
-      <change type="MOVED" beforePath="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\customTable.java" afterPath="$PROJECT_DIR$/src/piccoapp/customUI/customTable.java" />
-      <change type="MOVED" beforePath="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\customTableCell.java" afterPath="$PROJECT_DIR$/src/piccoapp/customUI/customTableCell.java" />
-      <change type="MOVED" beforePath="C:\Users\mtiko_000\SkyDrive\Programing\PiccoApp\src\piccoapp\customTableHeader.java" afterPath="$PROJECT_DIR$/src/piccoapp/customUI/customTableHeader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" afterPath="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/beerList.java" afterPath="$PROJECT_DIR$/src/piccoapp/beerList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/draftAbvSorter.java" afterPath="$PROJECT_DIR$/src/piccoapp/draftAbvSorter.java" />
+    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="Organised">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTableFormat.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTextFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/menuItems/Sorbet.java" afterPath="$PROJECT_DIR$/src/piccoapp/menuItems/Sorbet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PiccoApp.iws" />
@@ -50,14 +37,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="beerList.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="beerList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/piccoapp/beerList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.5598142">
+            <state vertical-scroll-proportion="0.0">
               <caret line="83" column="67" selection-start-line="83" selection-start-column="67" selection-end-line="83" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IceCreamTableFormat.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTableFormat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IceCreamTextFilter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTextFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.19744483">
+              <caret line="14" column="43" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="43" />
+              <folding>
+                <element signature="e#361#362#0" expanded="true" />
+                <element signature="e#411#412#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BeerTableFormat.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/beer/BeerTableFormat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/src/piccoapp/menuItems/Beer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="837" column="83" selection-start-line="837" selection-start-column="83" selection-end-line="837" selection-end-column="83" />
+              <caret line="619" column="96" selection-start-line="619" selection-start-column="96" selection-end-line="619" selection-end-column="96" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Beer#0" expanded="false" />
@@ -87,6 +107,7 @@
                 <element signature="method#editBottledBeer#0;class#Beer#0" expanded="false" />
                 <element signature="method#printDraftBeer#0;class#Beer#0" expanded="false" />
                 <element signature="method#printBottledBeer#0;class#Beer#0" expanded="false" />
+                <element signature="method#printBeerList#0;class#Beer#0" expanded="false" />
                 <element signature="e#26485#26497#0" expanded="false" />
               </folding>
             </state>
@@ -109,7 +130,7 @@
         <entry file="file://$PROJECT_DIR$/src/piccoapp/menuItems/Sorbet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -155,11 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/currentDraftBeerList.xml" />
-        <option value="$PROJECT_DIR$/HTMLheader.txt" />
-        <option value="$PROJECT_DIR$/draftBeerMasterList.xml" />
-        <option value="$PROJECT_DIR$/src/nextComit.txt" />
-        <option value="$PROJECT_DIR$/Feature Requests.txt" />
         <option value="$PROJECT_DIR$/currentBottledBeerList.xml" />
         <option value="$PROJECT_DIR$/XML/currentBottledBeerList.xml" />
         <option value="$PROJECT_DIR$/XML/bottledBeerMasterList.xml" />
@@ -206,6 +222,11 @@
         <option value="$PROJECT_DIR$/src/piccoapp/Sorbet.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/tables/SimpleBeerTableFormat.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/tables/beer/SimpleBeerTableFormat.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/tables/iceCream/IceCreamTableFormat.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/tables/sorbet/SimpleBeerTableFormat.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/menuItems/Sorbet.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTableFormat.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTextFilter.java" />
       </list>
     </option>
   </component>
@@ -373,6 +394,58 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="tables" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sorbet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PiccoApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PiccoApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="piccoapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tables" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="beer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PiccoApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PiccoApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="piccoapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="menuItems" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -436,6 +509,8 @@
       <recent name="C:\Users\mtiko_000\SkyDrive\Programing\Picco\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="piccoapp.tables.sorbet" />
+      <recent name="piccoapp.tables.iceCream" />
       <recent name="piccoapp" />
       <recent name="" />
     </key>
@@ -633,12 +708,6 @@
       <created>1429741011934</created>
       <option name="number" value="Default" />
       <updated>1431666732292</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Fixed textfilter sort.">
-      <created>1432696867137</created>
-      <option name="number" value="00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1432696867140</updated>
     </task>
     <task id="LOCAL-00053" summary="JLists in createDraftBeer are now single selection&#10;- also added sorting to current beer list">
       <created>1432699229011</created>
@@ -928,7 +997,13 @@
       <option name="project" value="LOCAL" />
       <updated>1435345937711</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Organised">
+      <created>1435346848746</created>
+      <option name="number" value="00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1435346848746</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -1033,7 +1108,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="variable int id added to Beer class to enable better editing in the future" />
     <MESSAGE value="editBeer moved to Beer class&#10;- not working" />
     <MESSAGE value="editBeer variables fixed&#10;- copy of method removed from draftBeerList" />
     <MESSAGE value="id mutator added to Beer class&#10;- id set in BeerXMLParser via int counter" />
@@ -1058,7 +1132,8 @@
     <MESSAGE value="Beerlist now uploading to test.piccorestaurant.com" />
     <MESSAGE value="Created Flavor class for ice cream and sorbets" />
     <MESSAGE value="Flavor class changed to two separate classes for ice cream and sorbet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Flavor class changed to two separate classes for ice cream and sorbet" />
+    <MESSAGE value="Organised" />
+    <option name="LAST_COMMIT_MESSAGE" value="Organised" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1105,6 +1180,7 @@
             <element signature="method#editBottledBeer#0;class#Beer#0" expanded="false" />
             <element signature="method#printDraftBeer#0;class#Beer#0" expanded="false" />
             <element signature="method#printBottledBeer#0;class#Beer#0" expanded="false" />
+            <element signature="method#printBeerList#0;class#Beer#0" expanded="false" />
             <element signature="e#26485#26497#0" expanded="false" />
           </folding>
         </state>
@@ -1168,6 +1244,7 @@
             <element signature="method#editBottledBeer#0;class#Beer#0" expanded="false" />
             <element signature="method#printDraftBeer#0;class#Beer#0" expanded="false" />
             <element signature="method#printBottledBeer#0;class#Beer#0" expanded="false" />
+            <element signature="method#printBeerList#0;class#Beer#0" expanded="false" />
             <element signature="e#26485#26497#0" expanded="false" />
           </folding>
         </state>
@@ -1223,6 +1300,7 @@
             <element signature="method#editBottledBeer#0;class#Beer#0" expanded="false" />
             <element signature="method#printDraftBeer#0;class#Beer#0" expanded="false" />
             <element signature="method#printBottledBeer#0;class#Beer#0" expanded="false" />
+            <element signature="method#printBeerList#0;class#Beer#0" expanded="false" />
             <element signature="e#26485#26497#0" expanded="false" />
           </folding>
         </state>
@@ -1337,13 +1415,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1598746">
           <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/beer/BeerTableFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1474,21 +1545,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/menuItems/Beer.java">
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/beer/SimpleBeerTableFormat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="837" column="83" selection-start-line="837" selection-start-column="83" selection-end-line="837" selection-end-column="83" />
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#Beer#0" expanded="false" />
-            <element signature="method#Beer#0;class#Beer#0" expanded="false" />
-            <element signature="method#createNewDraftBeer#0;class#Beer#0" expanded="false" />
-            <element signature="method#createNewBottledBeer#0;class#Beer#0" expanded="false" />
-            <element signature="method#editDraftBeer#0;class#Beer#0" expanded="false" />
-            <element signature="method#editBottledBeer#0;class#Beer#0" expanded="false" />
-            <element signature="method#printDraftBeer#0;class#Beer#0" expanded="false" />
-            <element signature="method#printBottledBeer#0;class#Beer#0" expanded="false" />
-            <element signature="e#26485#26497#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/beerList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="83" column="67" selection-start-line="83" selection-start-column="67" selection-end-line="83" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1506,27 +1578,54 @@
     <entry file="file://$PROJECT_DIR$/src/piccoapp/menuItems/Sorbet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/beer/SimpleBeerTableFormat.java">
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/beer/BeerTableFormat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/menuItems/Beer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="619" column="96" selection-start-line="619" selection-start-column="96" selection-end-line="619" selection-end-column="96" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Beer#0" expanded="false" />
+            <element signature="method#Beer#0;class#Beer#0" expanded="false" />
+            <element signature="method#createNewDraftBeer#0;class#Beer#0" expanded="false" />
+            <element signature="method#createNewBottledBeer#0;class#Beer#0" expanded="false" />
+            <element signature="method#editDraftBeer#0;class#Beer#0" expanded="false" />
+            <element signature="method#editBottledBeer#0;class#Beer#0" expanded="false" />
+            <element signature="method#printDraftBeer#0;class#Beer#0" expanded="false" />
+            <element signature="method#printBottledBeer#0;class#Beer#0" expanded="false" />
+            <element signature="method#printBeerList#0;class#Beer#0" expanded="false" />
+            <element signature="e#26485#26497#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/beerList.java">
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTableFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5598142">
-          <caret line="83" column="67" selection-start-line="83" selection-start-column="67" selection-end-line="83" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/tables/sorbet/IceCreamTextFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19744483">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
           </folding>
         </state>
       </provider>

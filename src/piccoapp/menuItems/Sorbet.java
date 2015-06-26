@@ -5,10 +5,10 @@ package piccoapp.menuItems;
  */
 public class Sorbet {
 
-    String flavor;
+    static String flavor;
 
     public Sorbet(String flavor) {
 
-        this.flavor = flavor;
+        Sorbet.flavor = flavor;
     }
 }
