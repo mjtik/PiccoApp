@@ -1,4 +1,7 @@
-package piccoapp;
+package piccoapp.menuItems;
+
+import piccoapp.*;
+import piccoapp.customUI.customButton;
 
 import javax.swing.*;
 import java.awt.*;

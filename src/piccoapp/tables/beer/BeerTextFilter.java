@@ -1,6 +1,7 @@
-package piccoapp;
+package piccoapp.tables.beer;
 
 import ca.odell.glazedlists.TextFilterator;
+import piccoapp.menuItems.Beer;
 
 import java.util.List;
 

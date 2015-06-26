@@ -1,5 +1,7 @@
 package piccoapp;
 
+import piccoapp.menuItems.Beer;
+
 import java.util.Comparator;
 
 /**

@@ -1,4 +1,4 @@
-package piccoapp;
+package piccoapp.menuItems;
 
 /**
  * Created by mtiko_000 on 6/26/2015.

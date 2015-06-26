@@ -9,6 +9,12 @@ import ca.odell.glazedlists.swing.GlazedListsSwing;
 import ca.odell.glazedlists.swing.TableComparatorChooser;
 import ca.odell.glazedlists.swing.TextComponentMatcherEditor;
 import org.apache.commons.io.FileUtils;
+import piccoapp.customUI.customButton;
+import piccoapp.customUI.customScrollPane;
+import piccoapp.customUI.customTable;
+import piccoapp.menuItems.Beer;
+import piccoapp.tables.beer.BeerTextFilter;
+import piccoapp.tables.beer.SimpleBeerTableFormat;
 
 import javax.swing.*;
 import javax.swing.border.Border;

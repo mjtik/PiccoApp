@@ -1,4 +1,6 @@
-package piccoapp;
+package piccoapp.customUI;
+
+import piccoapp.MenuChanger;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,8 +1,9 @@
-package piccoapp; /**
+package piccoapp.tables.beer; /**
  * Created by mtiko_000 on 4/27/2015.
  */
 
 import ca.odell.glazedlists.gui.TableFormat;
+import piccoapp.menuItems.Beer;
 
 /**
  * Created by mtiko_000 on 4/22/2015.

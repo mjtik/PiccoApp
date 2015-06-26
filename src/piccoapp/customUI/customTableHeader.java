@@ -1,4 +1,4 @@
-package piccoapp;
+package piccoapp.customUI;
 
 import javax.swing.*;
 import javax.swing.table.TableCellRenderer;
