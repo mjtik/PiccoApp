@@ -8,7 +8,6 @@ import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 import piccoapp.XMLParsers.FlavorXMLParser;
-import piccoapp.menuItems.Beer;
 import piccoapp.menuItems.Flavor;
 
 import java.io.FileWriter;
@@ -62,21 +61,21 @@ public class flavorList {
 
     }
 
-    public void removeBeer(Beer beer) {
+    public void removeFlavor(Flavor flavor) {
         SAXBuilder builder = new SAXBuilder();
-        String removeName = beer.getName();
+        String removeName = flavor.getFlavor();
 
         try {
             Document document = builder.build(filePath);
             Element rootNode = document.getRootElement();
-            List<Element> beers = rootNode.getChildren("beer");
+            List<Element> flavors = rootNode.getChildren("flavor");
 
-            for (int i = 0; i <= beers.size() - 1; i++) {
+            for (int i = 0; i <= flavors.size() - 1; i++) {
 
-                Element element = beers.get(i);
+                Element element = flavors.get(i);
                 if (removeName.equals(element.getChildText("name"))) {
 
-                    beers.remove(i);
+                    flavors.remove(i);
                 }
 
             }
@@ -89,7 +88,7 @@ public class flavorList {
             e.printStackTrace();
         }
 
-        sortedList.remove(beer);
+        sortedList.remove(flavor);
 
     }
 

@@ -8,8 +8,7 @@
   <component name="ChangeListManager">
     <list id="04ed97b4-2618-4588-9144-4e6085151b39" name="Rejected commit: Default" comment="" />
     <list id="05e7192f-49ce-469a-937f-50f271875955" name="Created Bottled Beer List Editor - removed first menu, focusing on beer. (cherry picked from commit 5e27023)" comment="Created Bottled Beer List Editor&#10;- removed first menu, focusing on beer.&#10;(cherry picked from commit 5e27023)" />
-    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="merged all parsers and tables to use Flavor class">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/lists/beerList.java" afterPath="$PROJECT_DIR$/src/piccoapp/lists/beerList.java" />
+    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="fixed addFlavor in flavorList">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/lists/flavorList.java" afterPath="$PROJECT_DIR$/src/piccoapp/lists/flavorList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -51,9 +50,14 @@
       <file leaf-file-name="flavorList.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/piccoapp/lists/flavorList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22996515">
-              <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
-              <folding />
+            <state vertical-scroll-proportion="0.3554007">
+              <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+              <folding>
+                <element signature="docComment;class#flavorList#0" expanded="false" />
+                <element signature="method#flavorList#0;class#flavorList#0" expanded="false" />
+                <element signature="method#addFlavor#0;class#flavorList#0" expanded="false" />
+                <element signature="method#removeFlavor#0;class#flavorList#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -653,12 +657,6 @@
       <option name="number" value="Default" />
       <updated>1431666732292</updated>
     </task>
-    <task id="LOCAL-00060" summary="Basic gridBagLayout for new interface">
-      <created>1432876434821</created>
-      <option name="number" value="00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1432876434823</updated>
-    </task>
     <task id="LOCAL-00061" summary="Created ultimate Sigleton. Will revise in the future.&#10; - added draftBeerJPanel">
       <created>1432911306715</created>
       <option name="number" value="00061" />
@@ -947,7 +945,13 @@
       <option name="project" value="LOCAL" />
       <updated>1435420585301</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="fixed addFlavor in flavorList">
+      <created>1435421023570</created>
+      <option name="number" value="00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1435421023570</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -1052,7 +1056,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Delete button on editBeer now working" />
     <MESSAGE value="Card layout Cont.&#10;- right panel has a card layout with a card for each menu category&#10;- in that card layout is another cardlayout to display submenu category" />
     <MESSAGE value="Dropbox on cardlayout works&#10;- created dropbox class to make future panels" />
     <MESSAGE value="Bottled list card added" />
@@ -1077,7 +1080,8 @@
     <MESSAGE value="Created sorbet XMLParser" />
     <MESSAGE value="merged sorbet and ice cream into one class called Flavor." />
     <MESSAGE value="merged all parsers and tables to use Flavor class" />
-    <option name="LAST_COMMIT_MESSAGE" value="merged all parsers and tables to use Flavor class" />
+    <MESSAGE value="fixed addFlavor in flavorList" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed addFlavor in flavorList" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1087,7 +1091,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="24" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1592,9 +1596,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/piccoapp/lists/flavorList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22996515">
-          <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
-          <folding />
+        <state vertical-scroll-proportion="0.3554007">
+          <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+          <folding>
+            <element signature="docComment;class#flavorList#0" expanded="false" />
+            <element signature="method#flavorList#0;class#flavorList#0" expanded="false" />
+            <element signature="method#addFlavor#0;class#flavorList#0" expanded="false" />
+            <element signature="method#removeFlavor#0;class#flavorList#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
