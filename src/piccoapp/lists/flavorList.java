@@ -22,7 +22,7 @@ public class flavorList {
     private SortedList<Flavor> sortedList;
     private String filePath;
 
-    flavorList(String s) {
+    public flavorList(String s) {
         filePath = s;
         sortedList = new FlavorXMLParser().parseXML(filePath);
 

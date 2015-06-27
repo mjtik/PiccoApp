@@ -8,9 +8,9 @@
   <component name="ChangeListManager">
     <list id="04ed97b4-2618-4588-9144-4e6085151b39" name="Rejected commit: Default" comment="" />
     <list id="05e7192f-49ce-469a-937f-50f271875955" name="Created Bottled Beer List Editor - removed first menu, focusing on beer. (cherry picked from commit 5e27023)" comment="Created Bottled Beer List Editor&#10;- removed first menu, focusing on beer.&#10;(cherry picked from commit 5e27023)" />
-    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="fixed remove Flavor in flavorList">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="added filepaths for ice cream and sorbet xml files&#10; - there are some broken copied methods">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" afterPath="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/lists/flavorList.java" afterPath="$PROJECT_DIR$/src/piccoapp/lists/flavorList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PiccoApp.iws" />
@@ -39,8 +39,8 @@
       <file leaf-file-name="MenuChanger.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.645857">
-              <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
+            <state vertical-scroll-proportion="1.4642452">
+              <caret line="615" column="53" selection-start-line="615" selection-start-column="53" selection-end-line="615" selection-end-column="53" />
               <folding>
                 <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
                 <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
@@ -52,7 +52,7 @@
                 <element signature="method#sorbet_JPanel#0;class#MenuChanger#0" expanded="false" />
                 <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
                 <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-                <element signature="e#44134#44184#0" expanded="false" />
+                <element signature="e#44128#44178#0" expanded="false" />
                 <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
                 <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
                 <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
@@ -551,12 +551,6 @@
       <option name="number" value="Default" />
       <updated>1431666732292</updated>
     </task>
-    <task id="LOCAL-00062" summary="More layout adjustments&#10;- edit button now works for both columns">
-      <created>1432919359474</created>
-      <option name="number" value="00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1432919359474</updated>
-    </task>
     <task id="LOCAL-00063" summary="Began removing static everyting&#10;- filepaths moved out of fileSetup&#10;- started ne draftBeerList class that will perform repetitive functions">
       <created>1432922962398</created>
       <option name="number" value="00063" />
@@ -845,7 +839,13 @@
       <option name="project" value="LOCAL" />
       <updated>1435421323722</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="added filepaths for ice cream and sorbet xml files&#10; - there are some broken copied methods">
+      <created>1435423285143</created>
+      <option name="number" value="00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1435423285143</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -950,7 +950,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Dropbox on cardlayout works&#10;- created dropbox class to make future panels" />
     <MESSAGE value="Bottled list card added" />
     <MESSAGE value="Edit &amp; Create New Beer buttons work on bottled card" />
     <MESSAGE value="UI Changes&#10;- colors given variables so it's esier to change&#10;- custom button class created" />
@@ -975,7 +974,8 @@
     <MESSAGE value="merged all parsers and tables to use Flavor class" />
     <MESSAGE value="fixed addFlavor in flavorList" />
     <MESSAGE value="fixed remove Flavor in flavorList" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed remove Flavor in flavorList" />
+    <MESSAGE value="added filepaths for ice cream and sorbet xml files&#10; - there are some broken copied methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="added filepaths for ice cream and sorbet xml files&#10; - there are some broken copied methods" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1060,7 +1060,7 @@
             <element signature="method#sorbet_JPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#44134#44184#0" expanded="false" />
+            <element signature="e#44128#44178#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
@@ -1130,7 +1130,7 @@
             <element signature="method#sorbet_JPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#44134#44184#0" expanded="false" />
+            <element signature="e#44128#44178#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
@@ -1193,7 +1193,7 @@
             <element signature="method#sorbet_JPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#44134#44184#0" expanded="false" />
+            <element signature="e#44128#44178#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
@@ -1224,7 +1224,7 @@
             <element signature="method#sorbet_JPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#44134#44184#0" expanded="false" />
+            <element signature="e#44128#44178#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
@@ -1508,8 +1508,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.645857">
-          <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
+        <state vertical-scroll-proportion="1.4642452">
+          <caret line="615" column="53" selection-start-line="615" selection-start-column="53" selection-end-line="615" selection-end-column="53" />
           <folding>
             <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
@@ -1521,7 +1521,7 @@
             <element signature="method#sorbet_JPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#44134#44184#0" expanded="false" />
+            <element signature="e#44128#44178#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />

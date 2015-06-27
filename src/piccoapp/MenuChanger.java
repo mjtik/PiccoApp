@@ -69,16 +69,16 @@ public class MenuChanger {
             + System.getProperty("file.separator") + "iceCreamMasterList.xml";
     static final String CURRENT_ICE_CREAM_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") +
             "XML" + System.getProperty("file.separator") + "currentIceCreamList.xml";
-    static final beerList master_iceCreamList = new beerList(MASTER_ICE_CREAM_LIST_XML_FILESPATH);
-    static final beerList current_iceCreamList = new beerList(CURRENT_ICE_CREAM_LIST_XML_FILEPATH);
+    static final flavorList master_iceCreamList = new flavorList(MASTER_ICE_CREAM_LIST_XML_FILESPATH);
+    static final flavorList current_iceCreamList = new flavorList(CURRENT_ICE_CREAM_LIST_XML_FILEPATH);
 
     //filepaths for sorbet XML files
     static final String MASTER_SORBET_LIST_XML_FILESPATH = HOME_DIR + System.getProperty("file.separator") + "XML"
             + System.getProperty("file.separator") + "sorbetMasterList.xml";
     static final String CURRENT_SORBET_LIST_XML_FILEPATH = HOME_DIR + System.getProperty("file.separator") +
             "XML" + System.getProperty("file.separator") + "currentSorbetList.xml";
-    static final beerList master_sorbetList = new beerList(MASTER_SORBET_LIST_XML_FILESPATH);
-    static final beerList current_sorbetList = new beerList(CURRENT_SORBET_LIST_XML_FILEPATH);
+    static final flavorList master_sorbetList = new flavorList(MASTER_SORBET_LIST_XML_FILESPATH);
+    static final flavorList current_sorbetList = new flavorList(CURRENT_SORBET_LIST_XML_FILEPATH);
 
     static SortedList<Beer> bottledBeerMasterSortedList;
     static SortedList<Beer> currentBottledBeerSortedList;
@@ -581,8 +581,8 @@ public class MenuChanger {
         final JPanel cards = new JPanel(cardLayout);
 
         final dropboxJPanel dropboxJPanel = new dropboxJPanel(choices, heading);
-        cards.add(draftBeer_JPanel(master_draftBeerList, current_draftBeerList), DRAFTBEER);
-        cards.add(bottledBeer_JPanel(master_bottledBeerList, current_bottledBeerList), BOTTLEDBEER);
+        cards.add(iceCream_JPanel(master_iceCreamList, current_iceCreamList), ICECREAM);
+        cards.add(sorbet_JPanel(master_sorbetList, current_sorbetList), SORBET);
 
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -609,11 +609,11 @@ public class MenuChanger {
                 String selection = dropboxJPanel.dropbox.getSelectedItem().toString();
                 System.out.println(selection);
                 switch (selection) {
-                    case DRAFTBEER:
-                        cardLayout.show(cards, DRAFTBEER);
+                    case ICECREAM:
+                        cardLayout.show(cards, ICECREAM);
                         break;
-                    case BOTTLEDBEER:
-                        cardLayout.show(cards, BOTTLEDBEER);
+                    case SORBET:
+                        cardLayout.show(cards, SORBET);
                         break;
                 }
             }
