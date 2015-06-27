@@ -9,6 +9,7 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
+import piccoapp.menuItems.Flavor;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,11 +18,11 @@ import java.util.List;
 
 public class FlavorXMLParser {
 
-    EventList<Sorbet> sorbetEventList = new BasicEventList<>();
+    EventList<Flavor> flavorEvenList = new BasicEventList<>();
 
-    public SortedList<Sorbet> parseXML(String fileName) {
+    public SortedList<Flavor> parseXML(String fileName) {
 
-        SortedList<Sorbet> sortedSorbet = new SortedList<Sorbet>(sorbetEventList, null);
+        SortedList<Flavor> sortedFlavor = new SortedList<Flavor>(flavorEvenList, null);
 
         SAXBuilder builder = new SAXBuilder();
         File file = new File(fileName);
@@ -29,13 +30,13 @@ public class FlavorXMLParser {
         try {
             Document document = builder.build(file);
             Element rootNode = document.getRootElement();
-            List<Element> sorbetList = rootNode.getChildren("flavor");
+            List<Element> flavorList = rootNode.getChildren("flavor");
 
-            for (int i = 0; i <= sorbetList.size() - 1; i++) {
+            for (int i = 0; i <= flavorList.size() - 1; i++) {
 
-                Element element = sorbetList.get(i);
-                Sorbet sorbet = new Sorbet(element.getChildText("name"));
-                sorbetEventList.add(sorbet);
+                Element element = flavorList.get(i);
+                Flavor flavor = new Flavor(element.getChildText("name"));
+                flavorEvenList.add(flavor);
 
             }
 
@@ -46,7 +47,7 @@ public class FlavorXMLParser {
             e.printStackTrace();
         }
 
-        return sortedSorbet;
+        return sortedFlavor;
 
     }
 

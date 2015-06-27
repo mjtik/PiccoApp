@@ -6,21 +6,10 @@ package piccoapp.menuItems;
 public class Flavor {
 
     String flavor;
-    Boolean isSorbet = false;
 
-    public void sorbet(String flavor) {
-
+    public Flavor(String flavor) {
         this.flavor = flavor;
-        isSorbet = true;
-
     }
-
-    public void iceCream(String flavor) {
-        this.flavor = flavor;
-        isSorbet = false;
-
-    }
-
 
     public String getFlavor() {
         return flavor;
