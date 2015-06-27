@@ -22,7 +22,7 @@ public class beerList {
     private SortedList<Beer> sortedList;
     private String filePath;
 
-    beerList(String s) {
+    public beerList(String s) {
         filePath = s;
         sortedList = new BeerXMLParser().parseXML(filePath);
 
