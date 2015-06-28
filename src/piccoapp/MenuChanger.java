@@ -83,6 +83,10 @@ public class MenuChanger {
     static final flavorList master_sorbetList = new flavorList(MASTER_SORBET_LIST_XML_FILESPATH);
     static final flavorList current_sorbetList = new flavorList(CURRENT_SORBET_LIST_XML_FILEPATH);
 
+    //final strings for category cards
+    static final String BEER_CARD = "Beer Card";
+    static final String ICE_CREAM_CARD = "Ice Cream Card";
+
     static SortedList<Beer> bottledBeerMasterSortedList;
     static SortedList<Beer> currentBottledBeerSortedList;
     static Dimension rightPanelDimension = new Dimension(500, 400);
@@ -117,11 +121,12 @@ public class MenuChanger {
         frame.setLayout(new GridBagLayout());
         frame.getContentPane().setBackground(two);
 
-        JPanel categoryCards = new JPanel(new CardLayout());
-
-        final String BEER_CARD = "Beer Card";
+        CardLayout cardLayout = new CardLayout();
+        JPanel categoryCards = new JPanel(cardLayout);
 
         categoryCards.add(beerCard(), BEER_CARD);
+        categoryCards.add(iceCreamCard(), ICE_CREAM_CARD);
+
 
         frame.setSize(840, 800);
 
@@ -135,7 +140,7 @@ public class MenuChanger {
         gbc.weightx = .1;
         gbc.weighty = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        frame.add(leftMenu_JPanel(), gbc);
+        frame.add(leftMenu_JPanel(cardLayout, categoryCards), gbc);
 
 
         gbc.gridx = 1;
@@ -153,7 +158,7 @@ public class MenuChanger {
 
     }
 
-    public static JPanel leftMenu_JPanel() {
+    public static JPanel leftMenu_JPanel(final CardLayout cardLayout, final JPanel categoryCards) {
         JPanel panel = new JPanel();
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -195,22 +200,26 @@ public class MenuChanger {
             @Override
             public void mouseClicked(MouseEvent e) {
 
-                for (int i = 0; i < menuButtons_JLabelArray.length; i++) {
-                    menuButtons_JLabelArray[i].setBackground(two);
+                for (JLabel aMenuButtons_JLabelArray : menuButtons_JLabelArray) {
+                    aMenuButtons_JLabelArray.setBackground(two);
+                    aMenuButtons_JLabelArray.setForeground(one);
                 }
                 beer_JLabel.setBackground(three);
                 beer_JLabel.setForeground(Color.BLACK);
+                cardLayout.show(categoryCards, BEER_CARD);
             }
         });
 
         icecream_JLabel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                for (int i = 0; i < menuButtons_JLabelArray.length; i++) {
-                    menuButtons_JLabelArray[i].setBackground(two);
+                for (JLabel aMenuButtons_JLabelArray : menuButtons_JLabelArray) {
+                    aMenuButtons_JLabelArray.setBackground(two);
+                    aMenuButtons_JLabelArray.setForeground(one);
                 }
-                beer_JLabel.setBackground(three);
-                beer_JLabel.setForeground(Color.BLACK);
+                icecream_JLabel.setBackground(three);
+                icecream_JLabel.setForeground(Color.BLACK);
+                cardLayout.show(categoryCards, ICE_CREAM_CARD);
             }
         });
 

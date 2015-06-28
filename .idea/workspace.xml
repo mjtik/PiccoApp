@@ -8,7 +8,17 @@
   <component name="ChangeListManager">
     <list id="04ed97b4-2618-4588-9144-4e6085151b39" name="Rejected commit: Default" comment="" />
     <list id="05e7192f-49ce-469a-937f-50f271875955" name="Created Bottled Beer List Editor - removed first menu, focusing on beer. (cherry picked from commit 5e27023)" comment="Created Bottled Beer List Editor&#10;- removed first menu, focusing on beer.&#10;(cherry picked from commit 5e27023)" />
-    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="sorbet_JPanel added">
+    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="Adjusting GridBagLayout in edit beer">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$1.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$2.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$3.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$4.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$5.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$6.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$7.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$8.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$9.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger.class" afterPath="$PROJECT_DIR$/out/production/PiccoApp/piccoapp/MenuChanger.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" afterPath="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -38,77 +48,22 @@
       <file leaf-file-name="MenuChanger.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1713961">
-              <caret line="201" column="55" selection-start-line="201" selection-start-column="55" selection-end-line="201" selection-end-column="55" />
+            <state vertical-scroll-proportion="1.4008908">
+              <caret line="217" column="64" selection-start-line="217" selection-start-column="64" selection-end-line="217" selection-end-column="64" />
               <folding>
-                <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-                <element signature="e#8186#8569#0" expanded="true" />
-                <element signature="e#8568#8569#0" expanded="true" />
-                <element signature="e#8614#8996#0" expanded="true" />
-                <element signature="e#8995#8996#0" expanded="true" />
-                <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
-                <element signature="e#10257#10827#0" expanded="true" />
-                <element signature="e#10826#10827#0" expanded="true" />
+                <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
                 <element signature="method#draftBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-                <element signature="e#16077#16287#0" expanded="true" />
-                <element signature="e#16286#16287#0" expanded="true" />
-                <element signature="e#16429#16720#0" expanded="true" />
-                <element signature="e#16719#16720#0" expanded="true" />
-                <element signature="e#16871#17150#0" expanded="true" />
-                <element signature="e#17149#17150#0" expanded="true" />
-                <element signature="e#17206#17453#0" expanded="true" />
-                <element signature="e#17452#17453#0" expanded="true" />
-                <element signature="e#17514#17796#0" expanded="true" />
-                <element signature="e#17795#17796#0" expanded="true" />
-                <element signature="e#17836#18051#0" expanded="true" />
-                <element signature="e#18050#18051#0" expanded="true" />
-                <element signature="e#18095#18824#0" expanded="true" />
-                <element signature="e#18823#18824#0" expanded="true" />
                 <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-                <element signature="e#24019#24231#0" expanded="true" />
-                <element signature="e#24230#24231#0" expanded="true" />
-                <element signature="e#24373#24664#0" expanded="true" />
-                <element signature="e#24663#24664#0" expanded="true" />
-                <element signature="e#24815#25094#0" expanded="true" />
-                <element signature="e#25093#25094#0" expanded="true" />
-                <element signature="e#25150#25397#0" expanded="true" />
-                <element signature="e#25396#25397#0" expanded="true" />
-                <element signature="e#25458#25740#0" expanded="true" />
-                <element signature="e#25739#25740#0" expanded="true" />
-                <element signature="e#25780#25995#0" expanded="true" />
-                <element signature="e#25994#25995#0" expanded="true" />
-                <element signature="e#26041#26774#0" expanded="true" />
-                <element signature="e#26773#26774#0" expanded="true" />
                 <element signature="method#iceCreamCard#0;class#MenuChanger#0" expanded="false" />
                 <element signature="method#iceCream_JPanel#0;class#MenuChanger#0" expanded="false" />
-                <element signature="e#33967#34180#0" expanded="true" />
-                <element signature="e#34179#34180#0" expanded="true" />
-                <element signature="e#34325#34612#0" expanded="true" />
-                <element signature="e#34611#34612#0" expanded="true" />
-                <element signature="e#34761#35046#0" expanded="true" />
-                <element signature="e#35045#35046#0" expanded="true" />
-                <element signature="e#35106#35388#0" expanded="true" />
-                <element signature="e#35387#35388#0" expanded="true" />
-                <element signature="e#35453#35740#0" expanded="true" />
-                <element signature="e#35739#35740#0" expanded="true" />
-                <element signature="e#35947#36689#0" expanded="true" />
-                <element signature="e#36688#36689#0" expanded="true" />
+                <element signature="class#36347:36469" expanded="false" />
+                <element signature="method#actionPerformed#0;class#36347:36469" expanded="false" />
                 <element signature="method#sorbet_JPanel#0;class#MenuChanger#0" expanded="false" />
-                <element signature="e#42089#42302#0" expanded="true" />
-                <element signature="e#42301#42302#0" expanded="true" />
-                <element signature="e#42447#42734#0" expanded="true" />
-                <element signature="e#42733#42734#0" expanded="true" />
-                <element signature="e#42883#43168#0" expanded="true" />
-                <element signature="e#43167#43168#0" expanded="true" />
-                <element signature="e#43228#43510#0" expanded="true" />
-                <element signature="e#43509#43510#0" expanded="true" />
-                <element signature="e#43575#43862#0" expanded="true" />
-                <element signature="e#43861#43862#0" expanded="true" />
-                <element signature="e#44069#44811#0" expanded="true" />
-                <element signature="e#44810#44811#0" expanded="true" />
+                <element signature="class#44469:44591" expanded="false" />
+                <element signature="method#actionPerformed#0;class#44469:44591" expanded="false" />
                 <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
                 <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-                <element signature="e#45253#45303#0" expanded="false" />
+                <element signature="e#45816#45866#0" expanded="false" />
                 <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
                 <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
                 <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
@@ -748,12 +703,6 @@
       <option name="number" value="Default" />
       <updated>1431666732292</updated>
     </task>
-    <task id="LOCAL-00070" summary="More Static removed, variables declared final">
-      <created>1433075967157</created>
-      <option name="number" value="00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1433075967157</updated>
-    </task>
     <task id="LOCAL-00071" summary="Created package piccoapp&#10;- moved draftBeerList class out of menuChanger">
       <created>1433077231238</created>
       <option name="number" value="00071" />
@@ -1042,7 +991,13 @@
       <option name="project" value="LOCAL" />
       <updated>1435521629201</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="left menu buttons change color when selected&#10; - only active menu items are working">
+      <created>1435522577571</created>
+      <option name="number" value="00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1435522577571</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -1075,7 +1030,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1064" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277405" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1083,7 +1038,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31449893" sideWeight="0.5614776" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4726477" sideWeight="0.49182057" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4726477" sideWeight="0.49182057" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6236324" sideWeight="0.43852243" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32713348" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1147,7 +1102,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Added sizes to bottled list, made draft sizes normal weight" />
     <MESSAGE value="Now printing window list" />
     <MESSAGE value="First commit on new machine. Fixed dependencies" />
     <MESSAGE value="Added filepaths for webList" />
@@ -1172,7 +1126,8 @@
     <MESSAGE value="editFlavor method added to Flavor class" />
     <MESSAGE value="iceCream_JPanel updated with edit function.. panel should be complete." />
     <MESSAGE value="sorbet_JPanel added" />
-    <option name="LAST_COMMIT_MESSAGE" value="sorbet_JPanel added" />
+    <MESSAGE value="left menu buttons change color when selected&#10; - only active menu items are working" />
+    <option name="LAST_COMMIT_MESSAGE" value="left menu buttons change color when selected&#10; - only active menu items are working" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1182,7 +1137,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="25" />
+      <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1238,74 +1193,19 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="213" column="0" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
           <folding>
-            <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#8186#8569#0" expanded="true" />
-            <element signature="e#8568#8569#0" expanded="true" />
-            <element signature="e#8614#8996#0" expanded="true" />
-            <element signature="e#8995#8996#0" expanded="true" />
-            <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#10257#10827#0" expanded="true" />
-            <element signature="e#10826#10827#0" expanded="true" />
+            <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#draftBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#16077#16287#0" expanded="true" />
-            <element signature="e#16286#16287#0" expanded="true" />
-            <element signature="e#16429#16720#0" expanded="true" />
-            <element signature="e#16719#16720#0" expanded="true" />
-            <element signature="e#16871#17150#0" expanded="true" />
-            <element signature="e#17149#17150#0" expanded="true" />
-            <element signature="e#17206#17453#0" expanded="true" />
-            <element signature="e#17452#17453#0" expanded="true" />
-            <element signature="e#17514#17796#0" expanded="true" />
-            <element signature="e#17795#17796#0" expanded="true" />
-            <element signature="e#17836#18051#0" expanded="true" />
-            <element signature="e#18050#18051#0" expanded="true" />
-            <element signature="e#18095#18824#0" expanded="true" />
-            <element signature="e#18823#18824#0" expanded="true" />
             <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#24019#24231#0" expanded="true" />
-            <element signature="e#24230#24231#0" expanded="true" />
-            <element signature="e#24373#24664#0" expanded="true" />
-            <element signature="e#24663#24664#0" expanded="true" />
-            <element signature="e#24815#25094#0" expanded="true" />
-            <element signature="e#25093#25094#0" expanded="true" />
-            <element signature="e#25150#25397#0" expanded="true" />
-            <element signature="e#25396#25397#0" expanded="true" />
-            <element signature="e#25458#25740#0" expanded="true" />
-            <element signature="e#25739#25740#0" expanded="true" />
-            <element signature="e#25780#25995#0" expanded="true" />
-            <element signature="e#25994#25995#0" expanded="true" />
-            <element signature="e#26041#26774#0" expanded="true" />
-            <element signature="e#26773#26774#0" expanded="true" />
             <element signature="method#iceCreamCard#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#iceCream_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#33967#34180#0" expanded="true" />
-            <element signature="e#34179#34180#0" expanded="true" />
-            <element signature="e#34325#34612#0" expanded="true" />
-            <element signature="e#34611#34612#0" expanded="true" />
-            <element signature="e#34761#35046#0" expanded="true" />
-            <element signature="e#35045#35046#0" expanded="true" />
-            <element signature="e#35106#35388#0" expanded="true" />
-            <element signature="e#35387#35388#0" expanded="true" />
-            <element signature="e#35453#35740#0" expanded="true" />
-            <element signature="e#35739#35740#0" expanded="true" />
-            <element signature="e#35947#36689#0" expanded="true" />
-            <element signature="e#36688#36689#0" expanded="true" />
+            <element signature="class#36347:36469" expanded="false" />
+            <element signature="method#actionPerformed#0;class#36347:36469" expanded="false" />
             <element signature="method#sorbet_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#42089#42302#0" expanded="true" />
-            <element signature="e#42301#42302#0" expanded="true" />
-            <element signature="e#42447#42734#0" expanded="true" />
-            <element signature="e#42733#42734#0" expanded="true" />
-            <element signature="e#42883#43168#0" expanded="true" />
-            <element signature="e#43167#43168#0" expanded="true" />
-            <element signature="e#43228#43510#0" expanded="true" />
-            <element signature="e#43509#43510#0" expanded="true" />
-            <element signature="e#43575#43862#0" expanded="true" />
-            <element signature="e#43861#43862#0" expanded="true" />
-            <element signature="e#44069#44811#0" expanded="true" />
-            <element signature="e#44810#44811#0" expanded="true" />
+            <element signature="class#44469:44591" expanded="false" />
+            <element signature="method#actionPerformed#0;class#44469:44591" expanded="false" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#45253#45303#0" expanded="false" />
+            <element signature="e#45816#45866#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
@@ -1364,74 +1264,19 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="213" column="0" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
           <folding>
-            <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#8186#8569#0" expanded="true" />
-            <element signature="e#8568#8569#0" expanded="true" />
-            <element signature="e#8614#8996#0" expanded="true" />
-            <element signature="e#8995#8996#0" expanded="true" />
-            <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#10257#10827#0" expanded="true" />
-            <element signature="e#10826#10827#0" expanded="true" />
+            <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#draftBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#16077#16287#0" expanded="true" />
-            <element signature="e#16286#16287#0" expanded="true" />
-            <element signature="e#16429#16720#0" expanded="true" />
-            <element signature="e#16719#16720#0" expanded="true" />
-            <element signature="e#16871#17150#0" expanded="true" />
-            <element signature="e#17149#17150#0" expanded="true" />
-            <element signature="e#17206#17453#0" expanded="true" />
-            <element signature="e#17452#17453#0" expanded="true" />
-            <element signature="e#17514#17796#0" expanded="true" />
-            <element signature="e#17795#17796#0" expanded="true" />
-            <element signature="e#17836#18051#0" expanded="true" />
-            <element signature="e#18050#18051#0" expanded="true" />
-            <element signature="e#18095#18824#0" expanded="true" />
-            <element signature="e#18823#18824#0" expanded="true" />
             <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#24019#24231#0" expanded="true" />
-            <element signature="e#24230#24231#0" expanded="true" />
-            <element signature="e#24373#24664#0" expanded="true" />
-            <element signature="e#24663#24664#0" expanded="true" />
-            <element signature="e#24815#25094#0" expanded="true" />
-            <element signature="e#25093#25094#0" expanded="true" />
-            <element signature="e#25150#25397#0" expanded="true" />
-            <element signature="e#25396#25397#0" expanded="true" />
-            <element signature="e#25458#25740#0" expanded="true" />
-            <element signature="e#25739#25740#0" expanded="true" />
-            <element signature="e#25780#25995#0" expanded="true" />
-            <element signature="e#25994#25995#0" expanded="true" />
-            <element signature="e#26041#26774#0" expanded="true" />
-            <element signature="e#26773#26774#0" expanded="true" />
             <element signature="method#iceCreamCard#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#iceCream_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#33967#34180#0" expanded="true" />
-            <element signature="e#34179#34180#0" expanded="true" />
-            <element signature="e#34325#34612#0" expanded="true" />
-            <element signature="e#34611#34612#0" expanded="true" />
-            <element signature="e#34761#35046#0" expanded="true" />
-            <element signature="e#35045#35046#0" expanded="true" />
-            <element signature="e#35106#35388#0" expanded="true" />
-            <element signature="e#35387#35388#0" expanded="true" />
-            <element signature="e#35453#35740#0" expanded="true" />
-            <element signature="e#35739#35740#0" expanded="true" />
-            <element signature="e#35947#36689#0" expanded="true" />
-            <element signature="e#36688#36689#0" expanded="true" />
+            <element signature="class#36347:36469" expanded="false" />
+            <element signature="method#actionPerformed#0;class#36347:36469" expanded="false" />
             <element signature="method#sorbet_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#42089#42302#0" expanded="true" />
-            <element signature="e#42301#42302#0" expanded="true" />
-            <element signature="e#42447#42734#0" expanded="true" />
-            <element signature="e#42733#42734#0" expanded="true" />
-            <element signature="e#42883#43168#0" expanded="true" />
-            <element signature="e#43167#43168#0" expanded="true" />
-            <element signature="e#43228#43510#0" expanded="true" />
-            <element signature="e#43509#43510#0" expanded="true" />
-            <element signature="e#43575#43862#0" expanded="true" />
-            <element signature="e#43861#43862#0" expanded="true" />
-            <element signature="e#44069#44811#0" expanded="true" />
-            <element signature="e#44810#44811#0" expanded="true" />
+            <element signature="class#44469:44591" expanded="false" />
+            <element signature="method#actionPerformed#0;class#44469:44591" expanded="false" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#45253#45303#0" expanded="false" />
+            <element signature="e#45816#45866#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
@@ -1483,74 +1328,19 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="460" column="56" selection-start-line="460" selection-start-column="56" selection-end-line="460" selection-end-column="56" />
           <folding>
-            <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#8186#8569#0" expanded="true" />
-            <element signature="e#8568#8569#0" expanded="true" />
-            <element signature="e#8614#8996#0" expanded="true" />
-            <element signature="e#8995#8996#0" expanded="true" />
-            <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#10257#10827#0" expanded="true" />
-            <element signature="e#10826#10827#0" expanded="true" />
+            <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#draftBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#16077#16287#0" expanded="true" />
-            <element signature="e#16286#16287#0" expanded="true" />
-            <element signature="e#16429#16720#0" expanded="true" />
-            <element signature="e#16719#16720#0" expanded="true" />
-            <element signature="e#16871#17150#0" expanded="true" />
-            <element signature="e#17149#17150#0" expanded="true" />
-            <element signature="e#17206#17453#0" expanded="true" />
-            <element signature="e#17452#17453#0" expanded="true" />
-            <element signature="e#17514#17796#0" expanded="true" />
-            <element signature="e#17795#17796#0" expanded="true" />
-            <element signature="e#17836#18051#0" expanded="true" />
-            <element signature="e#18050#18051#0" expanded="true" />
-            <element signature="e#18095#18824#0" expanded="true" />
-            <element signature="e#18823#18824#0" expanded="true" />
             <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#24019#24231#0" expanded="true" />
-            <element signature="e#24230#24231#0" expanded="true" />
-            <element signature="e#24373#24664#0" expanded="true" />
-            <element signature="e#24663#24664#0" expanded="true" />
-            <element signature="e#24815#25094#0" expanded="true" />
-            <element signature="e#25093#25094#0" expanded="true" />
-            <element signature="e#25150#25397#0" expanded="true" />
-            <element signature="e#25396#25397#0" expanded="true" />
-            <element signature="e#25458#25740#0" expanded="true" />
-            <element signature="e#25739#25740#0" expanded="true" />
-            <element signature="e#25780#25995#0" expanded="true" />
-            <element signature="e#25994#25995#0" expanded="true" />
-            <element signature="e#26041#26774#0" expanded="true" />
-            <element signature="e#26773#26774#0" expanded="true" />
             <element signature="method#iceCreamCard#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#iceCream_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#33967#34180#0" expanded="true" />
-            <element signature="e#34179#34180#0" expanded="true" />
-            <element signature="e#34325#34612#0" expanded="true" />
-            <element signature="e#34611#34612#0" expanded="true" />
-            <element signature="e#34761#35046#0" expanded="true" />
-            <element signature="e#35045#35046#0" expanded="true" />
-            <element signature="e#35106#35388#0" expanded="true" />
-            <element signature="e#35387#35388#0" expanded="true" />
-            <element signature="e#35453#35740#0" expanded="true" />
-            <element signature="e#35739#35740#0" expanded="true" />
-            <element signature="e#35947#36689#0" expanded="true" />
-            <element signature="e#36688#36689#0" expanded="true" />
+            <element signature="class#36347:36469" expanded="false" />
+            <element signature="method#actionPerformed#0;class#36347:36469" expanded="false" />
             <element signature="method#sorbet_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#42089#42302#0" expanded="true" />
-            <element signature="e#42301#42302#0" expanded="true" />
-            <element signature="e#42447#42734#0" expanded="true" />
-            <element signature="e#42733#42734#0" expanded="true" />
-            <element signature="e#42883#43168#0" expanded="true" />
-            <element signature="e#43167#43168#0" expanded="true" />
-            <element signature="e#43228#43510#0" expanded="true" />
-            <element signature="e#43509#43510#0" expanded="true" />
-            <element signature="e#43575#43862#0" expanded="true" />
-            <element signature="e#43861#43862#0" expanded="true" />
-            <element signature="e#44069#44811#0" expanded="true" />
-            <element signature="e#44810#44811#0" expanded="true" />
+            <element signature="class#44469:44591" expanded="false" />
+            <element signature="method#actionPerformed#0;class#44469:44591" expanded="false" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#45253#45303#0" expanded="false" />
+            <element signature="e#45816#45866#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
@@ -1571,74 +1361,19 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="323" column="93" selection-start-line="323" selection-start-column="93" selection-end-line="323" selection-end-column="93" />
           <folding>
-            <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#8186#8569#0" expanded="true" />
-            <element signature="e#8568#8569#0" expanded="true" />
-            <element signature="e#8614#8996#0" expanded="true" />
-            <element signature="e#8995#8996#0" expanded="true" />
-            <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#10257#10827#0" expanded="true" />
-            <element signature="e#10826#10827#0" expanded="true" />
+            <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#draftBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#16077#16287#0" expanded="true" />
-            <element signature="e#16286#16287#0" expanded="true" />
-            <element signature="e#16429#16720#0" expanded="true" />
-            <element signature="e#16719#16720#0" expanded="true" />
-            <element signature="e#16871#17150#0" expanded="true" />
-            <element signature="e#17149#17150#0" expanded="true" />
-            <element signature="e#17206#17453#0" expanded="true" />
-            <element signature="e#17452#17453#0" expanded="true" />
-            <element signature="e#17514#17796#0" expanded="true" />
-            <element signature="e#17795#17796#0" expanded="true" />
-            <element signature="e#17836#18051#0" expanded="true" />
-            <element signature="e#18050#18051#0" expanded="true" />
-            <element signature="e#18095#18824#0" expanded="true" />
-            <element signature="e#18823#18824#0" expanded="true" />
             <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#24019#24231#0" expanded="true" />
-            <element signature="e#24230#24231#0" expanded="true" />
-            <element signature="e#24373#24664#0" expanded="true" />
-            <element signature="e#24663#24664#0" expanded="true" />
-            <element signature="e#24815#25094#0" expanded="true" />
-            <element signature="e#25093#25094#0" expanded="true" />
-            <element signature="e#25150#25397#0" expanded="true" />
-            <element signature="e#25396#25397#0" expanded="true" />
-            <element signature="e#25458#25740#0" expanded="true" />
-            <element signature="e#25739#25740#0" expanded="true" />
-            <element signature="e#25780#25995#0" expanded="true" />
-            <element signature="e#25994#25995#0" expanded="true" />
-            <element signature="e#26041#26774#0" expanded="true" />
-            <element signature="e#26773#26774#0" expanded="true" />
             <element signature="method#iceCreamCard#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#iceCream_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#33967#34180#0" expanded="true" />
-            <element signature="e#34179#34180#0" expanded="true" />
-            <element signature="e#34325#34612#0" expanded="true" />
-            <element signature="e#34611#34612#0" expanded="true" />
-            <element signature="e#34761#35046#0" expanded="true" />
-            <element signature="e#35045#35046#0" expanded="true" />
-            <element signature="e#35106#35388#0" expanded="true" />
-            <element signature="e#35387#35388#0" expanded="true" />
-            <element signature="e#35453#35740#0" expanded="true" />
-            <element signature="e#35739#35740#0" expanded="true" />
-            <element signature="e#35947#36689#0" expanded="true" />
-            <element signature="e#36688#36689#0" expanded="true" />
+            <element signature="class#36347:36469" expanded="false" />
+            <element signature="method#actionPerformed#0;class#36347:36469" expanded="false" />
             <element signature="method#sorbet_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#42089#42302#0" expanded="true" />
-            <element signature="e#42301#42302#0" expanded="true" />
-            <element signature="e#42447#42734#0" expanded="true" />
-            <element signature="e#42733#42734#0" expanded="true" />
-            <element signature="e#42883#43168#0" expanded="true" />
-            <element signature="e#43167#43168#0" expanded="true" />
-            <element signature="e#43228#43510#0" expanded="true" />
-            <element signature="e#43509#43510#0" expanded="true" />
-            <element signature="e#43575#43862#0" expanded="true" />
-            <element signature="e#43861#43862#0" expanded="true" />
-            <element signature="e#44069#44811#0" expanded="true" />
-            <element signature="e#44810#44811#0" expanded="true" />
+            <element signature="class#44469:44591" expanded="false" />
+            <element signature="method#actionPerformed#0;class#44469:44591" expanded="false" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#45253#45303#0" expanded="false" />
+            <element signature="e#45816#45866#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
@@ -1937,77 +1672,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1713961">
-          <caret line="201" column="55" selection-start-line="201" selection-start-column="55" selection-end-line="201" selection-end-column="55" />
+        <state vertical-scroll-proportion="1.4008908">
+          <caret line="217" column="64" selection-start-line="217" selection-start-column="64" selection-end-line="217" selection-end-column="64" />
           <folding>
-            <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#8186#8569#0" expanded="true" />
-            <element signature="e#8568#8569#0" expanded="true" />
-            <element signature="e#8614#8996#0" expanded="true" />
-            <element signature="e#8995#8996#0" expanded="true" />
-            <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#10257#10827#0" expanded="true" />
-            <element signature="e#10826#10827#0" expanded="true" />
+            <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#draftBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#16077#16287#0" expanded="true" />
-            <element signature="e#16286#16287#0" expanded="true" />
-            <element signature="e#16429#16720#0" expanded="true" />
-            <element signature="e#16719#16720#0" expanded="true" />
-            <element signature="e#16871#17150#0" expanded="true" />
-            <element signature="e#17149#17150#0" expanded="true" />
-            <element signature="e#17206#17453#0" expanded="true" />
-            <element signature="e#17452#17453#0" expanded="true" />
-            <element signature="e#17514#17796#0" expanded="true" />
-            <element signature="e#17795#17796#0" expanded="true" />
-            <element signature="e#17836#18051#0" expanded="true" />
-            <element signature="e#18050#18051#0" expanded="true" />
-            <element signature="e#18095#18824#0" expanded="true" />
-            <element signature="e#18823#18824#0" expanded="true" />
             <element signature="method#bottledBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#24019#24231#0" expanded="true" />
-            <element signature="e#24230#24231#0" expanded="true" />
-            <element signature="e#24373#24664#0" expanded="true" />
-            <element signature="e#24663#24664#0" expanded="true" />
-            <element signature="e#24815#25094#0" expanded="true" />
-            <element signature="e#25093#25094#0" expanded="true" />
-            <element signature="e#25150#25397#0" expanded="true" />
-            <element signature="e#25396#25397#0" expanded="true" />
-            <element signature="e#25458#25740#0" expanded="true" />
-            <element signature="e#25739#25740#0" expanded="true" />
-            <element signature="e#25780#25995#0" expanded="true" />
-            <element signature="e#25994#25995#0" expanded="true" />
-            <element signature="e#26041#26774#0" expanded="true" />
-            <element signature="e#26773#26774#0" expanded="true" />
             <element signature="method#iceCreamCard#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#iceCream_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#33967#34180#0" expanded="true" />
-            <element signature="e#34179#34180#0" expanded="true" />
-            <element signature="e#34325#34612#0" expanded="true" />
-            <element signature="e#34611#34612#0" expanded="true" />
-            <element signature="e#34761#35046#0" expanded="true" />
-            <element signature="e#35045#35046#0" expanded="true" />
-            <element signature="e#35106#35388#0" expanded="true" />
-            <element signature="e#35387#35388#0" expanded="true" />
-            <element signature="e#35453#35740#0" expanded="true" />
-            <element signature="e#35739#35740#0" expanded="true" />
-            <element signature="e#35947#36689#0" expanded="true" />
-            <element signature="e#36688#36689#0" expanded="true" />
+            <element signature="class#36347:36469" expanded="false" />
+            <element signature="method#actionPerformed#0;class#36347:36469" expanded="false" />
             <element signature="method#sorbet_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#42089#42302#0" expanded="true" />
-            <element signature="e#42301#42302#0" expanded="true" />
-            <element signature="e#42447#42734#0" expanded="true" />
-            <element signature="e#42733#42734#0" expanded="true" />
-            <element signature="e#42883#43168#0" expanded="true" />
-            <element signature="e#43167#43168#0" expanded="true" />
-            <element signature="e#43228#43510#0" expanded="true" />
-            <element signature="e#43509#43510#0" expanded="true" />
-            <element signature="e#43575#43862#0" expanded="true" />
-            <element signature="e#43861#43862#0" expanded="true" />
-            <element signature="e#44069#44811#0" expanded="true" />
-            <element signature="e#44810#44811#0" expanded="true" />
+            <element signature="class#44469:44591" expanded="false" />
+            <element signature="method#actionPerformed#0;class#44469:44591" expanded="false" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#45253#45303#0" expanded="false" />
+            <element signature="e#45816#45866#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
