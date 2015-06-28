@@ -15,6 +15,10 @@ public class Flavor {
 
     String flavor;
 
+    public Flavor() {
+
+    }
+
     public Flavor(String flavor) {
         this.flavor = flavor;
     }

@@ -640,7 +640,7 @@ public class MenuChanger {
                 new TextComponentMatcherEditor<>(master_flavorListTextEdit, new FlavorTextFilter()));
         final AdvancedTableModel<Flavor> master_flavorListTableModel = GlazedListsSwing
                 .eventTableModelWithThreadProxyList
-                (master_flavorListTextSortedIssues, new FlavorTableFormat());
+                        (master_flavorListTextSortedIssues, new FlavorTableFormat());
         final customTable master_flavorListJTable = new customTable(master_flavorListTableModel);
         master_flavorListJTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         TableComparatorChooser.install(master_flavorListJTable, master_flavorList.getSortedList(),
@@ -648,7 +648,7 @@ public class MenuChanger {
                 .MULTIPLE_COLUMN_MOUSE);
 
 
-        //Right table for CurrentBeerList
+        //Right table for current flavors
         JTextField current_flavorListFilterEdit = new JTextField(10);
         final FilterList<Flavor> current_flavorListTextSortedIssues = new FilterList<>(current_flavorList
                 .getSortedList(),
@@ -666,8 +666,8 @@ public class MenuChanger {
 
         panel.setLayout(new GridBagLayout());
 
-        customScrollPane beerMasterListScrollPane = new customScrollPane(master_flavorListJTable);
-        customScrollPane currentBeerListScrollPane = new customScrollPane(current_flavorListJTable);
+        customScrollPane master_flavorList_scrollPane = new customScrollPane(master_flavorListJTable);
+        customScrollPane current_flavorList_scrollPane = new customScrollPane(current_flavorListJTable);
 
 
         customButton createNewFlavor_Button = new customButton("New");
@@ -695,9 +695,9 @@ public class MenuChanger {
         panel.add(removeFlavorFromCurrentList_Button, new GridBagConstraints(2, 2, 2, 1, 1.0, 0.0, GridBagConstraints
                 .CENTER, GridBagConstraints.BOTH, rightComponentInsets, 0, 0));
 
-        panel.add(beerMasterListScrollPane, new GridBagConstraints(0, 3, 2, 1, 1.0, 1.0, GridBagConstraints.CENTER,
+        panel.add(master_flavorList_scrollPane, new GridBagConstraints(0, 3, 2, 1, 1.0, 1.0, GridBagConstraints.CENTER,
                 GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
-        panel.add(currentBeerListScrollPane, new GridBagConstraints(2, 3, 2, 1, 1.0, 1.0, GridBagConstraints.CENTER,
+        panel.add(current_flavorList_scrollPane, new GridBagConstraints(2, 3, 2, 1, 1.0, 1.0, GridBagConstraints.CENTER,
                 GridBagConstraints.BOTH, rightComponentInsets, 0, 0));
 
         panel.add(createNewFlavor_Button, new GridBagConstraints(0, 4, 2, 1, 1, 0.0, GridBagConstraints.CENTER,
@@ -713,7 +713,7 @@ public class MenuChanger {
             public void actionPerformed(ActionEvent e) {
 
 
-                new Beer().createNewDraftBeer(master_flavorList, current_flavorList);
+                new Flavor().createNewFlavor(master_flavorList, current_flavorList);
 
             }
         });
@@ -742,7 +742,7 @@ public class MenuChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                current_flavorList.addBeer(master_flavorListTableModel.getElementAt(master_flavorListJTable
+                current_flavorList.addFlavor(master_flavorListTableModel.getElementAt(master_flavorListJTable
                         .getSelectedRow()));
 
             }
@@ -752,7 +752,7 @@ public class MenuChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                current_flavorList.removeBeer(current_flavorListTableModel.getElementAt(current_flavorListJTable
+                current_flavorList.removeFlavor(current_flavorListTableModel.getElementAt(current_flavorListJTable
                         .getSelectedRow()));
 
             }
@@ -761,7 +761,7 @@ public class MenuChanger {
         printList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Beer().printBeerList(current_draftBeerList, current_bottledBeerList);
+
             }
         });
 
@@ -769,8 +769,8 @@ public class MenuChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    new Beer().editFlavor(master_flavorListTableModel.getElementAt(master_flavorListJTable
-                            .getSelectedRow()), master_flavorList, current_flavorList);
+                    new Flavor(). (master_flavorListTableModel.getElementAt(master_flavorListJTable
+                            .getSelectedRow()), master_flavorList, current_flavorList)
 
                 } catch (IndexOutOfBoundsException e1) {
 
