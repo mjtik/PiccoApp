@@ -792,6 +792,172 @@ public class MenuChanger {
         return panel;
     }
 
+    public static rightContentJPanel sorbet_JPanel(final flavorList master_flavorList, final flavorList
+            current_flavorList) {
+
+        rightContentJPanel panel = new rightContentJPanel();
+
+        Border paddingBorder = BorderFactory.createEmptyBorder(5, 30, 30, 30);
+        panel.setBorder(paddingBorder);
+
+        //Left table for masterflavorlist
+        JTextField master_flavorListTextEdit = new JTextField(10);
+        final FilterList<Flavor> master_flavorListTextSortedIssues = new FilterList<>(master_flavorList.getSortedList(),
+                new TextComponentMatcherEditor<>(master_flavorListTextEdit, new FlavorTextFilter()));
+        final AdvancedTableModel<Flavor> master_flavorListTableModel = GlazedListsSwing
+                .eventTableModelWithThreadProxyList
+                        (master_flavorListTextSortedIssues, new FlavorTableFormat());
+        final customTable master_flavorListJTable = new customTable(master_flavorListTableModel);
+        master_flavorListJTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        TableComparatorChooser.install(master_flavorListJTable, master_flavorList.getSortedList(),
+                TableComparatorChooser
+                        .MULTIPLE_COLUMN_MOUSE);
+
+
+        //Right table for current flavors
+        JTextField current_flavorListFilterEdit = new JTextField(10);
+        final FilterList<Flavor> current_flavorListTextSortedIssues = new FilterList<>(current_flavorList
+                .getSortedList(),
+                new TextComponentMatcherEditor<>(current_flavorListFilterEdit, new FlavorTextFilter()));
+        final AdvancedTableModel<Flavor> current_flavorListTableModel = GlazedListsSwing
+                .eventTableModelWithThreadProxyList(current_flavorListTextSortedIssues, new FlavorTableFormat());
+        final customTable current_flavorListJTable = new customTable(current_flavorListTableModel);
+        current_flavorListJTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        TableComparatorChooser.install(current_flavorListJTable, current_flavorList.getSortedList(),
+                TableComparatorChooser.MULTIPLE_COLUMN_MOUSE);
+
+
+        current_flavorListJTable.getTableHeader().setOpaque(false);
+
+
+        panel.setLayout(new GridBagLayout());
+
+        customScrollPane master_flavorList_scrollPane = new customScrollPane(master_flavorListJTable);
+        customScrollPane current_flavorList_scrollPane = new customScrollPane(current_flavorListJTable);
+
+
+        customButton createNewFlavor_Button = new customButton("New");
+        final customButton addFlavorToCurrentList_Button = new customButton("Add To List");
+        final customButton removeFlavorFromCurrentList_Button = new customButton("86 From List");
+        final customButton printList = new customButton("Print");
+        final customButton editFlavor = new customButton("Edit");
+
+
+        panel.add(new JLabel("All Flavors:"), new GridBagConstraints(0, 0, 2, 1, 0.0, 0.0, GridBagConstraints.CENTER,
+                GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
+        panel.add(new JLabel("Current List: "), new GridBagConstraints(2, 0, 2, 1, 0.0, 0.0, GridBagConstraints
+                .CENTER, GridBagConstraints.BOTH, rightComponentInsets, 0, 0));
+        panel.add(new JLabel("Filter: "), new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER,
+                GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
+        panel.add(master_flavorListTextEdit, new GridBagConstraints(1, 1, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER,
+                GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
+        panel.add(new JLabel("Filter: "), new GridBagConstraints(2, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER,
+                GridBagConstraints.BOTH, rightComponentInsets, 0, 0));
+        panel.add(current_flavorListFilterEdit, new GridBagConstraints(3, 1, 1, 1, 1.0, 0.0, GridBagConstraints.CENTER,
+                GridBagConstraints.BOTH, rightComponentInsets, 0, 0));
+
+        panel.add(addFlavorToCurrentList_Button, new GridBagConstraints(0, 2, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER,
+                GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
+        panel.add(removeFlavorFromCurrentList_Button, new GridBagConstraints(2, 2, 2, 1, 1.0, 0.0, GridBagConstraints
+                .CENTER, GridBagConstraints.BOTH, rightComponentInsets, 0, 0));
+
+        panel.add(master_flavorList_scrollPane, new GridBagConstraints(0, 3, 2, 1, 1.0, 1.0, GridBagConstraints.CENTER,
+                GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
+        panel.add(current_flavorList_scrollPane, new GridBagConstraints(2, 3, 2, 1, 1.0, 1.0, GridBagConstraints.CENTER,
+                GridBagConstraints.BOTH, rightComponentInsets, 0, 0));
+
+        panel.add(createNewFlavor_Button, new GridBagConstraints(0, 4, 2, 1, 1, 0.0, GridBagConstraints.CENTER,
+                GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
+        panel.add(editFlavor, new GridBagConstraints(0, 5, 2, 1, 1.0, 0.0, GridBagConstraints.CENTER,
+                GridBagConstraints.BOTH, leftComponentInsets, 0, 0));
+        panel.add(printList, new GridBagConstraints(2, 4, 2, 1, 1, 0.0, GridBagConstraints.CENTER, GridBagConstraints
+                .BOTH, rightComponentInsets, 0, 0));
+
+
+        createNewFlavor_Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+                new Flavor().createNewFlavor(master_flavorList, current_flavorList);
+
+            }
+        });
+
+        //if something is selected in current list, deselect it
+        master_flavorListJTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (current_flavorListJTable.getSelectedRow() > -1) {
+                    current_flavorListJTable.clearSelection();
+                }
+            }
+        });
+
+        //if something is selected in the master list, deselect it
+        current_flavorListJTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (master_flavorListJTable.getSelectedRow() > -1) {
+                    master_flavorListJTable.clearSelection();
+                }
+            }
+        });
+
+        addFlavorToCurrentList_Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                current_flavorList.addFlavor(master_flavorListTableModel.getElementAt(master_flavorListJTable
+                        .getSelectedRow()));
+
+            }
+        });
+
+        removeFlavorFromCurrentList_Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                current_flavorList.removeFlavor(current_flavorListTableModel.getElementAt(current_flavorListJTable
+                        .getSelectedRow()));
+
+            }
+        });
+
+        printList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        editFlavor.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    new Flavor().editFlavor(master_flavorListTableModel.getElementAt(master_flavorListJTable
+                            .getSelectedRow()), master_flavorList, current_flavorList);
+
+                } catch (IndexOutOfBoundsException e1) {
+
+                    try {
+                        new Flavor().editFlavor(current_flavorListTableModel.getElementAt(current_flavorListJTable
+                                .getSelectedRow()), master_flavorList, current_flavorList);
+                    } catch (IndexOutOfBoundsException e2) {
+
+                    }
+
+                }
+
+            }
+
+
+        });
+
+
+        return panel;
+    }
+
 
 
 
