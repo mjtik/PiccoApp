@@ -769,13 +769,13 @@ public class MenuChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    new Flavor(). (master_flavorListTableModel.getElementAt(master_flavorListJTable
-                            .getSelectedRow()), master_flavorList, current_flavorList)
+                    new Flavor().editFlavor(master_flavorListTableModel.getElementAt(master_flavorListJTable
+                            .getSelectedRow()), master_flavorList, current_flavorList);
 
                 } catch (IndexOutOfBoundsException e1) {
 
                     try {
-                        new Beer().editFlavor(current_flavorListTableModel.getElementAt(current_flavorListJTable
+                        new Flavor().editFlavor(current_flavorListTableModel.getElementAt(current_flavorListJTable
                                 .getSelectedRow()), master_flavorList, current_flavorList);
                     } catch (IndexOutOfBoundsException e2) {
 
