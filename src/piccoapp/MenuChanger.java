@@ -158,12 +158,16 @@ public class MenuChanger {
 
         GridBagConstraints gbc = new GridBagConstraints();
         panel.setLayout(new GridBagLayout());
+
         //buttons for leftMenu_Panel
         JLabel filler_JLabel = leftMenuJLabel(" ");
         final JLabel beer_JLabel = leftMenuJLabel("Beer  ");
-        JLabel wine_JLabel = leftMenuJLabel("Wine  ");
-        JLabel food_JLabel = leftMenuJLabel("Food  ");
-        JLabel icecream_JLabel = leftMenuJLabel("Ice Cream  ");
+        final JLabel wine_JLabel = leftMenuJLabel("Wine  ");
+        final JLabel food_JLabel = leftMenuJLabel("Food  ");
+        final JLabel icecream_JLabel = leftMenuJLabel("Ice Cream  ");
+
+        final JLabel[] menuButtons_JLabelArray = {beer_JLabel, wine_JLabel, food_JLabel, icecream_JLabel};
+
         panel.setBackground(three);
 
         gbc.anchor = GridBagConstraints.FIRST_LINE_START;
@@ -190,10 +194,26 @@ public class MenuChanger {
         beer_JLabel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+
+                for (int i = 0; i < menuButtons_JLabelArray.length; i++) {
+                    menuButtons_JLabelArray[i].setBackground(two);
+                }
                 beer_JLabel.setBackground(three);
                 beer_JLabel.setForeground(Color.BLACK);
             }
         });
+
+        icecream_JLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                for (int i = 0; i < menuButtons_JLabelArray.length; i++) {
+                    menuButtons_JLabelArray[i].setBackground(two);
+                }
+                beer_JLabel.setBackground(three);
+                beer_JLabel.setForeground(Color.BLACK);
+            }
+        });
+
 
 
         return panel;
