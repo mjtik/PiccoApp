@@ -98,7 +98,7 @@ public class menuPrinter {
             ftpClient.enterLocalPassiveMode();
             ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
 
-            ftpClient.changeWorkingDirectory("/subdomains/test/httpdocs/");
+            ftpClient.changeWorkingDirectory("/piccorestaurant.com/");
 
             String website_remoteFile = "beer.html";
             InputStream website_inputStream = new FileInputStream(beerList_htmlFile);
