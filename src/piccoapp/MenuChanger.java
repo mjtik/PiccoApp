@@ -791,6 +791,8 @@ public class MenuChanger {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                new menuPrinter().writeWebIceCreamList(current_iceCreamList, current_sorbetList);
+
             }
         });
 

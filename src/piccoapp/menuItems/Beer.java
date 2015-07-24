@@ -221,6 +221,7 @@ public class Beer {
                 if (addToCurrentListCheckBox.isSelected()) {
                     beerList_Current.addBeer(newBeer);
                 }
+                beerList_Master.addBeer(newBeer);
                 frame.setVisible(false);
 
             }

@@ -3,6 +3,8 @@ package piccoapp;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
+import piccoapp.lists.flavorList;
+import piccoapp.menuItems.Flavor;
 
 import java.io.*;
 
@@ -15,14 +17,18 @@ public class menuPrinter {
     static final File beerList_printFile = new File(MenuChanger.HOME_DIR + "\\html\\Beer_List.html");
     static final File beerList_Window_printFile = new File(MenuChanger.HOME_DIR + "\\html\\Beer_List_Window.html");
     static final File beerList_htmlFile = new File(MenuChanger.HOME_DIR + "\\html\\beer.html");
+    static final File iceCreamList_htmlFile = new File(MenuChanger.HOME_DIR + "\\html\\icecream.html");
 
 
     //headers and footers for printlist
     static final String PRINT_LIST_HTML_FOOTER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
     static final String PRINT_LIST_HTML_HEADER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
+
     //headers for weblist
     static final String WEB_LIST_HTML_HEADER = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "webList_htmlHeader.txt";
     static final String WEB_LIST_HTML_FOOTER = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "webList_htmlFooter.txt";
+    static final String ICE_CREAM_WEBLIST_HTML_HEADER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "iceCream_webList_htmlHeader.txt";
+    static final String ICE_CREAM_WEBLIST_HTML_FOOTER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "iceCream_webList_htmlFooter.txt";
     File printList_headerFile = new File(PRINT_LIST_HTML_HEADER_FILEPATH);
     File printList_footerFile = new File(PRINT_LIST_HTML_FOOTER_FILEPATH);
     String printList_headerHTML;
@@ -31,7 +37,10 @@ public class menuPrinter {
     File webList_footerFile = new File(WEB_LIST_HTML_FOOTER);
     String webList_footerHTML;
     String webList_headerHTML;
-
+    File iceCream_webList_headerHTML_file = new File(ICE_CREAM_WEBLIST_HTML_HEADER_FILEPATH);
+    File iceCream_webList_footerHTML_file = new File(ICE_CREAM_WEBLIST_HTML_FOOTER_FILEPATH);
+    String iceCream_webList_headerHTML_string;
+    String iceCream_webList_footerHTML_string;
 
 
     public menuPrinter() {
@@ -40,6 +49,9 @@ public class menuPrinter {
             printList_footerHTML = FileUtils.readFileToString(printList_footerFile);
             webList_footerHTML = FileUtils.readFileToString(webList_footerFile);
             webList_headerHTML = FileUtils.readFileToString(webList_headerFile);
+            iceCream_webList_headerHTML_string = FileUtils.readFileToString(iceCream_webList_headerHTML_file);
+            iceCream_webList_footerHTML_string = FileUtils.readFileToString(iceCream_webList_footerHTML_file);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -111,8 +123,66 @@ public class menuPrinter {
         }
 
 
+    }
+
+    public void writeWebIceCreamList(flavorList iceCreamFlavors, flavorList sorbetFlavors) {
+
+        String iceCreamHTML;
+        String sorbetHTML;
+
+        StringBuilder iceCreamBuilder = new StringBuilder();
+        StringBuilder sorbetBuilder = new StringBuilder();
+
+        //write ice cream list html
+        for (Flavor f : iceCreamFlavors.getSortedList()) {
+            iceCreamBuilder.append(f.getFlavor() + "<br/>");
+        }
+
+        //write sorbet list html
+        //header for sorbet part
+        sorbetBuilder.append("<br/><h1>Sorbet</h1>");
+
+        for (Flavor f : sorbetFlavors.getSortedList()) {
+            sorbetBuilder.append(f.getFlavor() + "<br/>");
+        }
+
+        iceCreamHTML = iceCreamBuilder.toString();
+        sorbetHTML = sorbetBuilder.toString();
+
+        try {
+            BufferedWriter printList_bufferedWriter = new BufferedWriter(new FileWriter(iceCreamList_htmlFile));
+            printList_bufferedWriter.write(iceCream_webList_headerHTML_string);
+            printList_bufferedWriter.write(iceCreamHTML);
+            printList_bufferedWriter.write(sorbetHTML);
+            printList_bufferedWriter.write(iceCream_webList_footerHTML_string);
+            printList_bufferedWriter.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        FTPClient ftpClient = new FTPClient();
+
+        try {
+            ftpClient.connect(MenuChanger.SERVER, MenuChanger.PORT);
+            ftpClient.login(MenuChanger.USER_NAME, MenuChanger.password);
+            ftpClient.enterLocalPassiveMode();
+            ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+
+            ftpClient.changeWorkingDirectory("/piccorestaurant.com/");
+
+            String website_remoteFile = "icecream.html";
+            InputStream website_inputStream = new FileInputStream(iceCreamList_htmlFile);
+            boolean website_done = ftpClient.storeFile(website_remoteFile, website_inputStream);
+            if (website_done) {
+                System.out.println("beerList_website uploaded");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
 
 
     }
-
 }
