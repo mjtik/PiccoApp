@@ -18,29 +18,39 @@ public class menuPrinter {
     static final File beerList_Window_printFile = new File(MenuChanger.HOME_DIR + "\\html\\Beer_List_Window.html");
     static final File beerList_htmlFile = new File(MenuChanger.HOME_DIR + "\\html\\beer.html");
     static final File iceCreamList_htmlFile = new File(MenuChanger.HOME_DIR + "\\html\\icecream.html");
+    static final File iceCreamList_printFile = new File(MenuChanger.HOME_DIR + "\\html\\iceCream_List.html");
 
 
     //headers and footers for printlist
-    static final String PRINT_LIST_HTML_FOOTER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
-    static final String PRINT_LIST_HTML_HEADER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
+    static final String BEER_LIST_PRINT_HTML_FOOTER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlFooter.txt";
+    static final String BEER_LIST_PRINT_HTML_HEADER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "printList_htmlHeader.txt";
+    static final String ICE_CREAM_LIST_PRINT_HTML_HEADER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "iceCream_print_htmlHeader.txt";
+    static final String ICE_CREAM_LIST_PRINT_HTML_FOOTER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "iceCream_print_htmlFooter.txt";
 
     //headers for weblist
-    static final String WEB_LIST_HTML_HEADER = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "webList_htmlHeader.txt";
-    static final String WEB_LIST_HTML_FOOTER = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "webList_htmlFooter.txt";
-    static final String ICE_CREAM_WEBLIST_HTML_HEADER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "iceCream_webList_htmlHeader.txt";
-    static final String ICE_CREAM_WEBLIST_HTML_FOOTER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "iceCream_webList_htmlFooter.txt";
-    File printList_headerFile = new File(PRINT_LIST_HTML_HEADER_FILEPATH);
-    File printList_footerFile = new File(PRINT_LIST_HTML_FOOTER_FILEPATH);
+    static final String BEER_LIST_WEB_HTML_HEADER = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "webList_htmlHeader.txt";
+    static final String BEER_LIST_WEB_HTML_FOOTER = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "webList_htmlFooter.txt";
+    static final String ICE_CREAM_LIST_WEB_HTML_HEADER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "iceCream_webList_htmlHeader.txt";
+    static final String ICE_CREAM_LIST_WEB_HTML_FOOTER_FILEPATH = MenuChanger.HOME_DIR + System.getProperty("file.separator") + "HTML" + System.getProperty("file.separator") + "iceCream_webList_htmlFooter.txt";
+
+    File printList_headerFile = new File(BEER_LIST_PRINT_HTML_HEADER_FILEPATH);
+    File printList_footerFile = new File(BEER_LIST_PRINT_HTML_FOOTER_FILEPATH);
     String printList_headerHTML;
     String printList_footerHTML;
-    File webList_headerFile = new File(WEB_LIST_HTML_HEADER);
-    File webList_footerFile = new File(WEB_LIST_HTML_FOOTER);
+    File webList_headerFile = new File(BEER_LIST_WEB_HTML_HEADER);
+    File webList_footerFile = new File(BEER_LIST_WEB_HTML_FOOTER);
     String webList_footerHTML;
     String webList_headerHTML;
-    File iceCream_webList_headerHTML_file = new File(ICE_CREAM_WEBLIST_HTML_HEADER_FILEPATH);
-    File iceCream_webList_footerHTML_file = new File(ICE_CREAM_WEBLIST_HTML_FOOTER_FILEPATH);
+
+    File iceCream_webList_headerHTML_file = new File(ICE_CREAM_LIST_WEB_HTML_HEADER_FILEPATH);
+    File iceCream_webList_footerHTML_file = new File(ICE_CREAM_LIST_WEB_HTML_FOOTER_FILEPATH);
     String iceCream_webList_headerHTML_string;
     String iceCream_webList_footerHTML_string;
+
+    File iceCreamList_print_html_header_file = new File(ICE_CREAM_LIST_PRINT_HTML_HEADER_FILEPATH);
+    File iceCreamList_print_html_footer_file = new File(ICE_CREAM_LIST_PRINT_HTML_FOOTER_FILEPATH);
+    String iceCreamList_print_html_header_string;
+    String iceCreamList_print_html_footer_string;
 
 
     public menuPrinter() {
@@ -51,6 +61,7 @@ public class menuPrinter {
             webList_headerHTML = FileUtils.readFileToString(webList_headerFile);
             iceCream_webList_headerHTML_string = FileUtils.readFileToString(iceCream_webList_headerHTML_file);
             iceCream_webList_footerHTML_string = FileUtils.readFileToString(iceCream_webList_footerHTML_file);
+
 
         } catch (IOException e) {
             e.printStackTrace();
