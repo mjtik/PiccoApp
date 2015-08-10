@@ -17,8 +17,8 @@ public class menuPrinter {
     static final File beerList_printFile = new File(MenuChanger.HOME_DIR + "\\html\\Beer_List.html");
     static final File beerList_Window_printFile = new File(MenuChanger.HOME_DIR + "\\html\\Beer_List_Window.html");
     static final File beerList_htmlFile = new File(MenuChanger.HOME_DIR + "\\html\\beer.html");
-    static final File iceCreamList_htmlFile = new File(MenuChanger.HOME_DIR + "\\html\\icecream.html");
-    static final File iceCreamList_printFile = new File(MenuChanger.HOME_DIR + "\\html\\iceCream_List.html");
+    static final File iceCreamList_web_file = new File(MenuChanger.HOME_DIR + "\\html\\icecream.html");
+    static final File iceCreamList_print_file = new File(MenuChanger.HOME_DIR + "\\html\\iceCream_List.html");
 
 
     //headers and footers for printlist
@@ -163,7 +163,7 @@ public class menuPrinter {
         sorbetHTML = sorbetBuilder.toString();
 
         try {
-            BufferedWriter printList_bufferedWriter = new BufferedWriter(new FileWriter(iceCreamList_htmlFile));
+            BufferedWriter printList_bufferedWriter = new BufferedWriter(new FileWriter(iceCreamList_web_file));
             printList_bufferedWriter.write(iceCreamList_web_html_header_string);
             printList_bufferedWriter.write(iceCreamHTML);
             printList_bufferedWriter.write(sorbetHTML);
@@ -185,7 +185,7 @@ public class menuPrinter {
             ftpClient.changeWorkingDirectory("/piccorestaurant.com/");
 
             String website_remoteFile = "icecream.html";
-            InputStream website_inputStream = new FileInputStream(iceCreamList_htmlFile);
+            InputStream website_inputStream = new FileInputStream(iceCreamList_web_file);
             boolean website_done = ftpClient.storeFile(website_remoteFile, website_inputStream);
             if (website_done) {
                 System.out.println("beerList_website uploaded");
@@ -195,6 +195,45 @@ public class menuPrinter {
         }
 
 
+
+
+    }
+
+    public void write_iceCreamList_print(flavorList iceCreamFlavors, flavorList sorbetFlavors) {
+
+        String iceCreamHTML;
+        String sorbetHTML;
+
+        StringBuilder iceCreamBuilder = new StringBuilder();
+        StringBuilder sorbetBuilder = new StringBuilder();
+
+        //write ice cream list html
+        for (Flavor f : iceCreamFlavors.getSortedList()) {
+            iceCreamBuilder.append("<h3>" + f.getFlavor() + "</h3>");
+        }
+
+        //write sorbet list html
+        //header for sorbet part
+        sorbetBuilder.append("<h1>Sorbet</h1>");
+
+        for (Flavor f : sorbetFlavors.getSortedList()) {
+            sorbetBuilder.append("<h3>" + f.getFlavor() + "</h3>");
+        }
+
+        iceCreamHTML = iceCreamBuilder.toString();
+        sorbetHTML = sorbetBuilder.toString();
+
+        try {
+            BufferedWriter printList_bufferedWriter = new BufferedWriter(new FileWriter(iceCreamList_print_file));
+            printList_bufferedWriter.write(iceCreamList_print_html_header_string);
+            printList_bufferedWriter.write(iceCreamHTML);
+            printList_bufferedWriter.write(sorbetHTML);
+            printList_bufferedWriter.write(iceCreamList_print_html_footer_string);
+            printList_bufferedWriter.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }
