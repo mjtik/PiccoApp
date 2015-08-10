@@ -35,17 +35,17 @@ public class menuPrinter {
 
     File printList_headerFile = new File(BEER_LIST_PRINT_HTML_HEADER_FILEPATH);
     File printList_footerFile = new File(BEER_LIST_PRINT_HTML_FOOTER_FILEPATH);
-    String printList_headerHTML;
-    String printList_footerHTML;
+    String beerList_print_html_header_string;
+    String beerList_print_html_footer_string;
     File webList_headerFile = new File(BEER_LIST_WEB_HTML_HEADER);
     File webList_footerFile = new File(BEER_LIST_WEB_HTML_FOOTER);
-    String webList_footerHTML;
-    String webList_headerHTML;
+    String beerList_web_html_footer_string;
+    String beerList_web_html_header_string;
 
     File iceCream_webList_headerHTML_file = new File(ICE_CREAM_LIST_WEB_HTML_HEADER_FILEPATH);
     File iceCream_webList_footerHTML_file = new File(ICE_CREAM_LIST_WEB_HTML_FOOTER_FILEPATH);
-    String iceCream_webList_headerHTML_string;
-    String iceCream_webList_footerHTML_string;
+    String iceCreamList_web_html_header_string;
+    String iceCreamList_web_html_footer_string;
 
     File iceCreamList_print_html_header_file = new File(ICE_CREAM_LIST_PRINT_HTML_HEADER_FILEPATH);
     File iceCreamList_print_html_footer_file = new File(ICE_CREAM_LIST_PRINT_HTML_FOOTER_FILEPATH);
@@ -55,12 +55,14 @@ public class menuPrinter {
 
     public menuPrinter() {
         try {
-            printList_headerHTML = FileUtils.readFileToString(printList_headerFile);
-            printList_footerHTML = FileUtils.readFileToString(printList_footerFile);
-            webList_footerHTML = FileUtils.readFileToString(webList_footerFile);
-            webList_headerHTML = FileUtils.readFileToString(webList_headerFile);
-            iceCream_webList_headerHTML_string = FileUtils.readFileToString(iceCream_webList_headerHTML_file);
-            iceCream_webList_footerHTML_string = FileUtils.readFileToString(iceCream_webList_footerHTML_file);
+            beerList_print_html_header_string = FileUtils.readFileToString(printList_headerFile);
+            beerList_print_html_footer_string = FileUtils.readFileToString(printList_footerFile);
+            beerList_web_html_footer_string = FileUtils.readFileToString(webList_footerFile);
+            beerList_web_html_header_string = FileUtils.readFileToString(webList_headerFile);
+            iceCreamList_web_html_header_string = FileUtils.readFileToString(iceCream_webList_headerHTML_file);
+            iceCreamList_web_html_footer_string = FileUtils.readFileToString(iceCream_webList_footerHTML_file);
+            iceCreamList_print_html_header_string = FileUtils.readFileToString(iceCreamList_print_html_header_file);
+            iceCreamList_print_html_footer_string = FileUtils.readFileToString(iceCreamList_print_html_footer_file);
 
 
         } catch (IOException e) {
@@ -73,10 +75,10 @@ public class menuPrinter {
 
         try {
             BufferedWriter printList_bufferedWriter = new BufferedWriter(new FileWriter(beerList_printFile));
-            printList_bufferedWriter.write(printList_headerHTML);
+            printList_bufferedWriter.write(beerList_print_html_header_string);
             printList_bufferedWriter.write(bottledBeerListHTML);
             printList_bufferedWriter.write(draftBeerListHTML);
-            printList_bufferedWriter.write(printList_footerHTML);
+            printList_bufferedWriter.write(beerList_print_html_footer_string);
             printList_bufferedWriter.close();
 
         } catch (IOException e) {
@@ -89,9 +91,9 @@ public class menuPrinter {
 
         try {
             BufferedWriter printList_bufferedWriter = new BufferedWriter(new FileWriter(beerList_Window_printFile));
-            printList_bufferedWriter.write(printList_headerHTML);
+            printList_bufferedWriter.write(beerList_print_html_header_string);
             printList_bufferedWriter.write(draftBeerListHTML);
-            printList_bufferedWriter.write(printList_footerHTML);
+            printList_bufferedWriter.write(beerList_print_html_footer_string);
             printList_bufferedWriter.close();
 
         } catch (IOException e) {
@@ -103,10 +105,10 @@ public class menuPrinter {
     public void writeWebBeerList(String bottledBeerListHTML, String draftBeerListHTML) {
         try {
             BufferedWriter printList_bufferedWriter = new BufferedWriter(new FileWriter(beerList_htmlFile));
-            printList_bufferedWriter.write(webList_headerHTML);
+            printList_bufferedWriter.write(beerList_web_html_header_string);
             printList_bufferedWriter.write(draftBeerListHTML);
             printList_bufferedWriter.write(bottledBeerListHTML);
-            printList_bufferedWriter.write(webList_footerHTML);
+            printList_bufferedWriter.write(beerList_web_html_footer_string);
             printList_bufferedWriter.close();
 
         } catch (IOException e) {
@@ -162,10 +164,10 @@ public class menuPrinter {
 
         try {
             BufferedWriter printList_bufferedWriter = new BufferedWriter(new FileWriter(iceCreamList_htmlFile));
-            printList_bufferedWriter.write(iceCream_webList_headerHTML_string);
+            printList_bufferedWriter.write(iceCreamList_web_html_header_string);
             printList_bufferedWriter.write(iceCreamHTML);
             printList_bufferedWriter.write(sorbetHTML);
-            printList_bufferedWriter.write(iceCream_webList_footerHTML_string);
+            printList_bufferedWriter.write(iceCreamList_web_html_footer_string);
             printList_bufferedWriter.close();
 
         } catch (IOException e) {
