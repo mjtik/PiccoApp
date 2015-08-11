@@ -56,7 +56,7 @@ public class Flavor {
         panel.add(createNewFlavor_Button, gbc);
 
 
-        final JFrame frame = new JFrame("Create New Beer");
+        final JFrame frame = new JFrame("Create New Flavor");
         frame.setSize(400, 500);
         frame.getContentPane().add(panel);
         frame.setLocationRelativeTo(null);

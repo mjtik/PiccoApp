@@ -8,8 +8,9 @@
   <component name="ChangeListManager">
     <list id="04ed97b4-2618-4588-9144-4e6085151b39" name="Rejected commit: Default" comment="" />
     <list id="05e7192f-49ce-469a-937f-50f271875955" name="Created Bottled Beer List Editor - removed first menu, focusing on beer. (cherry picked from commit 5e27023)" comment="Created Bottled Beer List Editor&#10;- removed first menu, focusing on beer.&#10;(cherry picked from commit 5e27023)" />
-    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="iceCream header/footer files to string added to menuPrinter constructor&#10;- some other variables renamed to be more clear">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/menuPrinter.java" afterPath="$PROJECT_DIR$/src/piccoapp/menuPrinter.java" />
+    <list default="true" id="7036b70f-d9e9-4358-beef-92975160b9cf" name="Adjusting GridBagLayout in edit beer" comment="write_iceCreamList_print function added to menuWriter&#10;- some variable names changed for clarity">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/menuItems/Flavor.java" afterPath="$PROJECT_DIR$/src/piccoapp/menuItems/Flavor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" afterPath="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PiccoApp.iws" />
@@ -35,32 +36,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MenuChanger.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MenuChanger.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="526" column="16" selection-start-line="526" selection-start-column="16" selection-end-line="526" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.94957983">
+              <caret line="963" column="101" selection-start-line="963" selection-start-column="101" selection-end-line="963" selection-end-column="101" />
               <folding>
-                <element signature="imports" expanded="false" />
                 <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
                 <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
                 <element signature="method#leftMenu_JPanel#0;class#MenuChanger#0" expanded="false" />
                 <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
                 <element signature="method#draftBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-                <element signature="method#iceCreamCard#0;class#MenuChanger#0" expanded="false" />
-                <element signature="class#44568:44690" expanded="false" />
-                <element signature="method#actionPerformed#0;class#44568:44690" expanded="false" />
+                <element signature="e#44666#44993#0" expanded="true" />
+                <element signature="e#44992#44993#0" expanded="true" />
                 <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
                 <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-                <element signature="e#45915#45965#0" expanded="false" />
-                <element signature="e#46159#46160#0" expanded="false" />
-                <element signature="e#46209#46210#0" expanded="false" />
+                <element signature="e#46218#46268#0" expanded="false" />
                 <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
                 <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
                 <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
                 <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
-                <element signature="e#47889#47890#0" expanded="false" />
-                <element signature="e#47931#47932#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -72,11 +67,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#718#719#0" expanded="false" />
-                <element signature="e#751#752#0" expanded="false" />
-                <element signature="e#813#814#0" expanded="false" />
-                <element signature="e#857#858#0" expanded="false" />
                 <element signature="method#addBeer#0;class#beerList#0" expanded="false" />
                 <element signature="method#removeBeer#0;class#beerList#0" expanded="false" />
               </folding>
@@ -90,12 +80,7 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="21" column="29" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="29" />
               <folding>
-                <element signature="imports" expanded="false" />
                 <element signature="docComment;class#flavorList#0" expanded="false" />
-                <element signature="e#732#733#0" expanded="false" />
-                <element signature="e#765#766#0" expanded="false" />
-                <element signature="e#829#830#0" expanded="false" />
-                <element signature="e#873#874#0" expanded="false" />
                 <element signature="method#removeFlavor#0;class#flavorList#0" expanded="false" />
               </folding>
             </state>
@@ -106,16 +91,11 @@
         <entry file="file://$PROJECT_DIR$/src/piccoapp/menuItems/Flavor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="84" column="116" selection-start-line="84" selection-start-column="116" selection-end-line="84" selection-end-column="116" />
+              <caret line="50" column="49" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
               <folding>
-                <element signature="imports" expanded="false" />
                 <element signature="docComment;class#Flavor#0" expanded="false" />
-                <element signature="e#370#371#0" expanded="false" />
-                <element signature="e#406#407#0" expanded="false" />
                 <element signature="method#editFlavor#0;class#Flavor#0" expanded="false" />
-                <element signature="e#4087#4188#0" expanded="false" />
-                <element signature="e#6722#6723#0" expanded="false" />
-                <element signature="e#6751#6752#0" expanded="false" />
+                <element signature="e#4089#4190#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -127,7 +107,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="631" column="29" selection-start-line="631" selection-start-column="29" selection-end-line="631" selection-end-column="29" />
               <folding>
-                <element signature="imports" expanded="false" />
                 <element signature="docComment;class#Beer#0" expanded="false" />
                 <element signature="method#Beer#0;class#Beer#0" expanded="false" />
                 <element signature="method#createNewDraftBeer#0;class#Beer#0" expanded="false" />
@@ -135,62 +114,20 @@
                 <element signature="method#editBottledBeer#0;class#Beer#0" expanded="false" />
                 <element signature="method#printDraftBeer#0;class#Beer#0" expanded="false" />
                 <element signature="method#printBottledBeer#0;class#Beer#0" expanded="false" />
-                <element signature="e#32082#32083#0" expanded="false" />
-                <element signature="e#32115#32116#0" expanded="false" />
-                <element signature="e#32167#32168#0" expanded="false" />
-                <element signature="e#32211#32212#0" expanded="false" />
-                <element signature="e#32242#32243#0" expanded="false" />
-                <element signature="e#32269#32270#0" expanded="false" />
-                <element signature="e#32309#32310#0" expanded="false" />
-                <element signature="e#32341#32342#0" expanded="false" />
-                <element signature="e#32373#32374#0" expanded="false" />
-                <element signature="e#32406#32407#0" expanded="false" />
-                <element signature="e#32448#32449#0" expanded="false" />
-                <element signature="e#32482#32483#0" expanded="false" />
-                <element signature="e#32513#32514#0" expanded="false" />
-                <element signature="e#32545#32546#0" expanded="false" />
-                <element signature="e#32585#32586#0" expanded="false" />
-                <element signature="e#32617#32618#0" expanded="false" />
-                <element signature="e#32649#32650#0" expanded="false" />
-                <element signature="e#32682#32683#0" expanded="false" />
-                <element signature="e#32724#32725#0" expanded="false" />
-                <element signature="e#32758#32759#0" expanded="false" />
-                <element signature="e#32793#32794#0" expanded="false" />
-                <element signature="e#32829#32830#0" expanded="false" />
-                <element signature="e#32877#32878#0" expanded="false" />
-                <element signature="e#32917#32918#0" expanded="false" />
-                <element signature="e#32953#32954#0" expanded="false" />
-                <element signature="e#32984#32985#0" expanded="false" />
-                <element signature="e#33022#33023#0" expanded="false" />
-                <element signature="e#33052#33053#0" expanded="false" />
-                <element signature="e#33086#33087#0" expanded="false" />
-                <element signature="e#33121#33122#0" expanded="false" />
-                <element signature="e#33167#33168#0" expanded="false" />
-                <element signature="e#33205#33206#0" expanded="false" />
-                <element signature="e#33240#33241#0" expanded="false" />
-                <element signature="e#33276#33277#0" expanded="false" />
-                <element signature="e#33324#33325#0" expanded="false" />
-                <element signature="e#33364#33365#0" expanded="false" />
-                <element signature="e#33396#33397#0" expanded="false" />
-                <element signature="e#33433#33434#0" expanded="false" />
-                <element signature="e#33469#33470#0" expanded="false" />
-                <element signature="e#33520#33521#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menuPrinter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="menuPrinter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/piccoapp/menuPrinter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7536232">
-              <caret line="236" column="8" selection-start-line="236" selection-start-column="8" selection-end-line="236" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="176" column="41" selection-start-line="176" selection-start-column="41" selection-end-line="176" selection-end-column="41" />
               <folding>
                 <element signature="docComment;class#menuPrinter#0" expanded="false" />
                 <element signature="method#writeBeerList#0;class#menuPrinter#0" expanded="false" />
                 <element signature="method#writeWindowBeerList#0;class#menuPrinter#0" expanded="false" />
-                <element signature="method#writeWebBeerList#0;class#menuPrinter#0" expanded="false" />
-                <element signature="method#writeWebIceCreamList#0;class#menuPrinter#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -271,10 +208,10 @@
         <option value="$PROJECT_DIR$/src/piccoapp/tables/flavors/IceCreamTableFormat.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/XMLParsers/FlavorXMLParser.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/lists/flavorList.java" />
-        <option value="$PROJECT_DIR$/src/piccoapp/menuItems/Flavor.java" />
-        <option value="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/menuItems/Beer.java" />
         <option value="$PROJECT_DIR$/src/piccoapp/menuPrinter.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/menuItems/Flavor.java" />
+        <option value="$PROJECT_DIR$/src/piccoapp/MenuChanger.java" />
       </list>
     </option>
   </component>
@@ -282,9 +219,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="947" />
-    <option name="width" value="974" />
-    <option name="height" value="1057" />
+    <option name="x" value="156" />
+    <option name="width" value="1772" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -538,12 +475,6 @@
       <created>1429741011934</created>
       <option name="number" value="Default" />
       <updated>1431666732292</updated>
-    </task>
-    <task id="LOCAL-00075" summary="editBeer moved to Beer class&#10;- not working">
-      <created>1433079062032</created>
-      <option name="number" value="00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1433079062032</updated>
     </task>
     <task id="LOCAL-00076" summary="editBeer moved to Beer class&#10;- not working">
       <created>1433079682370</created>
@@ -833,7 +764,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439228339345</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="write_iceCreamList_print function added to menuWriter&#10;- some variable names changed for clarity">
+      <created>1439229283274</created>
+      <option name="number" value="00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1439229283274</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <option name="clearContext" value="false" />
     <option name="createChangelist" value="false" />
     <option name="createBranch" value="false" />
@@ -865,8 +802,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="947" y="0" width="974" height="1057" extended-state="0" />
-    <editor active="true" />
+    <frame x="156" y="0" width="1772" height="1050" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277405" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -874,8 +811,8 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31449893" sideWeight="0.5614776" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56745183" sideWeight="0.49182057" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43040684" sideWeight="0.43852243" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.56666666" sideWeight="0.49182057" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43" sideWeight="0.43852243" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32713348" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2410208" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -938,7 +875,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Created Flavor class for ice cream and sorbets" />
     <MESSAGE value="Flavor class changed to two separate classes for ice cream and sorbet" />
     <MESSAGE value="Organised" />
     <MESSAGE value="Created IceCream TableFormat &amp; TextFilter" />
@@ -963,7 +899,8 @@
     <MESSAGE value="Fixed bug adding bottled beer&#10;- beer is added to boston the current list and master list&#10;Added limited functionality to Ice Cream menu&#10;- the online menu can be updated&#10;- no editing ability or publishing from sorbet menu" />
     <MESSAGE value="Added variable and file paths for iceCream&#10;- changed some older variable names to be more clear." />
     <MESSAGE value="iceCream header/footer files to string added to menuPrinter constructor&#10;- some other variables renamed to be more clear" />
-    <option name="LAST_COMMIT_MESSAGE" value="iceCream header/footer files to string added to menuPrinter constructor&#10;- some other variables renamed to be more clear" />
+    <MESSAGE value="write_iceCreamList_print function added to menuWriter&#10;- some variable names changed for clarity" />
+    <option name="LAST_COMMIT_MESSAGE" value="write_iceCreamList_print function added to menuWriter&#10;- some variable names changed for clarity" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -986,8 +923,6 @@
             <element signature="docComment;class#menuPrinter#0" expanded="false" />
             <element signature="method#writeBeerList#0;class#menuPrinter#0" expanded="false" />
             <element signature="method#writeWindowBeerList#0;class#menuPrinter#0" expanded="false" />
-            <element signature="method#writeWebBeerList#0;class#menuPrinter#0" expanded="false" />
-            <element signature="method#writeWebIceCreamList#0;class#menuPrinter#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1011,7 +946,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="838" column="0" selection-start-line="838" selection-start-column="0" selection-end-line="838" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="docComment;class#Beer#0" expanded="false" />
             <element signature="method#Beer#0;class#Beer#0" expanded="false" />
             <element signature="method#createNewDraftBeer#0;class#Beer#0" expanded="false" />
@@ -1019,46 +953,6 @@
             <element signature="method#editBottledBeer#0;class#Beer#0" expanded="false" />
             <element signature="method#printDraftBeer#0;class#Beer#0" expanded="false" />
             <element signature="method#printBottledBeer#0;class#Beer#0" expanded="false" />
-            <element signature="e#32082#32083#0" expanded="false" />
-            <element signature="e#32115#32116#0" expanded="false" />
-            <element signature="e#32167#32168#0" expanded="false" />
-            <element signature="e#32211#32212#0" expanded="false" />
-            <element signature="e#32242#32243#0" expanded="false" />
-            <element signature="e#32269#32270#0" expanded="false" />
-            <element signature="e#32309#32310#0" expanded="false" />
-            <element signature="e#32341#32342#0" expanded="false" />
-            <element signature="e#32373#32374#0" expanded="false" />
-            <element signature="e#32406#32407#0" expanded="false" />
-            <element signature="e#32448#32449#0" expanded="false" />
-            <element signature="e#32482#32483#0" expanded="false" />
-            <element signature="e#32513#32514#0" expanded="false" />
-            <element signature="e#32545#32546#0" expanded="false" />
-            <element signature="e#32585#32586#0" expanded="false" />
-            <element signature="e#32617#32618#0" expanded="false" />
-            <element signature="e#32649#32650#0" expanded="false" />
-            <element signature="e#32682#32683#0" expanded="false" />
-            <element signature="e#32724#32725#0" expanded="false" />
-            <element signature="e#32758#32759#0" expanded="false" />
-            <element signature="e#32793#32794#0" expanded="false" />
-            <element signature="e#32829#32830#0" expanded="false" />
-            <element signature="e#32877#32878#0" expanded="false" />
-            <element signature="e#32917#32918#0" expanded="false" />
-            <element signature="e#32953#32954#0" expanded="false" />
-            <element signature="e#32984#32985#0" expanded="false" />
-            <element signature="e#33022#33023#0" expanded="false" />
-            <element signature="e#33052#33053#0" expanded="false" />
-            <element signature="e#33086#33087#0" expanded="false" />
-            <element signature="e#33121#33122#0" expanded="false" />
-            <element signature="e#33167#33168#0" expanded="false" />
-            <element signature="e#33205#33206#0" expanded="false" />
-            <element signature="e#33240#33241#0" expanded="false" />
-            <element signature="e#33276#33277#0" expanded="false" />
-            <element signature="e#33324#33325#0" expanded="false" />
-            <element signature="e#33364#33365#0" expanded="false" />
-            <element signature="e#33396#33397#0" expanded="false" />
-            <element signature="e#33433#33434#0" expanded="false" />
-            <element signature="e#33469#33470#0" expanded="false" />
-            <element signature="e#33520#33521#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1071,8 +965,6 @@
             <element signature="docComment;class#menuPrinter#0" expanded="false" />
             <element signature="method#writeBeerList#0;class#menuPrinter#0" expanded="false" />
             <element signature="method#writeWindowBeerList#0;class#menuPrinter#0" expanded="false" />
-            <element signature="method#writeWebBeerList#0;class#menuPrinter#0" expanded="false" />
-            <element signature="method#writeWebIceCreamList#0;class#menuPrinter#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1082,26 +974,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="213" column="0" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#leftMenu_JPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#draftBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#iceCreamCard#0;class#MenuChanger#0" expanded="false" />
-            <element signature="class#44568:44690" expanded="false" />
-            <element signature="method#actionPerformed#0;class#44568:44690" expanded="false" />
+            <element signature="e#44666#44993#0" expanded="true" />
+            <element signature="e#44992#44993#0" expanded="true" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#45915#45965#0" expanded="false" />
-            <element signature="e#46159#46160#0" expanded="false" />
-            <element signature="e#46209#46210#0" expanded="false" />
+            <element signature="e#46218#46268#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#47889#47890#0" expanded="false" />
-            <element signature="e#47931#47932#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1111,11 +997,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="81" column="67" selection-start-line="81" selection-start-column="67" selection-end-line="81" selection-end-column="67" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#718#719#0" expanded="false" />
-            <element signature="e#751#752#0" expanded="false" />
-            <element signature="e#813#814#0" expanded="false" />
-            <element signature="e#857#858#0" expanded="false" />
             <element signature="method#addBeer#0;class#beerList#0" expanded="false" />
             <element signature="method#removeBeer#0;class#beerList#0" expanded="false" />
           </folding>
@@ -1134,7 +1015,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="838" column="0" selection-start-line="838" selection-start-column="0" selection-end-line="838" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="docComment;class#Beer#0" expanded="false" />
             <element signature="method#Beer#0;class#Beer#0" expanded="false" />
             <element signature="method#createNewDraftBeer#0;class#Beer#0" expanded="false" />
@@ -1142,46 +1022,6 @@
             <element signature="method#editBottledBeer#0;class#Beer#0" expanded="false" />
             <element signature="method#printDraftBeer#0;class#Beer#0" expanded="false" />
             <element signature="method#printBottledBeer#0;class#Beer#0" expanded="false" />
-            <element signature="e#32082#32083#0" expanded="false" />
-            <element signature="e#32115#32116#0" expanded="false" />
-            <element signature="e#32167#32168#0" expanded="false" />
-            <element signature="e#32211#32212#0" expanded="false" />
-            <element signature="e#32242#32243#0" expanded="false" />
-            <element signature="e#32269#32270#0" expanded="false" />
-            <element signature="e#32309#32310#0" expanded="false" />
-            <element signature="e#32341#32342#0" expanded="false" />
-            <element signature="e#32373#32374#0" expanded="false" />
-            <element signature="e#32406#32407#0" expanded="false" />
-            <element signature="e#32448#32449#0" expanded="false" />
-            <element signature="e#32482#32483#0" expanded="false" />
-            <element signature="e#32513#32514#0" expanded="false" />
-            <element signature="e#32545#32546#0" expanded="false" />
-            <element signature="e#32585#32586#0" expanded="false" />
-            <element signature="e#32617#32618#0" expanded="false" />
-            <element signature="e#32649#32650#0" expanded="false" />
-            <element signature="e#32682#32683#0" expanded="false" />
-            <element signature="e#32724#32725#0" expanded="false" />
-            <element signature="e#32758#32759#0" expanded="false" />
-            <element signature="e#32793#32794#0" expanded="false" />
-            <element signature="e#32829#32830#0" expanded="false" />
-            <element signature="e#32877#32878#0" expanded="false" />
-            <element signature="e#32917#32918#0" expanded="false" />
-            <element signature="e#32953#32954#0" expanded="false" />
-            <element signature="e#32984#32985#0" expanded="false" />
-            <element signature="e#33022#33023#0" expanded="false" />
-            <element signature="e#33052#33053#0" expanded="false" />
-            <element signature="e#33086#33087#0" expanded="false" />
-            <element signature="e#33121#33122#0" expanded="false" />
-            <element signature="e#33167#33168#0" expanded="false" />
-            <element signature="e#33205#33206#0" expanded="false" />
-            <element signature="e#33240#33241#0" expanded="false" />
-            <element signature="e#33276#33277#0" expanded="false" />
-            <element signature="e#33324#33325#0" expanded="false" />
-            <element signature="e#33364#33365#0" expanded="false" />
-            <element signature="e#33396#33397#0" expanded="false" />
-            <element signature="e#33433#33434#0" expanded="false" />
-            <element signature="e#33469#33470#0" expanded="false" />
-            <element signature="e#33520#33521#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1194,8 +1034,6 @@
             <element signature="docComment;class#menuPrinter#0" expanded="false" />
             <element signature="method#writeBeerList#0;class#menuPrinter#0" expanded="false" />
             <element signature="method#writeWindowBeerList#0;class#menuPrinter#0" expanded="false" />
-            <element signature="method#writeWebBeerList#0;class#menuPrinter#0" expanded="false" />
-            <element signature="method#writeWebIceCreamList#0;class#menuPrinter#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1205,26 +1043,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="213" column="0" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#leftMenu_JPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#draftBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#iceCreamCard#0;class#MenuChanger#0" expanded="false" />
-            <element signature="class#44568:44690" expanded="false" />
-            <element signature="method#actionPerformed#0;class#44568:44690" expanded="false" />
+            <element signature="e#44666#44993#0" expanded="true" />
+            <element signature="e#44992#44993#0" expanded="true" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#45915#45965#0" expanded="false" />
-            <element signature="e#46159#46160#0" expanded="false" />
-            <element signature="e#46209#46210#0" expanded="false" />
+            <element signature="e#46218#46268#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#47889#47890#0" expanded="false" />
-            <element signature="e#47931#47932#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1234,11 +1066,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#718#719#0" expanded="false" />
-            <element signature="e#751#752#0" expanded="false" />
-            <element signature="e#813#814#0" expanded="false" />
-            <element signature="e#857#858#0" expanded="false" />
             <element signature="method#addBeer#0;class#beerList#0" expanded="false" />
             <element signature="method#removeBeer#0;class#beerList#0" expanded="false" />
           </folding>
@@ -1250,7 +1077,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="681" column="26" selection-start-line="681" selection-start-column="26" selection-end-line="681" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="docComment;class#Beer#0" expanded="false" />
             <element signature="method#Beer#0;class#Beer#0" expanded="false" />
             <element signature="method#createNewDraftBeer#0;class#Beer#0" expanded="false" />
@@ -1258,46 +1084,6 @@
             <element signature="method#editBottledBeer#0;class#Beer#0" expanded="false" />
             <element signature="method#printDraftBeer#0;class#Beer#0" expanded="false" />
             <element signature="method#printBottledBeer#0;class#Beer#0" expanded="false" />
-            <element signature="e#32082#32083#0" expanded="false" />
-            <element signature="e#32115#32116#0" expanded="false" />
-            <element signature="e#32167#32168#0" expanded="false" />
-            <element signature="e#32211#32212#0" expanded="false" />
-            <element signature="e#32242#32243#0" expanded="false" />
-            <element signature="e#32269#32270#0" expanded="false" />
-            <element signature="e#32309#32310#0" expanded="false" />
-            <element signature="e#32341#32342#0" expanded="false" />
-            <element signature="e#32373#32374#0" expanded="false" />
-            <element signature="e#32406#32407#0" expanded="false" />
-            <element signature="e#32448#32449#0" expanded="false" />
-            <element signature="e#32482#32483#0" expanded="false" />
-            <element signature="e#32513#32514#0" expanded="false" />
-            <element signature="e#32545#32546#0" expanded="false" />
-            <element signature="e#32585#32586#0" expanded="false" />
-            <element signature="e#32617#32618#0" expanded="false" />
-            <element signature="e#32649#32650#0" expanded="false" />
-            <element signature="e#32682#32683#0" expanded="false" />
-            <element signature="e#32724#32725#0" expanded="false" />
-            <element signature="e#32758#32759#0" expanded="false" />
-            <element signature="e#32793#32794#0" expanded="false" />
-            <element signature="e#32829#32830#0" expanded="false" />
-            <element signature="e#32877#32878#0" expanded="false" />
-            <element signature="e#32917#32918#0" expanded="false" />
-            <element signature="e#32953#32954#0" expanded="false" />
-            <element signature="e#32984#32985#0" expanded="false" />
-            <element signature="e#33022#33023#0" expanded="false" />
-            <element signature="e#33052#33053#0" expanded="false" />
-            <element signature="e#33086#33087#0" expanded="false" />
-            <element signature="e#33121#33122#0" expanded="false" />
-            <element signature="e#33167#33168#0" expanded="false" />
-            <element signature="e#33205#33206#0" expanded="false" />
-            <element signature="e#33240#33241#0" expanded="false" />
-            <element signature="e#33276#33277#0" expanded="false" />
-            <element signature="e#33324#33325#0" expanded="false" />
-            <element signature="e#33364#33365#0" expanded="false" />
-            <element signature="e#33396#33397#0" expanded="false" />
-            <element signature="e#33433#33434#0" expanded="false" />
-            <element signature="e#33469#33470#0" expanded="false" />
-            <element signature="e#33520#33521#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1310,8 +1096,6 @@
             <element signature="docComment;class#menuPrinter#0" expanded="false" />
             <element signature="method#writeBeerList#0;class#menuPrinter#0" expanded="false" />
             <element signature="method#writeWindowBeerList#0;class#menuPrinter#0" expanded="false" />
-            <element signature="method#writeWebBeerList#0;class#menuPrinter#0" expanded="false" />
-            <element signature="method#writeWebIceCreamList#0;class#menuPrinter#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1321,26 +1105,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="460" column="56" selection-start-line="460" selection-start-column="56" selection-end-line="460" selection-end-column="56" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#leftMenu_JPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#draftBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#iceCreamCard#0;class#MenuChanger#0" expanded="false" />
-            <element signature="class#44568:44690" expanded="false" />
-            <element signature="method#actionPerformed#0;class#44568:44690" expanded="false" />
+            <element signature="e#44666#44993#0" expanded="true" />
+            <element signature="e#44992#44993#0" expanded="true" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#45915#45965#0" expanded="false" />
-            <element signature="e#46159#46160#0" expanded="false" />
-            <element signature="e#46209#46210#0" expanded="false" />
+            <element signature="e#46218#46268#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#47889#47890#0" expanded="false" />
-            <element signature="e#47931#47932#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1357,26 +1135,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="323" column="93" selection-start-line="323" selection-start-column="93" selection-end-line="323" selection-end-column="93" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#leftMenu_JPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#draftBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#iceCreamCard#0;class#MenuChanger#0" expanded="false" />
-            <element signature="class#44568:44690" expanded="false" />
-            <element signature="method#actionPerformed#0;class#44568:44690" expanded="false" />
+            <element signature="e#44666#44993#0" expanded="true" />
+            <element signature="e#44992#44993#0" expanded="true" />
             <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#45915#45965#0" expanded="false" />
-            <element signature="e#46159#46160#0" expanded="false" />
-            <element signature="e#46209#46210#0" expanded="false" />
+            <element signature="e#46218#46268#0" expanded="false" />
             <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
             <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#47889#47890#0" expanded="false" />
-            <element signature="e#47931#47932#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1579,47 +1351,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/lists/flavorList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="29" />
+          <folding>
+            <element signature="docComment;class#flavorList#0" expanded="false" />
+            <element signature="method#removeFlavor#0;class#flavorList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/piccoapp/lists/beerList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#718#719#0" expanded="false" />
-            <element signature="e#751#752#0" expanded="false" />
-            <element signature="e#813#814#0" expanded="false" />
-            <element signature="e#857#858#0" expanded="false" />
             <element signature="method#addBeer#0;class#beerList#0" expanded="false" />
             <element signature="method#removeBeer#0;class#beerList#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/menuItems/Flavor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="526" column="16" selection-start-line="526" selection-start-column="16" selection-end-line="526" selection-end-column="16" />
+          <caret line="50" column="49" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#leftMenu_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#draftBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#iceCreamCard#0;class#MenuChanger#0" expanded="false" />
-            <element signature="class#44568:44690" expanded="false" />
-            <element signature="method#actionPerformed#0;class#44568:44690" expanded="false" />
-            <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#45915#45965#0" expanded="false" />
-            <element signature="e#46159#46160#0" expanded="false" />
-            <element signature="e#46209#46210#0" expanded="false" />
-            <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
-            <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
-            <element signature="e#47889#47890#0" expanded="false" />
-            <element signature="e#47931#47932#0" expanded="false" />
+            <element signature="docComment;class#Flavor#0" expanded="false" />
+            <element signature="method#editFlavor#0;class#Flavor#0" expanded="false" />
+            <element signature="e#4089#4190#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1629,7 +1390,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="631" column="29" selection-start-line="631" selection-start-column="29" selection-end-line="631" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="docComment;class#Beer#0" expanded="false" />
             <element signature="method#Beer#0;class#Beer#0" expanded="false" />
             <element signature="method#createNewDraftBeer#0;class#Beer#0" expanded="false" />
@@ -1637,93 +1397,41 @@
             <element signature="method#editBottledBeer#0;class#Beer#0" expanded="false" />
             <element signature="method#printDraftBeer#0;class#Beer#0" expanded="false" />
             <element signature="method#printBottledBeer#0;class#Beer#0" expanded="false" />
-            <element signature="e#32082#32083#0" expanded="false" />
-            <element signature="e#32115#32116#0" expanded="false" />
-            <element signature="e#32167#32168#0" expanded="false" />
-            <element signature="e#32211#32212#0" expanded="false" />
-            <element signature="e#32242#32243#0" expanded="false" />
-            <element signature="e#32269#32270#0" expanded="false" />
-            <element signature="e#32309#32310#0" expanded="false" />
-            <element signature="e#32341#32342#0" expanded="false" />
-            <element signature="e#32373#32374#0" expanded="false" />
-            <element signature="e#32406#32407#0" expanded="false" />
-            <element signature="e#32448#32449#0" expanded="false" />
-            <element signature="e#32482#32483#0" expanded="false" />
-            <element signature="e#32513#32514#0" expanded="false" />
-            <element signature="e#32545#32546#0" expanded="false" />
-            <element signature="e#32585#32586#0" expanded="false" />
-            <element signature="e#32617#32618#0" expanded="false" />
-            <element signature="e#32649#32650#0" expanded="false" />
-            <element signature="e#32682#32683#0" expanded="false" />
-            <element signature="e#32724#32725#0" expanded="false" />
-            <element signature="e#32758#32759#0" expanded="false" />
-            <element signature="e#32793#32794#0" expanded="false" />
-            <element signature="e#32829#32830#0" expanded="false" />
-            <element signature="e#32877#32878#0" expanded="false" />
-            <element signature="e#32917#32918#0" expanded="false" />
-            <element signature="e#32953#32954#0" expanded="false" />
-            <element signature="e#32984#32985#0" expanded="false" />
-            <element signature="e#33022#33023#0" expanded="false" />
-            <element signature="e#33052#33053#0" expanded="false" />
-            <element signature="e#33086#33087#0" expanded="false" />
-            <element signature="e#33121#33122#0" expanded="false" />
-            <element signature="e#33167#33168#0" expanded="false" />
-            <element signature="e#33205#33206#0" expanded="false" />
-            <element signature="e#33240#33241#0" expanded="false" />
-            <element signature="e#33276#33277#0" expanded="false" />
-            <element signature="e#33324#33325#0" expanded="false" />
-            <element signature="e#33364#33365#0" expanded="false" />
-            <element signature="e#33396#33397#0" expanded="false" />
-            <element signature="e#33433#33434#0" expanded="false" />
-            <element signature="e#33469#33470#0" expanded="false" />
-            <element signature="e#33520#33521#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/menuItems/Flavor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="116" selection-start-line="84" selection-start-column="116" selection-end-line="84" selection-end-column="116" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#Flavor#0" expanded="false" />
-            <element signature="e#370#371#0" expanded="false" />
-            <element signature="e#406#407#0" expanded="false" />
-            <element signature="method#editFlavor#0;class#Flavor#0" expanded="false" />
-            <element signature="e#4087#4188#0" expanded="false" />
-            <element signature="e#6722#6723#0" expanded="false" />
-            <element signature="e#6751#6752#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/piccoapp/lists/flavorList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#flavorList#0" expanded="false" />
-            <element signature="e#732#733#0" expanded="false" />
-            <element signature="e#765#766#0" expanded="false" />
-            <element signature="e#829#830#0" expanded="false" />
-            <element signature="e#873#874#0" expanded="false" />
-            <element signature="method#removeFlavor#0;class#flavorList#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/piccoapp/menuPrinter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7536232">
-          <caret line="236" column="8" selection-start-line="236" selection-start-column="8" selection-end-line="236" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="176" column="41" selection-start-line="176" selection-start-column="41" selection-end-line="176" selection-end-column="41" />
           <folding>
             <element signature="docComment;class#menuPrinter#0" expanded="false" />
             <element signature="method#writeBeerList#0;class#menuPrinter#0" expanded="false" />
             <element signature="method#writeWindowBeerList#0;class#menuPrinter#0" expanded="false" />
-            <element signature="method#writeWebBeerList#0;class#menuPrinter#0" expanded="false" />
-            <element signature="method#writeWebIceCreamList#0;class#menuPrinter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/piccoapp/MenuChanger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.94957983">
+          <caret line="963" column="101" selection-start-line="963" selection-start-column="101" selection-end-line="963" selection-end-column="101" />
+          <folding>
+            <element signature="method#setUIFont#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#createAndShowGUI#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#leftMenu_JPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#beerCard#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#draftBeer_JPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="e#44666#44993#0" expanded="true" />
+            <element signature="e#44992#44993#0" expanded="true" />
+            <element signature="method#leftMenuJLabel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#main#0;class#MenuChanger#0" expanded="false" />
+            <element signature="e#46218#46268#0" expanded="false" />
+            <element signature="method#fileSetup#0;class#MenuChanger#0" expanded="false" />
+            <element signature="class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="method#dropboxJPanel#0;class#dropboxJPanel#0;class#MenuChanger#0" expanded="false" />
+            <element signature="class#rightContentJPanel#0;class#MenuChanger#0" expanded="false" />
           </folding>
         </state>
       </provider>

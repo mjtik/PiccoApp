@@ -792,6 +792,7 @@ public class MenuChanger {
             public void actionPerformed(ActionEvent e) {
 
                 new menuPrinter().writeWebIceCreamList(current_iceCreamList, current_sorbetList);
+                new menuPrinter().write_iceCreamList_print(current_iceCreamList, current_sorbetList);
 
             }
         });
@@ -958,6 +959,9 @@ public class MenuChanger {
         printList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                new menuPrinter().writeWebIceCreamList(current_iceCreamList, current_sorbetList);
+                new menuPrinter().write_iceCreamList_print(current_iceCreamList, current_sorbetList);
 
             }
         });
